@@ -1,0 +1,16 @@
+
+
+Talk with Max about the data work he did. 
+  What data do we have?
+  How did we get to it?
+  What were the next steps planned?
+
+Start building up a database of articles on hedonic analysis and traffic noise.
+  Particular to Minneapolis/St. Paul?
+  How are people estimating traffic noise?
+  What traffic variable are people including in the model? (max? mean? night/day?)
+  How are people modeling the house prices?
+    unit of analysis (individual houses sales? EMV? Mean EMV by census tract?)
+
+knitR
+  how do I cache large calculations so that computer doesn't have to do them each time?
