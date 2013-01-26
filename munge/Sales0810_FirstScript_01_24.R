@@ -1,5 +1,5 @@
 library("foreign")
-sales0810 <- read.dbf("../Data/FromGISVoltoRServer/Sales20082010.dbf")
+sales0810 <- read.dbf("../Data/GIS2R/Sales20082010.dbf")
 summary(sales0810)
 str(sales0810)
 

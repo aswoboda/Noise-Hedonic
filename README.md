@@ -7,4 +7,6 @@ Overall Structure of Project
 
 Inside Noise Hedonic Project we have folders for Data and Noise-Hedonic (github repository)
 
-Data has subfolders for ....
+Data has two subfolders:
+* GIS2R - this folder should be copied from the GIS volume to the R server
+* R2GIS - this folder should be copied from the R server to the GIS volume
