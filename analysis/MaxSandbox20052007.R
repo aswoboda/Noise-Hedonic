@@ -1,5 +1,5 @@
 library (foreign)
-workingdata <- read.dbf("../Data/CleanData/Sales20052007.dbf")
+workingdata <- read.dbf("../Data//R2GIS/CleanData/Sales20052007.dbf")
 names(workingdata)
 summary(workingdata)
 
@@ -54,7 +54,7 @@ outlierTest(model.SaleValue3)
 
 ######Normality Issues arise so we investigate with the log transformation on the dependent variable
 ##Dependent variable: Sales Value (log transformed) w/o MCA5, PARK_dist, SHOP_dist SDNUM | inclusion of Acres2, logMax, logFIN_SQ_FT
-model.logSaleValue1 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR + GARAGE + GARSQFT + ACRES_POLY + ACRES2 + HOMESTEAD+ logFIN_SQ_+YEAR_BUILT+logMAX+LAKE_dist+MCA3+SHOP_dist+CBD_dist, data=workingdata)
+model.logSaleValue1 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR + ACRES_POLY + ACRES2 + HOMESTEAD+ logFIN_SQ_+YEAR_BUILT+logMAX+LAKE_dist+MCA3+SHOP_dist+CBD_dist, data=workingdata)
 summary(model.logSaleValue1)
 anova(model.logSaleValue1)
 #Diagnostics
@@ -63,6 +63,8 @@ ncvTest(model.logSaleValue1) #nonconstant variance does not improve
 dwtest (model.logSaleValue1) #autocorrelation
 bptest(model.logSaleValue1)
 plot(model.logSaleValue1)
+
+ceresPlots(model.logSaleValue1)
 
 workingdata [-c(16294,16293, 24494), ]
 
