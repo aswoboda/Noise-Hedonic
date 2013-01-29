@@ -4,8 +4,9 @@ summary(sales0507)
 
 
 #Pulling the variables we WANT into a new, working dataframe.
+sales0507$GARSQFT <- as.numeric(sales0507$GARAGESQFT) #Converting factor to numeric
 dataNames <- names (sales0507)
-VarsIWant <- which(dataNames %in% c("COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARAGESQFT", "SALE_QRT", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
+VarsIWant <- which(dataNames %in% c("COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARSQFT", "SALE_QRT", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
 workingdata = sales0507[ , VarsIWant]
 summary (workingdata)
 workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
@@ -15,6 +16,7 @@ hist(workingdata$ACRES_POLY) #Large outliers -- very right skewed
 hist(workingdata$FIN_SQ_FT) #Also right skewed
 hist(workingdata$MAX) #Left skewed
 hist(workingdata$SALE_VALUE) #Right skewed
+#Limit Dataset
 LivingAreaOutliers = which (workingdata$FIN_SQ_FT > 5000) #Limit dataset to houses with less than 5000 sq ft.
 AcreageOutliers = which (workingdata$ACRES_POLY > 1) #Limit dataset to parcels less than one acre
 TrafficNoiseOutliers = which(workingdata$MAX <25) #Limit dataset to properties exposed to more than 25 dBA
