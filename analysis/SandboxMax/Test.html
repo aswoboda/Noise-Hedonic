@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Max&#39;s First Analysis</title>
+
+<base target="_blank"/>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>Max&#39;s First Analysis</h1>
+
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the <strong>MD</strong> toolbar button for help on Markdown).</p>
+
+<p>When you click the <strong>Knit HTML</strong> button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+
+<pre><code class="r">getwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/home/timmm/Noise Hedonic Project/Noise-Hedonic/analysis/SandboxMax&quot;
+</code></pre>
+
+<pre><code class="r">
+library(foreign)
+workingdata &lt;- read.dbf(&quot;../../../Data//R2GIS/CleanData/Sales20052007.dbf&quot;)
+names(workingdata)
+</code></pre>
+
+<pre><code>##  [1] &quot;COUNTY_ID&quot;  &quot;PIN&quot;        &quot;CITY&quot;       &quot;ZIP&quot;        &quot;ACRES_POLY&quot;
+##  [6] &quot;HOMESTEAD&quot;  &quot;TOTAL_TAX&quot;  &quot;HOME_STYLE&quot; &quot;FIN_SQ_FT&quot;  &quot;GARAGE&quot;    
+## [11] &quot;YEAR_BUILT&quot; &quot;SALE_VALUE&quot; &quot;SALE_YR&quot;    &quot;BEDS&quot;       &quot;BATH&quot;      
+## [16] &quot;MAX&quot;        &quot;TRACTCE10&quot;  &quot;BLDG_QUAL&quot;  &quot;PARK_dist&quot;  &quot;LAKE_dist&quot; 
+## [21] &quot;SALE_QRT&quot;   &quot;SDNUM&quot;      &quot;MCA3&quot;       &quot;MCA5&quot;       &quot;UNIQID&quot;    
+## [26] &quot;Long_X&quot;     &quot;Lat_Y&quot;      &quot;SHOP_dist&quot;  &quot;CBD_dist&quot;   &quot;GARSQFT&quot;   
+## [31] &quot;logSALE_VA&quot; &quot;logFIN_SQ_&quot; &quot;logMAX&quot;     &quot;ACRES2&quot;
+</code></pre>
+
+<pre><code class="r">summary(workingdata)
+</code></pre>
+
+<pre><code>##  COUNTY_ID                 PIN                      CITY      
+##  037: 9989   037-010220002050:    1   ST. PAUL        : 7133  
+##  123:12063   037-011040001001:    1   LAKEVILLE       : 2114  
+##  163: 5500   037-011100001001:    1   CITY OF WOODBURY: 2005  
+##              037-011126001001:    1   EAGAN           : 1538  
+##              037-011165002005:    1   BURNSVILLE      : 1233  
+##              037-011165003003:    1   APPLE VALLEY    : 1158  
+##              (Other)         :27546   (Other)         :12371  
+##       ZIP          ACRES_POLY    HOMESTEAD   TOTAL_TAX     
+##  55044  : 1745   Min.   :0.020   N: 3267   Min.   :     0  
+##  55106  : 1574   1st Qu.:0.160   Y:24285   1st Qu.:  2223  
+##  55024  : 1294   Median :0.250             Median :  2884  
+##  55125  : 1255   Mean   :0.265             Mean   : 61929  
+##  55124  : 1158   3rd Qu.:0.320             3rd Qu.:  4993  
+##  (Other):20525   Max.   :1.000             Max.   :729500  
+##  NA&#39;s   :    1                                             
+##          HOME_STYLE     FIN_SQ_FT     GARAGE        YEAR_BUILT  
+##  SPLIT LEVL   :4017   Min.   : 390   N   :  439   Min.   :1858  
+##  RAMBLER      :3991   1st Qu.:1159   Y   :22365   1st Qu.:1949  
+##  BUNGALOW     :3188   Median :1639   NA&#39;s: 4748   Median :1973  
+##  TWO STORY    :3188   Mean   :1771                Mean   :1966  
+##  2 Story Frame:2117   3rd Qu.:2204                3rd Qu.:1993  
+##  ONE STORY    :2083   Max.   :4987                Max.   :2008  
+##  (Other)      :8968                                             
+##    SALE_VALUE        SALE_YR          BEDS          BATH      
+##  Min.   : 21000   Min.   :2005   Min.   :0.0   Min.   :0.000  
+##  1st Qu.:210000   1st Qu.:2005   1st Qu.:0.0   1st Qu.:0.000  
+##  Median :254000   Median :2006   Median :0.0   Median :0.000  
+##  Mean   :282878   Mean   :2006   Mean   :1.3   Mean   :0.811  
+##  3rd Qu.:332508   3rd Qu.:2006   3rd Qu.:3.0   3rd Qu.:1.750  
+##  Max.   :675000   Max.   :2007   Max.   :9.0   Max.   :4.500  
+##                                                               
+##       MAX         TRACTCE10       BLDG_QUAL      PARK_dist   
+##  Min.   :28.4   071018 :  489   Min.   :0.00   Min.   :   0  
+##  1st Qu.:52.3   060907 :  457   1st Qu.:0.00   1st Qu.:1085  
+##  Median :57.1   060820 :  366   Median :0.00   Median :2097  
+##  Mean   :58.7   061009 :  358   Mean   :1.35   Mean   :2602  
+##  3rd Qu.:64.8   060819 :  317   3rd Qu.:3.00   3rd Qu.:3776  
+##  Max.   :91.5   060817 :  286   Max.   :7.00   Max.   :9688  
+##                 (Other):25279                                
+##    LAKE_dist       SALE_QRT       SDNUM          MCA3          MCA5    
+##  Min.   :   0   Min.   :1.0   Min.   :  6   Min.   :338   Min.   :  0  
+##  1st Qu.: 400   1st Qu.:2.0   1st Qu.:196   1st Qu.:360   1st Qu.:355  
+##  Median : 734   Median :2.0   Median :623   Median :367   Median :359  
+##  Mean   : 898   Mean   :2.5   Mean   :496   Mean   :365   Mean   :370  
+##  3rd Qu.:1267   3rd Qu.:3.0   3rd Qu.:625   3rd Qu.:372   3rd Qu.:362  
+##  Max.   :4391   Max.   :4.0   Max.   :834   Max.   :378   Max.   :562  
+##                                                                        
+##      UNIQID          Long_X          Lat_Y        SHOP_dist    
+##  Min.   :    0   Min.   :-93.3   Min.   :44.6   Min.   :    6  
+##  1st Qu.: 7093   1st Qu.:-93.2   1st Qu.:44.8   1st Qu.:  932  
+##  Median :14242   Median :-93.1   Median :44.9   Median : 1498  
+##  Mean   :14306   Mean   :-93.1   Mean   :44.9   Mean   : 1896  
+##  3rd Qu.:21562   3rd Qu.:-93.0   3rd Qu.:45.0   3rd Qu.: 2244  
+##  Max.   :28744   Max.   :-92.8   Max.   :45.2   Max.   :10854  
+##                                                                
+##     CBD_dist        GARSQFT       logSALE_VA      logFIN_SQ_  
+##  Min.   : 1113   Min.   :   1   Min.   : 9.95   Min.   :5.97  
+##  1st Qu.: 6759   1st Qu.: 310   1st Qu.:12.26   1st Qu.:7.05  
+##  Median :13239   Median : 537   Median :12.45   Median :7.40  
+##  Mean   :14785   Mean   : 521   Mean   :12.49   Mean   :7.39  
+##  3rd Qu.:22289   3rd Qu.: 732   3rd Qu.:12.71   3rd Qu.:7.70  
+##  Max.   :37040   Max.   :1411   Max.   :13.42   Max.   :8.52  
+##                                                               
+##      logMAX         ACRES2      
+##  Min.   :3.35   Min.   :0.0004  
+##  1st Qu.:3.96   1st Qu.:0.0256  
+##  Median :4.04   Median :0.0625  
+##  Mean   :4.06   Mean   :0.0896  
+##  3rd Qu.:4.17   3rd Qu.:0.1024  
+##  Max.   :4.52   Max.   :1.0000  
+## 
+</code></pre>
+
+<pre><code class="r">
+### Preparation for regression analysis, load packages for tests
+
+require(zoo)
+</code></pre>
+
+<pre><code>## Loading required package: zoo
+</code></pre>
+
+<pre><code>## Attaching package: &#39;zoo&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:base&#39;:
+## 
+## as.Date, as.Date.numeric
+</code></pre>
+
+<pre><code class="r">require(lmtest)
+</code></pre>
+
+<pre><code>## Loading required package: lmtest
+</code></pre>
+
+<pre><code class="r">require(car)
+</code></pre>
+
+<pre><code>## Loading required package: car
+</code></pre>
+
+<pre><code>## Loading required package: MASS
+</code></pre>
+
+<pre><code>## Loading required package: nnet
+</code></pre>
+
+<p>You can also embed plots, for example:</p>
+
+<pre><code class="r">hist(workingdata$SALE_VALUE)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"/> </p>
+
+<p>Here, let&#39;s go ahead and run a regression.</p>
+
+<pre><code class="r">model.SaleValue1 &lt;- lm(SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + GARAGE + 
+    ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + 
+    MCA3 + MCA5 + SHOP_dist + CBD_dist, data = workingdata)
+summary(model.SaleValue1)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + 
+##     GARAGE + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + 
+##     MAX + PARK_dist + LAKE_dist + MCA3 + MCA5 + SHOP_dist + CBD_dist, 
+##     data = workingdata)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -494315  -33301   -5946   23135  371413 
+## 
+## Coefficients: (2 not defined because of singularities)
+##                               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                   2.90e+06   9.57e+05    3.04  0.00240 ** 
+## COUNTY_ID123                  4.78e+04   9.98e+03    4.79  1.7e-06 ***
+## COUNTY_ID163                  1.36e+05   2.90e+04    4.68  2.9e-06 ***
+## CITYARDEN HILLS               2.35e+04   6.42e+03    3.67  0.00025 ***
+## CITYBURNSVILLE               -6.77e+03   2.44e+03   -2.78  0.00548 ** 
+## CITYCITY OF BAYPORT          -1.21e+05   2.72e+04   -4.45  8.4e-06 ***
+## CITYCITY OF BIRCHWOOD        -1.79e+03   2.93e+04   -0.06  0.95136    
+## CITYCITY OF COTTAGE GROVE    -9.05e+04   2.59e+04   -3.50  0.00047 ***
+## CITYCITY OF DELLWOOD         -1.17e+03   6.31e+04   -0.02  0.98523    
+## CITYCITY OF HUGO             -1.17e+05   2.66e+04   -4.40  1.1e-05 ***
+## CITYCITY OF LAKE ELMO        -2.22e+04   2.71e+04   -0.82  0.41159    
+## CITYCITY OF MAHTOMEDI        -7.02e+03   2.64e+04   -0.27  0.79008    
+## CITYCITY OF NEWPORT          -8.35e+04   2.70e+04   -3.10  0.00196 ** 
+## CITYCITY OF OAKDALE          -2.76e+04   2.64e+04   -1.05  0.29574    
+## CITYCITY OF OAK PARK HEIGHTS -9.63e+04   2.68e+04   -3.59  0.00033 ***
+## CITYCITY OF PINE SPRINGS     -1.44e+05   4.83e+04   -2.98  0.00290 ** 
+## CITYCITY OF STILLWATER       -7.33e+04   2.60e+04   -2.82  0.00474 ** 
+## CITYCITY OF ST PAUL PARK     -8.76e+04   2.63e+04   -3.33  0.00088 ***
+## CITYCITY OF WHITE BEAR LAKE  -6.69e+04   3.23e+04   -2.07  0.03838 *  
+## CITYCITY OF WILLERNIE        -8.85e+04   3.13e+04   -2.83  0.00467 ** 
+## CITYCITY OF WOODBURY         -4.11e+04   2.60e+04   -1.58  0.11334    
+## CITYEAGAN                     4.49e+04   2.76e+03   16.26  &lt; 2e-16 ***
+## CITYEMPIRE TOWNSHIP          -2.57e+04   8.41e+03   -3.05  0.00227 ** 
+## CITYFALCON HEIGHTS            8.28e+04   7.91e+03   10.48  &lt; 2e-16 ***
+## CITYFARMINGTON               -1.89e+04   3.28e+03   -5.77  8.0e-09 ***
+## CITYGEM LAKE                  1.42e+04   5.77e+04    0.25  0.80501    
+## CITYINVER GROVE HEIGHTS       6.89e+04   4.11e+03   16.76  &lt; 2e-16 ***
+## CITYLAKEVILLE                -1.23e+04   2.73e+03   -4.50  6.9e-06 ***
+## CITYLAUDERDALE                6.13e+04   1.01e+04    6.07  1.3e-09 ***
+## CITYLITTLE CANADA             4.12e+04   7.09e+03    5.81  6.1e-09 ***
+## CITYMAPLEWOOD                 3.05e+04   4.95e+03    6.17  6.9e-10 ***
+## CITYMENDOTA                   1.67e+04   5.77e+04    0.29  0.77230    
+## CITYMENDOTA HEIGHTS           9.73e+04   5.88e+03   16.54  &lt; 2e-16 ***
+## CITYMOUNDS VIEW              -2.85e+02   5.61e+03   -0.05  0.95952    
+## CITYNEW BRIGHTON              1.51e+04   5.09e+03    2.96  0.00304 ** 
+## CITYNORTH OAKS                4.35e+04   2.22e+04    1.97  0.04936 *  
+## CITYNORTH ST. PAUL            3.14e+04   5.66e+03    5.54  3.0e-08 ***
+## CITYROSEMOUNT                 1.91e+04   2.64e+03    7.26  4.0e-13 ***
+## CITYROSEVILLE                 4.58e+04   4.99e+03    9.18  &lt; 2e-16 ***
+## CITYSHOREVIEW                 2.44e+04   4.79e+03    5.10  3.4e-07 ***
+## CITYSOUTH ST PAUL             9.31e+04   5.79e+03   16.09  &lt; 2e-16 ***
+## CITYSPRING LAKE PARK         -9.90e+03   5.77e+04   -0.17  0.86369    
+## CITYST. ANTHONY               4.36e+04   1.74e+04    2.50  0.01226 *  
+## CITYST. PAUL                  8.28e+04   4.81e+03   17.22  &lt; 2e-16 ***
+## CITYTOWN OF BAYTOWN                 NA         NA      NA       NA    
+## CITYVADNAIS HEIGHTS           2.20e+04   5.95e+03    3.70  0.00022 ***
+## CITYWEST ST PAUL              9.42e+04   5.32e+03   17.71  &lt; 2e-16 ***
+## CITYWHITE BEAR LAKE           2.07e+04   4.90e+03    4.23  2.3e-05 ***
+## CITYWHITE BEAR TOWNSHIP             NA         NA      NA       NA    
+## SALE_YR                      -2.06e+03   4.76e+02   -4.32  1.5e-05 ***
+## SDNUM                         4.62e+01   2.05e+01    2.25  0.02428 *  
+## GARAGEY                       2.52e+04   2.89e+03    8.70  &lt; 2e-16 ***
+## ACRES_POLY                    6.88e+04   3.53e+03   19.48  &lt; 2e-16 ***
+## HOMESTEADY                    5.82e+03   1.30e+03    4.47  7.8e-06 ***
+## FIN_SQ_FT                     1.09e+02   6.94e-01  157.54  &lt; 2e-16 ***
+## YEAR_BUILT                    3.65e+02   2.08e+01   17.56  &lt; 2e-16 ***
+## MAX                          -7.36e+02   5.05e+01  -14.59  &lt; 2e-16 ***
+## PARK_dist                    -1.30e+00   3.69e-01   -3.52  0.00043 ***
+## LAKE_dist                     2.70e+00   7.36e-01    3.66  0.00025 ***
+## MCA3                          1.17e+03   7.48e+01   15.59  &lt; 2e-16 ***
+## MCA5                          4.52e+01   1.22e+01    3.69  0.00022 ***
+## SHOP_dist                     2.93e+00   4.02e-01    7.29  3.3e-13 ***
+## CBD_dist                      3.68e+00   2.07e-01   17.77  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Residual standard error: 57500 on 22743 degrees of freedom
+##   (4748 observations deleted due to missingness)
+## Multiple R-squared: 0.716,   Adjusted R-squared: 0.715 
+## F-statistic:  955 on 60 and 22743 DF,  p-value: &lt;2e-16
+</code></pre>
+
+</body>
+
+</html>
+

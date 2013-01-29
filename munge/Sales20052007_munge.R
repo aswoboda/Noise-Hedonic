@@ -4,9 +4,10 @@ summary(sales0507)
 
 
 #Pulling the variables we WANT into a new, working dataframe.
-sales0507$GARSQFT <- as.numeric(sales0507$GARAGESQFT) #Converting factor to numeric
+sales0507$GARSQFT <- as.numeric(as.character(sales0507$GARAGESQFT)) #Converting factor to numeric
+sales0507$SALE_SEASON <- factor(sales0507$SALE_QRT)
 dataNames <- names (sales0507)
-VarsIWant <- which(dataNames %in% c("COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARSQFT", "SALE_QRT", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
+VarsIWant <- which(dataNames %in% c("COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARSQFT", "SALE_SEASON", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
 workingdata = sales0507[ , VarsIWant]
 summary (workingdata)
 workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
@@ -31,7 +32,11 @@ workingdata <- workingdata [-OutlierParcels, ] #Excludes observations that are o
 plot (workingdata$ACRES_POLY, workingdata$SALE_VALUE) #Possibility for x^2 relationship or log transformation
 plot (workingdata$FIN_SQ_FT, workingdata$SALE_VALUE) #Linear relationship
 plot (workingdata$MAX, workingdata$SALE_VALUE) #Not a clear linear relationship, possiblity for x^2 relationship
-pairs (~SALE_VALUE + CBD_dist + SHOP_dist + LAKE_dist + PARK_dist, data = workingdata) #Unclear linear relationships
+
+png(filename="graphs/PairsPlot.png", width= 12, height=12, units="in", res = 72)
+pairs (~SALE_VALUE + CBD_dist + SHOP_dist + LAKE_dist + PARK_dist, data = workingdata, cex = .25) #Unclear linear relationships
+dev.off()
+
 #Second batch uses log transformation of sales value
 plot (workingdata$ACRES_POLY, workingdata$logSALE_VALUE) #Possibility of x^2 relationship
 plot (workingdata$FIN_SQ_FT, workingdata$logSALE_VALUE) #Possibility of log transformation

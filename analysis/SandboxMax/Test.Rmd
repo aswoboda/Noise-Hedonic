@@ -1,0 +1,38 @@
+Max's First Analysis
+========================================================
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
+
+When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, cache=TRUE}
+getwd()
+
+library (foreign)
+workingdata <- read.dbf("../../../Data//R2GIS/CleanData/Sales20052007.dbf")
+names(workingdata)
+summary(workingdata)
+
+###Preparation for regression analysis, load packages for tests
+
+require(zoo)
+require(lmtest)
+require(car)
+
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+hist(workingdata$SALE_VALUE)
+```
+
+Here, let's go ahead and run a regression.
+
+```{r}
+model.SaleValue1 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + GARAGE + ACRES_POLY+HOMESTEAD+FIN_SQ_FT+YEAR_BUILT+MAX+PARK_dist+LAKE_dist+MCA3+MCA5+SHOP_dist+CBD_dist, data=workingdata)
+summary(model.SaleValue1)
+```
+
+
+

@@ -20,7 +20,7 @@ summary(model.SaleValue1)
 anova(model.SaleValue1)
 #Diagnostics
 plot(model.SaleValue1) #Normality issues once again #926, 19852 large leverage
-vif(model.SaleValue1) #multicollinearity #No real signs of severe multicollinearity
+vif(model.SaleValue1) #multicollinearity #SDNUM VIF above 10
 dwtest (model.SaleValue1) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.2974)
 bptest(model.SaleValue1)
 outlierTest(model.SaleValue1)
@@ -66,9 +66,15 @@ plot(model.logSaleValue1)
 
 ceresPlots(model.logSaleValue1)
 
-workingdata [-c(16294,16293, 24494), ]
+workingdata = workingdata [-c(16299,17134, 24492), ]
 
 ###Dependent variable: Sales Value (log transformed) w/o MCA5, PARK_dist, SHOP_dist SDNUM | inclusion of Acres2, logMax, logFIN_SQ_FT
-model.logSaleValue2 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR + GARAGE + GARSQFT + ACRES_POLY + ACRES2 + HOMESTEAD+ logFIN_SQ_+YEAR_BUILT+logMAX+LAKE_dist+MCA3+SHOP_dist+CBD_dist, data=workingdata)
+model.logSaleValue2 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR + ACRES_POLY + ACRES2 + HOMESTEAD+ logFIN_SQ_+YEAR_BUILT+logMAX+LAKE_dist+MCA3+SHOP_dist+CBD_dist, data=workingdata)
 summary(model.logSaleValue2)
+#Create a residual table with PIN ID number in order to investigate clusters of over/under- estimation parcels
+Residuals20052007 = data.frame(PIN = workingdata$UNIQID, Res = model.logSaleValue2$residuals)
+write.dbf(Residuals20052007, "../Data/R2GIS/ResidualLogSale0507.dbf" )
+
+
+
 plot(model.logSaleValue2)
