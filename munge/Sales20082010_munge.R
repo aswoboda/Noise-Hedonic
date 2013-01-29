@@ -50,4 +50,4 @@ cor(testcor1)
 
 ##Write new .dbf table and store it in 'CleanData' folder
 Sales20082010Clean = data.frame(workingdata)
-write.dbf(Sales20082010Clean, "../Data/CleanData/Sales20082010.dbf" )
+write.dbf(Sales20082010Clean, "../Data/R2GIS/CleanData/Sales20082010.dbf" )

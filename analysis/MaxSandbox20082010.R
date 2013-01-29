@@ -1,5 +1,5 @@
 library (foreign)
-workingdata <- read.dbf("../Data/CleanData/Sales20082010.dbf")
+workingdata <- read.dbf("../Data/R2GIS/CleanData/Sales20082010.dbf")
 summary(workingdata)
 
 ###Preparation for regression analysis, load packages for tests
