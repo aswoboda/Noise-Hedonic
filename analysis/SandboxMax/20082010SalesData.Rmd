@@ -1,14 +1,14 @@
-Max's Analysis -- 2005-2007 SalesData 1/30/13
+Max's Analysis -- 2008-2010 SalesData 1/30/13
 ========================================================
 
-This is a test run of analysis through RMarkdown using 2005-2007 Sales dataset.
+This is a test run of analysis through RMarkdown using 2008-2010 Sales dataset.
 
 Preparation for regression analysis...
 ```{r, cache=TRUE}
 getwd()
 
 library (foreign)
-workingdata <- read.dbf("../../../Data//R2GIS/CleanData/Sales20052007.dbf")
+workingdata <- read.dbf("../../../Data//R2GIS/CleanData/Sales20082010.dbf")
 require(zoo)
 require(lmtest)
 require(car)
@@ -19,7 +19,7 @@ In order to improve the model, I did three things:
 
 (1) After normality issues arose in preliminary regressions, used more restrictive constraints on outliers to make distributions to key variables more normal.
 Limited parcels to under 4000 square feet in living area, less than .6 acres, experiencing more than 25 dBA in traffic noise and sales values between $100k and $675k
-Sample size went from ~28k to 25,994
+Sample size went from ~19k to 15,587
 
 (2) Along with restricting dataset to exclude outliers, we also transformed structural and distance variables to logarithms when appropriate in order to better fit the nonlinear relationship they had with the log transformed dependent variables (sales value).
 
@@ -39,7 +39,7 @@ model.SaleValue1 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + ACRES_
 summary(model.SaleValue1)
 ```
 
-Looking at the residual and qqplot, notice that there may be some pattern in the variance as well as a violation of normality.
+Looking at the residual and qqplot, notice that there is a greater threat to homoscedasticity than in the 2005-2007 model and normality issues are still a problem.
 
 ```{r}
 unlogged = data.frame (yhat = model.SaleValue1$fitted.values, rr = model.SaleValue1$residuals)
@@ -55,7 +55,7 @@ model.logSaleValue2 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + ACRES_POLY
 summary(model.logSaleValue2)
 ```
 
-Looking at the residual and qqplot, note that the residuals seem to follow a more pronounced pattern that is in violation with homoscedasticity. However, normality conditions improve, yet there are still some issues. I am joining the residuals with the shapefile in order to see if these observations with either large over- or under-estimates are clustered.
+Looking at the residual and qqplot, note non constant variance and normality conditions improve, yet there are still some issues. I am joining the residuals with the shapefile in order to see if these observations with either large over- or under-estimates are clustered.
 
 ```{r}
 logged = data.frame (yhat = model.logSaleValue2$fitted.values, rr = model.logSaleValue2$residuals)
@@ -64,7 +64,7 @@ qqnorm(logged$rr)
 qqline(logged$rr)
 ```
 
-The last regression inputs the dummy variable for GARAGE. The inclusion of this variable excludes ~ 4k parcels mostly in Dakota County which brings the sample size to ~21k. This regression has similar looking residual and qqplots.
+The last regression inputs the dummy variable for GARAGE. The inclusion of this variable excludes ~ 1500 parcels mostly in Dakota County which brings the sample size to ~14k. This regression has similar looking residual and qqplots.
 
 ```{r}
 model.logSaleValue3 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + GARAGE + ACRES_POLY + ACRES2 + HOMESTEAD + logFIN_SQ_ + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP + logCBD +SALE_SEASO, data=workingdata)

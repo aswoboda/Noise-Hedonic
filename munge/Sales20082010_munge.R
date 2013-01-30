@@ -1,10 +1,15 @@
 library (foreign)
 sales0810 <- read.dbf("../Data/GIS2R/Sales20082010.dbf")
-summary(sales0810)
+summary(sales0810) #found that some observations have a 0 or negative sales value
+t <- which(sales0810$SALE_VALUE < 1)
+sales0810 = sales0810 [-t, ] #Excludes observations without sales value information
 
 #Pulling the variables we WANT into a new, working dataframe.
+sales0810$GARSQFT <- as.numeric(as.character(sales0810$GARAGESQFT)) #Converting factor to numeric
+sales0810$SALE_SEASON <- factor(sales0810$SALE_QRT)
+sales0810$SALE_MO <- factor(sales0810$SALE_MONTH)
 dataNames <- names (sales0810)
-VarsIWant <- which(dataNames %in% c("COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARAGESQFT", "SALE_QRT", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
+VarsIWant <- which(dataNames %in% c("GARSQFT","SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN"))
 workingdata = sales0810[ , VarsIWant]
 summary (workingdata)
 workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
@@ -14,13 +19,19 @@ hist(workingdata$ACRES_POLY) #Large outliers -- very right skewed
 hist(workingdata$FIN_SQ_FT) #Also right skewed
 hist(workingdata$MAX) #Left skewed
 hist(workingdata$SALE_VALUE) #Right skewed
-LivingAreaOutliers = which (workingdata$FIN_SQ_FT > 5000) #Limit dataset to houses with less than 5000 sq ft.
-AcreageOutliers = which (workingdata$ACRES_POLY > 1) #Limit dataset to parcels less than one acre
+LivingAreaOutliers = which (workingdata$FIN_SQ_FT > 4000) #Limit dataset to houses with less than 5000 sq ft.
+AcreageOutliers = which (workingdata$ACRES_POLY > .6) #Limit dataset to parcels less than one acre
 TrafficNoiseOutliers = which(workingdata$MAX <25) #Limit dataset to properties exposed to more than 25 dBA
 SalesValueOutliers = which (workingdata$SALE_VALUE > 675000)#Limit dataset to properties that sold for less than $675,000
-svoutlier = which (workingdata$logSALE_VALUE < 2)
+svoutlier = which (workingdata$logSALE_VALUE < 11.5)
 OutlierParcels = c(LivingAreaOutliers,AcreageOutliers,TrafficNoiseOutliers,SalesValueOutliers, svoutlier)
-workingdata <- workingdata [-OutlierParcels, ] #Excludes observations that are outliers (n=18668)
+workingdata <- workingdata [-OutlierParcels, ] #Excludes observations that are outliers (n=15670)
+
+#Recheck histograms with outliers removed
+hist(workingdata$ACRES_POLY) #Normal
+hist(workingdata$FIN_SQ_FT) #Slightly right-skewed
+hist(workingdata$MAX) #Normal
+hist(workingdata$logSALE_VALUE) #Normal
 
 ##Plot Investigation -- Looking for relationships with the dependent variable that may violate the linearity assumption
 #Cannot use pairs() function because of memory overload
@@ -28,25 +39,45 @@ workingdata <- workingdata [-OutlierParcels, ] #Excludes observations that are o
 plot (workingdata$ACRES_POLY, workingdata$SALE_VALUE) #Possibility for x^2 relationship or log transformation
 plot (workingdata$FIN_SQ_FT, workingdata$SALE_VALUE) #Linear relationship
 plot (workingdata$MAX, workingdata$SALE_VALUE) #Not a clear linear relationship, possiblity for x^2 relationship
-pairs (~SALE_VALUE + CBD_dist + SHOP_dist + LAKE_dist + PARK_dist, data = workingdata) #Unclear linear relationships
+
 #Second batch uses log transformation of sales value
-plot (workingdata$ACRES_POLY, workingdata$logSALE_VALUE) #Possibility of x^2 relationship
+plot (workingdata$ACRES_POLY, workingdata$logSALE_VALUE) #Possibility of x^2 transformation (values too small for log transformation)
 plot (workingdata$FIN_SQ_FT, workingdata$logSALE_VALUE) #Possibility of log transformation
-plot (workingdata$MAX, workingdata$logSALE_VALUE) #Not a clear linear relationship, possiblity for x^2 relationship
+plot (workingdata$MAX, workingdata$logSALE_VALUE) #Not a clear linear relationship, possiblity for log transformation
+
+png(filename="graphs/PairsPlot.png", width= 12, height=12, units="in", res = 72)
+pairs (~logSALE_VALUE + CBD_dist + SHOP_dist + LAKE_dist + PARK_dist, data = workingdata, cex = .25) #Possibility for log or x^2 relationships for CBD, SHOP, PARK
+dev.off()
 
 #After the plot investigations, make some transformations to explanatory variables to see if it improves upon the linearity assumption
 workingdata$logFIN_SQ_FT = log(workingdata$FIN_SQ_FT) #Transforming living area into logs
 workingdata$logMAX = log(workingdata$MAX) #Transforming traffic noise into logs
-workingdata$ACRES2 = (workingdata$ACRES_POLY*workingdata$ACRES_POLY)
+workingdata$ACRES2 = (workingdata$ACRES_POLY*workingdata$ACRES_POLY) #Transforming acres to a quadratic relationship
+workingdata$logCBD = log(workingdata$CBD_dist) #Transforming CBD distance into logs
+workingdata$logSHOP = log(workingdata$SHOP_dist) #Transforming shopping distance into logs
+workingdata$logPARK = log(workingdata$PARK_dist) #Transforming park distance into logs
+workingdata$logLAKE = log(workingdata$LAKE_dist) #Transforming lake distance into logs
 #Plot investigation with log transformations
-plot (workingdata$logFIN_SQ_FT, workingdata$logSALE_VALUE) #Didn't improve
+plot (workingdata$logFIN_SQ_FT, workingdata$logSALE_VALUE) #Improved
 plot (workingdata$logMAX, workingdata$logSALE_VALUE)  #Didn't improve
+plot (workingdata$logCBD, workingdata$logSALE_VALUE) #improved
+plot (workingdata$logSHOP, workingdata$logSALE_VALUE) #improved
+plot (workingdata$logPARK, workingdata$logSALE_VALUE)
+plot (workingdata$logLAKE, workingdata$logSALE_VALUE)
 
-##Multicollinearity investigation through correlation matrix #Trouble with making collinearity table but diagnostics do not show any multicollinearity
-dataNames <- names (workingdata)
-testcor <- which(dataNames %in% c("ACRES_POLY", "FIN_SQ_FT", "YEAR_BUILT", "SALE_VALUE", "BEDS", "BATH", "MAX", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "GARAGESQFT", "MCA3", "MCA5",  "SHOP_dist", "CBD_dist"))
-testcor1 = workingdata[ , testcor]
-cor(testcor1) 
+#Second round of outlier cuts after looking at histograms of distances
+hist(workingdata$logCBD)
+hist(workingdata$logSHOP)
+hist(workingdata$logPARK)
+hist(workingdata$logLAKE)
+SHOPoutlier = which (workingdata$logSHOP < 4)
+PARKoutlier = which (workingdata$logPARK < 3)
+LAKEoutlier = which (workingdata$logLAKE < 3)
+OutlierParcels2 <- c(SHOPoutlier, PARKoutlier, LAKEoutlier)
+workingdata <- workingdata [-OutlierParcels2, ] #Excludes observations that are outliers (n=15588)
+
+##Multicollinearity investigation through correlation matrix 
+cor(workingdata[, c("logSALE_VALUE", "logFIN_SQ_FT", "logMAX", "ACRES_POLY", "logCBD", "logSHOP", "logPARK", "logLAKE", "MCA3", "MCA5", "GARSQFT", "SALE_YR", "SDNUM")])
 
 ##Write new .dbf table and store it in 'CleanData' folder
 Sales20082010Clean = data.frame(workingdata)

@@ -3,9 +3,6 @@ workingdata <- read.dbf("../Data/R2GIS/CleanData/Sales20082010.dbf")
 summary(workingdata)
 
 ###Preparation for regression analysis, load packages for tests
-install.packages ("zoo")
-install.packages ("lmtest")
-install.packages ("car")
 require(zoo)
 require(lmtest)
 require(car)
@@ -14,52 +11,73 @@ require(car)
 
 ####Linear model investigation
 ##Dependent variable: Sales Value (untransformed)
-model.SaleValue1 <- lm (SALE_VALUE ~ CITY + SALE_YR + SDNUM + ACRES_POLY+HOMESTEAD+FIN_SQ_FT+YEAR_BUILT+MAX+PARK_dist+LAKE_dist+MCA3+MCA5+SHOP_dist+CBD_dist, data=workingdata)
+model.SaleValue1 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + MCA3 + MCA5 + SHOP_dist + CBD_dist +SALE_SEASO, data=workingdata)
 summary(model.SaleValue1)
-anova(model.SaleValue1)
+anova(model.SaleValue1) #MCA5 and SALE_MO 
 #Diagnostics
-plot(model.SaleValue1) #Normality issues once again #Observation 4067 high leverage
-vif(model.SaleValue1) #multicollinearity #SDNUM shows multicollinearity (probably with MCA scores)
-dwtest (model.SaleValue1) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4266)
-bptest(model.SaleValue1) 
-outlierTest(model.SaleValue1) #15579 13619 11911 5390 11994 5604 13873 13870 14681  14680 
-ncvTest(model.SaleValue1) #nonconstant variance
+plot(model.SaleValue1) #Normality issues once again #5222 large leverage
+vif(model.SaleValue1) #multicollinearity #SDNUM VIF above 10 #aliased coefficients means that there is perfect multicollinearity with one of the variables. In the summary table the variable will be NA
+dwtest (model.SaleValue1) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4538)
+bptest(model.SaleValue1)
+outlierTest(model.SaleValue1)
 
-workingdata = workingdata [-c(4067,15579, 13619, 11911, 5390, 11994, 5604, 13873, 13870, 14681,14680), ] #Removed leveraged observation
+workingdata = workingdata [-5222, ]
 
-
-##Dependent variable: Sales Value (untransformed) w/o MCA5, PARK_dist, SHOP_dist, SDnum
-model.SaleValue2 <- lm (SALE_VALUE ~ CITY + SALE_YR  + ACRES_POLY+HOMESTEAD+FIN_SQ_FT+YEAR_BUILT+MAX+LAKE_dist+MCA3+CBD_dist, data=workingdata)
+##Dependent variable: Sales Value (untransformed) w/o MCA5, SDNUM
+model.SaleValue2 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR  + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + MCA3 + SHOP_dist + CBD_dist  +SALE_SEASO, data=workingdata)
 summary(model.SaleValue2)
-anova(model.SaleValue2)
+anova(model.SaleValue1, model.SaleValue2)
 #Diagnostics
-plot(model.SaleValue2) #Normality issues once again
+plot(model.SaleValue2) #Normality issues once again 
 vif(model.SaleValue2) #multicollinearity #No real signs of severe multicollinearity
-dwtest (model.SaleValue2) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4266)
-bptest(model.SaleValue2) #shows some signs of heteroscedasticity
-outlierTest(model.SaleValue2) #14679  16705 10530  14678  15316  8497  13872 13472 10932  15283 
+dwtest (model.SaleValue2) #autocorrelation 
+bptest(model.SaleValue2)
+outlierTest(model.SaleValue2)
 
 
-#Dependent variable: Sales Value (untransformed) w/o MCA5, PARK_dist, SHOP_dist, SDNUM | inclusion of Acres2 
-model.SaleValue3 <- lm (SALE_VALUE ~ COUNTY_ID + CITY +SALE_YR  + ACRES_POLY+ ACRES2 +HOMESTEAD+FIN_SQ_FT+YEAR_BUILT+MAX+LAKE_dist+MCA3+CBD_dist, data=workingdata)
-summary(model.SaleValue3)
-#Diagnostics
-plot(model.SaleValue3) #Normality issues once again #Non constant variance
-outlierTest(model.SaleValue3)
-ncvTest(model.SaleValue3) #nonconstant variance
-dwtest (model.SaleValue3) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4266)
-bptest(model.SaleValue3)
-crPlots(model.SaleValue3)
 
 
-######Normality and Heteroskedasticity arise issues so we investigate with the log transformation on the dependent variable
-##Dependent variable: Sales Value (log transformed) w/o MCA5, PARK_dist, SHOP_dist SDNUM | inclusion of Acres2, logMax, logFIN_SQ_FT
-model.logSaleValue1 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR + ACRES_POLY+ ACRES2 +HOMESTEAD+ logFIN_SQ_ + YEAR_BUILT+logMAX+LAKE_dist+MCA3+CBD_dist, data=workingdata)
-summary(model.logSaleValue1) #Explains significantly less variation than untransformed model
+######Normality Issues arise so we investigate with the log transformation on the dependent variable
+##Dependent variable: Sales Value (log transformed) w/o MCA5, SDNUM | inclusion of Acres2, logMax, logFIN_SQ_FT, logPARK, logCBD, logSHOP, logLAKE
+model.logSaleValue1 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + ACRES_POLY + ACRES2 + HOMESTEAD + logFIN_SQ_ + YEAR_BUILT + logMAX + logPARK + logLAKE + MCA3 + logSHOP + logCBD + SALE_SEASO, data=workingdata)
+summary(model.logSaleValue1)
 anova(model.logSaleValue1)
 #Diagnostics
 outlierTest(model.logSaleValue1)
-ncvTest(model.logSaleValue1) #nonconstant variance does not improve
-dwtest (model.logSaleValue1) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4871)
+ncvTest(model.logSaleValue1) #
+dwtest (model.logSaleValue1) #autocorrelation
 bptest(model.logSaleValue1)
-plot(model.logSaleValue1) #QQ plot improves #Residual plot improves #ScaleLocation worsens
+plot(model.logSaleValue1) 
+
+###Dependent variable: Sales Value (log transformed) w/o MCA5, SDNUM, SALE_MO
+model.logSaleValue2 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + ACRES_POLY + ACRES2 + HOMESTEAD + logFIN_SQ_ + YEAR_BUILT + logMAX + logPARK + logLAKE+ MCA3 + logSHOP + logCBD + SALE_SEASO, data=workingdata)
+summary(model.logSaleValue2)
+anova( model.logSaleValue2)
+plot(model.logSaleValue2)
+
+##ResidualTable
+#Grab residual from model and row name from the model
+resData1 = data.frame(Res = model.logSaleValue2$residuals, RowName = names(model.logSaleValue2$residuals))
+#Add column of row names to the workingdata
+workingdata$RowName = row.names(workingdata)
+#Merge the resData table from model with workingdata table
+temp = merge(resData1, workingdata, all = TRUE)
+#From temporary table that merged resData table and workingdata table, extract residuals and PIN
+names(temp)
+temp = temp[, c(2, 4)]
+write.dbf(temp, "../Data/R2GIS/20082010logSales.dbf")
+
+
+###Dependent variable: Sales Value (log transformed) w/ GARAGE
+model.logSaleValue3 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + GARAGE + ACRES_POLY + ACRES2 + HOMESTEAD + logFIN_SQ_ + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP + logCBD + SALE_SEASO, data=workingdata)
+summary(model.logSaleValue3)
+plot(model.logSaleValue3)
+##ResidualTable
+#Grab residual from model and row name from the model
+resData2 = data.frame(Res = model.logSaleValue3$residuals, RowName = names(model.logSaleValue3$residuals))
+#Merge the resData table from model with workingdata table
+temp1 = merge(resData2, workingdata, all = TRUE)
+#From temporary table that merged resData table and workingdata table, extract residuals and PIN
+names(temp1)
+temp1 = temp1[, c(2, 4)]
+write.dbf(temp1, "../Data/R2GIS/20082010logSales_GARAGE.dbf")
