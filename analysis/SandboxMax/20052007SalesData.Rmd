@@ -1,14 +1,14 @@
 Max's Analysis -- 2005-2007 SalesData 1/30/13
 ========================================================
 
-This is a test run of analysis through RMarkdown using 2005-2007 Sales dataset.
+This is a test run of analysis through RMarkdown using 2005-2007 Sales dataset. And Aaron is making a few small changes.
 
 Preparation for regression analysis...
 ```{r, cache=TRUE}
 getwd()
 
 library (foreign)
-workingdata <- read.dbf("../../../Data//R2GIS/CleanData/Sales20052007.dbf")
+workingdata <- read.dbf("../../../Data/R2GIS/CleanData/Sales20052007.dbf")
 require(zoo)
 require(lmtest)
 require(car)
@@ -70,4 +70,33 @@ The last regression inputs the dummy variable for GARAGE. The inclusion of this 
 model.logSaleValue3 <- lm (logSALE_VA ~ COUNTY_ID + CITY + SALE_YR  + GARAGE + ACRES_POLY + ACRES2 + HOMESTEAD + logFIN_SQ_ + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP + logCBD +SALE_SEASO, data=workingdata)
 summary(model.logSaleValue3)
 ```
+
+Allowing the marginal effect of lot size to vary
+-------
+We have seen that including a quadratic term in lot size is useful. However, the value of additional lot size is likely to vary over space. This is one of the reasons we'll want to run LWR. In the meantime, we can interact lot size with our location variables, like distance to the St. Paul CBD and Minneapolis CBD. And, given that we have seen a quadratic relationship between distance to CBD and house prices (signifying and 'optimal' distance to live at), perhaps we can even interact lot size with distance to CBD and distance to CBD squared.
+
+Let's first rerun a simple semi-log regression
+```{r}
+model.logSaleValue3 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY + CBD_dist + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP  +SALE_SEASO, data=workingdata)
+summary(model.logSaleValue3)
+```
+
+Now let's interact lot size with CBD to see how the price of land might change over space
+```{r}
+model.logSaleValue4 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY*CBD_dist + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP +  +SALE_SEASO, data=workingdata)
+summary(model.logSaleValue4)
+```
+
+And now let's include acres squared
+```{r}
+model.logSaleValue5 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + I(ACRES_POLY^2) * CBD_dist + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP  +SALE_SEASO, data=workingdata)
+summary(model.logSaleValue5)
+```
+
+AND CBD distance squared
+```{r}
+model.logSaleValue6 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + I(ACRES_POLY^2) * CBD_dist + ACRES_POLY*I(CBD_dist^2) + I(ACRES_POLY^2)*I(CBD_dist^2)+ HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + logMAX + logPARK  + MCA3 + logSHOP  +SALE_SEASO, data=workingdata)
+summary(model.logSaleValue6)
+```
+
 
