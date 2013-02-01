@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Max&#39;s Analysis &ndash; 2008-2010 SalesData 1/31/13</title>
+
+<base target="_blank"/>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<h1>Max&#39;s Analysis &ndash; 2008-2010 SalesData 1/31/13</h1>
+
+<p>Today we are looking at interaction terms and whether attributes such as land size and traffic noise have a marginal effect that varies over space. Our goal is to map these marginal effects to show the need for locally-weighted regression.</p>
+
+<p>Although using a linear dependent variable would be easier to interpret, the model assumptions are violated and some of the explanatory variables do not fit/explain the variation in sales value as well as they do when the sales value is transformed into log.</p>
+
+<p>To find the marginal effect of an attribute that includes quadratic relationships and interaction terms requires a little more math. </p>
+
+<p>Lets look at an example equation: log (y) = a + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)<br/>
+In order to get y by itself, we need to take the exponent of both sides:<br/>
+y = exp<sup>[a</sup> + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)]</p>
+
+<p>Now, to estimate the marginal effect x has on y, we take the derivative of both sides with respect to x:<br/>
+dy/dx = (b1 + 2(b2) + b3(z)) * exp<sup>[a</sup> + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)] </p>
+
+<p>Preparation for regression analysis&hellip;</p>
+
+<pre><code class="r">getwd()
+</code></pre>
+
+<pre><code>## [1] &quot;/home/timmm/Noise Hedonic Project/Noise-Hedonic/analysis/SandboxMax&quot;
+</code></pre>
+
+<pre><code class="r">
+library(foreign)
+workingdata &lt;- read.dbf(&quot;../../../Data/R2GIS/CleanData/Sales20082010.dbf&quot;)
+require(zoo)
+require(lmtest)
+require(car)
+</code></pre>
+
+<p>After the Thursday, 1/31 morning meeting with Aaron, found that most of the extreme over/under estimation of sales values occur in the city of St. Paul, where one neighborhood is &#39;good&#39; (Hihgland Park) and another is riddled with crime/lower income. In order to account for these features we added three variables to the model:</p>
+
+<p>(1) Distance to nearest residential college (2) Median income ($2011) in Census Tract based on American Community Survey administered through US Census Bureau (3) Distance to Minneapolis &amp; St. Paul, not just nearest CBD</p>
+
+<p>In this first model, we include these three variables as well as exclude CITY variable so we can assess if there is multicollinearity present through vif(). We see that the inclusion of distance to St. Paul, Minneapolis, and nearest CBD are all closely correlated.</p>
+
+<pre><code class="r">model.SaleValue1 &lt;- lm(logSALE_VA ~ COUNTY_ID + factor(SALE_YR) + SDNUM + ACRES_POLY + 
+    I(ACRES_POLY^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + MAX + PARK_dist + 
+    I(PARK_dist^2) + LAKE_dist + I(LAKE_dist^2) + MCA3 + MCA5 + SHOP_dist + 
+    I(SHOP_dist^2) + COLLEGE_di + SP_dist + MPS_dist + CBD_dist + I(CBD_dist^2) + 
+    MED_INCOME + SALE_SEASO, data = workingdata)
+
+vif(model.SaleValue1)
+</code></pre>
+
+<pre><code>##                    GVIF Df GVIF^(1/(2*Df))
+## COUNTY_ID       151.912  2           3.511
+## factor(SALE_YR)   3.639  2           1.381
+## SDNUM            30.852  1           5.554
+## ACRES_POLY       24.494  1           4.949
+## I(ACRES_POLY^2)  21.451  1           4.631
+## HOMESTEAD         1.456  1           1.207
+## log(FIN_SQ_FT)    1.778  1           1.333
+## YEAR_BUILT        2.291  1           1.514
+## MAX               1.369  1           1.170
+## PARK_dist        13.989  1           3.740
+## I(PARK_dist^2)   14.471  1           3.804
+## LAKE_dist         9.170  1           3.028
+## I(LAKE_dist^2)    9.298  1           3.049
+## MCA3              1.168  1           1.081
+## MCA5              3.445  1           1.856
+## SHOP_dist        10.353  1           3.218
+## I(SHOP_dist^2)   10.289  1           3.208
+## COLLEGE_di       76.276  1           8.734
+## SP_dist         112.001  1          10.583
+## MPS_dist         62.292  1           7.893
+## CBD_dist        187.801  1          13.704
+## I(CBD_dist^2)    41.040  1           6.406
+## MED_INCOME        2.202  1           1.484
+## SALE_SEASO        1.081  3           1.013
+</code></pre>
+
+<p>The second model will exclude the St. Paul and Minneapolis distances. We see that there is no large violation of multicollinearity anymore.</p>
+
+<pre><code class="r">model.SaleValue2 &lt;- lm(logSALE_VA ~ COUNTY_ID + factor(SALE_YR) + ACRES_POLY + 
+    I(ACRES_POLY^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + MAX + PARK_dist + 
+    I(PARK_dist^2) + LAKE_dist + I(LAKE_dist^2) + MCA3 + MCA5 + SHOP_dist + 
+    I(SHOP_dist^2) + COLLEGE_di + CBD_dist + I(CBD_dist^2) + MED_INCOME + SALE_SEASO, 
+    data = workingdata)
+
+vif(model.SaleValue2)
+</code></pre>
+
+<pre><code>##                   GVIF Df GVIF^(1/(2*Df))
+## COUNTY_ID       10.310  2           1.792
+## factor(SALE_YR)  3.499  2           1.368
+## ACRES_POLY      24.212  1           4.921
+## I(ACRES_POLY^2) 21.255  1           4.610
+## HOMESTEAD        1.456  1           1.207
+## log(FIN_SQ_FT)   1.756  1           1.325
+## YEAR_BUILT       2.251  1           1.500
+## MAX              1.352  1           1.163
+## PARK_dist       13.895  1           3.728
+## I(PARK_dist^2)  14.369  1           3.791
+## LAKE_dist        9.110  1           3.018
+## I(LAKE_dist^2)   9.236  1           3.039
+## MCA3             1.161  1           1.077
+## MCA5             3.268  1           1.808
+## SHOP_dist       10.106  1           3.179
+## I(SHOP_dist^2)   9.424  1           3.070
+## COLLEGE_di      10.319  1           3.212
+## CBD_dist        36.400  1           6.033
+## I(CBD_dist^2)   36.684  1           6.057
+## MED_INCOME       2.135  1           1.461
+## SALE_SEASO       1.080  3           1.013
+</code></pre>
+
+<p>Now we include interaction terms to view if there is an interaction effect between distance to the CBD and (1) Land Size and (2) Traffic Noise. Note that all quadratic relationships and interaction terms are significant.</p>
+
+<pre><code class="r">model.SaleValue3 &lt;- lm(logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + ACRES_POLY * 
+    CBD_dist + log(MAX) * CBD_dist + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + 
+    LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2) + MCA3 + SHOP_dist + 
+    I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data = workingdata)
+
+summary(model.SaleValue3)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + 
+##     ACRES_POLY * CBD_dist + log(MAX) * CBD_dist + HOMESTEAD + 
+##     log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + 
+##     PARK_dist + I(PARK_dist^2) + MCA3 + SHOP_dist + I(SHOP_dist^2) + 
+##     MED_INCOME + COLLEGE_di + SALE_SEASO, data = workingdata)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.5851 -0.1189  0.0022  0.1270  1.3999 
+## 
+## Coefficients: (1 not defined because of singularities)
+##                          Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)              5.42e+00   2.07e-01   26.15  &lt; 2e-16 ***
+## COUNTY_ID123             3.17e-01   8.25e-02    3.84  0.00012 ***
+## COUNTY_ID163             4.63e-01   1.63e-02   28.36  &lt; 2e-16 ***
+## CITYARDEN HILLS         -4.45e-01   8.51e-02   -5.23  1.7e-07 ***
+## CITYBAYPORT              2.75e-02   3.07e-02    0.90  0.37036    
+## CITYBIRCHWOOD VILLAGE   -2.27e-01   4.53e-02   -5.00  5.7e-07 ***
+## CITYBURNSVILLE          -3.35e-02   1.24e-02   -2.70  0.00686 ** 
+## CITYCOTTAGE GROVE       -1.30e-01   1.02e-02  -12.66  &lt; 2e-16 ***
+## CITYDELLWOOD            -5.95e-01   2.13e-01   -2.80  0.00516 ** 
+## CITYEAGAN                6.01e-02   1.46e-02    4.11  4.0e-05 ***
+## CITYEMPIRE TOWNSHIP      1.13e-02   4.47e-02    0.25  0.79991    
+## CITYFALCON HEIGHTS       4.02e-02   8.58e-02    0.47  0.63958    
+## CITYFARMINGTON          -3.71e-02   1.64e-02   -2.26  0.02395 *  
+## CITYGEM LAKE            -6.32e-01   2.28e-01   -2.78  0.00551 ** 
+## CITYHUGO                -2.60e-01   3.66e-02   -7.11  1.2e-12 ***
+## CITYINVER GROVE HEIGHTS  2.57e-01   2.11e-02   12.20  &lt; 2e-16 ***
+## CITYLAKE ELMO           -3.17e-02   3.71e-02   -0.85  0.39332    
+## CITYLAKEVILLE           -1.94e-02   1.37e-02   -1.42  0.15614    
+## CITYLAUDERDALE          -1.42e-01   9.17e-02   -1.54  0.12261    
+## CITYLITTLE CANADA       -1.76e-01   8.55e-02   -2.06  0.03935 *  
+## CITYMAHTOMEDI           -1.02e-01   2.10e-02   -4.85  1.2e-06 ***
+## CITYMAPLEWOOD           -2.19e-02   8.22e-02   -0.27  0.79029    
+## CITYMENDOTA              1.02e-01   1.24e-01    0.82  0.41215    
+## CITYMENDOTA HEIGHTS      2.46e-01   2.80e-02    8.78  &lt; 2e-16 ***
+## CITYMOUNDS VIEW         -5.25e-01   8.39e-02   -6.26  4.0e-10 ***
+## CITYNEW BRIGHTON        -3.62e-01   8.31e-02   -4.36  1.3e-05 ***
+## CITYNEWPORT             -2.65e-01   2.78e-02   -9.53  &lt; 2e-16 ***
+## CITYNORTH ST. PAUL       9.78e-03   8.30e-02    0.12  0.90621    
+## CITYOAKDALE              1.61e-02   1.23e-02    1.30  0.19207    
+## CITYOAK PARK HEIGHTS     8.32e-02   2.93e-02    2.84  0.00453 ** 
+## CITYROSEMOUNT            6.19e-02   1.45e-02    4.27  2.0e-05 ***
+## CITYROSEVILLE           -1.74e-01   8.26e-02   -2.10  0.03537 *  
+## CITYSHOREVIEW           -4.85e-01   8.30e-02   -5.85  5.0e-09 ***
+## CITYSOUTH ST PAUL        3.05e-01   2.24e-02   13.59  &lt; 2e-16 ***
+## CITYSPRING LAKE PARK    -4.73e-01   1.71e-01   -2.76  0.00572 ** 
+## CITYST. ANTHONY         -1.79e-01   1.06e-01   -1.68  0.09218 .  
+## CITYSTILLWATER          -2.80e-02   1.57e-02   -1.78  0.07548 .  
+## CITYST. PAUL            -2.49e-02   8.22e-02   -0.30  0.76188    
+## CITYST. PAUL PARK       -2.25e-01   1.91e-02  -11.73  &lt; 2e-16 ***
+## CITYVADNAIS HEIGHTS     -3.69e-01   8.43e-02   -4.38  1.2e-05 ***
+## CITYWEST ST PAUL         3.12e-01   2.57e-02   12.15  &lt; 2e-16 ***
+## CITYWHITE BEAR LAKE     -1.19e-01   8.09e-02   -1.47  0.14082    
+## CITYWHITE BEAR TOWNSHIP -3.26e-01   8.35e-02   -3.91  9.3e-05 ***
+## CITYWILLERNIE           -3.07e-01   6.04e-02   -5.09  3.7e-07 ***
+## CITYWOODBURY                   NA         NA      NA       NA    
+## factor(SALE_YR)2009     -7.85e-02   4.15e-03  -18.95  &lt; 2e-16 ***
+## factor(SALE_YR)2010     -1.14e-01   4.46e-03  -25.55  &lt; 2e-16 ***
+## ACRES_POLY               3.68e-01   4.54e-02    8.11  5.4e-16 ***
+## CBD_dist                 1.91e-05   6.35e-06    3.01  0.00264 ** 
+## log(MAX)                -2.75e-01   2.75e-02  -10.03  &lt; 2e-16 ***
+## HOMESTEADY               2.66e-02   4.67e-03    5.70  1.2e-08 ***
+## log(FIN_SQ_FT)           5.56e-01   5.98e-03   92.93  &lt; 2e-16 ***
+## YEAR_BUILT               1.66e-03   8.95e-05   18.58  &lt; 2e-16 ***
+## LAKE_dist               -7.33e-05   8.41e-06   -8.72  &lt; 2e-16 ***
+## I(LAKE_dist^2)           2.73e-08   3.04e-09    8.98  &lt; 2e-16 ***
+## PARK_dist               -9.74e-06   3.73e-06   -2.61  0.00898 ** 
+## I(PARK_dist^2)           2.34e-09   5.54e-10    4.22  2.5e-05 ***
+## MCA3                     4.36e-04   1.36e-04    3.20  0.00136 ** 
+## SHOP_dist                4.26e-05   4.19e-06   10.18  &lt; 2e-16 ***
+## I(SHOP_dist^2)          -6.30e-09   6.86e-10   -9.19  &lt; 2e-16 ***
+## MED_INCOME               2.27e-06   1.20e-07   18.96  &lt; 2e-16 ***
+## COLLEGE_di              -4.07e-05   8.45e-07  -48.18  &lt; 2e-16 ***
+## SALE_SEASO2              1.31e-02   5.02e-03    2.60  0.00930 ** 
+## SALE_SEASO3              3.36e-03   5.12e-03    0.66  0.51150    
+## SALE_SEASO4             -1.93e-02   5.73e-03   -3.37  0.00076 ***
+## ACRES_POLY:CBD_dist     -4.37e-06   2.50e-06   -1.75  0.08023 .  
+## CBD_dist:log(MAX)        5.25e-06   1.57e-06    3.35  0.00080 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Residual standard error: 0.212 on 15604 degrees of freedom
+## Multiple R-squared: 0.696,   Adjusted R-squared: 0.695 
+## F-statistic:  550 on 65 and 15604 DF,  p-value: &lt;2e-16
+</code></pre>
+
+<p>Since all interaction terms were significant, we include more interaction terms that resemble the nonlinear relationship land size and distance to the central business district have with logged sales value. Note that the inclusion of more interaction terms that reflect the nonlinear relationship makes all interactions non-significant, perhaps multicollinearity is present.</p>
+
+<pre><code class="r">model.SaleValue4 &lt;- lm(logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + ACRES_POLY * 
+    CBD_dist + ACRES_POLY * I(CBD_dist^2) + I(ACRES_POLY^2) * I(CBD_dist^2) + 
+    I(ACRES_POLY^2) * CBD_dist + log(MAX) * CBD_dist + log(MAX) * I(CBD_dist^2) + 
+    HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + 
+    I(PARK_dist^2) + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + 
+    SALE_SEASO, data = workingdata)
+
+summary(model.SaleValue4)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + 
+##     ACRES_POLY * CBD_dist + ACRES_POLY * I(CBD_dist^2) + I(ACRES_POLY^2) * 
+##     I(CBD_dist^2) + I(ACRES_POLY^2) * CBD_dist + log(MAX) * CBD_dist + 
+##     log(MAX) * I(CBD_dist^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + 
+##     LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2) + 
+##     MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + 
+##     SALE_SEASO, data = workingdata)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.5867 -0.1191  0.0023  0.1262  1.3952 
+## 
+## Coefficients: (1 not defined because of singularities)
+##                                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                    5.45e+00   2.62e-01   20.80  &lt; 2e-16 ***
+## COUNTY_ID123                   3.03e-01   8.26e-02    3.67  0.00024 ***
+## COUNTY_ID163                   4.48e-01   1.72e-02   26.10  &lt; 2e-16 ***
+## CITYARDEN HILLS               -4.40e-01   8.53e-02   -5.16  2.4e-07 ***
+## CITYBAYPORT                    3.73e-02   3.09e-02    1.21  0.22719    
+## CITYBIRCHWOOD VILLAGE         -2.21e-01   4.53e-02   -4.89  1.0e-06 ***
+## CITYBURNSVILLE                -3.44e-02   1.24e-02   -2.77  0.00557 ** 
+## CITYCOTTAGE GROVE             -1.26e-01   1.05e-02  -11.98  &lt; 2e-16 ***
+## CITYDELLWOOD                  -5.73e-01   2.13e-01   -2.69  0.00709 ** 
+## CITYEAGAN                      5.34e-02   1.48e-02    3.61  0.00030 ***
+## CITYEMPIRE TOWNSHIP            4.65e-03   4.54e-02    0.10  0.91851    
+## CITYFALCON HEIGHTS             4.02e-02   8.61e-02    0.47  0.64033    
+## CITYFARMINGTON                -2.87e-02   1.84e-02   -1.56  0.11868    
+## CITYGEM LAKE                  -6.08e-01   2.28e-01   -2.67  0.00759 ** 
+## CITYHUGO                      -2.47e-01   3.69e-02   -6.70  2.2e-11 ***
+## CITYINVER GROVE HEIGHTS        2.44e-01   2.15e-02   11.39  &lt; 2e-16 ***
+## CITYLAKE ELMO                 -1.65e-02   3.72e-02   -0.44  0.65771    
+## CITYLAKEVILLE                 -2.11e-02   1.56e-02   -1.35  0.17651    
+## CITYLAUDERDALE                -1.33e-01   9.21e-02   -1.45  0.14766    
+## CITYLITTLE CANADA             -1.75e-01   8.57e-02   -2.05  0.04087 *  
+## CITYMAHTOMEDI                 -1.00e-01   2.10e-02   -4.77  1.8e-06 ***
+## CITYMAPLEWOOD                 -2.75e-02   8.24e-02   -0.33  0.73830    
+## CITYMENDOTA                    9.04e-02   1.24e-01    0.73  0.46716    
+## CITYMENDOTA HEIGHTS            2.34e-01   2.93e-02    7.99  1.4e-15 ***
+## CITYMOUNDS VIEW               -5.20e-01   8.40e-02   -6.18  6.4e-10 ***
+## CITYNEW BRIGHTON              -3.63e-01   8.32e-02   -4.36  1.3e-05 ***
+## CITYNEWPORT                   -2.65e-01   2.78e-02   -9.52  &lt; 2e-16 ***
+## CITYNORTH ST. PAUL             3.74e-03   8.30e-02    0.05  0.96409    
+## CITYOAKDALE                    1.47e-02   1.25e-02    1.18  0.23957    
+## CITYOAK PARK HEIGHTS           9.28e-02   2.95e-02    3.15  0.00166 ** 
+## CITYROSEMOUNT                  5.92e-02   1.45e-02    4.07  4.7e-05 ***
+## CITYROSEVILLE                 -1.78e-01   8.29e-02   -2.14  0.03198 *  
+## CITYSHOREVIEW                 -4.77e-01   8.31e-02   -5.74  9.7e-09 ***
+## CITYSOUTH ST PAUL              2.94e-01   2.33e-02   12.61  &lt; 2e-16 ***
+## CITYSPRING LAKE PARK          -4.59e-01   1.71e-01   -2.68  0.00737 ** 
+## CITYST. ANTHONY               -1.80e-01   1.06e-01   -1.70  0.08999 .  
+## CITYSTILLWATER                -2.00e-02   1.60e-02   -1.25  0.21013    
+## CITYST. PAUL                  -1.26e-02   8.26e-02   -0.15  0.87844    
+## CITYST. PAUL PARK             -2.27e-01   1.92e-02  -11.81  &lt; 2e-16 ***
+## CITYVADNAIS HEIGHTS           -3.67e-01   8.44e-02   -4.34  1.4e-05 ***
+## CITYWEST ST PAUL               3.07e-01   2.69e-02   11.40  &lt; 2e-16 ***
+## CITYWHITE BEAR LAKE           -1.21e-01   8.09e-02   -1.49  0.13641    
+## CITYWHITE BEAR TOWNSHIP       -3.19e-01   8.36e-02   -3.82  0.00013 ***
+## CITYWILLERNIE                 -3.15e-01   6.06e-02   -5.20  2.0e-07 ***
+## CITYWOODBURY                         NA         NA      NA       NA    
+## factor(SALE_YR)2009           -7.85e-02   4.14e-03  -18.95  &lt; 2e-16 ***
+## factor(SALE_YR)2010           -1.14e-01   4.46e-03  -25.59  &lt; 2e-16 ***
+## ACRES_POLY                     1.08e+00   2.77e-01    3.91  9.1e-05 ***
+## CBD_dist                       2.38e-05   2.58e-05    0.92  0.35632    
+## I(CBD_dist^2)                 -6.68e-11   7.17e-10   -0.09  0.92570    
+## I(ACRES_POLY^2)               -8.26e-01   4.93e-01   -1.68  0.09369 .  
+## log(MAX)                      -2.84e-01   4.91e-02   -5.79  7.0e-09 ***
+## HOMESTEADY                     2.63e-02   4.67e-03    5.62  1.9e-08 ***
+## log(FIN_SQ_FT)                 5.55e-01   6.00e-03   92.58  &lt; 2e-16 ***
+## YEAR_BUILT                     1.61e-03   9.10e-05   17.64  &lt; 2e-16 ***
+## LAKE_dist                     -7.37e-05   8.43e-06   -8.74  &lt; 2e-16 ***
+## I(LAKE_dist^2)                 2.79e-08   3.06e-09    9.13  &lt; 2e-16 ***
+## PARK_dist                     -9.49e-06   3.73e-06   -2.54  0.01101 *  
+## I(PARK_dist^2)                 2.41e-09   5.56e-10    4.34  1.4e-05 ***
+## MCA3                           4.44e-04   1.36e-04    3.26  0.00110 ** 
+## SHOP_dist                      4.28e-05   4.20e-06   10.21  &lt; 2e-16 ***
+## I(SHOP_dist^2)                -6.30e-09   6.88e-10   -9.16  &lt; 2e-16 ***
+## MED_INCOME                     2.26e-06   1.21e-07   18.62  &lt; 2e-16 ***
+## COLLEGE_di                    -4.03e-05   8.95e-07  -45.09  &lt; 2e-16 ***
+## SALE_SEASO2                    1.30e-02   5.02e-03    2.58  0.00976 ** 
+## SALE_SEASO3                    3.05e-03   5.12e-03    0.60  0.55147    
+## SALE_SEASO4                   -1.94e-02   5.73e-03   -3.38  0.00072 ***
+## ACRES_POLY:CBD_dist           -6.48e-05   3.73e-05   -1.74  0.08268 .  
+## ACRES_POLY:I(CBD_dist^2)       1.29e-09   1.04e-09    1.24  0.21568    
+## I(CBD_dist^2):I(ACRES_POLY^2) -5.31e-10   1.72e-09   -0.31  0.75729    
+## CBD_dist:I(ACRES_POLY^2)       4.51e-05   6.29e-05    0.72  0.47377    
+## CBD_dist:log(MAX)              7.23e-06   6.29e-06    1.15  0.25052    
+## I(CBD_dist^2):log(MAX)        -6.81e-11   1.75e-10   -0.39  0.69686    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Residual standard error: 0.212 on 15598 degrees of freedom
+## Multiple R-squared: 0.697,   Adjusted R-squared: 0.695 
+## F-statistic:  505 on 71 and 15598 DF,  p-value: &lt;2e-16
+</code></pre>
+
+<p>The last model keeps the interaction terms as well as Acres * CBD<sup>2,</sup> which was closest to signficance level in the preceding model. We see that all interaction terms are significant. These coefficients suggest that the value of land increases as a parcel is closer to the central business district, at a decreasing rate. Also, the value of traffic noise disturbance increases as a parcel get farther away from the central business district.</p>
+
+<pre><code class="r">model.SaleValue5 &lt;- lm(logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + ACRES_POLY * 
+    CBD_dist + I(ACRES_POLY^2) + ACRES_POLY * I(CBD_dist^2) + log(MAX) * CBD_dist + 
+    HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + 
+    I(PARK_dist^2) + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + 
+    SALE_SEASO, data = workingdata)
+
+summary(model.SaleValue5)
+</code></pre>
+
+<pre><code>## 
+## Call:
+## lm(formula = logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR) + 
+##     ACRES_POLY * CBD_dist + I(ACRES_POLY^2) + ACRES_POLY * I(CBD_dist^2) + 
+##     log(MAX) * CBD_dist + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + 
+##     LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2) + 
+##     MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + 
+##     SALE_SEASO, data = workingdata)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -1.5843 -0.1192  0.0025  0.1262  1.3959 
+## 
+## Coefficients: (1 not defined because of singularities)
+##                           Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)               5.41e+00   2.07e-01   26.11  &lt; 2e-16 ***
+## COUNTY_ID123              3.05e-01   8.26e-02    3.70  0.00022 ***
+## COUNTY_ID163              4.49e-01   1.70e-02   26.38  &lt; 2e-16 ***
+## CITYARDEN HILLS          -4.41e-01   8.52e-02   -5.18  2.3e-07 ***
+## CITYBAYPORT               3.68e-02   3.08e-02    1.19  0.23218    
+## CITYBIRCHWOOD VILLAGE    -2.22e-01   4.53e-02   -4.91  9.3e-07 ***
+## CITYBURNSVILLE           -3.52e-02   1.24e-02   -2.84  0.00451 ** 
+## CITYCOTTAGE GROVE        -1.27e-01   1.04e-02  -12.16  &lt; 2e-16 ***
+## CITYDELLWOOD             -5.70e-01   2.13e-01   -2.68  0.00734 ** 
+## CITYEAGAN                 5.43e-02   1.48e-02    3.67  0.00024 ***
+## CITYEMPIRE TOWNSHIP       4.22e-03   4.53e-02    0.09  0.92587    
+## CITYFALCON HEIGHTS        4.08e-02   8.61e-02    0.47  0.63564    
+## CITYFARMINGTON           -2.65e-02   1.81e-02   -1.47  0.14281    
+## CITYGEM LAKE             -6.10e-01   2.28e-01   -2.68  0.00737 ** 
+## CITYHUGO                 -2.45e-01   3.68e-02   -6.67  2.7e-11 ***
+## CITYINVER GROVE HEIGHTS   2.46e-01   2.14e-02   11.48  &lt; 2e-16 ***
+## CITYLAKE ELMO            -1.62e-02   3.72e-02   -0.43  0.66432    
+## CITYLAKEVILLE            -2.19e-02   1.56e-02   -1.41  0.15991    
+## CITYLAUDERDALE           -1.34e-01   9.21e-02   -1.46  0.14521    
+## CITYLITTLE CANADA        -1.78e-01   8.56e-02   -2.08  0.03768 *  
+## CITYMAHTOMEDI            -1.00e-01   2.10e-02   -4.78  1.7e-06 ***
+## CITYMAPLEWOOD            -2.75e-02   8.24e-02   -0.33  0.73805    
+## CITYMENDOTA               9.01e-02   1.24e-01    0.72  0.46851    
+## CITYMENDOTA HEIGHTS       2.32e-01   2.92e-02    7.93  2.3e-15 ***
+## CITYMOUNDS VIEW          -5.21e-01   8.40e-02   -6.20  5.7e-10 ***
+## CITYNEW BRIGHTON         -3.63e-01   8.32e-02   -4.37  1.2e-05 ***
+## CITYNEWPORT              -2.65e-01   2.78e-02   -9.54  &lt; 2e-16 ***
+## CITYNORTH ST. PAUL        3.74e-03   8.30e-02    0.05  0.96405    
+## CITYOAKDALE               1.52e-02   1.24e-02    1.22  0.22112    
+## CITYOAK PARK HEIGHTS      9.01e-02   2.94e-02    3.06  0.00220 ** 
+## CITYROSEMOUNT             5.85e-02   1.45e-02    4.02  5.7e-05 ***
+## CITYROSEVILLE            -1.77e-01   8.29e-02   -2.14  0.03234 *  
+## CITYSHOREVIEW            -4.79e-01   8.30e-02   -5.77  8.2e-09 ***
+## CITYSOUTH ST PAUL         2.95e-01   2.31e-02   12.76  &lt; 2e-16 ***
+## CITYSPRING LAKE PARK     -4.61e-01   1.71e-01   -2.69  0.00712 ** 
+## CITYST. ANTHONY          -1.80e-01   1.06e-01   -1.69  0.09100 .  
+## CITYSTILLWATER           -2.05e-02   1.59e-02   -1.29  0.19679    
+## CITYST. PAUL             -1.47e-02   8.26e-02   -0.18  0.85904    
+## CITYST. PAUL PARK        -2.27e-01   1.92e-02  -11.85  &lt; 2e-16 ***
+## CITYVADNAIS HEIGHTS      -3.68e-01   8.43e-02   -4.37  1.3e-05 ***
+## CITYWEST ST PAUL          3.08e-01   2.66e-02   11.56  &lt; 2e-16 ***
+## CITYWHITE BEAR LAKE      -1.22e-01   8.09e-02   -1.50  0.13308    
+## CITYWHITE BEAR TOWNSHIP  -3.21e-01   8.35e-02   -3.85  0.00012 ***
+## CITYWILLERNIE            -3.14e-01   6.05e-02   -5.18  2.2e-07 ***
+## CITYWOODBURY                    NA         NA      NA       NA    
+## factor(SALE_YR)2009      -7.85e-02   4.14e-03  -18.95  &lt; 2e-16 ***
+## factor(SALE_YR)2010      -1.14e-01   4.46e-03  -25.58  &lt; 2e-16 ***
+## ACRES_POLY                8.00e-01   1.02e-01    7.84  4.8e-15 ***
+## CBD_dist                  3.05e-05   7.01e-06    4.35  1.4e-05 ***
+## I(ACRES_POLY^2)          -2.98e-01   1.38e-01   -2.16  0.03114 *  
+## I(CBD_dist^2)            -3.28e-10   8.76e-11   -3.74  0.00019 ***
+## log(MAX)                 -2.70e-01   2.75e-02   -9.82  &lt; 2e-16 ***
+## HOMESTEADY                2.62e-02   4.67e-03    5.62  2.0e-08 ***
+## log(FIN_SQ_FT)            5.55e-01   6.00e-03   92.62  &lt; 2e-16 ***
+## YEAR_BUILT                1.61e-03   9.09e-05   17.75  &lt; 2e-16 ***
+## LAKE_dist                -7.39e-05   8.42e-06   -8.78  &lt; 2e-16 ***
+## I(LAKE_dist^2)            2.79e-08   3.06e-09    9.13  &lt; 2e-16 ***
+## PARK_dist                -9.76e-06   3.73e-06   -2.62  0.00889 ** 
+## I(PARK_dist^2)            2.43e-09   5.55e-10    4.38  1.2e-05 ***
+## MCA3                      4.40e-04   1.36e-04    3.24  0.00120 ** 
+## SHOP_dist                 4.28e-05   4.19e-06   10.20  &lt; 2e-16 ***
+## I(SHOP_dist^2)           -6.31e-09   6.87e-10   -9.18  &lt; 2e-16 ***
+## MED_INCOME                2.25e-06   1.21e-07   18.58  &lt; 2e-16 ***
+## COLLEGE_di               -4.03e-05   8.94e-07  -45.13  &lt; 2e-16 ***
+## SALE_SEASO2               1.30e-02   5.02e-03    2.60  0.00944 ** 
+## SALE_SEASO3               3.15e-03   5.12e-03    0.61  0.53890    
+## SALE_SEASO4              -1.93e-02   5.73e-03   -3.37  0.00076 ***
+## ACRES_POLY:CBD_dist      -4.12e-05   1.05e-05   -3.93  8.6e-05 ***
+## ACRES_POLY:I(CBD_dist^2)  1.07e-09   2.81e-10    3.82  0.00013 ***
+## CBD_dist:log(MAX)         4.94e-06   1.57e-06    3.15  0.00162 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
+## 
+## Residual standard error: 0.212 on 15601 degrees of freedom
+## Multiple R-squared: 0.697,   Adjusted R-squared: 0.695 
+## F-statistic:  527 on 68 and 15601 DF,  p-value: &lt;2e-16
+</code></pre>
+
+</body>
+
+</html>
+

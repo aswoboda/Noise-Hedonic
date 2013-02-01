@@ -10,7 +10,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/aswoboda/Noise Hedonic Project/Noise-Hedonic/analysis/SandboxMax"
+## [1] "/home/timmm/Noise Hedonic Project/Noise-Hedonic/analysis/SandboxMax"
 ```
 
 ```r
@@ -145,8 +145,7 @@ summary(model.SaleValue1)
 ## 
 ## Residual standard error: 54200 on 25934 degrees of freedom
 ## Multiple R-squared: 0.715,	Adjusted R-squared: 0.714 
-## F-statistic: 1.1e+03 on 59 and 25934 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.1e+03 on 59 and 25934 DF,  p-value: <2e-16
 ```
 
 
@@ -256,8 +255,7 @@ summary(model.logSaleValue2)
 ## 
 ## Residual standard error: 0.171 on 25936 degrees of freedom
 ## Multiple R-squared: 0.744,	Adjusted R-squared: 0.743 
-## F-statistic: 1.32e+03 on 57 and 25936 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.32e+03 on 57 and 25936 DF,  p-value: <2e-16
 ```
 
 
@@ -370,8 +368,7 @@ summary(model.logSaleValue3)
 ## Residual standard error: 0.168 on 21397 degrees of freedom
 ##   (4538 observations deleted due to missingness)
 ## Multiple R-squared: 0.746,	Adjusted R-squared: 0.745 
-## F-statistic: 1.08e+03 on 58 and 21397 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.08e+03 on 58 and 21397 DF,  p-value: <2e-16
 ```
 
 
@@ -466,8 +463,7 @@ summary(model.logSaleValue3)
 ## 
 ## Residual standard error: 0.172 on 25936 degrees of freedom
 ## Multiple R-squared: 0.738,	Adjusted R-squared: 0.737 
-## F-statistic: 1.28e+03 on 57 and 25936 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.28e+03 on 57 and 25936 DF,  p-value: <2e-16
 ```
 
 
@@ -559,8 +555,7 @@ summary(model.logSaleValue4)
 ## 
 ## Residual standard error: 0.172 on 25935 degrees of freedom
 ## Multiple R-squared: 0.739,	Adjusted R-squared: 0.738 
-## F-statistic: 1.26e+03 on 58 and 25935 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.26e+03 on 58 and 25935 DF,  p-value: <2e-16
 ```
 
 
@@ -655,8 +650,7 @@ summary(model.logSaleValue5)
 ## 
 ## Residual standard error: 0.172 on 25933 degrees of freedom
 ## Multiple R-squared: 0.74,	Adjusted R-squared: 0.739 
-## F-statistic: 1.23e+03 on 60 and 25933 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.23e+03 on 60 and 25933 DF,  p-value: <2e-16
 ```
 
 
@@ -756,8 +750,7 @@ summary(model.logSaleValue6)
 ## 
 ## Residual standard error: 0.169 on 25930 degrees of freedom
 ## Multiple R-squared: 0.749,	Adjusted R-squared: 0.749 
-## F-statistic: 1.23e+03 on 63 and 25930 DF,  p-value: <2e-16 
-## 
+## F-statistic: 1.23e+03 on 63 and 25930 DF,  p-value: <2e-16
 ```
 
 

@@ -11,17 +11,16 @@ require(car)
 
 ####Linear model investigation
 ##Dependent variable: Sales Value (untransformed)
-model.SaleValue1 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + MCA3 + MCA5 + SHOP_dist + CBD_dist +SALE_SEASO, data=workingdata)
+model.SaleValue1 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR + SDNUM + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + MCA3 + MCA5 + SHOP_dist  + COLLEGE_di + CBD_dist + MED_INCOME +SALE_SEASO, data=workingdata)
 summary(model.SaleValue1)
 anova(model.SaleValue1) #MCA5 and SALE_MO 
 #Diagnostics
-plot(model.SaleValue1) #Normality issues once again #5222 large leverage
+plot(model.SaleValue1) #Normality issues once again
 vif(model.SaleValue1) #multicollinearity #SDNUM VIF above 10 #aliased coefficients means that there is perfect multicollinearity with one of the variables. In the summary table the variable will be NA
 dwtest (model.SaleValue1) #autocorrelation # Signs of autocorrelation since DW value is less than 1.5 (1.4538)
 bptest(model.SaleValue1)
 outlierTest(model.SaleValue1)
 
-workingdata = workingdata [-5222, ]
 
 ##Dependent variable: Sales Value (untransformed) w/o MCA5, SDNUM
 model.SaleValue2 <- lm (SALE_VALUE ~ COUNTY_ID + CITY + SALE_YR  + ACRES_POLY + HOMESTEAD + FIN_SQ_FT + YEAR_BUILT + MAX + PARK_dist + LAKE_dist + MCA3 + SHOP_dist + CBD_dist  +SALE_SEASO, data=workingdata)
@@ -81,3 +80,30 @@ temp1 = merge(resData2, workingdata, all = TRUE)
 names(temp1)
 temp1 = temp1[, c(2, 4)]
 write.dbf(temp1, "../Data/R2GIS/20082010logSales_GARAGE.dbf")
+
+
+#########From 20082010SalesData_Interaction.Rmd, takes into account interaction terms
+model.SaleValue5 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + I(ACRES_POLY^2)+ACRES_POLY*I(CBD_dist^2)+ log (MAX) +  HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data=workingdata)
+summary(model.SaleValue5)
+
+#Acquire marginal effect for Acres and Traffic Noise and place it into a table
+mfx.TRAFFIC = (model.SaleValue5$coefficients["MAX"]+(model.SaleValue5$coefficients["CBD_dist:MAX"]*workingdata$CBD_dist)) * 
+  exp(model.SaleValue5$coefficients["(Intercept)"]+(model.SaleValue5$coefficients["MAX"]*workingdata$MAX) +(model.SaleValue5$coefficients["CBD_dist:MAX"]*workingdata$MAX*workingdata$CBD_dist))
+
+mfx.LAND = (model.SaleValue5$coefficients["ACRES_POLY"]+ (2*model.SaleValue5$coefficients["I(ACRES_POLY^2)"])+
+  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$CBD_dist) + (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*(workingdata$CBD_dist ^2))) *
+  exp(model.SaleValue5$coefficients["(Intercept)"]+(model.SaleValue5$coefficients["ACRES_POLY"]*workingdata$ACRES_POLY) +
+  (model.SaleValue5$coefficients["I(ACRES_POLY^2)"]*(workingdata$ACRES_POLY ^2)) + 
+  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$ACRES_POLY*workingdata$CBD_dist) + 
+  (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*workingdata$ACRES_POLY*(workingdata$CBD_dist ^2)))
+
+#Add column of row names to the workingdata
+workingdata$RowName = row.names(workingdata)
+mfx.data = data.frame(mfxTRAFFIC = mfx.TRAFFIC, mfxLAND = mfx.LAND, RowName = names (model.SaleValue5))
+#Merge the resData table from model with workingdata table
+temp1 = merge(mfx.data, workingdata, all = TRUE)
+#From temporary table that merged resData table and workingdata table, extract residuals and PIN
+names(temp1)
+temp1 = temp1[, c(2, 4)]
+write.dbf(temp1, "../Data/R2GIS/20082010mfx_Traf_Land.dbf")
+

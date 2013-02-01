@@ -84,3 +84,31 @@ temp1 = merge(resData2, workingdata, all = TRUE)
 names(temp1)
 temp1 = temp1[, c(2, 4)]
 write.dbf(temp1, "../Data/R2GIS/20052007logSales_GARAGE.dbf")
+
+
+
+#########From 20082010SalesData_Interaction.Rmd, takes into account interaction terms
+model.SaleValue4 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + ACRES_POLY*I(CBD_dist^2)+I(ACRES_POLY^2)*I(CBD_dist^2)+ I(ACRES_POLY^2)*CBD_dist + log(MAX) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data=workingdata)
+summary(model.SaleValue4)
+
+#Acquire marginal effect for Acres and Traffic Noise and place it into a table
+mfx.TRAFFIC = (model.SaleValue5$coefficients["MAX"]+(model.SaleValue5$coefficients["CBD_dist:MAX"]*workingdata$CBD_dist)) * 
+  exp(model.SaleValue5$coefficients["(Intercept)"]+(model.SaleValue5$coefficients["MAX"]*workingdata$MAX) +(model.SaleValue5$coefficients["CBD_dist:MAX"]*workingdata$MAX*workingdata$CBD_dist))
+
+mfx.LAND = (model.SaleValue5$coefficients["ACRES_POLY"]+ (2*model.SaleValue5$coefficients["I(ACRES_POLY^2)"])+
+  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$CBD_dist) + (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*(workingdata$CBD_dist ^2))) *
+  exp(model.SaleValue5$coefficients["(Intercept)"]+(model.SaleValue5$coefficients["ACRES_POLY"]*workingdata$ACRES_POLY) +
+  (model.SaleValue5$coefficients["I(ACRES_POLY^2)"]*(workingdata$ACRES_POLY ^2)) + 
+  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$ACRES_POLY*workingdata$CBD_dist) + 
+  (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*workingdata$ACRES_POLY*(workingdata$CBD_dist ^2)))
+
+#Add column of row names to the workingdata
+workingdata$RowName = row.names(workingdata)
+mfx.data = data.frame(mfxTRAFFIC = mfx.TRAFFIC, mfxLAND = mfx.LAND, RowName = names (model.SaleValue5))
+#Merge the resData table from model with workingdata table
+temp1 = merge(mfx.data, workingdata, all = TRUE)
+#From temporary table that merged resData table and workingdata table, extract residuals and PIN
+names(temp1)
+temp1 = temp1[, c(2, 4)]
+write.dbf(temp1, "../Data/R2GIS/20082010mfx_Traf_Land.dbf")
+

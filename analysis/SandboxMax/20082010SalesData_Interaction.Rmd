@@ -1,0 +1,72 @@
+Max's Analysis -- 2008-2010 SalesData 1/31/13
+========================================================
+Today we are looking at interaction terms and whether attributes such as land size and traffic noise have a marginal effect that varies over space. Our goal is to map these marginal effects to show the need for locally-weighted regression.
+
+Although using a linear dependent variable would be easier to interpret, the model assumptions are violated and some of the explanatory variables do not fit/explain the variation in sales value as well as they do when the sales value is transformed into log.
+
+To find the marginal effect of an attribute that includes quadratic relationships and interaction terms requires a little more math. 
+
+Lets look at an example equation: log (y) = a + b1(x) + b2 (x^2) + b3 (x*z)
+In order to get y by itself, we need to take the exponent of both sides:
+y = exp^[a + b1(x) + b2 (x^2) + b3 (x*z)]
+
+Now, to estimate the marginal effect x has on y, we take the derivative of both sides with respect to x:
+dy/dx = (b1 + 2(b2) + b3(z)) * exp ^ [a + b1(x) + b2 (x^2) + b3 (x*z)] 
+
+
+Preparation for regression analysis...
+```{r, cache=TRUE}
+getwd()
+
+library (foreign)
+workingdata <- read.dbf("../../../Data/R2GIS/CleanData/Sales20082010.dbf")
+require(zoo)
+require(lmtest)
+require(car)
+
+```
+
+After the Thursday, 1/31 morning meeting with Aaron, found that most of the extreme over/under estimation of sales values occur in the city of St. Paul, where one neighborhood is 'good' (Hihgland Park) and another is riddled with crime/lower income. In order to account for these features we added three variables to the model:
+
+(1) Distance to nearest residential college (2) Median income ($2011) in Census Tract based on American Community Survey administered through US Census Bureau (3) Distance to Minneapolis & St. Paul, not just nearest CBD
+
+In this first model, we include these three variables as well as exclude CITY variable so we can assess if there is multicollinearity present through vif(). We see that the inclusion of distance to St. Paul, Minneapolis, and nearest CBD are all closely correlated.
+
+```{r}
+model.SaleValue1 <- lm (logSALE_VA ~ COUNTY_ID + factor(SALE_YR) + SDNUM + ACRES_POLY + I(ACRES_POLY^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + MAX + PARK_dist + I(PARK_dist^2)+ LAKE_dist +I(LAKE_dist^2) + MCA3 + MCA5 + SHOP_dist+I(SHOP_dist^2)  + COLLEGE_di + SP_dist + MPS_dist + CBD_dist +I(CBD_dist^2)+ MED_INCOME +SALE_SEASO, data=workingdata)
+
+vif(model.SaleValue1)
+```
+
+The second model will exclude the St. Paul and Minneapolis distances. We see that there is no large violation of multicollinearity anymore.
+
+```{r}
+model.SaleValue2 <- lm (logSALE_VA ~ COUNTY_ID + factor(SALE_YR) + ACRES_POLY + I(ACRES_POLY^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + MAX + PARK_dist + I(PARK_dist^2)+ LAKE_dist +I(LAKE_dist^2) + MCA3 + MCA5 + SHOP_dist+I(SHOP_dist^2)  + COLLEGE_di + CBD_dist +I(CBD_dist^2)+ MED_INCOME +SALE_SEASO, data=workingdata)
+
+vif(model.SaleValue2)
+```
+
+Now we include interaction terms to view if there is an interaction effect between distance to the CBD and (1) Land Size and (2) Traffic Noise. Note that all quadratic relationships and interaction terms are significant.
+
+```{r}
+model.SaleValue3 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + log(MAX) * CBD_dist + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data=workingdata)
+
+summary(model.SaleValue3)
+
+```
+
+Since all interaction terms were significant, we include more interaction terms that resemble the nonlinear relationship land size and distance to the central business district have with logged sales value. Note that the inclusion of more interaction terms that reflect the nonlinear relationship makes all interactions non-significant, perhaps multicollinearity is present.
+
+```{r}
+model.SaleValue4 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + ACRES_POLY*I(CBD_dist^2)+I(ACRES_POLY^2)*I(CBD_dist^2)+ I(ACRES_POLY^2)*CBD_dist + log(MAX) * CBD_dist +log(MAX)*I(CBD_dist^2) + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data=workingdata)
+
+summary(model.SaleValue4)
+```
+
+The last model keeps the interaction terms as well as Acres * CBD^2, which was closest to signficance level in the preceding model. We see that all interaction terms are significant. These coefficients suggest that the value of land increases as a parcel is closer to the central business district, at a decreasing rate. Also, the value of traffic noise disturbance increases as a parcel get farther away from the central business district.
+
+```{r}
+model.SaleValue5 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES_POLY * CBD_dist + I(ACRES_POLY^2)+ACRES_POLY*I(CBD_dist^2)+ log(MAX) * CBD_dist +  HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_SEASO, data=workingdata)
+
+summary(model.SaleValue5)
+```
