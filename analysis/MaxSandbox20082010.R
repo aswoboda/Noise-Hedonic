@@ -87,24 +87,19 @@ model.SaleValue5 <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)  + ACRES
 summary(model.SaleValue5)
 
 #Acquire marginal effect for Acres and Traffic Noise and place it into a table
-mfx.TRAFFIC = ((model.SaleValue5$coefficients["log(MAX)"]*(log(workingdata$MAX)^(model.SaleValue5$coefficients["log(MAX)"]-1))) +
-  (workingdata$CBD_dist * model.SaleValue5$coefficients["CBD_dist:log(MAX)"]* (log(workingdata$MAX)^(model.SaleValue5$coefficients["CBD_dist:log(MAX)"]-1))) * 
-  exp(model.SaleValue5$coefficients["(Intercept)"])
+mfx.TRAFFIC = ((model.SaleValue5$coefficients["log(MAX)"]*(1/(workingdata$MAX))) + (model.SaleValue5$coefficients["CBD_dist:log(MAX)"]*(workingdata$CBD_dist/workingdata$MAX))) * (workingdata$SALE_VALUE)
 
-mfx.LAND = (model.SaleValue5$coefficients["ACRES_POLY"]+ (2*model.SaleValue5$coefficients["I(ACRES_POLY^2)"])+
-  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$CBD_dist) + (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*(workingdata$CBD_dist ^2))) *
-  exp(model.SaleValue5$coefficients["(Intercept)"]+(model.SaleValue5$coefficients["ACRES_POLY"]*workingdata$ACRES_POLY) +
-  (model.SaleValue5$coefficients["I(ACRES_POLY^2)"]*(workingdata$ACRES_POLY ^2)) + 
-  (model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$ACRES_POLY*workingdata$CBD_dist) + 
-  (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*workingdata$ACRES_POLY*(workingdata$CBD_dist ^2)))
+mfx.LAND = (model.SaleValue5$coefficients["ACRES_POLY"]+ (2*workingdata$ACRES_POLY * model.SaleValue5$coefficients["I(ACRES_POLY^2)"])+
+(model.SaleValue5$coefficients["ACRES_POLY:CBD_dist"]*workingdata$CBD_dist) + (model.SaleValue5$coefficients["ACRES_POLY:I(CBD_dist^2)"]*(workingdata$CBD_dist ^2))) * (workingdata$SALE_VALUE)
+             
 
 #Add column of row names to the workingdata
 workingdata$RowName = row.names(workingdata)
-mfx.data = data.frame(mfxTRAFFIC = mfx.TRAFFIC, mfxLAND = mfx.LAND, RowName = names (model.SaleValue5))
+mfx.data = data.frame(mfxTRAFFIC = mfx.TRAFFIC, mfxLAND = mfx.LAND, RowName = names (model.SaleValue5$residuals))
 #Merge the resData table from model with workingdata table
-temp1 = merge(mfx.data, workingdata, all = TRUE)
+temp2 = merge(mfx.data, workingdata, all = TRUE)
 #From temporary table that merged resData table and workingdata table, extract residuals and PIN
-names(temp1)
-temp1 = temp1[, c(2, 4)]
-write.dbf(temp1, "../Data/R2GIS/20082010mfx_Traf_Land.dbf")
+names(temp2)
+temp2 = temp2[, c(2,3, 5)]
+write.dbf(temp2, "../Data/R2GIS/20082010mfx_Land.dbf")
 
