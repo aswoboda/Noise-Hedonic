@@ -193,7 +193,7 @@ In order to get y by itself, we need to take the exponent of both sides:<br/>
 y = exp<sup>[a</sup> + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)]</p>
 
 <p>Now, to estimate the marginal effect x has on y, we take the derivative of both sides with respect to x:<br/>
-dy/dx = (b1 + 2(b2) + b3(z)) * exp<sup>[a</sup> + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)] </p>
+dy/dx = (b1 + 2(b2) + b3(z)) * exp ^ [a + b1(x) + b2 (x<sup>2)</sup> + b3 (x*z)] </p>
 
 <p>Preparation for regression analysis&hellip;</p>
 
@@ -226,31 +226,7 @@ require(car)
 vif(model.SaleValue1)
 </code></pre>
 
-<pre><code>##                    GVIF Df GVIF^(1/(2*Df))
-## COUNTY_ID       151.912  2           3.511
-## factor(SALE_YR)   3.639  2           1.381
-## SDNUM            30.852  1           5.554
-## ACRES_POLY       24.494  1           4.949
-## I(ACRES_POLY^2)  21.451  1           4.631
-## HOMESTEAD         1.456  1           1.207
-## log(FIN_SQ_FT)    1.778  1           1.333
-## YEAR_BUILT        2.291  1           1.514
-## MAX               1.369  1           1.170
-## PARK_dist        13.989  1           3.740
-## I(PARK_dist^2)   14.471  1           3.804
-## LAKE_dist         9.170  1           3.028
-## I(LAKE_dist^2)    9.298  1           3.049
-## MCA3              1.168  1           1.081
-## MCA5              3.445  1           1.856
-## SHOP_dist        10.353  1           3.218
-## I(SHOP_dist^2)   10.289  1           3.208
-## COLLEGE_di       76.276  1           8.734
-## SP_dist         112.001  1          10.583
-## MPS_dist         62.292  1           7.893
-## CBD_dist        187.801  1          13.704
-## I(CBD_dist^2)    41.040  1           6.406
-## MED_INCOME        2.202  1           1.484
-## SALE_SEASO        1.081  3           1.013
+<pre><code>## Error: could not find function &quot;vif&quot;
 </code></pre>
 
 <p>The second model will exclude the St. Paul and Minneapolis distances. We see that there is no large violation of multicollinearity anymore.</p>
@@ -264,28 +240,7 @@ vif(model.SaleValue1)
 vif(model.SaleValue2)
 </code></pre>
 
-<pre><code>##                   GVIF Df GVIF^(1/(2*Df))
-## COUNTY_ID       10.310  2           1.792
-## factor(SALE_YR)  3.499  2           1.368
-## ACRES_POLY      24.212  1           4.921
-## I(ACRES_POLY^2) 21.255  1           4.610
-## HOMESTEAD        1.456  1           1.207
-## log(FIN_SQ_FT)   1.756  1           1.325
-## YEAR_BUILT       2.251  1           1.500
-## MAX              1.352  1           1.163
-## PARK_dist       13.895  1           3.728
-## I(PARK_dist^2)  14.369  1           3.791
-## LAKE_dist        9.110  1           3.018
-## I(LAKE_dist^2)   9.236  1           3.039
-## MCA3             1.161  1           1.077
-## MCA5             3.268  1           1.808
-## SHOP_dist       10.106  1           3.179
-## I(SHOP_dist^2)   9.424  1           3.070
-## COLLEGE_di      10.319  1           3.212
-## CBD_dist        36.400  1           6.033
-## I(CBD_dist^2)   36.684  1           6.057
-## MED_INCOME       2.135  1           1.461
-## SALE_SEASO       1.080  3           1.013
+<pre><code>## Error: could not find function &quot;vif&quot;
 </code></pre>
 
 <p>Now we include interaction terms to view if there is an interaction effect between distance to the CBD and (1) Land Size and (2) Traffic Noise. Note that all quadratic relationships and interaction terms are significant.</p>
@@ -598,6 +553,13 @@ summary(model.SaleValue5)
 ## Residual standard error: 0.212 on 15601 degrees of freedom
 ## Multiple R-squared: 0.697,   Adjusted R-squared: 0.695 
 ## F-statistic:  527 on 68 and 15601 DF,  p-value: &lt;2e-16
+</code></pre>
+
+<pre><code class="r">summary(workingdata$CBD_dist)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    1400    7140   13500   14600   20400   37100
 </code></pre>
 
 </body>
