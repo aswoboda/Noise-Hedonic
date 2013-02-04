@@ -77,4 +77,4 @@ cor(workingdata[, c("logSALE_VALUE", "logFIN_SQ_FT", "logMAX", "ACRES_POLY", "lo
 
 ##Write new .dbf table and store it in 'CleanData' folder
 EMV2006Clean = data.frame(workingdata)
-write.dbf(EMV2006Clean, "../Data/R2GIS/CleanData/Sales20082010.dbf" )
+write.dbf(EMV2006Clean, "../Data/R2GIS/CleanData/EMV2006.dbf" )
