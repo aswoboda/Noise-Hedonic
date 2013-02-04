@@ -7,7 +7,7 @@ names(emv2006) #found that some observations have a 0 or negative sales value
 emv2006$GARSQFT <- as.numeric(as.character(emv2006$GARAGESQFT)) #Converting factor to numeric
 emv2006$MCA3 <- emv2006$X3_MCA
 dataNames <- names (emv2006)
-VarsIWant <- which(dataNames %in% c("GARSQFT","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "EMV_TOTAL", "BEDS", "BATH", "MAX", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "MCA3", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "PIN", "SP_dist", "MPS_dist" ))
+VarsIWant <- which(dataNames %in% c("GARSQFT","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "EMV_TOTAL", "BEDS", "BATH", "MAX", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "MCA3", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "PIN", "SP_dist", "MPS_dist","X_Meter", "Y_Meter"))
 workingdata = emv2006[ , VarsIWant]
 summary (workingdata)
 workingdata$logEMV = log(workingdata$EMV_TOTAL) #Transforming sales values into logs
@@ -60,17 +60,6 @@ plot (workingdata$logCBD, workingdata$logSALE_VALUE) #improved
 plot (workingdata$logSHOP, workingdata$logSALE_VALUE) #improved
 plot (workingdata$logPARK, workingdata$logSALE_VALUE)
 plot (workingdata$logLAKE, workingdata$logSALE_VALUE)
-
-#Second round of outlier cuts after looking at histograms of distances
-hist(workingdata$logCBD)
-hist(workingdata$logSHOP)
-hist(workingdata$logPARK)
-hist(workingdata$logLAKE)
-SHOPoutlier = which (workingdata$logSHOP < 4)
-PARKoutlier = which (workingdata$logPARK < 3)
-LAKEoutlier = which (workingdata$logLAKE < 3)
-OutlierParcels2 <- c(SHOPoutlier, PARKoutlier, LAKEoutlier)
-workingdata <- workingdata [-OutlierParcels2, ] #Excludes observations that are outliers (n=15588)
 
 ##Multicollinearity investigation through correlation matrix 
 cor(workingdata[, c("logSALE_VALUE", "logFIN_SQ_FT", "logMAX", "ACRES_POLY", "logCBD", "logSHOP", "logPARK", "logLAKE", "MCA3", "MCA5", "GARSQFT", "SALE_YR", "SDNUM")])

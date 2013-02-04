@@ -113,5 +113,5 @@ workingdata$RowName = row.names(workingdata)
 temp = merge(resData3, workingdata, all = TRUE)
 #From temporary table that merged resData table and workingdata table, extract residuals and PIN
 names(temp)
-temp = temp[, c(2, 4, 27)]
+temp = temp[, c(2, 4, 25:27)]
 write.dbf(temp, "../Data/R2GIS/20082010logSales_Modelbuilder.dbf")
