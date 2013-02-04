@@ -145,3 +145,12 @@ Reorganizer = function(lapplyoutput) {
   
   outputList
 }
+
+# Generalized Cross Validation for each k
+GCV = function(leverages, yhats, dep.var) {
+  sample.size = dim(yhats)[1]
+  v1 <- colSums(leverages)
+  SE <- colSums((dep.var-yhats)^2)
+  gcv <- sample.size*SE/(sample.size-v1)^2   
+  gcv
+}
