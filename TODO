@@ -1,4 +1,10 @@
 
+2013-02-04
+  Calculate Marginal Effects for preliminary LWR models and current best global model (with all theinteraction terms) (land and MAX)
+  Map above
+  Calculate residuals from LWR models
+  Moran's I for residuals from LWR and global models
+
 
 Talk with Max about the data work he did. 
   What data do we have? Everything and more.

@@ -10,15 +10,15 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-MYMODEL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT"
+MYMODEL = "logEMV~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT"
 KVECTOR = c(100, 200, 500, 1000, 5000)
 
 filePrefix = "../Data/R2GIS/CleanData/"
-inputFile = "Sales20082010.dbf" # "Sales20052007.dbf"
+inputFile = "Sales20052007.dbf"
 DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
 start = Sys.time()
-N = dim(DATAFRAME)[1]
-output.raw = mclapply(1:N,
+N = 10 # dim(DATAFRAME)[1]
+output.raw = lapply(1:N,
                       LWR,
                       Data.Frame = DATAFRAME,
                       my.model = MYMODEL,
