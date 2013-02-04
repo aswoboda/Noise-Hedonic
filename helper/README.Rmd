@@ -1,0 +1,6 @@
+helper folder
+========================================================
+
+This folder is a place to store scripts containing "helper functions" for our analysis.
+
+For instance, the LWR and Reorganzer functions needed to run locally weighted regression.
