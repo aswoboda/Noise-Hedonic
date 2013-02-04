@@ -103,3 +103,15 @@ names(temp2)
 temp2 = temp2[, c(2,3, 5)]
 write.dbf(temp2, "../Data/R2GIS/20082010mfx_Land.dbf")
 
+##Write .dbf file for residual table to plug into Spatial Autocorrelatoin (Moran's I) in model builder
+##ResidualTable
+#Grab residual from model and row name from the model
+resData3 = data.frame(Res = model.SaleValue5$residuals, RowName = names(model.SaleValue5$residuals))
+#Add column of row names to the workingdata
+workingdata$RowName = row.names(workingdata)
+#Merge the resData table from model with workingdata table
+temp = merge(resData3, workingdata, all = TRUE)
+#From temporary table that merged resData table and workingdata table, extract residuals and PIN
+names(temp)
+temp = temp[, c(2, 4, 27)]
+write.dbf(temp, "../Data/R2GIS/20082010logSales_Modelbuilder.dbf")
