@@ -38,7 +38,7 @@ mfx.LAND.2008 = (model.SaleValue2008$coefficients["ACRES_POLY"]+ (2*workingdata2
   (model.SaleValue2008$coefficients["ACRES_POLY:CBD_dist"]*workingdata2008$CBD_dist) + (model.SaleValue2008$coefficients["ACRES_POLY:I(CBD_dist^2)"]*(workingdata2008$CBD_dist ^2))) * (workingdata2008$SALE_VALUE)
 ##Creating/writing .dbf file that is ready for ArcGIS analysis
 workingdata2008$RowName = row.names(workingdata2008)
-table.data = data.frame(Res = model.SaleValue2008$residuals, mfxTRAFFIC = mfx.TRAFFIC.2008, mfxLAND = mfx.TRAFFIC.2008, RowName = names (model.SaleValue2008$residuals))
+table.data = data.frame(Res = model.SaleValue2008$residuals, mfxTRAFFIC = mfx.TRAFFIC.2008, mfxLAND = mfx.LAND.2008, RowName = names (model.SaleValue2008$residuals))
 temp = merge(table.data, workingdata2008, all = TRUE)
 dataNames <- names(temp)
 Output <- which(dataNames %in% c("Res", "mfxTRAFFIC", "mfxLAND", "PIN", "X_Meter", "Y_Meter", "UNIQID"))
