@@ -10,18 +10,19 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-MYMODEL = "logEMV~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT"
-KVECTOR = c(100, 200, 500, 1000, 5000)
+MYMODEL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3+CITY"
+MYMODELsmall = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3"
+KVECTOR = c(100, 200, 500, 1000, 2000)
 
 filePrefix = "../Data/R2GIS/CleanData/"
-inputFile = "Sales20052007.dbf"
+inputFile = "Sales20052010.dbf"
 DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
 start = Sys.time()
-N = 10 # dim(DATAFRAME)[1]
-output.raw = lapply(1:N,
-                      LWR,
+N =  dim(DATAFRAME)[1]
+output.raw = mclapply(1:N,
+                      LWRyear2,
                       Data.Frame = DATAFRAME,
-                      my.model = MYMODEL,
+                      my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
                       kvector = KVECTOR
                       )
 end = Sys.time()
@@ -30,7 +31,7 @@ dataSource = strsplit(inputFile, "\\.")[[1]][1]
 # save the output in case something goes wrong later
 save(output.raw, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRoutputRAW", Sys.Date(), ".RData"))
 
-names(output.raw) = DATAFRAME$PIN[1:N]
+names(output.raw) = DATAFRAME$UNIQID[1:N]
 output = Reorganizer(output.raw)
 save(output.raw, output, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRoutput", Sys.Date(), ".RData"))
 # if the save command works here, we can erase the earlier data file we saved as a precaution
