@@ -10,10 +10,10 @@ LWRyear2 = function(my.observation,
                    kvector) {
   
   # These four lines let you work within the function rather than having to run the function (helpful for debugging)
-        Data.Frame = DATAFRAME
-        my.model = MYMODEL#; my.modelSMALL = 
-        kvector = KVECTOR
-        my.observation = 6
+#         Data.Frame = DATAFRAME
+#         my.model = MYMODEL#; my.modelSMALL = 
+#         kvector = KVECTOR
+#         my.observation = 6
   print(my.observation)
   # grab some dimensions for creating our containers
   sample.size = dim(Data.Frame)[1]
@@ -85,9 +85,11 @@ LWRyear2 = function(my.observation,
     
     temp.est.dep.var.without[j] = lmreg$fitted.values[as.character(my.observation)] 
   }
+        coeffs = coeffs[, coefNames]
         temp.est.betas = matrix(t(coeffs), nrow = length(coefNames), ncol = length(kvector)) # Need a matrix, row for each B, columns for each k
         rownames(temp.est.betas) = coefNames
         colnames(temp.est.betas) = kvector
+        ses = ses[, coefNames]
         temp.st.errors = matrix(t(ses), nrow = length(coefNames), ncol = length(kvector)) # Same as above
         rownames(temp.st.errors) = coefNames
         colnames(temp.st.errors) = kvector  

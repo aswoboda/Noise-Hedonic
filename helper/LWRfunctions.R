@@ -166,10 +166,10 @@ LWRyear2 = function(my.observation,
                     kvector) {
   
   # These four lines let you work within the function rather than having to run the function (helpful for debugging)
-  #         Data.Frame = DATAFRAME
-  #         my.model = MYMODEL#; my.modelSMALL = 
-  #         kvector = KVECTOR
-  #         my.observation = 6
+#           Data.Frame = DATAFRAME
+#           my.model = MYMODEL#; my.modelSMALL = MYMODELsmall
+#           kvector = KVECTOR
+#           my.observation = 6
   print(my.observation)
   # grab some dimensions for creating our containers
   sample.size = dim(Data.Frame)[1]
@@ -186,6 +186,7 @@ LWRyear2 = function(my.observation,
   # Create data.frames for our coefficients and standard errors
   coeffs = data.frame(t(lmreg$coefficients))  
   coeffs = coeffs[-1, ]
+  coeffOrder = names(coeffs)
   
   ses = data.frame(t(summary(lmreg)$coefficients[, 2]))  
   ses = ses[-1, ]
@@ -241,12 +242,15 @@ LWRyear2 = function(my.observation,
     
     temp.est.dep.var.without[j] = lmreg$fitted.values[as.character(my.observation)] 
   }
-  temp.est.betas = matrix(t(coeffs), nrow = length(coefNames), ncol = length(kvector)) # Need a matrix, row for each B, columns for each k
-  rownames(temp.est.betas) = coefNames
-  colnames(temp.est.betas) = kvector
-  temp.st.errors = matrix(t(ses), nrow = length(coefNames), ncol = length(kvector)) # Same as above
-  rownames(temp.st.errors) = coefNames
-  colnames(temp.st.errors) = kvector  
+          coeffs = coeffs[, coeffOrder]
+          temp.est.betas = matrix(t(coeffs), nrow = length(coefNames), ncol = length(kvector)) # Need a matrix, row for each B, columns for each k
+          rownames(temp.est.betas) = coefNames  
+          colnames(temp.est.betas) = kvector  
+          
+          ses = ses[, coeffOrder]
+          temp.st.errors = matrix(t(ses), nrow = length(coefNames), ncol = length(kvector)) # Same as above  
+          rownames(temp.st.errors) = coefNames
+          colnames(temp.st.errors) = kvector  
   
   list(betas = temp.est.betas, st.errors = temp.st.errors, dep.vars = temp.est.dep.var, leverages = temp.leverage,
        dep.vars.without = temp.est.dep.var.without, bandwidths = kvector)

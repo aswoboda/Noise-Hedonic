@@ -10,8 +10,8 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-MYMODEL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3+CITY"
-MYMODELsmall = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3"
+MYMODEL = "logSALE_VA~log(MAX)+FIN_SQ_FT+ACRES_POLY+I(ACRES_POLY^2)+YEAR_BUILT+MED_INCOME+MCA3+CITY"
+MYMODELsmall = "logSALE_VA~log(MAX)+FIN_SQ_FT+ACRES_POLY+I(ACRES_POLY^2)+YEAR_BUILT+MED_INCOME+MCA3"
 KVECTOR = c(100, 200, 500, 1000, 2000)
 
 filePrefix = "../Data/R2GIS/CleanData/"
