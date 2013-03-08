@@ -105,114 +105,100 @@ summary(model.SaleValue20052010)
 ##     I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_MO, data = workingdata20052010)
 ## 
 ## Residuals:
-##    Min     1Q Median     3Q    Max 
-## -1.547 -0.106 -0.005  0.103  1.369 
+##     Min      1Q  Median      3Q     Max 
+## -1.5425 -0.1061 -0.0045  0.1037  1.3727 
 ## 
 ## Coefficients: (1 not defined because of singularities)
 ##                                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)                    4.57e+00   1.02e-01   44.76  < 2e-16 ***
-## COUNTY_ID123                   2.63e-01   6.95e-02    3.79  0.00015 ***
-## COUNTY_ID163                   4.39e-01   9.60e-03   45.68  < 2e-16 ***
-## CITYARDEN HILLS               -3.38e-01   7.05e-02   -4.79  1.7e-06 ***
-## CITYBAYPORT                   -4.15e-03   2.42e-02   -0.17  0.86394    
-## CITYBIRCHWOOD VILLAGE         -1.61e-01   3.84e-02   -4.21  2.6e-05 ***
-## CITYBURNSVILLE                -2.03e-02   6.30e-03   -3.22  0.00128 ** 
-## CITYCITY OF BAYPORT           -2.70e-02   2.60e-02   -1.04  0.29968    
-## CITYCITY OF BIRCHWOOD         -8.09e-02   4.02e-02   -2.01  0.04398 *  
-## CITYCITY OF COTTAGE GROVE     -7.73e-02   8.19e-03   -9.44  < 2e-16 ***
-## CITYCITY OF HUGO              -1.81e-01   2.17e-02   -8.32  < 2e-16 ***
-## CITYCITY OF LAKE ELMO          5.44e-03   2.88e-02    0.19  0.85024    
-## CITYCITY OF MAHTOMEDI         -4.19e-02   1.50e-02   -2.79  0.00535 ** 
-## CITYCITY OF NEWPORT           -1.63e-01   2.06e-02   -7.90  2.9e-15 ***
-## CITYCITY OF OAKDALE            4.51e-02   9.42e-03    4.79  1.7e-06 ***
-## CITYCITY OF OAK PARK HEIGHTS   2.29e-02   2.23e-02    1.03  0.30416    
-## CITYCITY OF STILLWATER         4.61e-03   1.10e-02    0.42  0.67534    
-## CITYCITY OF ST PAUL PARK      -1.29e-01   1.51e-02   -8.59  < 2e-16 ***
-## CITYCITY OF WHITE BEAR LAKE   -2.03e-01   6.09e-02   -3.33  0.00088 ***
-## CITYCITY OF WILLERNIE         -3.02e-01   3.54e-02   -8.54  < 2e-16 ***
-## CITYCITY OF WOODBURY           2.32e-02   6.48e-03    3.58  0.00034 ***
-## CITYCOTTAGE GROVE             -1.31e-01   8.04e-03  -16.33  < 2e-16 ***
-## CITYDELLWOOD                  -5.08e-01   1.82e-01   -2.79  0.00524 ** 
-## CITYEAGAN                      4.13e-02   7.46e-03    5.54  3.1e-08 ***
-## CITYEMPIRE TOWNSHIP           -2.63e-03   2.25e-02   -0.12  0.90693    
-## CITYFALCON HEIGHTS             7.42e-02   7.09e-02    1.05  0.29575    
-## CITYFARMINGTON                 3.39e-03   9.02e-03    0.38  0.70722    
-## CITYGEM LAKE                  -2.79e-01   1.26e-01   -2.22  0.02663 *  
-## CITYHUGO                      -2.23e-01   2.18e-02  -10.23  < 2e-16 ***
-## CITYINVER GROVE HEIGHTS        2.32e-01   1.07e-02   21.67  < 2e-16 ***
-## CITYLAKE ELMO                 -3.05e-02   3.14e-02   -0.97  0.33169    
-## CITYLAKEVILLE                 -2.69e-02   7.93e-03   -3.39  0.00069 ***
-## CITYLAUDERDALE                -5.24e-02   7.25e-02   -0.72  0.46991    
-## CITYLITTLE CANADA             -8.75e-02   7.06e-02   -1.24  0.21515    
-## CITYMAHTOMEDI                 -5.16e-02   1.70e-02   -3.04  0.00239 ** 
-## CITYMAPLEWOOD                  3.67e-02   6.95e-02    0.53  0.59751    
-## CITYMENDOTA                    5.54e-02   9.15e-02    0.61  0.54469    
-## CITYMENDOTA HEIGHTS            2.25e-01   1.54e-02   14.59  < 2e-16 ***
-## CITYMOUNDS VIEW               -3.59e-01   7.00e-02   -5.12  3.0e-07 ***
-## CITYNEW BRIGHTON              -2.67e-01   6.97e-02   -3.83  0.00013 ***
-## CITYNEWPORT                   -2.71e-01   2.33e-02  -11.64  < 2e-16 ***
-## CITYNORTH ST. PAUL             6.98e-02   6.97e-02    1.00  0.31636    
-## CITYOAKDALE                    7.83e-04   9.85e-03    0.08  0.93658    
-## CITYOAK PARK HEIGHTS           5.89e-02   2.34e-02    2.52  0.01181 *  
-## CITYROSEMOUNT                  7.66e-02   7.01e-03   10.93  < 2e-16 ***
-## CITYROSEVILLE                 -1.04e-01   6.97e-02   -1.49  0.13706    
-## CITYSHOREVIEW                 -3.38e-01   6.97e-02   -4.85  1.2e-06 ***
-## CITYSOUTH ST PAUL              2.79e-01   1.18e-02   23.55  < 2e-16 ***
-## CITYSPRING LAKE PARK          -3.67e-01   1.26e-01   -2.92  0.00349 ** 
-## CITYST. ANTHONY               -1.41e-01   7.81e-02   -1.80  0.07210 .  
-## CITYSTILLWATER                -2.65e-02   1.11e-02   -2.38  0.01718 *  
-## CITYST. PAUL                   7.05e-02   6.96e-02    1.01  0.31070    
-## CITYST. PAUL PARK             -2.25e-01   1.59e-02  -14.20  < 2e-16 ***
-## CITYTOWN OF BAYTOWN            6.12e-02   1.29e-01    0.47  0.63502    
-## CITYVADNAIS HEIGHTS           -2.59e-01   7.00e-02   -3.70  0.00021 ***
-## CITYWEST ST PAUL               2.84e-01   1.39e-02   20.53  < 2e-16 ***
-## CITYWHITE BEAR LAKE           -6.22e-02   6.90e-02   -0.90  0.36709    
-## CITYWHITE BEAR TOWNSHIP       -2.37e-01   6.98e-02   -3.40  0.00068 ***
-## CITYWILLERNIE                 -2.63e-01   5.11e-02   -5.16  2.5e-07 ***
+## (Intercept)                    4.55e+00   1.02e-01   44.56  < 2e-16 ***
+## COUNTY_ID123                   3.54e-01   4.66e-02    7.60  3.1e-14 ***
+## COUNTY_ID163                   4.53e-01   8.94e-03   50.62  < 2e-16 ***
+## CITYARDEN HILLS               -4.29e-01   4.81e-02   -8.93  < 2e-16 ***
+## CITYBAYPORT                   -2.71e-02   1.87e-02   -1.45  0.14698    
+## CITYBIRCHWOOD VILLAGE         -1.35e-01   2.79e-02   -4.83  1.4e-06 ***
+## CITYBURNSVILLE                -2.03e-02   6.31e-03   -3.22  0.00126 ** 
+## CITYCOTTAGE GROVE             -1.15e-01   6.07e-03  -18.98  < 2e-16 ***
+## CITYDELLWOOD                  -5.14e-01   1.82e-01   -2.83  0.00472 ** 
+## CITYEAGAN                      4.04e-02   7.46e-03    5.41  6.2e-08 ***
+## CITYEMPIRE TOWNSHIP           -1.86e-03   2.25e-02   -0.08  0.93403    
+## CITYFALCON HEIGHTS            -1.65e-02   4.87e-02   -0.34  0.73432    
+## CITYFARMINGTON                 3.88e-03   9.03e-03    0.43  0.66739    
+## CITYGEM LAKE                  -3.70e-01   1.15e-01   -3.22  0.00128 ** 
+## CITYHUGO                      -2.12e-01   2.03e-02  -10.47  < 2e-16 ***
+## CITYINVER GROVE HEIGHTS        2.32e-01   1.07e-02   21.62  < 2e-16 ***
+## CITYLAKE ELMO                 -2.43e-02   2.14e-02   -1.13  0.25707    
+## CITYLAKEVILLE                 -2.65e-02   7.94e-03   -3.34  0.00083 ***
+## CITYLAUDERDALE                -1.44e-01   5.09e-02   -2.82  0.00478 ** 
+## CITYLITTLE CANADA             -1.79e-01   4.82e-02   -3.71  0.00021 ***
+## CITYMAHTOMEDI                 -5.87e-02   1.16e-02   -5.07  3.9e-07 ***
+## CITYMAPLEWOOD                 -5.44e-02   4.66e-02   -1.17  0.24229    
+## CITYMENDOTA                    5.82e-02   9.16e-02    0.64  0.52538    
+## CITYMENDOTA HEIGHTS            2.25e-01   1.54e-02   14.55  < 2e-16 ***
+## CITYMOUNDS VIEW               -4.50e-01   4.73e-02   -9.50  < 2e-16 ***
+## CITYNEW BRIGHTON              -3.58e-01   4.69e-02   -7.63  2.3e-14 ***
+## CITYNEWPORT                   -2.23e-01   1.56e-02  -14.27  < 2e-16 ***
+## CITYNORTH ST. PAUL            -2.11e-02   4.68e-02   -0.45  0.65307    
+## CITYOAKDALE                    1.24e-02   7.01e-03    1.77  0.07746 .  
+## CITYOAK PARK HEIGHTS           2.73e-02   1.70e-02    1.61  0.10762    
+## CITYROSEMOUNT                  7.63e-02   7.02e-03   10.87  < 2e-16 ***
+## CITYROSEVILLE                 -1.94e-01   4.68e-02   -4.15  3.3e-05 ***
+## CITYSHOREVIEW                 -4.29e-01   4.69e-02   -9.15  < 2e-16 ***
+## CITYSOUTH ST PAUL              2.78e-01   1.18e-02   23.47  < 2e-16 ***
+## CITYSPRING LAKE PARK          -4.55e-01   1.15e-01   -3.96  7.4e-05 ***
+## CITYST. ANTHONY               -2.32e-01   5.87e-02   -3.96  7.6e-05 ***
+## CITYSTILLWATER                -2.29e-02   8.87e-03   -2.58  0.00995 ** 
+## CITYST. PAUL                  -2.03e-02   4.67e-02   -0.43  0.66415    
+## CITYST. PAUL PARK             -1.86e-01   1.11e-02  -16.74  < 2e-16 ***
+## CITYTOWN OF BAYTOWN            4.41e-02   1.29e-01    0.34  0.73246    
+## CITYVADNAIS HEIGHTS           -3.51e-01   4.74e-02   -7.40  1.4e-13 ***
+## CITYWEST ST PAUL               2.84e-01   1.39e-02   20.48  < 2e-16 ***
+## CITYWHITE BEAR LAKE           -1.53e-01   4.58e-02   -3.34  0.00084 ***
+## CITYWHITE BEAR TOWNSHIP       -3.28e-01   4.71e-02   -6.97  3.1e-12 ***
+## CITYWILLERNIE                 -3.05e-01   2.94e-02  -10.36  < 2e-16 ***
 ## CITYWOODBURY                         NA         NA      NA       NA    
-## factor(SALE_YR)2006            6.56e-03   2.60e-03    2.53  0.01151 *  
-## factor(SALE_YR)2007           -2.75e-02   2.85e-03   -9.63  < 2e-16 ***
-## factor(SALE_YR)2008           -1.38e-01   3.29e-03  -41.83  < 2e-16 ***
-## factor(SALE_YR)2009           -2.20e-01   3.31e-03  -66.33  < 2e-16 ***
-## factor(SALE_YR)2010           -2.52e-01   3.59e-03  -70.29  < 2e-16 ***
-## ACRES_POLY                     1.56e+00   1.38e-01   11.30  < 2e-16 ***
-## CBD_dist                       5.37e-05   2.55e-06   21.10  < 2e-16 ***
-## I(ACRES_POLY^2)               -1.59e+00   2.50e-01   -6.35  2.2e-10 ***
-## I(CBD_dist^2)                 -5.53e-10   7.63e-11   -7.24  4.6e-13 ***
-## log(MAX)                      -1.61e-01   6.97e-03  -23.10  < 2e-16 ***
-## HOMESTEADY                     2.88e-02   2.56e-03   11.25  < 2e-16 ***
-## log(FIN_SQ_FT)                 5.52e-01   3.16e-03  174.74  < 2e-16 ***
+## factor(SALE_YR)2006            6.18e-03   2.60e-03    2.38  0.01741 *  
+## factor(SALE_YR)2007           -2.83e-02   2.85e-03   -9.91  < 2e-16 ***
+## factor(SALE_YR)2008           -1.47e-01   3.10e-03  -47.36  < 2e-16 ***
+## factor(SALE_YR)2009           -2.29e-01   3.11e-03  -73.69  < 2e-16 ***
+## factor(SALE_YR)2010           -2.61e-01   3.42e-03  -76.40  < 2e-16 ***
+## ACRES_POLY                     1.60e+00   1.38e-01   11.56  < 2e-16 ***
+## CBD_dist                       5.45e-05   2.55e-06   21.40  < 2e-16 ***
+## I(ACRES_POLY^2)               -1.64e+00   2.50e-01   -6.56  5.5e-11 ***
+## I(CBD_dist^2)                 -5.70e-10   7.64e-11   -7.47  8.3e-14 ***
+## log(MAX)                      -1.58e-01   6.96e-03  -22.65  < 2e-16 ***
+## HOMESTEADY                     2.60e-02   2.54e-03   10.24  < 2e-16 ***
+## log(FIN_SQ_FT)                 5.52e-01   3.16e-03  174.57  < 2e-16 ***
 ## YEAR_BUILT                     1.81e-03   4.82e-05   37.62  < 2e-16 ***
-## LAKE_dist                     -7.80e-05   4.30e-06  -18.16  < 2e-16 ***
-## I(LAKE_dist^2)                 3.09e-08   1.56e-09   19.83  < 2e-16 ***
-## PARK_dist                     -8.80e-06   1.92e-06   -4.59  4.5e-06 ***
-## I(PARK_dist^2)                 1.64e-09   2.87e-10    5.70  1.2e-08 ***
-## MCA3                           6.66e-04   1.02e-04    6.56  5.4e-11 ***
-## SHOP_dist                      4.01e-05   2.23e-06   18.01  < 2e-16 ***
-## I(SHOP_dist^2)                -5.73e-09   3.66e-10  -15.66  < 2e-16 ***
-## MED_INCOME                     2.00e-06   6.42e-08   31.20  < 2e-16 ***
-## COLLEGE_di                    -3.26e-05   4.60e-07  -70.88  < 2e-16 ***
-## SALE_MO10                      6.12e-03   5.08e-03    1.21  0.22803    
-## SALE_MO11                     -2.09e-03   5.30e-03   -0.39  0.69401    
-## SALE_MO12                     -1.60e-02   5.57e-03   -2.88  0.00401 ** 
-## SALE_MO2                       3.65e-03   5.46e-03    0.67  0.50353    
-## SALE_MO3                       9.61e-03   5.04e-03    1.91  0.05673 .  
-## SALE_MO4                       1.19e-02   4.96e-03    2.41  0.01604 *  
-## SALE_MO5                       2.07e-02   4.78e-03    4.34  1.5e-05 ***
-## SALE_MO6                       2.67e-02   4.68e-03    5.70  1.2e-08 ***
-## SALE_MO7                       2.15e-02   4.81e-03    4.48  7.7e-06 ***
-## SALE_MO8                       1.47e-02   4.78e-03    3.08  0.00208 ** 
-## SALE_MO9                       1.41e-02   4.97e-03    2.84  0.00448 ** 
-## ACRES_POLY:CBD_dist           -1.33e-04   1.89e-05   -7.02  2.2e-12 ***
-## I(ACRES_POLY^2):I(CBD_dist^2) -3.54e-09   8.78e-10   -4.03  5.5e-05 ***
-## ACRES_POLY:I(CBD_dist^2)       3.23e-09   5.30e-10    6.09  1.1e-09 ***
-## CBD_dist:I(ACRES_POLY^2)       1.52e-04   3.21e-05    4.74  2.2e-06 ***
+## LAKE_dist                     -7.88e-05   4.30e-06  -18.33  < 2e-16 ***
+## I(LAKE_dist^2)                 3.11e-08   1.56e-09   19.97  < 2e-16 ***
+## PARK_dist                     -8.86e-06   1.92e-06   -4.61  4.1e-06 ***
+## I(PARK_dist^2)                 1.62e-09   2.88e-10    5.65  1.7e-08 ***
+## MCA3                           6.90e-04   1.02e-04    6.80  1.1e-11 ***
+## SHOP_dist                      3.99e-05   2.23e-06   17.93  < 2e-16 ***
+## I(SHOP_dist^2)                -5.71e-09   3.66e-10  -15.60  < 2e-16 ***
+## MED_INCOME                     2.01e-06   6.43e-08   31.30  < 2e-16 ***
+## COLLEGE_di                    -3.26e-05   4.61e-07  -70.79  < 2e-16 ***
+## SALE_MO10                      6.36e-03   5.08e-03    1.25  0.21072    
+## SALE_MO11                     -1.89e-03   5.31e-03   -0.36  0.72178    
+## SALE_MO12                     -1.60e-02   5.57e-03   -2.87  0.00409 ** 
+## SALE_MO2                       3.63e-03   5.47e-03    0.66  0.50665    
+## SALE_MO3                       9.76e-03   5.05e-03    1.93  0.05325 .  
+## SALE_MO4                       1.20e-02   4.96e-03    2.42  0.01545 *  
+## SALE_MO5                       2.10e-02   4.79e-03    4.40  1.1e-05 ***
+## SALE_MO6                       2.71e-02   4.68e-03    5.80  6.8e-09 ***
+## SALE_MO7                       2.19e-02   4.81e-03    4.55  5.4e-06 ***
+## SALE_MO8                       1.50e-02   4.78e-03    3.13  0.00176 ** 
+## SALE_MO9                       1.42e-02   4.97e-03    2.87  0.00415 ** 
+## ACRES_POLY:CBD_dist           -1.38e-04   1.89e-05   -7.29  3.3e-13 ***
+## I(ACRES_POLY^2):I(CBD_dist^2) -3.68e-09   8.78e-10   -4.19  2.7e-05 ***
+## ACRES_POLY:I(CBD_dist^2)       3.34e-09   5.31e-10    6.29  3.1e-10 ***
+## CBD_dist:I(ACRES_POLY^2)       1.59e-04   3.21e-05    4.95  7.6e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## Residual standard error: 0.182 on 41999 degrees of freedom
-## Multiple R-squared: 0.752,	Adjusted R-squared: 0.751 
-## F-statistic: 1.34e+03 on 95 and 41999 DF,  p-value: <2e-16
+## Residual standard error: 0.182 on 42013 degrees of freedom
+## Multiple R-squared: 0.751,	Adjusted R-squared: 0.751 
+## F-statistic: 1.56e+03 on 81 and 42013 DF,  p-value: <2e-16
 ```
 
 ```r
@@ -309,7 +295,7 @@ summary(mfx.TRAFFIC.20052010)
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##   -3760    -936    -692    -783    -537    -199
+##   -3680    -918    -678    -768    -526    -195
 ```
 
 ```r
@@ -328,7 +314,7 @@ summary(mfx.LAND.20052010)
 
 ```
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##  -77100   63900   88600  100000  125000  663000
+##  -85500   63100   87900   99900  126000  675000
 ```
 
 ```r

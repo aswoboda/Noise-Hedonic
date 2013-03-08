@@ -6,7 +6,7 @@ names(emv2006) #found that some observations have a 0 or negative sales value
 #Pulling the variables we WANT into a new, working dataframe.
 emv2006$GARSQFT <- as.numeric(as.character(emv2006$GARAGESQFT)) #Converting factor to numeric
 dataNames <- names (emv2006)
-VarsIWant <- which(dataNames %in% c("MED_INCOME", "GARSQFT","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY","SDNUM","HOMESTEAD", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "EMV_TOTAL", "BEDS", "BATH", "MAX", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "MCA3", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "PIN", "SP_dist", "MPS_dist","X_Meter", "Y_Meter"))
+VarsIWant <- which(dataNames %in% c("ELEM", "MED_INCOME", "GARSQFT","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY","SDNUM","HOMESTEAD", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "EMV_TOTAL", "BEDS", "BATH", "MAX", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "MCA3", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "PIN", "SP_dist", "MPS_dist","X_Meter", "Y_Meter"))
 workingdata = emv2006[ , VarsIWant]
 summary (workingdata)
 workingdata$logEMV = log(workingdata$EMV_TOTAL) #Transforming sales values into logs

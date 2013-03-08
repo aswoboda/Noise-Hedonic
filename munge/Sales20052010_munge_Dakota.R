@@ -14,7 +14,7 @@ salesdak$SALE_MO <- factor(salesdak$SALE_MONTH)
 salesdak$YEARtemp <- salesdak$SALE_YR - 2005
 salesdak$TimePeriod <- salesdak$YEARtemp*12+salesdak$SALE_MONTH
 dataNames <- names (salesdak)
-VarsIWant <- which(dataNames %in% c("GARSQFT","TimePeriod", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
+VarsIWant <- which(dataNames %in% c("ELEM","HIGH", "GARSQFT","TimePeriod", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
 workingdata = salesdak[ , VarsIWant]
 summary (workingdata)
 workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
