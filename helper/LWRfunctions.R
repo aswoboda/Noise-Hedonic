@@ -167,7 +167,7 @@ LWRyear2 = function(my.observation,
   
   # These four lines let you work within the function rather than having to run the function (helpful for debugging)
 #           Data.Frame = DATAFRAME
-#           my.model = MYMODEL#; my.modelSMALL = MYMODELsmall
+#           my.model = MYMODEL; my.modelSMALL = MYMODELsmall
 #           kvector = KVECTOR
 #           my.observation = 6
   print(my.observation)
@@ -238,8 +238,8 @@ LWRyear2 = function(my.observation,
     
     #Now we are going to exclude the observation itself.
     Data.Frame[as.character(my.observation), "Weights"] = 0
-    lmreg = lm(my.model, data = Data.Frame, weights = Weights)
-    
+    lmreg = try(lm(my.model, data = Data.Frame, weights = Weights))
+    if(class(lmreg) == "try-error") lmreg = lm(my.modelSMALL, data = Data.Frame, weights = Weights)
     temp.est.dep.var.without[j] = lmreg$fitted.values[as.character(my.observation)] 
   }
           coeffs = coeffs[, coeffOrder]
