@@ -10,7 +10,7 @@ head(test.table)
 
 test.data <- workingdata [ , ]
 
-temp = merge(test.table, test.data, all = TRUE)
+temp = merge(test.table, test.data, all = FALSE)
 dataNames <- names(temp)
 Output <- which(dataNames %in% c("hat.k100","hat.k200", "hat.k500", "hat.k1000", "hat.k2000",  "beta.ACRES.k100", "beta.ACRES.k200", "beta.ACRES.k500", "beta.ACRES.k1000","beta.ACRES.k2000", "beta.MAX.k100", "beta.MAX.k200", "beta.MAX.k500", "beta.MAX.k1000","beta.MAX.k2000","X_Meter", "Y_Meter","SALE_VALUE","logSALE_VA", "UNIQID", "SALE_YR"))
 temp = temp[, Output]
