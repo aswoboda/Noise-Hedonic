@@ -11,6 +11,59 @@ sales0510$SALE_MO <- factor(sales0510$SALE_MONTH)
 #Creating a time period variable so we can pull data in LWR from a time lag of a 12 month window for each parcel
 sales0510$YEARtemp <- sales0510$SALE_YR - 2005
 sales0510$TimePeriod <- sales0510$YEARtemp*12+sales0510$SALE_MONTH
+
+#Cleaning HOME_STYLE independent variable
+table(sales0510$HOME_STYLE)
+#Split
+x <- which (sales0510$HOME_STYLE == "Split/entry")
+x1 <- which (sales0510$HOME_STYLE == "SPLIT/ENTRY")
+x2 <- which (sales0510$HOME_STYLE == "Split Foyer Frame")
+x3 <- which (sales0510$HOME_STYLE == "Split/level")
+x4 <- which (sales0510$HOME_STYLE == "SPLIT LEVEL")
+x5 <- which (sales0510$HOME_STYLE == "Split Level Brick")
+x6 <- which (sales0510$HOME_STYLE == "Split Level Frame")
+x7 <- which (sales0510$HOME_STYLE == "SPLIT LEVL")
+split.home <- sales0510[x1, ]
+split <- c(x,x1,x2,x3,x4,x5,x6,x7)
+sales0510$HOME_STYLE[split] <- split.home$HOME_STYLE[1]
+#One Story
+x <- which (sales0510$HOME_STYLE == "1 Story Townhouse")
+x1 <- which (sales0510$HOME_STYLE == "ONE STORY")
+x2 <- which (sales0510$HOME_STYLE == "1 Story Frame")
+x3 <- which (sales0510$HOME_STYLE == "One Story")
+onestory.home <- sales0510[x1, ]
+onestory <- c(x,x1,x2,x3)
+sales0510$HOME_STYLE[onestory] <- onestory.home$HOME_STYLE[1]
+#One 1/2 Story
+x <- which (sales0510$HOME_STYLE == "1 1/2 Story Fram")
+x1 <- which (sales0510$HOME_STYLE == "1-1/2 STRY")
+x2 <- which (sales0510$HOME_STYLE == "1 1/2 Story Frame")
+onehalfstory.home <- sales0510[x1, ]
+onehalfstory <- c(x,x1,x2)
+sales0510$HOME_STYLE[onehalfstory] <- onehalfstory.home$HOME_STYLE[1]
+#One 3/4 Story
+x <- which (sales0510$HOME_STYLE == "One And 3/4 Story")
+x1 <- which (sales0510$HOME_STYLE == "1-3/4 STRY")
+one3quartstory.home <- sales0510[x1, ]
+one3quartstory <- c(x,x1)
+sales0510$HOME_STYLE[one3quartstory] <- one3quartstory.home$HOME_STYLE[1]
+#Two Story
+x <- which (sales0510$HOME_STYLE == "2 Story Brick")
+x1 <- which (sales0510$HOME_STYLE == "TWO STORY")
+x2 <- which (sales0510$HOME_STYLE == "2 Story Townhouse")
+x3 <- which (sales0510$HOME_STYLE == "Old 2 Story")
+x4 <- which (sales0510$HOME_STYLE == "2 Story Frame")
+x5 <- which (sales0510$HOME_STYLE == "Two Story")
+twostory.home <- sales0510[x1, ]
+twostory <- c(x,x1,x2,x3,x4,x5)
+sales0510$HOME_STYLE[twostory] <- twostory.home$HOME_STYLE[1]
+#Bungalow
+x <- which (sales0510$HOME_STYLE == "Bungalow")
+x1 <- which (sales0510$HOME_STYLE == "BUNGALOW")
+bung.home <- sales0510[x1, ]
+bung <- c(x,x1)
+sales0510$HOME_STYLE[bung] <- bung.home$HOME_STYLE[1]
+
 dataNames <- names (sales0510)
 VarsIWant <- which(dataNames %in% c("ELEM", "HIGH", "GARSQFT","TimePeriod", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
 workingdata = sales0510[ , VarsIWant]
