@@ -10,19 +10,24 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-MYMODEL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3+HOME_STYLE+PARK_dist+LAKE_dist+SHOP_dist+CITY"
-MYMODELsmall = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+MCA3+HOME_STYLE+PARK_dist+LAKE_dist+SHOP_dist"
+MYMODEL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+HOME_STYLE+ELEM"
+MYMODELsmall = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+MED_INCOME+HOME_STYLE"
 KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000)
 
 filePrefix = "../Data/R2GIS/CleanData/"
-inputFile = "Sales20052010.dbf"
-DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
+# inputFile = "Sales20052010.dbf"
+# DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
+# dakOBS = which(DATAFRAME$COUNTY_ID == "037" & DATAFRAME$BEDS > 0 & DATAFRAME$GARSQFT>175)
+# dakDATA = DATAFRAME[dakOBS, ]
+outputFile = "dakotaCLEAN.dbf"
+# write.dbf(dakDATA, file = paste0(filePrefix, outputFile))
+dakDATA = read.dbf(paste0(filePrefix, outputFile))
+
 start = Sys.time()
-N =  dim(DATAFRAME)[1]
-obs2run = which(DATAFRAME$TimePeriod>11)
+obs2run = rownames(dakDATA)[which(dakDATA$TimePeriod>11)]
 output.raw = mclapply(obs2run,
                       LWRyear2,
-                      Data.Frame = DATAFRAME,
+                      Data.Frame = dakDATA,
                       my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
                       kvector = KVECTOR
                       )
