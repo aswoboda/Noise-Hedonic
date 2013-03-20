@@ -37,7 +37,7 @@ dataSource = strsplit(inputFile, "\\.")[[1]][1]
 # save the output in case something goes wrong later
 save(output.raw, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRoutputRAW", Sys.Date(), ".RData"))
 
-names(output.raw) = DATAFRAME$UNIQID[obs2run]
+names(output.raw) = DATAFRAME$UNIQID[obs2run] #dakDATA
 output = Reorganizer(output.raw)
 save(output, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRoutput", Sys.Date(), ".RData"))
 # if the save command works here, we can erase the earlier data file we saved as a precaution

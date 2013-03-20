@@ -1,13 +1,13 @@
 library (foreign)
-salesdak <- read.dbf("../Data/GIS2R/Sales20052010.dbf")
-summary(salesdak) #found that some observations have a 0 or negative sales value
-t <- which(salesdak$SALE_VALUE < 1)
-salesdak = salesdak [-t, ] #Excludes observations without sales value information
-beds <- which(salesdak$BEDS > 0)
-salesdak = salesdak [beds, ]
+sales0510 <- read.dbf("../Data/GIS2R/Sales20052010.dbf")
+summary(sales0510) #found that some observations have a 0 or negative sales value
+sales0510$GARSQFT <- as.numeric(as.character(sales0510$GARAGESQFT)) #Converting factor to numeric
+t <- which(sales0510$SALE_VALUE < 1)
+salesdak = sales0510[-t, ]
+dakOBS = which(salesdak$COUNTY_ID == "037" & salesdak$BEDS > 0 & salesdak$GARSQFT>175)
+salesdak = salesdak [dakOBS, ]#Excludes observations without relevant info
 
 #Pulling the variables we WANT into a new, working dataframe.
-salesdak$GARSQFT <- as.numeric(as.character(salesdak$GARAGESQFT)) #Converting factor to numeric
 salesdak$SALE_SEASON <- factor(salesdak$SALE_QRT)
 salesdak$SALE_MO <- factor(salesdak$SALE_MONTH)
 #Creating a time period variable so we can pull data in LWR from a time lag of a 12 month window for each parcel
