@@ -25,25 +25,25 @@ load(paste0(dataPath, files2open[myFile], sep = ""))
 # 3) add a linear best fit line to look for a trend
 # 4) repeat above with different combinations of coefficients, bandwidths, and models
 
-###########################Log-transformed noise variable
+###########################'Linear' noise variable
 names(output)
-beta.noise = which(names(output)=="beta.log(MAX)") #find which column beta noise is in
-ses.noise = which(names(output)=="ses.log(MAX)") #find which column standard error noise is in
+beta.noise = which(names(output)=="beta.MAX") #find which column beta noise is in
+ses.noise = which(names(output)=="ses.MAX") #find which column standard error noise is in
 myCoeff.beta = names(output)[beta.noise]# choose a coefficient to work with
 myCoeff.ses = names(output)[ses.noise]
 test.table <- data.frame (time = DATAFRAME$TimePeriod[obs2run], coef = output[myCoeff.beta], se = output[myCoeff.ses], noise = DATAFRAME$MAX[obs2run], Sale.Val= DATAFRAME$SALE_VALUE[obs2run])
 head(test.table)
 #Calculate marginal effects for log-transformed noise variable.
-test.table$mfx.MAX.k25 <- (test.table$coef.beta.log.MAX..k25/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k50 <- (test.table$coef.beta.log.MAX..k50/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k75 <- (test.table$coef.beta.log.MAX..k75/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k100 <- (test.table$coef.beta.log.MAX..k100/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k150 <- (test.table$coef.beta.log.MAX..k150/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k200 <- (test.table$coef.beta.log.MAX..k200/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k400 <- (test.table$coef.beta.log.MAX..k400/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k600 <- (test.table$coef.beta.log.MAX..k600/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k800 <- (test.table$coef.beta.log.MAX..k800/test.table$noise) * test.table$Sale.Val
-test.table$mfx.MAX.k1000 <- (test.table$coef.beta.log.MAX..k1000/test.table$noise) * test.table$Sale.Val
+test.table$mfx.MAX.k25 <- (test.table$coef.beta.MAX..k25) * test.table$Sale.Val
+test.table$mfx.MAX.k50 <- (test.table$coef.beta.MAX..k50) * test.table$Sale.Val
+test.table$mfx.MAX.k75 <- (test.table$coef.beta.MAX..k75) * test.table$Sale.Val
+test.table$mfx.MAX.k100 <- (test.table$coef.beta.MAX..k100) * test.table$Sale.Val
+test.table$mfx.MAX.k150 <- (test.table$coef.beta.MAX..k150) * test.table$Sale.Val
+test.table$mfx.MAX.k200 <- (test.table$coef.beta.MAX..k200) * test.table$Sale.Val
+test.table$mfx.MAX.k400 <- (test.table$coef.beta.MAX..k400) * test.table$Sale.Val
+test.table$mfx.MAX.k600 <- (test.table$coef.beta.MAX..k600) * test.table$Sale.Val
+test.table$mfx.MAX.k800 <- (test.table$coef.beta.MAX..k800) * test.table$Sale.Val
+test.table$mfx.MAX.k1000 <- (test.table$coef.beta.MAX..k1000) * test.table$Sale.Val
 colnames(test.table)
 
 #Time period in question will always be from 12 to 72
