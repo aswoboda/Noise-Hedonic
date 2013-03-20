@@ -205,7 +205,7 @@ LWRyear2 = function(my.observation,
   # then we calculate distances (locations are expected to be "Long_X" and "Lat_Y" and are decimal degrees)
   # require(fields)
   Data.Frame = subset(Data.Frame, TimePeriod<Data.Frame[as.character(my.observation), "TimePeriod"]+1 & 
-    TimePeriod>Data.Frame[as.character(my.observation), "TimePeriod"]-25)
+    TimePeriod>Data.Frame[as.character(my.observation), "TimePeriod"]-13)
   
   Di=t(rdist.earth(cbind(Data.Frame[as.character(my.observation), "Long_X"], Data.Frame[as.character(my.observation), "Lat_Y"]),
                    cbind(Data.Frame$Long_X, Data.Frame$Lat_Y)))
