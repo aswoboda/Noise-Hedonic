@@ -95,6 +95,7 @@ for (i in bandwidths2plot) {
        ylab = myCoeff.beta,
        main = myBandwidth)
   abline(lm(myY ~ myX), col = "red")
+  #points(x,y)
 }
 dev.off()
 
