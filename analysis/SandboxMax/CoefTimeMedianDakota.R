@@ -6,15 +6,15 @@ require(foreign)
 source("helper/LWRfunctions.R")
 
 filePrefix = "../Data/R2GIS/CleanData/"
-inputFile = "Sales20052010.dbf"
+inputFile = "Sales20052010_Dakota.dbf"
 DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
 obs2run = which(DATAFRAME$TimePeriod>11)
 
-dataPath = "../Data/R2GIS/LWRoutput/"
+dataPath = "../Data/R2GIS/LWRoutput/Dakota/TimeLag12Months/"
 filelist = list.files(path = dataPath)
 
 files2open = filelist[which(substr(filelist, 1, 26) == "Sales20052010LWRoutput2013")]
-myFile = 8 # this determines which file we're opening
+myFile = 1 # this determines which file we're opening
 
 load(paste0(dataPath, files2open[myFile], sep = ""))
 # now we should have "output" loaded in our workspace and "MYMODEL" telling us which regression we ran
@@ -31,6 +31,14 @@ beta.noise = which(names(output)=="beta.MAX") #find which column beta noise is i
 ses.noise = which(names(output)=="ses.MAX") #find which column standard error noise is in
 myCoeff.beta = names(output)[beta.noise]# choose a coefficient to work with
 myCoeff.ses = names(output)[ses.noise]
+#Problem with test.table -- <NA> produced for row names in output file
+n = dim(output$yhats)[1]
+output$UNIQID <- c(1:n)
+
+
+
+
+
 test.table <- data.frame (time = DATAFRAME$TimePeriod[obs2run], coef = output[myCoeff.beta], se = output[myCoeff.ses], noise = DATAFRAME$MAX[obs2run], Sale.Val= DATAFRAME$SALE_VALUE[obs2run])
 head(test.table)
 #Calculate marginal effects for log-transformed noise variable.
@@ -95,7 +103,6 @@ for (i in bandwidths2plot) {
        ylab = myCoeff.beta,
        main = myBandwidth)
   abline(lm(myY ~ myX), col = "red")
-  #points(x,y)
 }
 dev.off()
 

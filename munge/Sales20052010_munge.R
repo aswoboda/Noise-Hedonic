@@ -8,6 +8,7 @@ sales0510 = sales0510 [-t, ] #Excludes observations without sales value informat
 sales0510$GARSQFT <- as.numeric(as.character(sales0510$GARAGESQFT)) #Converting factor to numeric
 sales0510$SALE_SEASON <- factor(sales0510$SALE_QRT)
 sales0510$SALE_MO <- factor(sales0510$SALE_MONTH)
+sales0510$OWNOCC <- as.numeric(sales0510$HOMESTEAD)-1
 #Creating a time period variable so we can pull data in LWR from a time lag of a 12 month window for each parcel
 sales0510$YEARtemp <- sales0510$SALE_YR - 2005
 sales0510$TimePeriod <- sales0510$YEARtemp*12+sales0510$SALE_MONTH
@@ -65,7 +66,7 @@ bung <- c(x,x1)
 sales0510$HOME_STYLE[bung] <- bung.home$HOME_STYLE[1]
 
 dataNames <- names (sales0510)
-VarsIWant <- which(dataNames %in% c("ELEM", "HIGH", "GARSQFT","TimePeriod", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "HOMESTEAD", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
+VarsIWant <- which(dataNames %in% c("ELEM", "HIGH", "GARSQFT","TimePeriod","HOMESTEAD", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "OWNOCC", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
 workingdata = sales0510[ , VarsIWant]
 summary (workingdata)
 workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
