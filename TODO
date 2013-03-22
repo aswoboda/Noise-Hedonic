@@ -1,25 +1,15 @@
 
-2013-02-04
-  Calculate Marginal Effects for preliminary LWR models and current best global model (with all theinteraction terms) (land and MAX)
-  Map above
-  Calculate residuals from LWR models
-  Moran's I for residuals from LWR and global models
 
 
-Talk with Max about the data work he did. 
-  What data do we have? Everything and more.
-  How did we get to it?
-  What were the next steps planned?
+We ran LWR for different bandwidths and the GCV score suggests we use a bandwidth of around 100 nearest neighbors. Do the coefficients for certain variables actually vary over space? Or do we get prety similar coefficients using LWR and the global model?
+* A Monte Carlo test of significance for spatial non-stationarity in the coefficients is described in the GWR book by Fotheringham, et al. (2002) on page 213.
+Calculate the variance of the vector of coefficients across your observations for your preferred LWR model. 
+Now reshuffle the location of your data.
+Rerun LWR and see which bandwidth minimizes the GCV score.
+Keep track of the:
+*** variance of the coefficients,
+*** minimum GCV score
+*** optimal bandwidth
+Do these steps numerous times and then plot the distribution of the statistics we kept track of throughout the simulation. Where do our actual LWR values fall in the distribution?
 
-Start building up a database of articles on hedonic analysis and traffic noise (in Mendeley)
-  Particular to Minneapolis/St. Paul?
-  How are people estimating traffic noise?
-  What traffic variable are people including in the model? (max? mean? night/day?)
-  How are people modeling the house prices?
-    unit of analysis (individual houses sales? EMV? Mean EMV by census tract?)
-
-knitR
-  how do I cache large calculations so that computer doesn't have to do them each time?
-
-For Aaron
-  run LWR on Dakota County to see if the additional structural characteristics seem to matter
+Save the data after each round of the simulation so we can look at pre-liminary results. 
