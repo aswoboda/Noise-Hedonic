@@ -25,7 +25,7 @@ mfx.LAND.20052010 = (model.SaleValue20052010$coefficients["ACRES_POLY"]+ (2*work
 
 
 ##Run model (Post Crash)
-model.SaleValue20052010.post <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)+ ACRES_POLY+ ACRES_POLY * CBD_dist + I(ACRES_POLY^2)* I(CBD_dist ^2) +ACRES_POLY*I(CBD_dist^2) +I(ACRES_POLY^2)*CBD_dist + MAX + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_MO, data= workingdata20052010, subset=(PostCrash == 1))
+model.SaleValue20052010.post <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)+ ACRES_POLY+ ACRES_POLY * CBD_dist +ACRES_POLY*I(CBD_dist^2) + MAX + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_MO, data= workingdata20052010, subset=(PostCrash == 1))
 summary(model.SaleValue20052010.post)
 ##Run model (Pre Crash)
 model.SaleValue20052010.pre <- lm (logSALE_VA ~ COUNTY_ID + CITY + factor(SALE_YR)+ ACRES_POLY+ ACRES_POLY * CBD_dist + I(ACRES_POLY^2)* I(CBD_dist ^2) +ACRES_POLY*I(CBD_dist^2) +I(ACRES_POLY^2)*CBD_dist + MAX + HOMESTEAD + log(FIN_SQ_FT) + YEAR_BUILT + LAKE_dist + I(LAKE_dist^2) + PARK_dist + I(PARK_dist^2)  + MCA3 + SHOP_dist + I(SHOP_dist^2) + MED_INCOME + COLLEGE_di + SALE_MO, data= workingdata20052010, subset=(PostCrash == 0))
