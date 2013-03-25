@@ -103,7 +103,7 @@ coef.table <- data.frame(output[myCoeff.beta])
 myHome = coef.table[myBandwidth]
 my.array["Home", "12 month lag", , "Big model"] = myHome[1:lwr.obs, 1] #Populate array field
 ##SMALL MODEL
-myFile = 2 # Determines which model we are opening
+myFile = 4 # Determines which model we are opening
 load(paste0(dataPath, files2open[myFile], sep = ""))
 #Choose bandwidth by finding minimum GCV score
 gcv = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
@@ -132,7 +132,7 @@ my.array["Home", "12 month lag", , "Small model"] = myHome[1:lwr.obs, 1] #Popula
 
 ###TIME LAG 24 MONTHS
 ##BIG MODEL
-myFile = 4 # Determines which model we are opening
+myFile = 5 # Determines which model we are opening
 load(paste0(dataPath, files2open[myFile], sep = ""))
 #Choose bandwidth by finding minimum GCV score
 gcv = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
@@ -157,7 +157,7 @@ coef.table <- data.frame(output[myCoeff.beta])
 myHome = coef.table[myBandwidth]
 my.array["Home", "24 month lag", , "Big model"] = myHome[1:lwr.obs, 1] #Populate array field
 ##SMALL MODEL
-myFile = 2 # Determines which model we are opening
+myFile = 6 # Determines which model we are opening
 load(paste0(dataPath, files2open[myFile], sep = ""))
 #Choose bandwidth by finding minimum GCV score
 gcv = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
@@ -184,7 +184,7 @@ my.array["Home", "24 month lag", , "Small model"] = myHome[1:lwr.obs, 1] #Popula
 
 ###########################################################
 ### Create a .pdf file and plot each model against each other by coefficient and time lag
-pdf("analysis/02LWRComparisons/CoefacrossModelsTest.pdf", height = 8, width = 12)
+pdf("analysis/02LWRComparisons/CoefacrossModelsTest.pdf", height = 9, width = 9)
 par(mfrow = c(3, 3))
 notebooks = c(1:3) #How many coefficients are we analyzing
 pages = c(1:3) #How many time lags are we analyzing
