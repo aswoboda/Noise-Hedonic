@@ -40,7 +40,8 @@ for (iter in 1:iterations) {
                       Data.Frame = simDATA,
                       my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
                       kvector = KVECTOR,
-                        timelag = 12
+                      timelag = 12,
+                        mc.cores = 12
   )
   names(output.raw) = simDATA$UNIQID[obs2run]
   output = Reorganizer(output.raw)
