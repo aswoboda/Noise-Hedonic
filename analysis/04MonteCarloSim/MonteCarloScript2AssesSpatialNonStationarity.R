@@ -13,7 +13,7 @@ MYMODELsmall = MYMODEL
 KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000)
 
 # How many times am I going to reshuffle?
-iterations = 2
+iterations = 5
 # How many things am I keeping track of each reshuffle? 
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
 vars2keep = c("Intercept", myVars[-length(myVars)])
