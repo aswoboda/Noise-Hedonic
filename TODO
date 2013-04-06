@@ -13,3 +13,9 @@ Keep track of the:
 Do these steps numerous times and then plot the distribution of the statistics we kept track of throughout the simulation. Where do our actual LWR values fall in the distribution?
 
 Save the data after each round of the simulation so we can look at pre-liminary results. 
+
+
+After the meeting with Daniel Alabi... we might want to move the data to the shared folder and not replicate it across user accounts on Rserver.its.carleton.edu
+
+require(foreign)
+testData = read.dbf("/shared/aswoboda/research/GIS2R/Sales20052010.dbf")
