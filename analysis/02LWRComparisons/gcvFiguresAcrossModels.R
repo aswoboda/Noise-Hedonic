@@ -10,12 +10,12 @@ inputFile = "Sales20052010.dbf"
 DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
 obs2run = which(DATAFRAME$TimePeriod>11)
 
-dataPath = "../Data/R2GIS/LWRoutput/TimeLag06months/"
+dataPath = "../Data/R2GIS/LWRoutput/"
 filelist = list.files(path = dataPath)
 
 files2open = filelist[which(substr(filelist, 1, 26) == "Sales20052010LWRoutput2013")]
 
-pdf("analysis/02LWRComparisons/GCVplotsTimeLag06Months.pdf")
+pdf("analysis/02LWRComparisons/GCVplots.pdf")
 for (myFile in 1:length(files2open)) {
   load(paste0(dataPath, files2open[myFile], sep = ""))
   if (dim(output[[1]])[1] == 42095) gcvs = GCV(output$leverages[obs2run, ], output$yhats[obs2run, ], DATAFRAME$logSALE_VA[obs2run])
