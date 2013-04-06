@@ -1,0 +1,276 @@
+
+R version 2.15.2 (2012-10-26) -- "Trick or Treat"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # Run a Monte Carlo experiment to see whether coefficients really vary over space
+> 
+> require(foreign)
+Loading required package: foreign
+> require(multicore)
+Loading required package: multicore
+> require(fields, quietly = TRUE)
+Spam version 0.29-2 (2012-08-17) is loaded.
+Type 'help( Spam)' or 'demo( spam)' for a short introduction 
+and overview of this package.
+Help for individual functions is also obtained by adding the
+suffix '.spam' to the function name, e.g. 'help( chol.spam)'.
+
+Attaching package: ‘spam’
+
+The following object(s) are masked from ‘package:base’:
+
+    backsolve, forwardsolve
+
+> # the following command loads up some functions we'll use
+> source("helper/LWRfunctions.R")
+> 
+> myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "HOME_STYLE")
+> RHS = paste(myVars, collapse = "+")
+> MYMODEL = paste("logSALE_VA", RHS, sep = "~")
+> MYMODELsmall = MYMODEL
+> KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000)
+> 
+> # How many times am I going to reshuffle?
+> iterations = 5
+> # How many things am I keeping track of each reshuffle? 
+> # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
+> vars2keep = c("Intercept", myVars[-length(myVars)])
+> numMCstats = 2 + 2*length(vars2keep)
+> MCstats = matrix(NA, iterations, numMCstats)
+> colnames(MCstats) = c("minGCV", "optimalBandwidth", 
++                       paste0("meanBeta.", vars2keep),
++                       paste0("sterBeta.", vars2keep))
+> 
+> filePrefix = "../Data/R2GIS/CleanData/"
+> inputFile = "Sales20052010.dbf"
+> DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
+> simDATA = DATAFRAME
+> N = dim(simDATA)[1]
+> obs2run = which(simDATA$TimePeriod>11)
+> for (iter in 1:iterations) {
++   # Do a reshuffle
++   rowShuffle = sample(1:N)
++   simDATA[, c("Long_X", "Lat_Y")] = DATAFRAME[rowShuffle, c("Long_X", "Lat_Y")]
++   start = Sys.time()
++   
++   output.raw = mclapply(obs2run,
++                       LWRtimelag,
++                       Data.Frame = simDATA,
++                       my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
++                       kvector = KVECTOR,
++                       timelag = 12,
++                         mc.cores = 12
++   )
++   names(output.raw) = simDATA$UNIQID[obs2run]
++   output = Reorganizer(output.raw)
++   
++   gcvs = GCV(leverages = output$leverages, 
++              yhats = output$yhats, 
++              dep.var = simDATA[obs2run, "logSALE_VA"])
++   minGCVnumber = which.min(gcvs)
++   minGCV = gcvs[minGCVnumber]
++   optimalBandwidth = KVECTOR[minGCVnumber]
++   
++   MCstats[iter, "minGCV"] = minGCV
++   MCstats[iter, "optimalBandwidth"] = optimalBandwidth
++   for (i in 1:length(vars2keep)) {
++     MCstats[iter, i+2] = mean(output[[i]][, minGCVnumber])
++     MCstats[iter, i+2+length(vars2keep)] = sd(output[[i]][, minGCVnumber])
++   }
++   end = Sys.time()
++   print(paste("iteration ", iter, " took "))
++   print(end - start)
++   write.csv(MCstats, file = paste0(filePrefix, "LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
++ }
+[1] 1000
+[1] 3000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 14000
+[1] 16000
+[1] 17000
+[1] 19000
+[1] 21000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 27000
+[1] 28000
+[1] 29000
+[1] 30000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 34000
+[1] 35000
+[1] 36000
+[1] 37000
+[1] 38000
+[1] 39000
+[1] 40000
+[1] 41000
+[1] 42000
+[1] "iteration  1  took "
+Time difference of 1.233193 hours
+[1] 1000
+[1] 3000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 14000
+[1] 16000
+[1] 17000
+[1] 19000
+[1] 21000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 28000
+[1] 29000
+[1] 27000
+[1] 31000
+[1] 32000
+[1] 30000
+[1] 34000
+[1] 35000
+[1] 33000
+[1] 37000
+[1] 38000
+[1] 36000
+[1] 40000
+[1] 41000
+[1] 39000
+[1] 42000
+[1] "iteration  2  took "
+Time difference of 1.233516 hours
+[1] 1000
+[1] 3000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 14000
+[1] 17000
+[1] 16000
+[1] 19000
+[1] 21000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 27000
+[1] 28000
+[1] 29000
+[1] 30000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 34000
+[1] 35000
+[1] 36000
+[1] 37000
+[1] 38000
+[1] 39000
+[1] 40000
+[1] 41000
+[1] 42000
+[1] "iteration  3  took "
+Time difference of 1.185675 hours
+[1] 1000
+[1] 3000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 14000
+[1] 16000
+[1] 17000
+[1] 19000
+[1] 21000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 27000
+[1] 28000
+[1] 29000
+[1] 30000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 34000
+[1] 35000
+[1] 36000
+[1] 37000
+[1] 38000
+[1] 39000
+[1] 40000
+[1] 41000
+[1] 42000
+[1] "iteration  4  took "
+Time difference of 1.320838 hours
+[1] 1000
+[1] 3000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 14000
+[1] 16000
+[1] 17000
+[1] 19000
+[1] 21000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 27000
+[1] 28000
+[1] 29000
+[1] 30000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 34000
+[1] 35000
+[1] 36000
+[1] 37000
+[1] 38000
+[1] 39000
+[1] 40000
+[1] 41000
+[1] 42000
+[1] "iteration  5  took "
+Time difference of 1.273672 hours
+> 
+> proc.time()
+      user     system    elapsed 
+247248.039   1058.586  22497.610 

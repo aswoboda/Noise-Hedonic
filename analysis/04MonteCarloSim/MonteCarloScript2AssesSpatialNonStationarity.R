@@ -13,7 +13,7 @@ MYMODELsmall = MYMODEL
 KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000)
 
 # How many times am I going to reshuffle?
-iterations = 5
+iterations = 20
 # How many things am I keeping track of each reshuffle? 
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
 vars2keep = c("Intercept", myVars[-length(myVars)])
@@ -41,7 +41,7 @@ for (iter in 1:iterations) {
                       my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
                       kvector = KVECTOR,
                       timelag = 12,
-                        mc.cores = 12
+                        mc.cores = 16
   )
   names(output.raw) = simDATA$UNIQID[obs2run]
   output = Reorganizer(output.raw)
@@ -63,4 +63,7 @@ for (iter in 1:iterations) {
   print(paste("iteration ", iter, " took "))
   print(end - start)
   write.csv(MCstats, file = paste0(filePrefix, "LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
+  rm(output, output.raw)
+  gc()
+  print(gc())
 }
