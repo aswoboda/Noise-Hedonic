@@ -6,14 +6,15 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "HOME_STYLE")
+myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_INCOME", "MCA3",
+           "LAKE_dist", "PARK_dist", "SHOP_dist", "CBD_dist", "HOME_STYLE")
 RHS = paste(myVars, collapse = "+")
 MYMODEL = paste("logSALE_VA", RHS, sep = "~")
 MYMODELsmall = MYMODEL
-KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000)
+KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000, 10000)
 
 # How many times am I going to reshuffle?
-iterations = 20
+iterations = 5
 # How many things am I keeping track of each reshuffle? 
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
 vars2keep = c("Intercept", myVars[-length(myVars)])
@@ -28,7 +29,7 @@ inputFile = "Sales20052010.dbf"
 DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
 simDATA = DATAFRAME
 N = dim(simDATA)[1]
-obs2run = which(simDATA$TimePeriod>11)
+obs2run = which(simDATA$TimePeriod>11)[1000]
 for (iter in 1:iterations) {
   # Do a reshuffle
   rowShuffle = sample(1:N)
