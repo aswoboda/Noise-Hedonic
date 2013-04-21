@@ -1,8 +1,8 @@
 
-dataPath = "~/Noise Hedonic Project/Data/R2GIS/CleanData/"
+dataPath = "~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigNoCity/bandwidth200/"
 setwd(dataPath)
 allFiles = list.files()
-MCstatFiles = allFiles[substr(allFiles, 1, 4) == "LWRM"]
+MCstatFiles = allFiles[substr(allFiles, 1, 25) == "LWRMonteCarloStats2013-04"]
 
 MCstat = read.csv(MCstatFiles[1])
 MCstat = MCstat[!is.na(MCstat[, 1]), ]
@@ -18,7 +18,7 @@ for (i in 2:length(MCstatFiles)) {
 
 MCstat = MCstat[order(MCstat$minGCV), ]
 
-write.csv(MCstat, "LWRMonteCarloStatsMaster.csv", row.names = F)
+write.csv(MCstat, "LWRMonteCarloStatsMasterBigModelK200.csv", row.names = F)
 
 for (i in 1:length(MCstatFiles)) {
   MCstat = read.csv(MCstatFiles[i])
