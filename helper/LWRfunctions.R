@@ -331,7 +331,7 @@ LWRtimelag = function(my.observation,
     temp.ses <- data.frame(t(summary(lmreg)$coefficients[, 2]))   # keep track the coefficient st errors
     ses = merge(ses, temp.ses, all = T, sort = F)
     temp.est.dep.var[j] <- lmreg$fitted.values[as.character(my.observation)] # keep track of the predicted value of y
-    temp.leverage[j] <- lm.influence(lmreg)$hat[as.character(my.observation)] # the leverage value
+    temp.leverage[j] <- lm.influence(lmreg, do.coef = FALSE)$hat[as.character(my.observation)] # the leverage value
     
     #Now we are going to exclude the observation itself.
     Data.Frame[as.character(my.observation), "Weights"] = 0
