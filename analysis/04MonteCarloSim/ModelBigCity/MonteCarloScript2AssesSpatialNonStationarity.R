@@ -11,10 +11,10 @@ myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_INCOME
 RHS = paste(myVars, collapse = "+")
 MYMODEL = paste("logSALE_VA", RHS, sep = "~")
 MYMODELsmall = substr(MYMODEL, 1, nchar(MYMODEL)-5)
-KVECTOR = c(50, 100, 175, 200, 225, 250, 300, 400, 600, 1000, 2000, 4000, 10000)
+KVECTOR = c(200)
 
 # How many times am I going to reshuffle?
-iterations = 2
+iterations = 100
 # How many things am I keeping track of each reshuffle? 
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
 vars2keep = c("Intercept", myVars[c(1:(length(myVars)-2))])
@@ -63,7 +63,7 @@ for (iter in 1:iterations) {
   end = print(Sys.time())
   print(paste("iteration ", iter, " took "))
   print(end - start)
-  write.csv(MCstats, file = paste0("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
+  write.csv(MCstats, file = paste0("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/bandwidth200/LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
   rm(output, output.raw)
   gc()
   print(gc())
