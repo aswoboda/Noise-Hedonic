@@ -263,11 +263,11 @@ LWRtimelag = function(my.observation,
                       timelag = 12) {
   
   # These four lines let you work within the function rather than having to run the function (helpful for debugging)
-  #           Data.Frame = DATAFRAME
-  #           my.model = MYMODEL; my.modelSMALL = MYMODELsmall
-  #           kvector = KVECTOR
+#             Data.Frame = DATAFRAME
+#             my.model = MYMODEL; my.modelSMALL = MYMODELsmall
+#             kvector = KVECTOR
   #           my.observation = 6
-  if(my.observation%%1000 == 0) print(my.observation)
+  if(as.numeric(my.observation)%%1000 == 0) print(my.observation)
   # grab some dimensions for creating our containers
   sample.size = dim(Data.Frame)[1]
   numK <- length(kvector)
