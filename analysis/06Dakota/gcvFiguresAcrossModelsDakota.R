@@ -18,14 +18,11 @@ obs2run = which(DATAFRAME$COUNTY_ID == "037" & DATAFRAME$BATH>.8 & DATAFRAME$Tim
 #dataPath = "../Data/R2GIS/CleanData/"
 filelist = list.files()
 files2open = filelist[which(substr(filelist, 1, 6) == "Dakota")]
-
+# mymat = c()
 pdf("GCVplotsAll.pdf")
 for (myFile in 1:length(files2open)) {
   load(files2open[myFile])
-  if (dim(output[[1]])[1] == 31748) gcvs = GCV(output$leverages[obs2run, ], output$yhats[obs2run, ], DATAFRAME$logSALE_VA[obs2run])
   if (dim(output[[1]])[1] == 9140) gcvs = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
-#   print(files2open[myFile])
-#   print(min(gcvs))
   ks = as.numeric(substr(colnames(output[[1]]), 2, 5))
   plot(ks, gcvs, type = "l", main = "")
   title(MYMODEL, cex.main = .5)
@@ -37,5 +34,11 @@ for (myFile in 1:length(files2open)) {
   title(paste("global model gcv:", round(globalGCV, 3)), line = -2)
   title(paste("min gcv:", round(min(gcvs), 5)), line = -3)
   title(paste("at bandwidth:", names(gcvs)[which.min(gcvs)]), line = -4)
+  #mymat = cbind(mymat, gcvs)
 }
 dev.off()
+
+
+# mymat = cbind(as.numeric(substr(rownames(mymat), 2, 6)), mymat)
+# matplot(mymat)
+# matplot(mymat[, 1], mymat[, -1], type = "o")
