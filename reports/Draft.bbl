@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -64,6 +64,13 @@ Jon~P Nelson.
   and Road Traffic}.
 \newblock \emph{Hedonic Methods in Housing Markets Economics}, \penalty0
   (October 2007), 2008.
+
+\bibitem[Rosen(1974)]{Rosen1974}
+Sherwin Rosen.
+\newblock {Hedonic Prices and Implicit Markets : Product Differentiation in
+  Pure Competition}.
+\newblock \emph{Journal of Political Economy}, 82\penalty0 (1):\penalty0
+  34--55, 1974.
 
 \bibitem[Sander and Polasky(2009)]{Sander2009b}
 Heather~a. Sander and Stephen Polasky.

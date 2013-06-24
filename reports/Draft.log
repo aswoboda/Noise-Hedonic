@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2013.6.18)  24 JUN 2013 08:32
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2012.8.24)  24 JUN 2013 13:11
 entering extended mode
 **Draft.tex
 (./Draft.tex
@@ -204,25 +204,25 @@ LaTeX Info: Redefining \] on input line 2667.
 ) (./Draft.aux)
 \openout1 = `Draft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
 
 (/usr/share/texmf/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    ... okay on input line 62.
 
 (/usr/share/texmf/tex/context/base/supp-pdf.tex
 (/usr/share/texmf/tex/context/base/supp-mis.tex
@@ -269,51 +269,53 @@ Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
 
 Package natbib Warning: Citation `Batemen2001' on page 1 undefined on input lin
-e 80.
+e 81.
 
 [1
 
 {/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 Package natbib Warning: Citation `Theebe2004' on page 2 undefined on input line
- 86.
+ 103.
 
+[2]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-[2]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ˜ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
+ [3]
+
+Package natbib Warning: Citation `Cho' on page 4 undefined on input line 119.
+
+
+Package natbib Warning: Citation `HughsSirmans' on page 4 undefined on input li
+ne 127.
+
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
- [3] [4]
-Overfull \hbox (3.05615pt too wide) in paragraph at lines 126--127
-\OT1/cmr/m/n/10 Consistent with past re-search, this study im-ple-ments a stan-
-dard semi-logarithmic
- []
+[4] [5] [6] [7] [8]
 
-[5] [6] [7]
-
-Package natbib Warning: Citation `Fotheringham2002' on page 8 undefined on inpu
-t line 178.
+Package natbib Warning: Citation `Fotheringham2002' on page 9 undefined on inpu
+t line 202.
 
 
-Package natbib Warning: Citation `Fotheringham2002' on page 8 undefined on inpu
-t line 188.
+Package natbib Warning: Citation `Fotheringham2002' on page 9 undefined on inpu
+t line 212.
 
-[8] <CopyOfMCsimResultsSDs.pdf, id=70, 578.16pt x 433.62pt>
+[9] <CopyOfMCsimResultsSDs.pdf, id=70, 578.16pt x 433.62pt>
 File: CopyOfMCsimResultsSDs.pdf Graphic file (type pdf)
 
 <use CopyOfMCsimResultsSDs.pdf>
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- (./Draft.bbl [9 <./CopyOfMCsimResultsSDs.pdf>]
+ (./Draft.bbl
 Underfull \hbox (badness 1533) in paragraph at lines 10--18
 []\OT1/cmr/m/n/10 Henrik An-der-s-son, Lina Jon-s-son, and Mikael []Ogren.  Pro
 p-erty Prices
@@ -325,7 +327,7 @@ Underfull \hbox (badness 1424) in paragraph at lines 10--18
 
  []
 
-
+[10 <./CopyOfMCsimResultsSDs.pdf>]
 Underfull \hbox (badness 1616) in paragraph at lines 27--35
 \OT1/cmr/m/n/10 i-cally weighted re-gres-sion: mod-elling spa-tial non-stationa
 rity.  \OT1/cmr/m/it/10 Jour-
@@ -338,19 +340,19 @@ Underfull \hbox (badness 1472) in paragraph at lines 27--35
  []
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 69--78
+Underfull \hbox (badness 3219) in paragraph at lines 76--85
 []\OT1/cmr/m/n/10 Heather a. Sander and Stephen Po-lasky.  The value of views a
 nd
  []
 
 
-Underfull \hbox (badness 3118) in paragraph at lines 69--78
+Underfull \hbox (badness 3118) in paragraph at lines 76--85
 \OT1/cmr/m/n/10 open space: Es-ti-mates from a he-do-nic pric-ing model for Ram
 -sey
  []
 
 
-Underfull \hbox (badness 3826) in paragraph at lines 69--78
+Underfull \hbox (badness 3826) in paragraph at lines 76--85
 \OT1/cmr/m/n/10 County, Min-nesota, USA.  \OT1/cmr/m/it/10 Land Use Pol-icy\OT1
 /cmr/m/n/10 , 26(3):837--845, July
  []
@@ -359,12 +361,12 @@ Underfull \hbox (badness 3826) in paragraph at lines 69--78
 
 Package natbib Warning: There were undefined citations.
 
-[10] (./Draft.aux) ) 
+[11] (./Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 2340 strings out of 94500
- 29094 string characters out of 1176766
- 80864 words of memory out of 1000000
- 5501 multiletter control sequences out of 10000+50000
+ 2343 strings out of 94500
+ 29124 string characters out of 1176766
+ 80888 words of memory out of 1000000
+ 5504 multiletter control sequences out of 10000+50000
  10491 words of font info for 38 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
  27i,8n,23p,1666b,231s stack positions out of 1500i,500n,5000p,200000b,5000s
@@ -381,6 +383,6 @@ f/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi
 7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fon
 ts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.p
 fb> </var/lib/texmf/pk/ljfour/jknappen/tc/tcrm1000.600pk></usr/share/texmf/font
-s/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pf
-b></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on Draft.pdf (10 pages, 158646 bytes).
+s/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pf
+b>
+Output written on Draft.pdf (11 pages, 158349 bytes).
