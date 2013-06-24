@@ -1,0 +1,85 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Andersson et~al.(2010)Andersson, Jonsson, and
+  \"{O}gren]{Andersson2010}
+Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
+\newblock {Property Prices and Exposure to Multiple Noise Sources: Hedonic
+  Regression with Road and Railway Noise}.
+\newblock \emph{Environmental and Resource Economics}, 45\penalty0
+  (1):\penalty0 73--89, 2010.
+\newblock ISSN 09246460.
+\newblock \doi{10.1007/s10640-009-9306-4}.
+\newblock URL \url{http://dx.doi.org/10.1007/s10640-009-9306-4}.
+
+\bibitem[Bateman et~al.(2001)Bateman, Day, and Lake]{Bateman2001}
+Ian Bateman, Brett Day, and Iain Lake.
+\newblock {The Effect of Road Traffic on Residential Property Values : A
+  Literature Review and Hedonic Pricing Study}.
+\newblock Technical Report January, 2001.
+
+\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, and
+  Charlton]{Brunsdon1998b}
+Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
+\newblock {Geographically weighted regression: modelling spatial
+  non-stationarity}.
+\newblock \emph{Journal of the Royal Statistical Society Series D The
+  Statistician}, 47\penalty0 (3):\penalty0 431--443, 1998.
+\newblock ISSN 00390526.
+\newblock \doi{10.1111/1467-9884.00145}.
+\newblock URL \url{http://www.jstor.org/stable/2988625}.
+
+\bibitem[Casetti(1974)]{Casetti1974}
+Emilio Casetti.
+\newblock {Generating Models by the Expansion Method: Applications to
+  Geographical Research}.
+\newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1974.
+
+\bibitem[{Marmolejo Duarte} and {Gonzalez
+  Tamez}(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
+Carlos {Marmolejo Duarte} and Carlos {Gonzalez Tamez}.
+\newblock {Does Noise Have a Stationary Impact on Residential Values?}
+\newblock \emph{Journal of European Real Estate Research}, 2\penalty0
+  (3):\penalty0 259--279, 2009.
+
+\bibitem[Navrud(2002)]{Navrud2002}
+Stale Navrud.
+\newblock {The State-Of-The-Art on Economic Valuation of Noise: Final Report to
+  European Commission DG Environment}.
+\newblock Technical report, 2002.
+
+\bibitem[Nelson(1982)]{Nelson1982}
+Jon~P Nelson.
+\newblock {Highway Noise and Property Values: A Survey of Recent Evidence}.
+\newblock \emph{Journal of Transport Economics and Policy}, 16\penalty0
+  (2):\penalty0 117--138, 1982.
+
+\bibitem[Nelson(2008)]{Nelson2008}
+Jon~P Nelson.
+\newblock {Hedonic Property Value Studies of Transportation Noise : Aircraft
+  and Road Traffic}.
+\newblock \emph{Hedonic Methods in Housing Markets Economics}, \penalty0
+  (October 2007), 2008.
+
+\bibitem[Sander and Polasky(2009)]{Sander2009b}
+Heather~a. Sander and Stephen Polasky.
+\newblock {The value of views and open space: Estimates from a hedonic pricing
+  model for Ramsey County, Minnesota, USA}.
+\newblock \emph{Land Use Policy}, 26\penalty0 (3):\penalty0 837--845, July
+  2009.
+\newblock ISSN 02648377.
+\newblock \doi{10.1016/j.landusepol.2008.10.009}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0264837708001324}.
+
+\bibitem[Wilhelmsson(2000)]{Wilhelmsson2000}
+Mats Wilhelmsson.
+\newblock {The Impact of Traffic Noise on the Values of Single-Family Houses}.
+\newblock \emph{Journal of Environmental Planning and Management}, 43\penalty0
+  (6):\penalty0 799--815, 2000.
+
+\end{thebibliography}

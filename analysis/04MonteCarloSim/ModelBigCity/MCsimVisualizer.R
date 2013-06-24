@@ -20,9 +20,10 @@ MCplotter = function(outputcoefficient, statcoefficient, meanORsd = "mean") {
   temp = density(MCMaster200[, statcoefficient])
   plot(temp, 
        xlim = c(min(c(range(temp$x), actual), na.rm = T), max(c(range(temp$x), actual), na.rm = T)),
-       main = paste(meanORsd, outputcoefficient),
-       axes = F, ylab = "relative frequency", xlab = "")
+       main = paste(meanORsd, sub("beta.", "", outputcoefficient)),
+       axes = F, ylab = "", xlab = "")
   axis(1)
+  mtext("relative frequency", 2, 1, cex = .7)
   abline(v = actual, col = "red")
 }
 
@@ -33,6 +34,14 @@ meanORsds = rep(c("mean", "sd"), c(12, 12))
 pdf("MCsimResults.pdf", height = 6, width = 24)
 par(mfrow = c(2, 12))
 for (i in 1:length(outputCOEFS)) {
+  MCplotter(outputCOEFS[i], statCOEFS[i], meanORsds[i])
+  title(MYMODEL, line = 1, outer = T)
+}
+dev.off()
+
+pdf("MCsimResultsSDs.pdf", height = 6, width = 8)
+par(mfrow = c(3, 4))
+for (i in 13:24) {
   MCplotter(outputCOEFS[i], statCOEFS[i], meanORsds[i])
   title(MYMODEL, line = 1, outer = T)
 }
