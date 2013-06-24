@@ -57,7 +57,7 @@ The following object(s) are masked from ‘package:base’:
 > TIMELAGS = c(6, 12, 24)
 > inputVARS = expand.grid(models = MYMODELS, lags = TIMELAGS)
 > 
-> for (combo in 1:dim(inputVARS)[1]) { #
+> for (combo in 6:7) { #
 +   MYMODEL = as.character(inputVARS$models[combo])
 +   TIMELAG = inputVARS$lags[combo]
 +   obs2run = which(DATAFRAME$TimePeriod>(TIMELAG-1))
@@ -82,7 +82,6 @@ The following object(s) are masked from ‘package:base’:
 +   print(gc())
 + }
 [1] 1000
-[1] 2000
 [1] 3000
 [1] 5000
 [1] 6000
@@ -90,19 +89,15 @@ The following object(s) are masked from ‘package:base’:
 [1] 9000
 [1] 10000
 [1] 11000
-[1] 12000
 [1] 14000
-[1] 15000
 [1] 16000
 [1] 17000
-[1] 18000
 [1] 19000
 [1] 21000
-[1] 20000
-[1] 22000
 [1] 24000
 [1] 25000
 [1] 27000
+[1] 22000
 [1] 28000
 [1] 29000
 [1] 30000
@@ -118,89 +113,16 @@ The following object(s) are masked from ‘package:base’:
 [1] 40000
 [1] 41000
 [1] 42000
-Time difference of 51.63064 mins
+Time difference of 2.060779 hours
            used  (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   414881  22.2   17034044  909.8  26615696 1421.5
-Vcells 18608538 142.0  177051759 1350.8 276151925 2106.9
+Ncells   414876  22.2   38696491 2066.7  75579086 4036.4
+Vcells 68936996 526.0  423433159 3230.6 826908109 6308.9
 [1] 1000
-[1] 2000
-[1] 3000
-[1] 5000
-[1] 6000
-[1] 7000
 [1] 9000
 [1] 10000
-[1] 11000
-[1] 12000
 [1] 14000
-[1] 15000
-[1] 16000
-[1] 17000
-[1] 18000
 [1] 19000
-[1] 20000
-[1] 21000
-[1] 22000
-[1] 25000
-[1] 24000
-[1] 27000
-[1] 28000
-[1] 29000
-[1] 30000
-[1] 31000
-[1] 32000
-[1] 33000
-[1] 34000
-[1] 35000
-[1] 36000
-[1] 37000
-[1] 38000
-[1] 39000
-[1] 40000
-[1] 41000
-[1] 42000
-Time difference of 1.058533 hours
-           used  (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   415011  22.2   22086514 1179.6  34510179 1843.1
-Vcells 18608699 142.0  225355683 1719.4 351956647 2685.3
-[1] 1000
-[1] 2000
-[1] 3000
-[1] 5000
-[1] 6000
-[1] 7000
-[1] 9000
-[1] 10000
-[1] 11000
-[1] 12000
-[1] 14000
-[1] 15000
-[1] 16000
-[1] 17000
-[1] 18000
-[1] 19000
-[1] 21000
-[1] 20000
-[1] 22000
-[1] 24000
-[1] 25000
-[1] 27000
-[1] 28000
-[1] 29000
-[1] 30000
-[1] 31000
-[1] 32000
-[1] 33000
-[1] 34000
-[1] 35000
-[1] 36000
-[1] 37000
-[1] 38000
-[1] 39000
-[1] 40000
-[1] 41000
-[1] 42000
-Time difference of 1.908666 hours
-           used  (Mb) gc trigger   (Mb)  max used   (Mb)
-Ncells   415011  22.2   57617915 3077.2  90027993 4808.1
-Vcells 68940347 526.0  616981385 4707.2 963951406 7354.4
+Time difference of 16.47344 mins
+Error in names(output.raw) = DATAFRAME$UNIQID[obs2run] : 
+  'names' attribute [22707] must be the same length as the vector [21285]
+Execution halted

@@ -22,7 +22,7 @@ N =  dim(DATAFRAME)[1]
 TIMELAGS = c(6, 12, 24)
 inputVARS = expand.grid(models = MYMODELS, lags = TIMELAGS)
 
-for (combo in 1:dim(inputVARS)[1]) { #
+for (combo in 6:7) { #
   MYMODEL = as.character(inputVARS$models[combo])
   TIMELAG = inputVARS$lags[combo]
   obs2run = which(DATAFRAME$TimePeriod>(TIMELAG-1))
