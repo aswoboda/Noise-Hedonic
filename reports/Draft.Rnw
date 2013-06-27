@@ -61,12 +61,37 @@ We estimate regression coefficients over time using a moving window of 12 months
 Our work makes three contributions to the field. First, we utilize new estimates of traffic noise that has never before been used in the hedonic literature. The data explicitly model noise propagation as a function of nearby buildings and landcover, as well as present the results at a fine spatial resolution (10m x 10m). Such estimates, combined with sptially explicit modeling techniques allow us to make our second contribution to the literature. We present one of the first estimates of how the impact of traffic noiseeee varies over space. We find that while the impact of other important control variables in the hedonic function vary over space, the impact of traffic noise does not. Lastly, we present the first estimates of how the Great Recession has affected the hedonic price of traffic noise.
 
 \section{Data}
-The 2010 US Census lists the population of the Minneapolis and St. Paul Metropolitan area in Minnesota as almost 3 million residents spread over seven counties. This study examines single family residential home transactions in the Census-defined urban areas of three of the seven counties – Dakota, Ramsey and Washington County (see Figure 1). We obtained data from approximately forty thousand sales transactions between 2005 and 2010 (n=42,095) from the 2010 MetroGIS Regional Parcel Dataset published by the Metropolitan Council. In addition to the geographic location and date of the house sale, we collected structural and locational variables commonly used in the hedonic literature. 
+The 2010 US Census lists the population of the Minneapolis and St. Paul Metropolitan area in Minnesota as almost 3 million residents spread over seven counties. This study examines single family residential home transactions in the Census-defined urban areas of three of the seven counties – Dakota, Ramsey and Washington County (see Figure 1). We obtained data from approximately forty thousand sales transactions between 2005 and 2010 (n=42,095) from the 2010 MetroGIS Regional Parcel Dataset published by the Metropolitan Council. In addition to the geographic location and date of the house sale, we collected structural and locational variables commonly used in the hedonic literature. Table \ref{tab:sumStats} provides a brief description of the variables and some basic summary statistics. Figure \ref{fig:overview} shows an overview of the study area as well as the spatial distribution of the house sales prices. Table \ref{tab:cor} shows a simple correlation matrix of the quantitative variables.
 
 \begin{figure}
 \includegraphics[width = \textwidth]{../graphs/StudyArea_SaleValueDistribution}
-\caption{This figure shows the spatial extent of our study area as well as the significant spatial variation in single family house sales prices.}
+\caption{This figure shows the spatial extent of our study area as well as the significant spatial variation in single family house sales prices.}\label{fig:overview}
 \end{figure}
+
+\begin{table}[htb]
+\caption{Variable Description and Summary Statistics}\label{tab:sumStats}
+\makebox[\linewidth][c]{
+\small
+\begin{tabular}{lrrrrrrr}
+  
+ & min & 25\% & 50\% & mean & 75\% & max & $\sigma$ \\ 
+  \hline
+  Sale Price (thousands \$) & 98.8 & 195.0 & 241.0 & 265.5 & 314.9 & 675.0 & 102.8 \\ 
+  House Size (thousands square feet) & 390 & 1158 & 1628 & 1750 & 2188 & 4000 & 704 \\ 
+  Lot Size (acres) & 0.02 & 0.17 & 0.25 & 0.25 & 0.31 & 0.60 & 0.11 \\ 
+  Owner Occupancy Dummy & 0.0 & 1.0 & 1.0 & 0.8 & 1.0 & 1.0 & 0.4 \\ 
+  Year House was Built & 1850 & 1950 & 1973 & 1967 & 1993 & 2010 & 32 \\ 
+  Traffic Noise (dB) & 25.1 & 50.5 & 55.3 & 56.4 & 62.2 & 91.5 & 8.8 \\ 
+  Median Income in Census Tract (thousands \$) & 13.9 & 54.6 & 69.1 & 72.6 & 89.7 & 143.3 & 23.6 \\ 
+  Elementary Test Scores & 335.6 & 359.8 & 365.4 & 364.5 & 370.4 & 551.7 & 10.6 \\ 
+  Distance to Central Business District (km) & 1.1 & 6.8 & 13.2 & 14.7 & 21.8 & 37.1 & 8.9 \\ 
+  Distance to nearest Park (km) & 0.0 & 1.1 & 2.2 & 2.6 & 3.8 & 9.7 & 1.9 \\ 
+  Distance to nearest Lake (km) & 0.0 & 0.4 & 0.8 & 0.9 & 1.3 & 4.4 & 0.7 \\ 
+  Distance to nearest Shopping Center (km) & 0.0 & 0.9 & 1.5 & 1.9 & 2.3 & 10.8 & 1.6 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
 
 \begin{table}
 \caption{Simple Correlation Matrix of Quantitative Variables}\label{tab:cor}
@@ -152,7 +177,7 @@ Regression output from a LWR model is voluminous in comparison to a standard reg
 % latex table generated in R 2.15.2 by xtable 1.7-0 package
 % Mon Jun 24 16:36:58 2013
 
-\begin{table}[ht]
+\begin{table}[bp]
 \caption{Hedonic Regression Results (dependent variable = $ln(\textrm{Sale Price})$)} \label{tab:mainresults} 
 \makebox[\linewidth]{
 \small
