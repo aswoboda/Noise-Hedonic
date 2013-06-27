@@ -4,11 +4,11 @@
 # Grab the MAX coefficients for the optimal bandwith in the given model output
 # plot the Max coefficients for the three paired specifications (with beds/baths/garagesqft vs. without)
 
-setwd("~/NoiseHedonicProject/Noise-Hedonic/analysis/06Dakota/") #assume I'm in the project default working directory "Noise Hedonic Project"
+setwd("~/Noise Hedonic Project/Noise-Hedonic/analysis/06Dakota/") #assume I'm in the project default working directory "Noise Hedonic Project"
 require(foreign)
 source("../../helper/LWRfunctions.R")
 
-DATAFRAME = read.dbf("~/NoiseHedonicProject/Data/R2GIS/CleanData/Sales20052010.dbf")
+DATAFRAME = read.dbf("~/Noise Hedonic Project/Data/R2GIS/CleanData/Sales20052010.dbf")
 obs2run = which(DATAFRAME$COUNTY_ID == "037" & DATAFRAME$BATH>.8 & DATAFRAME$TimePeriod>11)
 
 #dataPath = "../Data/R2GIS/CleanData/"
@@ -45,10 +45,7 @@ abline(0, 1, col = "blue")
 abline(lm.structural, col = "red")
 mtext("without", side = 2, line = 3.5)
 mtext("with Beds, Baths, Garage", side = 1, line = 2.5)
-#summary(lm.structural)
-addtable2plot(0, min(MAXcoeffs), signif(summary(lm.structural)$coefficients, 2), 
-              display.rownames = TRUE, hlines = FALSE, vlines = FALSE)
-text(2, 10, paste("R^2 = ", round(summary(lm.sink)$r.squared, 2)))
+summary(lm.structural)
 
 lm.medium = lm(V4 ~ V3, data = MAXcoeffs.d)
 plot(MAXcoeffs.d$V3, MAXcoeffs.d$V4, cex = .2, 
@@ -60,7 +57,7 @@ abline(0, 1, col = "blue")
 abline(lm.medium, col = "red")
 mtext("without", side = 2, line = 3.5)
 mtext("with Beds, Baths, Garage", side = 1, line = 2.5)
-#summary(lm.medium)
+summary(lm.medium)
 
 lm.sink = lm(V5 ~ V6, data = MAXcoeffs.d)
 plot(MAXcoeffs.d$V6, MAXcoeffs.d$V5, cex = .2, 
@@ -72,4 +69,31 @@ abline(0, 1, col = "blue")
 abline(lm.sink, col = "red")
 mtext("without", side = 2, line = 3.5)
 mtext("with Beds, Baths, Garage", side = 1, line = 2.5)
-#summary(lm.sink)
+summary(lm.sink)
+
+
+means = colMeans(MAXcoeffs)
+sds = apply(MAXcoeffs, 2, sd)
+
+comp.tab = matrix(NA, 6, 2)
+
+comp.tab[1, ] = means[1:2]
+comp.tab[3, ] = means[3:4]
+comp.tab[5, ] = means[5:6]
+
+comp.tab[2, ] = sds[1:2]
+comp.tab[4, ] = sds[3:4]
+comp.tab[6, ] = sds[5:6]
+
+comp.tab = round(comp.tab, 5)
+comp.tab[c(2, 4, 6), ] = paste0("(", comp.tab[c(2, 4, 6), ], ")")
+
+require(xtable)
+xtable(comp.tab)
+
+t.test(MAXcoeffs[, 1:2])
+t.test(MAXcoeffs[, 1:2], paired = T)
+t.test(MAXcoeffs[, 3:4])
+t.test(MAXcoeffs[, 3:4], paired = T)
+t.test(MAXcoeffs[, 5:6])
+t.test(MAXcoeffs[, 5:6], paired = T)

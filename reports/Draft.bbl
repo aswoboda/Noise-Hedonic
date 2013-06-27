@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -16,16 +16,22 @@ Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
 \newblock \doi{10.1007/s10640-009-9306-4}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10640-009-9306-4}.
 
-\bibitem[Bateman et~al.(2001)Bateman, Day, and Lake]{Bateman2001}
-Ian Bateman, Brett Day, and Iain Lake.
+\bibitem[Bateman et~al.(2001)Bateman, Day, Lake, and Lovett]{Bateman2001}
+Ian Bateman, Brett Day, Iain Lake, and Andrew Lovett.
 \newblock {The Effect of Road Traffic on Residential Property Values : A
   Literature Review and Hedonic Pricing Study}.
 \newblock Technical Report January, 2001.
 
-\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, and
-  Charlton]{Brunsdon1998b}
-Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
-\newblock {Geographically weighted regression: modelling spatial
+\bibitem[Blanco and Flindell(2011)]{Blanco2011}
+J~C Blanco and I~H Flindell.
+\newblock {Property prices in urban areas affected by road traffic noise}.
+\newblock \emph{Applied Acoustics}, 72\penalty0 (4):\penalty0 133--141, 2011.
+\newblock URL \url{http://eprints.soton.ac.uk/191013/}.
+
+\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, Charlton, and
+  Brunsdont]{Brunsdon1998b}
+Chris Brunsdon, Stewart Fotheringham, Martin Charlton, and Chris Brunsdont.
+\newblock {Geographically weighted regression-modelling spatial
   non-stationarity}.
 \newblock \emph{Journal of the Royal Statistical Society Series D The
   Statistician}, 47\penalty0 (3):\penalty0 431--443, 1998.
@@ -39,18 +45,83 @@ Emilio Casetti.
   Geographical Research}.
 \newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1974.
 
-\bibitem[{Marmolejo Duarte} and {Gonzalez
-  Tamez}(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
-Carlos {Marmolejo Duarte} and Carlos {Gonzalez Tamez}.
+\bibitem[Cho et~al.(2011)Cho, Kim, and Roberts]{Cho2011b}
+Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
+\newblock {Values of environmental landscape amenities during the 2000–2006
+  real estate boom and subsequent 2008 recession}.
+\newblock \emph{Journal of Environmental Planning and Management}, 54\penalty0
+  (1):\penalty0 71--91, January 2011.
+\newblock ISSN 0964-0568.
+\newblock \doi{10.1080/09640568.2010.502760}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
+
+\bibitem[Cohen and Coughlin(2009)]{Cohen2009}
+Jeffrey~P Cohen and Cletus~C Coughlin.
+\newblock {Changing Noise Levels and Housing Prices Near the Atlanta Airport}.
+\newblock \emph{Growth and Change}, 40\penalty0 (2):\penalty0 287--313, 2009.
+
+\bibitem[Day et~al.(2007)Day, Bateman, and Lake]{Day2007}
+B~Day, I~Bateman, and I~Lake.
+\newblock {Beyond implicit prices: recovering theoretically consistent and
+  transferable values for noise avoidance from a hedonic property price model}.
+\newblock \emph{Environmental and Resource Economics}, 37\penalty0
+  (1):\penalty0 211--232, 2007.
+
+\bibitem[Day(2003)]{Day2003}
+Brett Day.
+\newblock {Submarket Identification in Property Markets: A Hedonic Housing
+  Price Model for Glasgow}.
+\newblock 2003.
+
+\bibitem[Duarte and Tamez(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
+Carlos~Marmolejo Duarte and Carlos~Gonzalez Tamez.
 \newblock {Does Noise Have a Stationary Impact on Residential Values?}
 \newblock \emph{Journal of European Real Estate Research}, 2\penalty0
   (3):\penalty0 259--279, 2009.
+
+\bibitem[Fotheringham et~al.(2002)Fotheringham, Brunsdon, and
+  Charlton]{Fotheringham2002}
+A.~Stewart Fotheringham, Chris Brunsdon, and Martin Charlton.
+\newblock \emph{{Geographically Weighted Regression: the analysis of spatially
+  varying relationships}}.
+\newblock John Wiley \& Sons, West Sussex, England, 2002.
+
+\bibitem[Huang and Palmquist(2001)]{Huang;Palmquist2001}
+Ju-Chin Huang and Raymond~B Palmquist.
+\newblock {Environmental Conditions, Reservation Prices, and Time on the Market
+  for Housing}.
+\newblock \emph{Journal of Real Estate Finance and Economics}, 22\penalty0
+  (2-3):\penalty0 203--219, 2001.
+
+\bibitem[Kim et~al.(2007)Kim, Park, and Kweon]{Kim2007}
+Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
+\newblock {Highway traffic noise effects on land price in an urban area}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  12\penalty0 (4):\penalty0 275--280, June 2007.
+\newblock ISSN 13619209.
+\newblock \doi{10.1016/j.trd.2007.03.002}.
+\newblock URL
+  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/des%
+cription\#description
+  http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
 
 \bibitem[Navrud(2002)]{Navrud2002}
 Stale Navrud.
 \newblock {The State-Of-The-Art on Economic Valuation of Noise: Final Report to
   European Commission DG Environment}.
 \newblock Technical report, 2002.
+
+\bibitem[Nega et~al.(2012)Nega, Smith, Bethune, and Fu]{Nega2012}
+Tsegaye Nega, Carl Smith, James Bethune, and Wei-Hsin Fu.
+\newblock {An analysis of landscape penetration by road infrastructure and
+  traffic noise}.
+\newblock \emph{Computers, Environment and Urban Systems}, 36\penalty0
+  (3):\penalty0 245--256, May 2012.
+\newblock ISSN 01989715.
+\newblock \doi{10.1016/j.compenvurbsys.2011.09.001}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0198971511000895}.
 
 \bibitem[Nelson(1982)]{Nelson1982}
 Jon~P Nelson.
@@ -62,8 +133,9 @@ Jon~P Nelson.
 Jon~P Nelson.
 \newblock {Hedonic Property Value Studies of Transportation Noise : Aircraft
   and Road Traffic}.
-\newblock \emph{Hedonic Methods in Housing Markets Economics}, \penalty0
-  (October 2007), 2008.
+\newblock In Andrea Baranzini, Jose Ramirez, Caroline Schaerer, and Philippe
+  Thalmann, editors, \emph{Hedonic Methods in Housing Market Economics}, number
+  October 2007, chapter~3, pages 57--82. Springer, New York, NY, 2008.
 
 \bibitem[Rosen(1974)]{Rosen1974}
 Sherwin Rosen.
@@ -73,7 +145,7 @@ Sherwin Rosen.
   34--55, 1974.
 
 \bibitem[Sander and Polasky(2009)]{Sander2009b}
-Heather~a. Sander and Stephen Polasky.
+Heather~A. Sander and Stephen Polasky.
 \newblock {The value of views and open space: Estimates from a hedonic pricing
   model for Ramsey County, Minnesota, USA}.
 \newblock \emph{Land Use Policy}, 26\penalty0 (3):\penalty0 837--845, July
@@ -82,6 +154,13 @@ Heather~a. Sander and Stephen Polasky.
 \newblock \doi{10.1016/j.landusepol.2008.10.009}.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0264837708001324}.
+
+\bibitem[Theebe(2004)]{Theebe2004a}
+Marcel Theebe.
+\newblock {Planes, Tranes, and Automobiles: The Impact of Traffic Noise on
+  House Prices}.
+\newblock \emph{Journal of Real Estate Finance and Economics}, 28\penalty0
+  (2/3):\penalty0 209--234, 2004.
 
 \bibitem[Wilhelmsson(2000)]{Wilhelmsson2000}
 Mats Wilhelmsson.
