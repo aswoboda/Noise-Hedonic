@@ -1,0 +1,20 @@
+
+I have played with running a mixed LWR following the algorithm described in the GWR book (pages ###) using some simulated data. I don't know how to apply it to our Noise Model, in which we are only including observations within the past year in our regressions...
+
+Basic idea of the algorithm is:
+# n observations
+# a variables believed to have stationary effect over space
+# b variables belived to have non-stationary effect over space
+
+# for each column of Xa:
+  # regress the column against Xb using basic GWR
+  # compute the residuals from the above regression
+# regress y against Xb using basic GWR
+# compute the residuals from the above regression
+# regress the y residuals against the Xa residuals using OLS -> this yields ahat, the stationary coefficients
+# subtract Xa*ahat from y. regress this against Xb using basic GWR to obtain the geographically varying coefficients
+
+# note that if there are ka a-group variables, then using this algorithm requires running basic GWR ka + 2 times
+
+
+For our data, we have been selecting an observation, then restricting the analysis to only observations sold within the past year, then calculating weights based on the nearest k observations.
