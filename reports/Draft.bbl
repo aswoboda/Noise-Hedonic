@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,12 @@ Ian Bateman, Brett Day, Iain Lake, and Andrew Lovett.
 \newblock {The Effect of Road Traffic on Residential Property Values : A
   Literature Review and Hedonic Pricing Study}.
 \newblock Technical Report January, 2001.
+
+\bibitem[Blanco and Flindell(2011)]{Blanco2011}
+J~C Blanco and I~H Flindell.
+\newblock {Property prices in urban areas affected by road traffic noise}.
+\newblock \emph{Applied Acoustics}, 72\penalty0 (4):\penalty0 133--141, 2011.
+\newblock URL \url{http://eprints.soton.ac.uk/191013/}.
 
 \bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, Charlton, and
   Brunsdont]{Brunsdon1998b}
@@ -50,6 +56,24 @@ Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
 \newblock URL
   \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
 
+\bibitem[Cohen and Coughlin(2009)]{Cohen2009}
+Jeffrey~P Cohen and Cletus~C Coughlin.
+\newblock {Changing Noise Levels and Housing Prices Near the Atlanta Airport}.
+\newblock \emph{Growth and Change}, 40\penalty0 (2):\penalty0 287--313, 2009.
+
+\bibitem[Day et~al.(2007)Day, Bateman, and Lake]{Day2007}
+B~Day, I~Bateman, and I~Lake.
+\newblock {Beyond implicit prices: recovering theoretically consistent and
+  transferable values for noise avoidance from a hedonic property price model}.
+\newblock \emph{Environmental and Resource Economics}, 37\penalty0
+  (1):\penalty0 211--232, 2007.
+
+\bibitem[Day(2003)]{Day2003}
+Brett Day.
+\newblock {Submarket Identification in Property Markets: A Hedonic Housing
+  Price Model for Glasgow}.
+\newblock 2003.
+
 \bibitem[Duarte and Tamez(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
 Carlos~Marmolejo Duarte and Carlos~Gonzalez Tamez.
 \newblock {Does Noise Have a Stationary Impact on Residential Values?}
@@ -70,11 +94,17 @@ Ju-Chin Huang and Raymond~B Palmquist.
 \newblock \emph{Journal of Real Estate Finance and Economics}, 22\penalty0
   (2-3):\penalty0 203--219, 2001.
 
-\bibitem[{Hughes Jr.} and Sirmans(1992)]{HughesJr.1992}
-William~T. {Hughes Jr.} and C.F. Sirmans.
-\newblock {Traffic Externalities and Single-Family Housing Prices}.
-\newblock \emph{Journal of Regional Science}, 32\penalty0 (4):\penalty0
-  487--500, 1992.
+\bibitem[Kim et~al.(2007)Kim, Park, and Kweon]{Kim2007}
+Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
+\newblock {Highway traffic noise effects on land price in an urban area}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  12\penalty0 (4):\penalty0 275--280, June 2007.
+\newblock ISSN 13619209.
+\newblock \doi{10.1016/j.trd.2007.03.002}.
+\newblock URL
+  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/des%
+cription\#description
+  http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
 
 \bibitem[Navrud(2002)]{Navrud2002}
 Stale Navrud.

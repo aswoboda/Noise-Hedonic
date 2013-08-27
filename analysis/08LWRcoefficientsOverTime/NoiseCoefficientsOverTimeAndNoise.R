@@ -8,10 +8,10 @@
 # the results of these regressions get plopped into the appropriate sections and tables in the article
 # ultimately might want to create a bigger table
 
-load("~/Noise Hedonic Project/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/CopyOfSales20052010LWRmodel18-2013-04-13.RData")
-source("~/Noise Hedonic Project/Noise-Hedonic/helper/LWRfunctions.R")
+load("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/CopyOfSales20052010LWRmodel18-2013-04-13.RData")
+source("~/NoiseHedonicProject/Noise-Hedonic/helper/LWRfunctions.R")
 require(foreign)
-DATAFRAME = read.dbf("~/Noise Hedonic Project/Data/R2GIS/CleanData/Sales20052010.dbf")
+DATAFRAME = read.dbf("~/NoiseHedonicProject/Data/R2GIS/CleanData/Sales20052010.dbf")
 
 optimalK = "k200"
 TIMELAG = 12
@@ -53,7 +53,7 @@ MAXcat.time.data$Pre = "post"
 MAXcat.time.data$Pre[which(as.character(MAXcat.time.data$Noise%%1) == "0.9")] = "pre"
 MAXcat.time.data$Color = ifelse(MAXcat.time.data$Pre == "pre", "red", "blue")
 
-pdf("~/Noise Hedonic Project/Noise-Hedonic/graphs/LWRbetaMAXbyCatTime.pdf", width = 6, height = 4,
+pdf("~/NoiseHedonicProject/Noise-Hedonic/graphs/LWRbetaMAXbyCatTime.pdf", width = 6, height = 4,
     family = "Palatino")
 par(mar = c(4, 5, 4, 2))
 with(MAXcat.time.data,
