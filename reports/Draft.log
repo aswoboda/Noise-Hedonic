@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2012.8.24)  27 JUN 2013 12:08
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2012.8.24)  26 AUG 2013 21:12
 entering extended mode
 **Draft.tex
 (./Draft.tex
@@ -303,48 +303,58 @@ nesota metropoli-
 [1
 
 {/usr/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Missing character: There is no ï in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ï in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ƒ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ¦ in font cmr10!
+ [2]
 
-Package natbib Warning: Citation `Baranzini2010' on page 2 undefined on input l
-ine 84.
+Package natbib Warning: Citation `Baranzini2010' on page 3 undefined on input l
+ine 95.
 
-[2] [3]
+[3] [4]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
- [4]
-<../graphs/StudyArea_SaleValueDistribution.png, id=44, 614.295pt x 794.97pt>
+ [5]
+<../graphs/StudyArea_SaleValueDistribution.png, id=47, 614.295pt x 794.97pt>
 File: ../graphs/StudyArea_SaleValueDistribution.png Graphic file (type png)
 
 <use ../graphs/StudyArea_SaleValueDistribution.png>
-<../graphs/CorrelationMatrix.png, id=45, 948.54375pt x 369.38pt>
+<../graphs/CorrelationMatrix.png, id=48, 948.54375pt x 369.38pt>
 File: ../graphs/CorrelationMatrix.png Graphic file (type png)
 
-<use ../graphs/CorrelationMatrix.png> [5 <../graphs/CorrelationMatrix.png>]
-[6 <../graphs/StudyArea_SaleValueDistribution.png>]
-<../graphs/DescriptiveStatsByYear.png, id=56, 981.6675pt x 586.19pt>
+<use ../graphs/CorrelationMatrix.png> [6 <../graphs/CorrelationMatrix.png>]
+[7 <../graphs/StudyArea_SaleValueDistribution.png>]
+<../graphs/DescriptiveStatsByYear.png, id=60, 981.6675pt x 586.19pt>
 File: ../graphs/DescriptiveStatsByYear.png Graphic file (type png)
 
-<use ../graphs/DescriptiveStatsByYear.png> [7]
-<../graphs/GlobalRegression.png, id=62, 626.34pt x 744.7825pt>
+<use ../graphs/DescriptiveStatsByYear.png> [8]
+<../graphs/GlobalRegression.png, id=65, 626.34pt x 744.7825pt>
 File: ../graphs/GlobalRegression.png Graphic file (type png)
 
 <use ../graphs/GlobalRegression.png>
 
-LaTeX Warning: Float too large for page by 6.3337pt on input line 186.
+LaTeX Warning: Float too large for page by 6.3337pt on input line 197.
 
-[8 <../graphs/DescriptiveStatsByYear.png>] [9 <../graphs/GlobalRegression.png>]
-[10] <../graphs/GCVbyModel.pdf, id=90, 578.16pt x 433.62pt>
+[9 <../graphs/DescriptiveStatsByYear.png>] [10 <../graphs/GlobalRegression.png>
+] [11] <../graphs/GCVbyModel.pdf, id=93, 578.16pt x 433.62pt>
 File: ../graphs/GCVbyModel.pdf Graphic file (type pdf)
 
-<use ../graphs/GCVbyModel.pdf> [11] [12 <../graphs/GCVbyModel.pdf>] [13]
-[14] [15] <../graphs/CopyOfMCsimResultsSDs.pdf, id=119, 578.16pt x 433.62pt>
+<use ../graphs/GCVbyModel.pdf> [12] [13 <../graphs/GCVbyModel.pdf>] [14]
+[15] [16] <../graphs/CopyOfMCsimResultsSDs.pdf, id=122, 578.16pt x 433.62pt>
 File: ../graphs/CopyOfMCsimResultsSDs.pdf Graphic file (type pdf)
 
 <use ../graphs/CopyOfMCsimResultsSDs.pdf>
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [16 <../graphs/CopyOfMCsimResultsSDs.pdf>]
+ [17 <../graphs/CopyOfMCsimResultsSDs.pdf>]
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ˜ in font cmtt10!
@@ -379,68 +389,7 @@ Missing character: There is no ™ in font cmtt10!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17]
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
- [18]
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ˜ in font cmtt10!
-Missing character: There is no â in font cmtt10!
-Missing character: There is no € in font cmtt10!
-Missing character: There is no ™ in font cmtt10!
+[18]
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ˜ in font cmtt10!
@@ -502,13 +451,74 @@ Missing character: There is no ˜ in font cmtt10!
 Missing character: There is no â in font cmtt10!
 Missing character: There is no € in font cmtt10!
 Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+ [20]
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ˜ in font cmtt10!
+Missing character: There is no â in font cmtt10!
+Missing character: There is no € in font cmtt10!
+Missing character: There is no ™ in font cmtt10!
 
-<../graphs/LWRbetaMAXbyCatTime.pdf, id=142, 433.62pt x 289.08pt>
+<../graphs/LWRbetaMAXbyCatTime.pdf, id=145, 433.62pt x 289.08pt>
 File: ../graphs/LWRbetaMAXbyCatTime.pdf Graphic file (type pdf)
 
-<use ../graphs/LWRbetaMAXbyCatTime.pdf> [20] [21 <../graphs/LWRbetaMAXbyCatTime
-.pdf>] [22]
-Overfull \hbox (1.58392pt too wide) in paragraph at lines 454--455
+<use ../graphs/LWRbetaMAXbyCatTime.pdf> [21] [22 <../graphs/LWRbetaMAXbyCatTime
+.pdf>] [23]
+Overfull \hbox (1.58392pt too wide) in paragraph at lines 465--466
 \OT1/cmr/m/n/10 We es-ti-mated the im-pact of traf-fic noise on hous-ing prices
  us-ing Lo-cally Weighted
  []
@@ -525,7 +535,7 @@ Underfull \hbox (badness 1424) in paragraph at lines 10--18
 
  []
 
-[23]
+[24]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -558,7 +568,7 @@ Underfull \hbox (badness 1533) in paragraph at lines 49--58
 
  []
 
-[24]
+[25]
 Underfull \hbox (badness 1189) in paragraph at lines 98--108
 []\OT1/cmr/m/n/10 Kwang Sik Kim, Sung Joong Park, and Young-Jun Kweon.  High-wa
 y
@@ -615,17 +625,17 @@ Underfull \hbox (badness 3826) in paragraph at lines 148--157
 
 Package natbib Warning: There were undefined citations.
 
-[25] (./Draft.aux) ) 
+[26] (./Draft.aux) ) 
 Here is how much of TeX's memory you used:
  2882 strings out of 94500
  39398 string characters out of 1176766
- 93927 words of memory out of 1000000
+ 93928 words of memory out of 1000000
  6016 multiletter control sequences out of 10000+50000
  12609 words of font info for 46 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
  35i,13n,38p,1164b,299s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 170 PDF objects out of 300000
+ 173 PDF objects out of 300000
  0 named destinations out of 131072
  36 words of extra memory for PDF output out of 65536
 </usr/share/texmf/fonts/type1/bluesky/cm/cmtt10.pfb></usr/s
@@ -636,10 +646,10 @@ cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/share/texmf
 /fonts/type1/bluesky/cm/cmmi7.pfb> </var/lib/texmf/pk/ljfour/jknappen/tc/tcrm10
 00.600pk> </var/lib/texmf/pk/ljfour/jknappen/tc/tcrm0900.600pk></usr/share/texm
 f/fonts/type1/bluesky/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmt
-i10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/f
-onts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.
+i10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fon
+ts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.
 pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/
 type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb><
 /usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1
 /bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on Draft.pdf (25 pages, 502238 bytes).
+Output written on Draft.pdf (26 pages, 508257 bytes).
