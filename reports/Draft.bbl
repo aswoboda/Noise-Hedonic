@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -16,6 +16,17 @@ Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
 \newblock \doi{10.1007/s10640-009-9306-4}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10640-009-9306-4}.
 
+\bibitem[Baranzini et~al.(2010)Baranzini, Schaerer, and
+  Thalmann]{Baranzini2010}
+Andrea Baranzini, Caroline Schaerer, and Philippe Thalmann.
+\newblock {Using measured instead of perceived noise in hedonic models}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  15\penalty0 (8):\penalty0 473--482, December 2010.
+\newblock ISSN 13619209.
+\newblock \doi{10.1016/j.trd.2010.06.002}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S1361920910000878}.
+
 \bibitem[Bateman et~al.(2001)Bateman, Day, Lake, and Lovett]{Bateman2001}
 Ian Bateman, Brett Day, Iain Lake, and Andrew Lovett.
 \newblock {The Effect of Road Traffic on Residential Property Values : A
@@ -28,9 +39,9 @@ J~C Blanco and I~H Flindell.
 \newblock \emph{Applied Acoustics}, 72\penalty0 (4):\penalty0 133--141, 2011.
 \newblock URL \url{http://eprints.soton.ac.uk/191013/}.
 
-\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, Charlton, and
-  Brunsdont]{Brunsdon1998b}
-Chris Brunsdon, Stewart Fotheringham, Martin Charlton, and Chris Brunsdont.
+\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, and
+  Charlton]{Brunsdon1998b}
+Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
 \newblock {Geographically weighted regression-modelling spatial
   non-stationarity}.
 \newblock \emph{Journal of the Royal Statistical Society Series D The
@@ -39,16 +50,35 @@ Chris Brunsdon, Stewart Fotheringham, Martin Charlton, and Chris Brunsdont.
 \newblock \doi{10.1111/1467-9884.00145}.
 \newblock URL \url{http://www.jstor.org/stable/2988625}.
 
-\bibitem[Casetti(1974)]{Casetti1974}
+\bibitem[Carruthers and Clark(2010)]{Carruthers2010}
+John~I. Carruthers and David~E. Clark.
+\newblock {Valuing Environmental Quality: a Space-Based Strategy}.
+\newblock \emph{Journal of Regional Science}, 50\penalty0 (4):\penalty0
+  801--832, April 2010.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2010.00662.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2010.00662.x}.
+
+\bibitem[Casetti(1972)]{Casetti1972}
 Emilio Casetti.
 \newblock {Generating Models by the Expansion Method: Applications to
   Geographical Research}.
-\newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1974.
+\newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1972.
+
+\bibitem[Chernobai et~al.(2009)Chernobai, Reibel, and Carney]{Chernobai2009}
+Ekaterina Chernobai, Michael Reibel, and Michael Carney.
+\newblock {Nonlinear Spatial and Temporal Effects of Highway Construction on
+  House Prices}.
+\newblock \emph{The Journal of Real Estate Finance and Economics}, 42\penalty0
+  (3):\penalty0 348--370, October 2009.
+\newblock ISSN 0895-5638.
+\newblock \doi{10.1007/s11146-009-9208-9}.
+\newblock URL \url{http://link.springer.com/10.1007/s11146-009-9208-9}.
 
 \bibitem[Cho et~al.(2011)Cho, Kim, and Roberts]{Cho2011b}
 Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
-\newblock {Values of environmental landscape amenities during the 2000–2006
-  real estate boom and subsequent 2008 recession}.
+\newblock {Values of Environmental Landscape Amenities during the 2000 - 2006
+  Real Estate Boom and Subsequent 2008 Recession}.
 \newblock \emph{Journal of Environmental Planning and Management}, 54\penalty0
   (1):\penalty0 71--91, January 2011.
 \newblock ISSN 0964-0568.
@@ -56,29 +86,46 @@ Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
 \newblock URL
   \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
 
+\bibitem[Cleveland and Devlin(1988)]{Cleveland1988}
+William~S Cleveland and Susan~J Devlin.
+\newblock {Locally Weighted Regression : An Approach to Regression Analysis by
+  Local Fifing}.
+\newblock \emph{Journal of the American Statistical Association}, 83\penalty0
+  (403):\penalty0 596--610, 1988.
+
+\bibitem[Cohen and Coughlin(2008)]{Cohen2008a}
+Jeffrey~P. Cohen and Cletus~C. Coughlin.
+\newblock {Spatial Hedonic Models of Airport Noise, Proximity, and Housing
+  Prices}.
+\newblock \emph{Journal of Regional Science}, 48\penalty0 (5):\penalty0
+  859--878, December 2008.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2008.00569.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2008.00569.x}.
+
 \bibitem[Cohen and Coughlin(2009)]{Cohen2009}
-Jeffrey~P Cohen and Cletus~C Coughlin.
+Jeffrey~P. Cohen and Cletus~C. Coughlin.
 \newblock {Changing Noise Levels and Housing Prices Near the Atlanta Airport}.
 \newblock \emph{Growth and Change}, 40\penalty0 (2):\penalty0 287--313, 2009.
 
 \bibitem[Day et~al.(2007)Day, Bateman, and Lake]{Day2007}
-B~Day, I~Bateman, and I~Lake.
+Brett Day, Ian Bateman, and Iain Lake.
 \newblock {Beyond implicit prices: recovering theoretically consistent and
   transferable values for noise avoidance from a hedonic property price model}.
 \newblock \emph{Environmental and Resource Economics}, 37\penalty0
   (1):\penalty0 211--232, 2007.
-
-\bibitem[Day(2003)]{Day2003}
-Brett Day.
-\newblock {Submarket Identification in Property Markets: A Hedonic Housing
-  Price Model for Glasgow}.
-\newblock 2003.
 
 \bibitem[Duarte and Tamez(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
 Carlos~Marmolejo Duarte and Carlos~Gonzalez Tamez.
 \newblock {Does Noise Have a Stationary Impact on Residential Values?}
 \newblock \emph{Journal of European Real Estate Research}, 2\penalty0
   (3):\penalty0 259--279, 2009.
+
+\bibitem[Espey and Lopez(2000)]{Espey2000}
+Molly Espey and Hilary Lopez.
+\newblock {The Impact of Airport Noise and Proximity on Residential Property
+  Values}.
+\newblock \emph{Growth and Change}, 31\penalty0 (3):\penalty0 408--419, 2000.
 
 \bibitem[Fotheringham et~al.(2002)Fotheringham, Brunsdon, and
   Charlton]{Fotheringham2002}
@@ -94,6 +141,12 @@ Ju-Chin Huang and Raymond~B Palmquist.
 \newblock \emph{Journal of Real Estate Finance and Economics}, 22\penalty0
   (2-3):\penalty0 203--219, 2001.
 
+\bibitem[{Hughes Jr.} and Sirmans(1992)]{HughesJr.1992}
+William~T. {Hughes Jr.} and C.F. Sirmans.
+\newblock {Traffic Externalities and Single-Family Housing Prices}.
+\newblock \emph{Journal of Regional Science}, 32\penalty0 (4):\penalty0
+  487--500, 1992.
+
 \bibitem[Kim et~al.(2007)Kim, Park, and Kweon]{Kim2007}
 Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
 \newblock {Highway traffic noise effects on land price in an urban area}.
@@ -105,6 +158,71 @@ Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
   \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/des%
 cription\#description
   http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
+
+\bibitem[Larsen(2012)]{Larsen2012}
+James~E. Larsen.
+\newblock {Surface street traffic volume and single-family house price}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  17\penalty0 (4):\penalty0 317--320, June 2012.
+\newblock ISSN 13619209.
+\newblock \doi{10.1016/j.trd.2012.01.004}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S1361920912000053}.
+
+\bibitem[Li and Saphores(2012)]{Li2012}
+Wei Li and Jean-Daniel Saphores.
+\newblock {Assessing Impacts of Freeway Truck Traffic on Residential Property
+  Values Southern California Case Study}.
+\newblock \emph{Transportation Research Record}, \penalty0 (2288):\penalty0
+  48--56, 2012.
+\newblock \doi{10.3141/2288-06}.
+
+\bibitem[Matthews and Turnbull(2007)]{Matthews2007}
+John~W. Matthews and Geoffrey~K. Turnbull.
+\newblock \emph{{Neighborhood Street Layout and Property Value: The Interaction
+  of Accessibility and Land Use Mix}}, volume~35.
+\newblock July 2007.
+\newblock ISBN 1114600790359.
+\newblock \doi{10.1007/s11146-007-9035-9}.
+\newblock URL \url{http://link.springer.com/10.1007/s11146-007-9035-9}.
+
+\bibitem[McMillen(2004)]{McMillen2004}
+Daniel~P. McMillen.
+\newblock {Airport expansions and property values: the case of Chicago O'Hare
+  Airport}.
+\newblock \emph{Journal of Urban Economics}, 55\penalty0 (3):\penalty0
+  627--640, May 2004.
+\newblock ISSN 00941190.
+\newblock \doi{10.1016/j.jue.2004.01.001}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0094119004000099}.
+
+\bibitem[McMillen(2012)]{McMillen2012}
+Daniel~P. McMillen.
+\newblock {Perspectives on Spatial Econometrics: Linear Smoothing With
+  Structured Models}.
+\newblock \emph{Journal of Regional Science}, 52\penalty0 (2):\penalty0
+  192--209, May 2012.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2011.00746.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00746.x}.
+
+\bibitem[Miedema and Oudshoorn(2001)]{Miedema2001}
+Henk M~E Miedema and Catharina G~M Oudshoorn.
+\newblock {Annoyance from Transportation Noise : Relationships with Exposure
+  Metrics DNL and DENL and Their Confidence Intervals}.
+\newblock \emph{Environmental Health Perspectives}, 109\penalty0 (4):\penalty0
+  409--416, 2001.
+
+\bibitem[Nappi-Choulet and Maury(2011)]{Nappi-Choulet2011}
+Ingrid Nappi-Choulet and Tristan-Pierre Maury.
+\newblock {A Spatial and Temporal Autoregressive Local Estimation for the Paris
+  Housing Market}.
+\newblock \emph{Journal of Regional Science}, 51\penalty0 (4):\penalty0
+  732--750, October 2011.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2011.00713.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00713.x}.
 
 \bibitem[Navrud(2002)]{Navrud2002}
 Stale Navrud.
@@ -129,21 +247,6 @@ Jon~P Nelson.
 \newblock \emph{Journal of Transport Economics and Policy}, 16\penalty0
   (2):\penalty0 117--138, 1982.
 
-\bibitem[Nelson(2008)]{Nelson2008}
-Jon~P Nelson.
-\newblock {Hedonic Property Value Studies of Transportation Noise : Aircraft
-  and Road Traffic}.
-\newblock In Andrea Baranzini, Jose Ramirez, Caroline Schaerer, and Philippe
-  Thalmann, editors, \emph{Hedonic Methods in Housing Market Economics}, number
-  October 2007, chapter~3, pages 57--82. Springer, New York, NY, 2008.
-
-\bibitem[Rosen(1974)]{Rosen1974}
-Sherwin Rosen.
-\newblock {Hedonic Prices and Implicit Markets : Product Differentiation in
-  Pure Competition}.
-\newblock \emph{Journal of Political Economy}, 82\penalty0 (1):\penalty0
-  34--55, 1974.
-
 \bibitem[Sander and Polasky(2009)]{Sander2009b}
 Heather~A. Sander and Stephen Polasky.
 \newblock {The value of views and open space: Estimates from a hedonic pricing
@@ -157,10 +260,19 @@ Heather~A. Sander and Stephen Polasky.
 
 \bibitem[Theebe(2004)]{Theebe2004a}
 Marcel Theebe.
-\newblock {Planes, Tranes, and Automobiles: The Impact of Traffic Noise on
+\newblock {Planes, Trains, and Automobiles: The Impact of Traffic Noise on
   House Prices}.
 \newblock \emph{Journal of Real Estate Finance and Economics}, 28\penalty0
   (2/3):\penalty0 209--234, 2004.
+
+\bibitem[Weinhold(2013)]{Weinhold2013}
+Diana Weinhold.
+\newblock {The Happiness-Reducing Costs of Noise Pollution}.
+\newblock \emph{Journal of Regional Science}, 53\penalty0 (2):\penalty0
+  292--303, May 2013.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/jors.12001}.
+\newblock URL \url{http://doi.wiley.com/10.1111/jors.12001}.
 
 \bibitem[Wilhelmsson(2000)]{Wilhelmsson2000}
 Mats Wilhelmsson.
