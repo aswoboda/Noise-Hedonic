@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -50,6 +50,21 @@ Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
 \newblock \doi{10.1111/1467-9884.00145}.
 \newblock URL \url{http://www.jstor.org/stable/2988625}.
 
+\bibitem[Carruthers and Clark(2010)]{Carruthers2010}
+John~I. Carruthers and David~E. Clark.
+\newblock {Valuing Environmental Quality: a Space-Based Strategy}.
+\newblock \emph{Journal of Regional Science}, 50\penalty0 (4):\penalty0
+  801--832, April 2010.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2010.00662.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2010.00662.x}.
+
+\bibitem[Casetti(1972)]{Casetti1972}
+Emilio Casetti.
+\newblock {Generating Models by the Expansion Method: Applications to
+  Geographical Research}.
+\newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1972.
+
 \bibitem[Chernobai et~al.(2009)Chernobai, Reibel, and Carney]{Chernobai2009}
 Ekaterina Chernobai, Michael Reibel, and Michael Carney.
 \newblock {Nonlinear Spatial and Temporal Effects of Highway Construction on
@@ -59,6 +74,17 @@ Ekaterina Chernobai, Michael Reibel, and Michael Carney.
 \newblock ISSN 0895-5638.
 \newblock \doi{10.1007/s11146-009-9208-9}.
 \newblock URL \url{http://link.springer.com/10.1007/s11146-009-9208-9}.
+
+\bibitem[Cho et~al.(2011)Cho, Kim, and Roberts]{Cho2011b}
+Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
+\newblock {Values of Environmental Landscape Amenities during the 2000 - 2006
+  Real Estate Boom and Subsequent 2008 Recession}.
+\newblock \emph{Journal of Environmental Planning and Management}, 54\penalty0
+  (1):\penalty0 71--91, January 2011.
+\newblock ISSN 0964-0568.
+\newblock \doi{10.1080/09640568.2010.502760}.
+\newblock URL
+  \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
 
 \bibitem[Cohen and Coughlin(2008)]{Cohen2008a}
 Jeffrey~P. Cohen and Cletus~C. Coughlin.
@@ -70,11 +96,10 @@ Jeffrey~P. Cohen and Cletus~C. Coughlin.
 \newblock \doi{10.1111/j.1467-9787.2008.00569.x}.
 \newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2008.00569.x}.
 
-\bibitem[Day(2003)]{Day2003}
-Brett Day.
-\newblock {Submarket Identification in Property Markets: A Hedonic Housing
-  Price Model for Glasgow}.
-\newblock 2003.
+\bibitem[Cohen and Coughlin(2009)]{Cohen2009}
+Jeffrey~P. Cohen and Cletus~C. Coughlin.
+\newblock {Changing Noise Levels and Housing Prices Near the Atlanta Airport}.
+\newblock \emph{Growth and Change}, 40\penalty0 (2):\penalty0 287--313, 2009.
 
 \bibitem[Day et~al.(2007)Day, Bateman, and Lake]{Day2007}
 Brett Day, Ian Bateman, and Iain Lake.
@@ -108,6 +133,24 @@ Ju-Chin Huang and Raymond~B Palmquist.
   for Housing}.
 \newblock \emph{Journal of Real Estate Finance and Economics}, 22\penalty0
   (2-3):\penalty0 203--219, 2001.
+
+\bibitem[{Hughes Jr.} and Sirmans(1992)]{HughesJr.1992}
+William~T. {Hughes Jr.} and C.F. Sirmans.
+\newblock {Traffic Externalities and Single-Family Housing Prices}.
+\newblock \emph{Journal of Regional Science}, 32\penalty0 (4):\penalty0
+  487--500, 1992.
+
+\bibitem[Kim et~al.(2007)Kim, Park, and Kweon]{Kim2007}
+Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
+\newblock {Highway traffic noise effects on land price in an urban area}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  12\penalty0 (4):\penalty0 275--280, June 2007.
+\newblock ISSN 13619209.
+\newblock \doi{10.1016/j.trd.2007.03.002}.
+\newblock URL
+  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/des%
+cription\#description
+  http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
 
 \bibitem[Larsen(2012)]{Larsen2012}
 James~E. Larsen.
@@ -147,12 +190,32 @@ Daniel~P. McMillen.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0094119004000099}.
 
+\bibitem[McMillen(2012)]{McMillen2012}
+Daniel~P. McMillen.
+\newblock {Perspectives on Spatial Econometrics: Linear Smoothing With
+  Structured Models}.
+\newblock \emph{Journal of Regional Science}, 52\penalty0 (2):\penalty0
+  192--209, May 2012.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2011.00746.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00746.x}.
+
 \bibitem[Miedema and Oudshoorn(2001)]{Miedema2001}
 Henk M~E Miedema and Catharina G~M Oudshoorn.
 \newblock {Annoyance from Transportation Noise : Relationships with Exposure
   Metrics DNL and DENL and Their Confidence Intervals}.
 \newblock \emph{Environmental Health Perspectives}, 109\penalty0 (4):\penalty0
   409--416, 2001.
+
+\bibitem[Nappi-Choulet and Maury(2011)]{Nappi-Choulet2011}
+Ingrid Nappi-Choulet and Tristan-Pierre Maury.
+\newblock {A Spatial and Temporal Autoregressive Local Estimation for the Paris
+  Housing Market}.
+\newblock \emph{Journal of Regional Science}, 51\penalty0 (4):\penalty0
+  732--750, October 2011.
+\newblock ISSN 00224146.
+\newblock \doi{10.1111/j.1467-9787.2011.00713.x}.
+\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00713.x}.
 
 \bibitem[Navrud(2002)]{Navrud2002}
 Stale Navrud.
