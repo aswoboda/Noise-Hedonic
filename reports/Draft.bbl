@@ -1,4 +1,4 @@
-\begin{thebibliography}{32}
+\begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -85,6 +85,13 @@ Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
 \newblock \doi{10.1080/09640568.2010.502760}.
 \newblock URL
   \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
+
+\bibitem[Cleveland and Devlin(1988)]{Cleveland1988}
+William~S Cleveland and Susan~J Devlin.
+\newblock {Locally Weighted Regression : An Approach to Regression Analysis by
+  Local Fifing}.
+\newblock \emph{Journal of the American Statistical Association}, 83\penalty0
+  (403):\penalty0 596--610, 1988.
 
 \bibitem[Cohen and Coughlin(2008)]{Cohen2008a}
 Jeffrey~P. Cohen and Cletus~C. Coughlin.
