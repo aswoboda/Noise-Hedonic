@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{34}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -257,6 +257,17 @@ Heather~A. Sander and Stephen Polasky.
 \newblock \doi{10.1016/j.landusepol.2008.10.009}.
 \newblock URL
   \url{http://linkinghub.elsevier.com/retrieve/pii/S0264837708001324}.
+
+\bibitem[Sunding and Swoboda(2010)]{Sunding2010}
+David~L. Sunding and Aaron~M. Swoboda.
+\newblock {Hedonic analysis with locally weighted regression: An application to
+  the shadow cost of housing regulation in Southern California}.
+\newblock \emph{Regional Science and Urban Economics}, 40\penalty0
+  (6):\penalty0 550--573, November 2010.
+\newblock ISSN 01660462.
+\newblock \doi{10.1016/j.regsciurbeco.2010.07.002}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0166046210000608}.
 
 \bibitem[Theebe(2004)]{Theebe2004a}
 Marcel Theebe.
