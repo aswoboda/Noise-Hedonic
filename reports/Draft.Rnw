@@ -1,6 +1,9 @@
 \documentclass{article}
 \usepackage[round]{natbib}
-\usepackage{caption, amsmath, graphicx, setspace, multirow, color, hyperref}
+\usepackage{caption, amsmath, graphicx, setspace, multirow, color, hyperref, array}
+
+\newcolumntype{x}[1]{%
+>{\centering\hspace{0pt}}p{#1}}%
 
 \defcitealias{Netherlands2004}{Netherlands, 2004}
 \defcitealias{UNDESA2012}{United Nations, 2012}
@@ -70,8 +73,32 @@ The 2010 US Census lists the population of the Twin Cities Metropolitan Region (
 
 \begin{table}
 \caption{Matrix of Pearson Correlation Coefficients for Quantitative Variables}\label{tab:cor}
-\includegraphics[width = \textwidth]{../graphs/CorrelationMatrix}
+%\includegraphics[width = \textwidth]{../graphs/CorrelationMatrix}
+\begin{center}
+\small
+\tabcolsep=0.05cm
+\begin{tabular}{lrrrrrrrrrrr}
+  \hline
+ & \multicolumn{1}{x{.35in}}{Price} & \multicolumn{1}{x{.38in}}{House} & \multicolumn{1}{x{.35in}}{Lot} & 
+ \multicolumn{1}{x{.35in}}{Built} & \multicolumn{1}{x{.35in}}{Noise} & \multicolumn{1}{x{.35in}}{Inc.} & 
+ \multicolumn{1}{x{.35in}}{Test} & \multicolumn{1}{x{.35in}}{CBD} & \multicolumn{1}{x{.35in}}{Park} & \multicolumn{1}{x{.35in}}{Lake} & \multicolumn{1}{x{.35in}}{Shop} \tabularnewline 
+  \hline
+ln Sale Price & 1 &  &  &  &  &  &  &  &  &  &  \tabularnewline 
+  House Size & 0.74 & 1 &  &  &  &  &  &  &  &  &  \tabularnewline 
+  Lot Size & 0.40 & 0.45 & 1 &  &  &  &  &  &  &  &  \tabularnewline 
+  Year Built & 0.49 & 0.52 & 0.47 & 1 &  &  &  &  &  &  &  \tabularnewline 
+  Noise & -0.12 & -0.07 & 0.00 & -0.19 & 1 &  &  &  &  &  &  \tabularnewline 
+  Income & 0.55 & 0.50 & 0.41 & 0.57 & -0.18 & 1 &  &  &  &  &  \tabularnewline
+  Elem. Test Scores & 0.33 & 0.28 & 0.29 & 0.34 & -0.04 & 0.44 & 1 &  &  &  &  \tabularnewline 
+  Distance to CBD & 0.35 & 0.45 & 0.43 & 0.58 & -0.04 & 0.53 & 0.35 & 1 &  &  &  \tabularnewline
+  Distance to Park & 0.27 & 0.28 & 0.22 & 0.42 & -0.13 & 0.38 & 0.22 & 0.57 & 1 &  &  \tabularnewline
+  Distance to Lake & -0.05 & -0.10 & -0.25 & -0.17 & -0.03 & -0.12 & -0.10 & -0.09 & 0.20 & 1 &  \tabularnewline
+  Distance to Shop & 0.28 & 0.27 & 0.15 & 0.37 & -0.19 & 0.36 & 0.18 & 0.46 & 0.38 & 0.15 & 1 \tabularnewline
+   \hline
+\end{tabular}
+\end{center} 
 \end{table}
+
 
 \subsection{Structural Attributes}
 According to a review by \cite{Wilhelmsson2000}, the most common structural attributes included in real-estate hedonic pricing studies are living area, number of bathrooms, age, garage and lot size.  Although the 2010 MetroGIS Regional Parcel Dataset includes structural data on living area, age, garage presence, lot size and owner occupancy for every transaction, we have variables for the number of bedrooms, bathrooms, and size of the garage only for those house sales in one county. We feel confident in our results even without these independent variables for most of our study data because sensitivity analysis conducted in areas with the additional structural variables revealed very similar estimates when the variables were included and excluded. These results are in section \ref{Discussion} of the the paper. Additionally, other hedonic work has been published using a similar set of explanatory variables in this area, see for instance, \citet{Sander2009b}.
