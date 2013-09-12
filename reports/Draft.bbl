@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{59}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,13 @@
 \newblock Technical report, United Nations Department of Economic and Social
   Affairs, 2012.
 
+\bibitem[USF(2012)]{USFHA2012}
+{Summary of Noise Barriers Constructed by December 31, 2010}.
+\newblock Technical report, US Department of Transportation Federal Highway
+  Administration, 2012.
+\newblock URL
+  \url{http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/summary/index.cfm}.
+
 \bibitem[Andersson et~al.(2010)Andersson, Jonsson, and
   \"{O}gren]{Andersson2010}
 Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
@@ -24,6 +31,14 @@ Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
 \newblock ISSN 09246460.
 \newblock \doi{10.1007/s10640-009-9306-4}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10640-009-9306-4}.
+
+\bibitem[Arditi et~al.(2007)Arditi, Lee, and Polat]{Arditi2007}
+David Arditi, Dong-Eun Lee, and Gul Polat.
+\newblock {Fatal accidents in nighttime vs. daytime highway construction work
+  zones.}
+\newblock \emph{Journal of Safety Research}, 38\penalty0 (4):\penalty0
+  399--405, 2007.
+\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/17884426}.
 
 \bibitem[Babisch et~al.(2005)Babisch, Beule, Schust, Kersten, and
   Ising]{Babisch2005}
