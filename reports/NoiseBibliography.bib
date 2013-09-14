@@ -49,17 +49,6 @@ url = {http://doi.wiley.com/10.1111/jors.12001},
 volume = {53},
 year = {2013}
 }
-@techreport{UNDESA2012,
-institution = {United Nations Department of Economic and Social Affairs},
-title = {{World Urbanization Prospects: The 2011 Revision}},
-year = {2012}
-}
-@techreport{USFHA2012,
-institution = {US Department of Transportation Federal Highway Administration},
-title = {{Summary of Noise Barriers Constructed by December 31, 2010}},
-url = {http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/summary/index.cfm},
-year = {2012}
-}
 @article{Larsen2012,
 abstract = {This study investigates the relationship between surface street traffic volume and single- family house prices in a relatively small city in the US. Hedonic price models are estimated using data from 9670 transactions that occurred between January 1998 and March 2011. It is discovered that parcels fronting or adjacent to a high-traffic street sell, on average, at an 8.1\% discount compared to similar parcels that are not so situated. Restricting the analysis to parcels on or adjacent to a high-traffic street, house price and traffic volume are found to be negatively related; a doubling of volume from any particular traffic count, ceteris pari- bus, reduces selling price by an average of 2.1\%. },
 author = {Larsen, James E.},
@@ -157,6 +146,17 @@ url = {http://doi.wiley.com/10.1111/j.1467-9787.2012.00774.x},
 volume = {52},
 year = {2012}
 }
+@techreport{UNDESA2012,
+institution = {United Nations Department of Economic and Social Affairs},
+title = {{World Urbanization Prospects: The 2011 Revision}},
+year = {2012}
+}
+@techreport{USFHA2012,
+institution = {US Department of Transportation Federal Highway Administration},
+title = {{Summary of Noise Barriers Constructed by December 31, 2010}},
+url = {http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/summary/index.cfm},
+year = {2012}
+}
 @article{Blanco2011,
 abstract = {This paper reports a revealed preference study into the different effects of road traffic noise on property values in residential areas with similarly high road traffic sound levels but with what appear to be important differences in the market for different types of residential property in each area. The results show significant differences in the revealed effects of noise on property prices between the three areas with in one case an increasing (and possibly misleading) relationship between higher monetary values and higher sound levels. A number of possible explanations for the findings are discussed in the paper.},
 annote = {This paper compares HP coefficients for road traffic noise between three different residential areas in different parts of the country with important differences in the market for different types of property in each area. The observed differences in HP coefficients between the different areas expose uncertainties when extrapolating from monetary values of noise obtained in one area to other areas. 
@@ -251,6 +251,38 @@ pages = {732--750},
 title = {{A Spatial and Temporal Autoregressive Local Estimation for the Paris Housing Market}},
 url = {http://doi.wiley.com/10.1111/j.1467-9787.2011.00713.x},
 volume = {51},
+year = {2011}
+}
+@article{Paez2011,
+abstract = {Large variability and correlations among the coefficients obtained from the method of geographically weighted regression (GWR) have been identified in previous research. This is an issue that poses a serious challenge for the utility of the method as a tool to investigate multivariate relationships. The objectives of this paper are to assess: (1) the ability of GWR to discriminate between a spatially constant processes and one with spatially varying relationships; and (2) to accurately retrieve spatially varying relationships. Extensive numerical experiments are used to investigate situations where the underlying process is stationary and nonstationary, and to assess the degree to which spurious intercoefficient correlations are introduced. Two different implementations of GWR and cross-validation approaches are assessed. Results suggest that judicious application of GWR can be used to discern whether the underlying process is nonstationary. Furthermore, evidence of spurious correlations indicates that caution must be exercised when drawing conclusions regarding spatial relationships retrieved using this approach, particularly when working with small samples.},
+annote = {RQ: How well does LWR discriminate between a spatially constant processes and one with spatially varying relationships and how accurately does LWR estimate spatially varying relationships?
+        
+Results: Depending on the level of true correlation in variables, estimation (either LWR or Local Linear) and CV approaches (standardized or not), LWR will falsely prescribe non-stationary processes 10\%-50\% of the time. The authors confirm that a "nonnegligible" amount of spatial variation and subsequently correlation between LWR coeff. surfaces is inherently generated by the method. Tendency to overfit. 
+        
+Contributions: This article contributes to the literature by examining these two issues(stationary/non-stationary discrimination and retrieving reliable parametric surfaces) by considering different estimation/CV techniques not considered previously. 
+                  
+Future work: Systematically changing sample sizes, determining a minimum sample size for LWR, introducing varying levels of correlation between coefficient surfaces, as supposed to one fixed rate.
+        
+This article does not really compare different CV methods.          
+          
+Cites:         
+Farber and Paez, 2007 -- Added to Mendeley
+Wheeler and Teifelsdorf 2005 -- Added to Mendeley
+Wheeler, 2007 -- ILLiaded, will add to Mendeley
+Wheeler, 2009 -- ILLiaded, will add to Mendeley
+Wang, 2008 -- ILLiaded, will add to Mendeley
+Harris, 2010 -- ILLiaded, will add to Mendeley          
+Cited by:        
+Matthews, 2012 -- In Mendeley},
+author = {Paez, Antonio and Farber, Steven and Wheeler, David},
+file = {:Users/aswoboda/Documents/Mendeley Desktop/Paez, Farber, Wheeler/Environment and Planning A/Paez, Farber, Wheeler - 2011 - A simulation-based study of geographically weighted regression as a method for investigating spatially va.pdf:pdf},
+journal = {Environment and Planning A},
+keywords = {LOOCV,SCV,Theo},
+mendeley-tags = {LOOCV,SCV,Theo},
+number = {12},
+pages = {2992--3010},
+title = {{A simulation-based study of geographically weighted regression as a method for investigating spatially varying relationships}},
+volume = {43},
 year = {2011}
 }
 @article{Sorensen2011,
@@ -358,39 +390,27 @@ year = {2010}
 @article{McMillen2010,
 abstract = {In contrast to the rigid structure of standard parametric hedonic analysis, nonparametric estimators control for misspecified spatial effects while using highly flexible functional forms. Despite these advantages, nonparametric procedures are still not used extensively for spatial data analysis due to perceived difficulties associated with estimation and hypothesis testing. We demonstrate that nonparametric estimation is feasible for large datasets with many independent variables, offering statistical tests of individual covariates and tests of model specification. We show that fixed parameterization of distance to the nearest rapid transit line is a misspecification and that pricing of access to this amenity varies across neighborhoods within Chicago.},
 annote = {RQ: Is the use of LWR in an hedonic analysis of spatial data feasible, and does it accurately describe hedonic house price function compared to fixed parametric spatial models in the context of Monte Carlo procedure and Chicago housing price hedonic analysis?
-
         
 Results: The Monte Carlo procedure shows that LWR conserves on DoF and achieves a high level of predictive accuracy compared to fully nonparametric estimation. The hedonic analysis yields geographically varying estimates of the price of EL access, suggesting that fixed parameter estimates are less accurate/misspecified
-
         
 Contribution: Redfearn and McMillen demonstrate the usefulness of LWR through a Monte Carlo procedure, and show that fixed parameter hedonic estimates of EL accessability mask geographical variance, which a LWR picks up on. 
-
         
 Data: Generated data sets in order to perform Monte Carlo procedure, one with a continuously declining dependent variable with distance from the city center and one with irregular "neighborhoods" that introduce shifts in the values.
 For the hedonic estimate, a data set of 3,705 observations of Chicago single-family home sales in 2000 within 1 mile of Chicago's elevated train (EL) was used. Assessor's data was used to obtain standard housing characteristics like lot size, \# of rooms, etc. 
-
         
 Methodology: The Monte Carlo procedure was performed with a smoothly changing spatial dependent variable and one with shifts, representing neighborhoods. A third procedure was performed with proxied fixed effects and slope interactions, to introduce some error/uncertainty and more accurately reflect the real world, where researchers will not have perfect knowledge of neighborhood boundaries. 
 In the hedonic estimate of the component of EL proximity as in single-family housing prices, the authors first performed a global OWL linear regression that, in its final form, resulted in statistically insignificant results for distance from El stop, thanks to the geographic noise from the data. LWR was then used, both with a 25\% window size and a 100\% window size, with both nonparametric and semi-parametric estimates. 
-
         
 Evidence: The authors state that a large window needs to be used for locational variables, like distance to nearest EL stop, in order to measure the marginal effects, and with a window size of 100\%, find that prices decline by almost 17\% per additional mile from the nearest EL stop. For a 25\% window, the spatial pattern of the coefficients shows information that a simple OLS would simply mask because of data aggregation. The authors provide additional evidence for the strength of LWR by withholding 400 random observations from their data set and using the rest of data set to "predict" the holdouts. RSME for the LWR was much lower than the OLS, and while OLS with census tract fixed effects had a slightly lower RSME than LWR, LWR used only 1/3 the degrees of freedom. 
-
         
 Future Work: While the authors seek to introduce LWR as a new and powerful tool, it is not the single "best" approach, and thus there might be other ways that provide accurate alternatives that should be examined.
-
         
-
-        
-          
-Cites:
-        
+                  
+Cites:        
 Cleveland, W.S. and S.J. Devlin. 1988. 
 --Added to Mendeley  
-Farber, Paez, 2007 -- In Mendeley
-          
-Cited by: 
-        
+Farber, Paez, 2007 -- In Mendeley          
+Cited by:         
 Koschinsky, 2011 -- In Mendeley},
 author = {McMillen, Daniel P. and Redfearn, Christian L.},
 doi = {10.1111/j.1467-9787.2010.00664.x},
@@ -920,13 +940,6 @@ title = {{Using Happiness Surveys to Value Intangibles : The Case of Airport Noi
 volume = {115},
 year = {2005}
 }
-@techreport{Defra2004,
-abstract = {This report provides information on the calculation and production of the London Road Traffic Noise Map. The London Road Traffic Noise Map is one element of the Noise Mapping England Project. This is being carried out as part of the development of the National Ambient Noise Strategy. It has been created to provide information on the levels of road traffic noise across the whole of the Greater London area. Similar maps for elsewhere in England and for other types of noise will be covered by projects that are being planned or progressed at present. This report describes how the London Road Traffic Noise Map was created. It describes the information sources that were used, the computer software systems, the data processing, stakeholder involvement, challenges, lessons learnt, and the end product.},
-booktitle = {Office},
-institution = {UK Department for Environment, Food and Rural Affairs},
-title = {{Noise Mapping England The London Road Traffic Noise Map}},
-year = {2004}
-}
 @article{McMillen2004,
 author = {McMillen, Daniel P.},
 doi = {10.1016/j.jue.2004.01.001},
@@ -942,14 +955,6 @@ url = {http://linkinghub.elsevier.com/retrieve/pii/S0094119004000099},
 volume = {55},
 year = {2004}
 }
-@techreport{Netherlands2004,
-annote = {Preferred citation:
-Health Council of the Netherlands. THe Influence of Night-time Noise on Sleep and Health. The Hague: Health Council of the Netherlands, 2004; publication no. 2004/14E.},
-file = {:Users/aswoboda/Documents/Mendeley Desktop/Unknown/Unknown/Unknown - 2004 - The Influence of Night-time Noise on Sleep and Health.pdf:pdf},
-institution = {Health Council of the Netherlands},
-title = {{The Influence of Night-time Noise on Sleep and Health}},
-year = {2004}
-}
 @article{Theebe2004a,
 abstract = {Because of large planned infrastructual projects like expansion of the main airport and construction of high-speed railways, noise nuisance has become a national social topic in the Netherlands. Moreover, according to EU-guidelines, determination and enforcement of differentiated noise limits will be delegated from national to local governments in the near future. The value of noise has never been this important. In this paper, we estimate the non-linear impact of traffic noise on property prices. The used data set is very extensive, over 100,000 sales transactions are studied, with many individual property characteristics, combined with noise levels for 2 million small 100 by 100m areas. We use spatial autocorrelation techniques to overcome regular problems of tranditional NIMBY-analysis performed by hedonic regression. In a rising market, we find that the impact of traffic noise ranges to 12 percent, with an average of about 5 percetn. The discount varies across sub-markets, and is a non-linear function of the noise level.},
 annote = {Look for Noise data from National Institute of Public Health in the Netherlands},
@@ -962,6 +967,21 @@ number = {2/3},
 pages = {209--234},
 title = {{Planes, Trains, and Automobiles: The Impact of Traffic Noise on House Prices}},
 volume = {28},
+year = {2004}
+}
+@techreport{Netherlands2004,
+annote = {Preferred citation:
+Health Council of the Netherlands. THe Influence of Night-time Noise on Sleep and Health. The Hague: Health Council of the Netherlands, 2004; publication no. 2004/14E.},
+file = {:Users/aswoboda/Documents/Mendeley Desktop/Unknown/Unknown/Unknown - 2004 - The Influence of Night-time Noise on Sleep and Health.pdf:pdf},
+institution = {Health Council of the Netherlands},
+title = {{The Influence of Night-time Noise on Sleep and Health}},
+year = {2004}
+}
+@techreport{Defra2004,
+abstract = {This report provides information on the calculation and production of the London Road Traffic Noise Map. The London Road Traffic Noise Map is one element of the Noise Mapping England Project. This is being carried out as part of the development of the National Ambient Noise Strategy. It has been created to provide information on the levels of road traffic noise across the whole of the Greater London area. Similar maps for elsewhere in England and for other types of noise will be covered by projects that are being planned or progressed at present. This report describes how the London Road Traffic Noise Map was created. It describes the information sources that were used, the computer software systems, the data processing, stakeholder involvement, challenges, lessons learnt, and the end product.},
+booktitle = {Office},
+institution = {UK Department for Environment, Food and Rural Affairs},
+title = {{Noise Mapping England The London Road Traffic Noise Map}},
 year = {2004}
 }
 @unpublished{Day2003,
@@ -1080,6 +1100,14 @@ title = {{Why is central Paris rich and downtown Detroit poor ? An amenity-based
 volume = {43},
 year = {1999}
 }
+@book{Loader1999,
+address = {New York, NY},
+author = {Loader, Clive},
+pages = {290},
+publisher = {Springer-Verlag},
+title = {{Local Regression and Likelihood}},
+year = {1999}
+}
 @article{Brunsdon1998b,
 abstract = {In regression models where the cases are geographical locations, sometimes regression coefficients do not remain fixed over space. A technique for exploring this phenomenon, geographically weighted regression is introduced. A related Monte Carlo significance test for spatial non-stationarity is also considered. Finally, an example of the method is given, using limiting long-term illness data from the 1991 UK census.},
 author = {Brunsdon, Chris and Fotheringham, Stewart and Charlton, Martin},
@@ -1128,17 +1156,6 @@ title = {{Review of Some of the Literature on the Social Cost of Motor-Vehicle U
 volume = {3},
 year = {1997}
 }
-@techreport{FHWA1995,
-abstract = {Studies have shown that some of the most pervasive sources of noise in our environment today are those associated with transportation. Traffic noise tends to be a dominant noise source in our urban as well as rural environment. In response to the problems associated with traffic noise, the United States Code of Federal Regulations Part 772 (23 CFR 772), "Procedures for Abatement of Highway Traffic Noise and Construction Noise," establishes standards for mitigating highway traffic noise. The purpose of this document is to provide Federal Highway Administration (FHWA) policies and guidance for the analysis and abatement of highway traffic noise. A 3½-day training course, sponsored by the National Highway Institute, is available for instructing FHWA field and State highway agency (SHA) staffs in the details of the policies and the technical procedures required for analyzing and abating traffic noise impacts.},
-address = {Washington, DC},
-file = {:Users/aswoboda/Documents/Mendeley Desktop/Unknown/Unknown/Unknown - 1995 - Highway Traffic Noise Analysis and Abatement Policy and Guidance.pdf:pdf},
-institution = {U.S. Department of Transportation Federal Highway Administration},
-keywords = {Traffic Count,Traffic Noise,USA},
-mendeley-tags = {Traffic Count,Traffic Noise,USA},
-number = {June},
-title = {{Highway Traffic Noise Analysis and Abatement Policy and Guidance}},
-year = {1995}
-}
 @article{Williams1995,
 abstract = {Air pollution from traffic is one of the main factors considered in the environmental appraisal of road schemes. Currently this appraisal concentrates on the emission and roadside concentration of those regulated pollutants which are potentially harmful to the health or well-being of human, animal or plant life, or to ecological systems. However, vehicle emissions, especially those from diesel vehicles, may also cause a number of aesthetic and nuisance problems, such a visibility reduction, urban soiling and physical irritation. A methodology to investigated the subjective nuisance effects of air pollution from road traffic on the public has been developed and tested. The data indicates that vehicle-derived air pollution was an issue of high relative importance to the public when compared to other major social issues. On a local level, the physical presence of road traffic and its associated pollution appeared to be the largest contributors to outdoor public environmental nuisance. Indoors, the public appeared to experience only minor disturbances from vehicle-derived pollution, with the average respondent being not very bothered by vehicle-derived smoke, fumes and odour, dust and dirt and general air pollution. Noise appeared to cause the greatest indoor traffic-related nuisance, although many respondents complained about soiling from dust/dirt. The surveys suggest that outdoor disturbance from vehicle-derived air pollution was fairly high, with smoke, fumes and odour causing the greatest annoyance. The main reason given for disturbance from outdoor smoke, fumes and odour and dust/dirt was concern that they would harm the public's health. Other important specific reasons included soiling and the smell of the fumes.(ABSTRACT TRUNCATED AT 250 WORDS)},
 author = {Williams, I D and McCrae, I S},
@@ -1153,6 +1170,17 @@ pmid = {7544024},
 title = {{Road traffic nuisance in residential and commercial areas.}},
 url = {http://www.ncbi.nlm.nih.gov/pubmed/7544024},
 volume = {169},
+year = {1995}
+}
+@techreport{FHWA1995,
+abstract = {Studies have shown that some of the most pervasive sources of noise in our environment today are those associated with transportation. Traffic noise tends to be a dominant noise source in our urban as well as rural environment. In response to the problems associated with traffic noise, the United States Code of Federal Regulations Part 772 (23 CFR 772), "Procedures for Abatement of Highway Traffic Noise and Construction Noise," establishes standards for mitigating highway traffic noise. The purpose of this document is to provide Federal Highway Administration (FHWA) policies and guidance for the analysis and abatement of highway traffic noise. A 3½-day training course, sponsored by the National Highway Institute, is available for instructing FHWA field and State highway agency (SHA) staffs in the details of the policies and the technical procedures required for analyzing and abating traffic noise impacts.},
+address = {Washington, DC},
+file = {:Users/aswoboda/Documents/Mendeley Desktop/Unknown/Unknown/Unknown - 1995 - Highway Traffic Noise Analysis and Abatement Policy and Guidance.pdf:pdf},
+institution = {U.S. Department of Transportation Federal Highway Administration},
+keywords = {Traffic Count,Traffic Noise,USA},
+mendeley-tags = {Traffic Count,Traffic Noise,USA},
+number = {June},
+title = {{Highway Traffic Noise Analysis and Abatement Policy and Guidance}},
 year = {1995}
 }
 @phdthesis{Cheng1992,
@@ -1264,4 +1292,30 @@ pages = {81--91},
 title = {{Generating Models by the Expansion Method: Applications to Geographical Research}},
 volume = {4},
 year = {1972}
+}
+@book{Muth1969,
+address = {Chicago},
+author = {Muth, Richard F.},
+publisher = {University of Chicago Press},
+title = {{Cities and Housing}},
+year = {1969}
+}
+@article{Mills1967,
+abstract = {The purpose of this paper is to put forth a simplified, aggregative model that will help to explain the sizes and structures of urban areas. The viewpoint taken is that the basic characteristics of cities are to be understood as market responses to opportunities for production and income. Properties of production functions are at the heart of the explanation of city size and structure in the model developed here, in much the way that properties of production functions are at the heart of modern neoclassical growth theory. The general ideas that motivate the selection of the model developed below are commonplace in the voluminous recent literature on urban economics and geography. It has frequently been observed that the large size and rapid recent growth of urban areas are responses to income and employment opportunities provided there as between urban areas of different size. Likewise, it is a common observation on the structure of cities that the nature and intensity of land use vary greatly from city to city and from one part of a city to another.},
+author = {Mills, Edwin S.},
+issn = {00028282},
+journal = {American Economic Review},
+pages = {197--210},
+title = {{An Aggregative Model of Resource Allocation in a Metropolitan Area}},
+volume = {57},
+year = {1967}
+}
+@book{Alonso1964,
+abstract = {In Chapter 1, the author describes the approach of his study - an economic one that will focus on how land values are associated with land uses in urban areas, with most of his focus on residential land use. He justifies this by noting that most privately-owned land in urban areas has become residential, specifically four-fifths. He provides a brief history of the study of land values, pre-1900 and post-1900, when urban land values become a bigger focus. Pages 15-17 summarize the main approach and definitions to key terms, including price, size of the site, and the featureless plain. Chapter 2 provides a diagrammatic and mathematical interpretation of individual household equilibrium. It joins the functions for opportunities available to an individual (tied to income) and the combination of preferences (mapped as an indifference surface) for the quantity of land (q), the time taken to travel to the city center (t), and the composite value of all other goods (z), such that dq/dt>0, dq/dz0. Joining these functions shows what combination of goods can be obtained with a given income. Key terms: locus of opportunities, indifference surface. Note that equilibrium, the marginal rate of substitution is equal to the marginal costs. Chapter 3 notes: In the agricultural model, rents are a residual, so they drop with the price of the good. The agricultural model also aims to show how that for determining either the appropriate quantity of land, or the appropriate distance from the city center, marginal revenues should equal marginal costs, i.e. marginal profits should equal 0. Actually, marginal profits equal 0 at two distances; the distance should be where overall revenues exceed the overall costs (represented by the area between the curves) when moving further away. The business model focuses on distance, not quanitity of land. Here the bid rent model is replaced with the bid price model. The bid price function is combined with the price structure. The appropriate distance for locating the firm is where the curves are tangent to each other. Chapter 4 cites an inverse, convex (to the origin) relationship between of price of land and quantity of land if the amount to be paid for land stays constant. Also, the satisfaction (a function of bid price and distance) derived from from buying land at a certain distance from the city changes so that more land is desired to be purchased for less money as distance increases. The marginal rate of substitution equation indicates that distant land will be bought for a cheaper price because commuting costs increase. Commodity prices and profits do not apply to this model as they do to the agriculture and firm models. Chapter 5 focuses on market equilibrium. It notes at the outset that both land and distance are goods, but only land is transacted and has a price. The buyer closest to the city center will have the steepest bid rent curve. Also, the equilibrium price of the buyer immediately further from the center is equal to one's own marginal price, while one's own equilibrium price is the same as the marginal price of the buyer immediately closer to the center. Game theory - decisions based on what others have decided about their acceptable price - is involved in this analysis. Modifications are made to the model so that it allows the supplier to maximize revenue instead of price. Chapter 6 focuses on applications of the model. It is concluded that a rich buyer have a gentler bid price curve, and will be more likely to buy land on the periphery. The chapter also focuses on the effects of income, population growth, trasportation improvements, post-WWII development, and taxation. The effects of land use zoning and density-intensity zoning are also examined. The author then looks at the effect of differences in road accessibility and land areas with more than one urban center.},
+author = {Alonso, William},
+booktitle = {Location and land useToward a general theory of land rent},
+isbn = {0674537009},
+pages = {xi, 204},
+title = {{Location and land use: toward a general theory of land rent}},
+year = {1964}
 }
