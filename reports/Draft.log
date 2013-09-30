@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2012.8.24)  30 SEP 2013 15:26
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2012.8.24)  30 SEP 2013 15:51
 entering extended mode
 **Draft.tex
 (./Draft.tex
@@ -470,7 +470,7 @@ Underfull \hbox (badness 1478) in paragraph at lines 512--521
 Here is how much of TeX's memory you used:
  4759 strings out of 94500
  65459 string characters out of 1176766
- 128853 words of memory out of 1000000
+ 127853 words of memory out of 1000000
  7704 multiletter control sequences out of 10000+50000
  13467 words of font info for 49 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
@@ -495,4 +495,4 @@ pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/
 type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb><
 /usr/share/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1
 /bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
-Output written on Draft.pdf (39 pages, 600717 bytes).
+Output written on Draft.pdf (39 pages, 600671 bytes).
