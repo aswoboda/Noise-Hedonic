@@ -1,0 +1,47 @@
+Notes from Nathan:
+
+Dear Aaron,
+
+Below and in the attached are some notes on reading the paper.  In the large, I think you are correct in sensing that for this audience the emphasis probably needs to shit more toward "this is what we found and this is what it means."  In particular, I'm not sure I am seeing (and I don't feel the current paper tells) how the results from the spatial model in section 4 differ meaningfully from those in section 3.  In fact, if I understood it right, it sounds like section 5 largely shows the results in section 3 to be quite robust when it comes to the primary variable in question.  To my reading, this suggested that much of sections 4 & 5 might be reduced.  Whether that happens or not, it feels like much more needs to be made of the findings re: noise effects and what those results mean and how they fit in the literature.
+
+I'd be happy to talk more in person about any of this if it would be useful,
+Nathan
+
+Big picture:
+
+1) Motivation: 
+I agree with your general sense that the paper is too much “this is what we did.”  Even more than “this is what we found,” I think you need to show more of “this is why this is important.”  Specifically, why is this an improvement on the existing literature.  I’m not saying I can’t see answers to that question in the current paper.  Rather, they are buried instead of foregrounded.  I’d recommend thinking of the paper more as part of an argument—or at least a dialog—with the existing literature.  (I don’t want to suggest getting hostile—just focusing on the contributions rather than the methods.)  I don’t think this will require extensive revision.  Just a few tweaks were and there could make a big change to the feel.
+
+a) I am not sure the motivation is as strong as it could be along a couple of dimensions.  First, it seems like the abstract describes your contribution in a pretty limited way: “While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, the relationship between housing prices and automobile traffic noise has rarely been explored at landscape level, especially in the United States.”  That sounds like you are just doing the same thing in a slightly different way.  I may not be understanding correctly, but I think you can claim something much stronger.  “While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, existing studies have relied on crude, distance-based measures of exposure.  Here we reduce measurement error in the exposure variable by modeling the propagation….”  In other words, the existing lit is insufficient and here is a correction (rather than the existing literature is fine and here is just another way of doing it).  Of course, the strength of this line of motivation depends on whether you find a higher coefficient with a simple distance measure.  Would it be possible to do that distance-based analysis readily to find out?
+
+NB I see the Cheng study is an outlier.  And you have the argument against that paper as the definitive study—too small and too narrow (only one city).  However, I am not sure you make your added value clear enough.  Just a few tweaks to sentences in this paragraph would make a big difference.
+
+b) The paragraph that starts at the top of p. 4 needs a transition sentence to make clear how this connects to the previous paragraph.  It is clear by the end of the paragraph, but something like, “The quick review of estimates above makes clear the large imprecision in estimates of noise disamenity.” or something like that might make clearer why you are arguing for this study.
+
+2) Table 4: You have buried the all-critical noise variable in the middle of the table.  I’d put it at the top (which also matches the ordering in your model).
+
+3) On p. 15 you conclude that the hedonic coefficients are “different” pre- and post-crash.  It would be great if you could say something more elucidating.  Toward that end, I wondered which sets of coefficients were statistically different from each other.
+
+4) I think section 5 needs more focus.  It feels like we’ve gone away from the point of the paper (to figure out the size of the  noise impact) and wandered into a methods question (are the cool spatial models giving different answers).  For example, in section 5.1 the size of the coefficient on noise isn’t even mentioned.  Section 5.2’s title points to the problem—we’re talking about the stability of the hedonic function rather than about the critical parameter.  The only mention of the noise parameter in 5.2 is ironically to note that the spatial variation may well have been due to noise.  To me this suggests all of the part with spatial variation can be dramatically paired back to say “In results available from the authors we used the methods of so-and-so to explore the possibility of spatial variability in the noise effect.  We were not able to reject the hypothesis of spatial stationarity.  Furthermore, the more flexible specification which allowed for spatial variation in the other dependent variables’ effects produced very similar estimates for the effect of traffic noise.  Thus, we focus here on the results of the simpler stationary model.”
+
+A similar question comes up with section 5.3.  The change in effect you find with the more complex model is -0.8*10^-3.  If I got it right from the Table 4 the difference in effect in the simpler model is -1.45*10^-3.  Given the size of the SEs, I wonder if that difference is really meaningful.  It is more than 50%, so maybe it is meaningful and you need the fancy model.  But in that case, I would like to see more discussion playing up (and arguing) that point.  
+
+I’m not sure, but it seems you could accommodate the threshold question in the basic model, too.  If I’m right about that, then it is an empirical question whether the fancy model is needed; does it give different answers than the basic model?  [Aside: Figure 4 raises the question of how much of the difference btw pre-and post-2008 effects is driven by the outliers with 80-85 decibels.  Looks to me like you still get the same story, but you might want to re-run it excluding that group to confirm the robustness (and maybe add a footnote).  
+
+Small points
+1) Table 1: I was surprised at the max size of homes in your sample.  I figured with such a large sample you surely would have seen at least 1 house on a 1-acre lot or with >4000 sq ft.  That made me wonder if I was not fully understanding something about the sample.
+
+2) p. 6: I think there is a word missing in this sentence.  “Although the 2010 MetroGIS RegionalParcel Dataset includes structural data on living area, age, garage presence, lotsize, owner-occupancy and house architectural style for every transaction, we have variables for the number of bedrooms, bathrooms, and size of the garage for house sales in one county.”  It seems to say you DO have these variables, but the next sentence says you DO NOT have them.  Could it be that you have these for “ONLY one county?”
+
+3) p. 8 section 2.2: I would not necessarily cite studies that have used this particular data.  I would cite the relevant literature at the top of the paper in the lit review.  To cite those using this particular data as such seems to suggest that what is really important is this data.  But that would seem so suggest that your results have pretty limited applicability.  That’s not the message you want to send.  So, if they are important studies, cite them in the lit review no matter what data they are using.  If they really aren’t that important, then don’t cite them.
+
+
+4) p. 8 last line: what does “A-weighted” mean?
+
+5) p. 9: what does “reference distance” mean?
+
+6) I would combine sections 4 & 5 so that you have section 3 “Basic Regression Model” and section 4 “Locally Weighted Regression Model.”  Separating 4 & 5 tends to emphasize the method.  You might even include moving this methods portion up into the methods/data discussion prior to any results. But I am not sure that would work well given the iterative data-methods nature of the discussion.
+
+7) In eq 6 I might rename the variable “Months since 2008” or “Months” so people don’t confuse it with a matrix of dummies intended to pick up seasonality.  
+
+8) Traffic reduction during the recession: What if you just said traffic fell by 2% in 2008, 4% in 2009, and 2% in 2010?  Would it be possible to quickly re-estimate to show that a first approximation doesn’t change anything?
