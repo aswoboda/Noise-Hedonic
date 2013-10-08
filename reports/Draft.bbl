@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{63}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -19,8 +19,7 @@
 \newblock Technical report, US Department of Transportation Federal Highway
   Administration, 2012.
 \newblock URL
-  \url{http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/sum%
-mary/index.cfm}.
+  \url{http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/summary/index.cfm}.
 
 \bibitem[Alonso(1964)]{Alonso1964}
 William Alonso.
@@ -113,8 +112,7 @@ Theo Bodin, Maria Albin, Jonas Ard\"{o}, Emilie Stroh, Per-Olof Ostergren, and
 \newblock ISSN 1476-069X.
 \newblock \doi{10.1186/1476-069X-8-38}.
 \newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2753564\&tool%
-=pmcentrez\&rendertype=abstract}.
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2753564\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Brandt and Maennig(2011)]{Brandt2011}
 Sebastian Brandt and Wolfgang Maennig.
@@ -230,8 +228,7 @@ Yvonne de~Kluizenaar, Sabine~a Janssen, Henk Vos, Erik~M Salomons, Han Zhou,
 \newblock ISSN 1660-4601.
 \newblock \doi{10.3390/ijerph10062258}.
 \newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3717735\&tool%
-=pmcentrez\&rendertype=abstract}.
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3717735\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Delucchi and Hsu(1998)]{Delucchi1998}
 Mark Delucchi and Shi-Ling Hsu.
@@ -316,8 +313,7 @@ Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
 \newblock ISSN 13619209.
 \newblock \doi{10.1016/j.trd.2007.03.002}.
 \newblock URL
-  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/des%
-cription\#description
+  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/description\#description
   http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
 
 \bibitem[Langley(1976)]{Langley1976}
@@ -423,17 +419,6 @@ Stale Navrud.
   European Commission DG Environment}.
 \newblock Technical report, 2002.
 
-\bibitem[Nega et~al.(2012)Nega, Smith, Bethune, and Fu]{Nega2012}
-Tsegaye Nega, Carl Smith, James Bethune, and Wei-Hsin Fu.
-\newblock {An analysis of landscape penetration by road infrastructure and
-  traffic noise}.
-\newblock \emph{Computers, Environment and Urban Systems}, 36\penalty0
-  (3):\penalty0 245--256, May 2012.
-\newblock ISSN 01989715.
-\newblock \doi{10.1016/j.compenvurbsys.2011.09.001}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0198971511000895}.
-
 \bibitem[Nelson(1982)]{Nelson1982}
 Jon~P. Nelson.
 \newblock {Highway Noise and Property Values: A Survey of Recent Evidence}.
@@ -472,17 +457,6 @@ Antonio Paez, Steven Farber, and David Wheeler.
 \newblock \emph{Environment and Planning A}, 43\penalty0 (12):\penalty0
   2992--3010, 2011.
 
-\bibitem[Sander and Polasky(2009)]{Sander2009b}
-Heather~A. Sander and Stephen Polasky.
-\newblock {The value of views and open space: Estimates from a hedonic pricing
-  model for Ramsey County, Minnesota, USA}.
-\newblock \emph{Land Use Policy}, 26\penalty0 (3):\penalty0 837--845, July
-  2009.
-\newblock ISSN 02648377.
-\newblock \doi{10.1016/j.landusepol.2008.10.009}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0264837708001324}.
-
 \bibitem[Shepherd et~al.(2013)Shepherd, Welch, Dirks, and
   McBride]{Shepherd2013}
 Daniel Shepherd, David Welch, Kim~N Dirks, and David McBride.
@@ -493,8 +467,7 @@ Daniel Shepherd, David Welch, Kim~N Dirks, and David McBride.
 \newblock ISSN 1660-4601.
 \newblock \doi{10.3390/ijerph10041284}.
 \newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3709317\&tool%
-=pmcentrez\&rendertype=abstract}.
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3709317\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Sorensen et~al.(2011)Sorensen, Hvidberg, Andersen, Nordsborg,
   Lillelund, Jakobsen, Tjonneland, Overvad, and Raaschou-Nielsen]{Sorensen2011}
