@@ -55,7 +55,11 @@
 
 \usepackage{alltt}
 \usepackage[round]{natbib}
+\usepackage[nolists]{endfloat}
+\usepackage[width = 5in]{geometry}
 \usepackage{caption, amsmath, graphicx, setspace, multirow, color, hyperref, array}
+
+%\renewcommand{\efloatseparator}{\mbox{}}
 
 \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
@@ -67,18 +71,21 @@
 \defcitealias{USFHA2012}{USFHWA, 2012}
 
 \title{The Negative Effect of Traffic Noise on House Prices: A Landscape Hedonic Analysis}
-\date{\today}
+\date{}
 
 \doublespacing
 \begin{document}
 \maketitle
+\pagenumbering{roman}
 \begin{singlespace}
 \begin{abstract}
 One consequence of the expanding road network and its associated traffic is increased levels of traffic noise.  While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, research in the United States has often relied on crude measures of traffic noise. Here, we reduce the measurement error of traffic noise exposure through a detailed model of noise propagation over the landscape. Additionally, we estimate the impact on single family home transactions throughout the St.\ Paul, Minnesota, urban area using spatially explicit local regression techniques to allow for spatial non-stationarity in the hedonic function. Contrary to previous work, we find no evidence that the effect of traffic noise varies significantly across the several hundred square miles of our study region, nor by traffic noise levels. We do find significant differences in the impact of traffic noise before and after the economic recession of 2008-09. Our results suggest that an increase in traffic noise of one decibel decreases house prices by an average of 0.19 percent before September 2008 and an average of 0.37 percent after September 2008.
 \end{abstract}
 \end{singlespace}
 
-\newpage
+\clearpage
+\pagenumbering{arabic} 
+
 \section{Motivation and Past Research}\label{sec:lit}
 Prolonged exposure to traffic noise affects people in a number of ways, ranging from simple annoyance \citep{Miedema2001, Ouis2001, Ohrstrom2007, DeKluizenaar2013, Weinhold2013}, to sleep disturbance \citepalias{Netherlands2004}, to increasing risk for stroke \citep{Sorensen2011}, hypertension \citep{Jarup2008, Bodin2009}, myocardial infarction \citep{Babisch2005}, and overall quality of life \citep{Shepherd2013}. The noise level at which such effects are observed does not have to be high.  It has been shown that people exposed to traffic noise with a 24-hour average of 55 decibels (dBA) are found to be at a higher risk for hypertension \citep{Barregard2009, Bodin2009}, and those exposed to 60 dBA or greater are found to be at a higher risk for stroke \citep{Sorensen2011}.  
 
@@ -111,7 +118,7 @@ In addition to the geographic location and date of the house sale, we collected 
 \caption{This figure shows the spatial extent of our study area as well as the significant spatial variation in single family house sales prices.}\label{fig:overview}
 \end{figure}
 
-\begin{table}[htb]
+\begin{table}
 \caption{Variable Description and Summary Statistics}\label{tab:sumStats}
 \makebox[\linewidth][c]{
 \small
@@ -356,7 +363,7 @@ We believe the hedonic function varies significantly over space and the use of a
 
 In the first simulation we estimated the LWR model using bandwidths ranging from the nearest 50 to 10,000 sales just as before, but with the spatially reshuffled data (so the nearest 50 observations in the simulations are not the same 50 observations in reality). In 100 consecutive simulations, the smallest Generalized Cross-Validation score was obtained at the largest bandwidth. The smallest of these GCV scores was 0.041, just as was the case with the global (non-LWR) model. In other words, after running thousands of regressions on the shuffled data, we never obtained model performance anywhere near the LWR model with our true locational data. This seems to be strong evidence that the increased ability to predict house prices with a local model is not due to chance and that there is spatial non-stationarity in the hedonic function.
 
-\subsubsection{Does the impact of traffic noise vary over space?}
+\subsection{Does the Implicit Price of Traffic Noise Change over Space?}
 In the previous simulation we found that the hedonic regression function indeed exhibits spatial non-stationarity. However, we have not yet established which variables have spatially varying coefficients. In the second simulation, we seek to explore which of the hedonic regression coefficients exhibit spatial non-stationarity. We repeat the Monte Carlo simulation described earlier, but only at the optimal bandwidth from the original LWR model. We collected the standard deviation of the estimated LWR coefficients for each variable in each iteration of the simulation. The intuition of this simulation is as follows: a variable might truly exert a spatially \emph{stationary} effect on house prices, but our estimates vary over space due to chance. If this is the case, by shuffling the location of our observations and rerunning the LWR model, we should see a similar dispersion in regression coefficients over space with the reshuffled data as with our actual data. However, if the coefficient exhibits true spatial \emph{non-stationarity}, it is unlikely that we will see such a large of a standard deviation in the coefficient estimates after having reshuffled the data (because now the houses for which a coefficient exerts a strong effect are probably no longer near each other). 
 
 After 100 iterations of this second simulation, the minimum GCV score for these re-sampled LWR models is 0.060, substantially larger than all models (global and local) with the actual data. The fourth column in Table \ref{tab:mainresults} displays the standard deviations of the LWR regression coefficients obtained with our data. Column (6) displays the proportion of Monte Carlo simulations that yielded larger standard deviations of LWR coefficient estimates than those shown in column $\sigma_{\hat{\beta}}$. For most variables, we never obtained a larger standard deviation in the simulation than we obtained from the LWR model with the actual data. However, the values associated with the traffic noise and owner occupancy variables suggest that the variation in LWR coefficients in our data may have been due to random chance. These coefficients may in fact be stationary across the study area, while the other coefficients appear to be non-stationary. Future work may want to estimate a mixed-LWR model in which the coefficients on traffic noise and owner occupancy remain stationary while the other coefficients are allowed to vary over space. See \citet{Fotheringham2002} for a description of a mixed-LWR estimation algorithm. 
@@ -379,7 +386,7 @@ In this section we look for evidence of temporal non-stationarity in the hedonic
 \hat{\beta}_{LWR} = \alpha _0 + \alpha _1 \texttt{*Months since Sep. 2008} + \alpha _2  \texttt{*Post} + \alpha _3 \texttt{*Post*Months since Sep. 2008} + \epsilon.
 \end{equation}
 The results of this regression will help us understand the patterns of change in the implicit price of traffic noise. In particular, $\alpha_1 \neq 0$ suggests a linear temporal trend in the marginal willingness to pay to avoid traffic noise, while $\alpha_2 \neq 0$ suggests that there was a structural break after September 2008, and $\alpha_3 \neq 0$ will imply a change in the temporal trend after September 2008. The linear regression results presented in Table \ref{tab:betaMAX} show that there the estimated LWR coefficients for traffic noise are significantly smaller after September 2008.
-\begin{table}[htb]
+\begin{table}
 \caption{Dependent Variable = Traffic Noise LWR Coefficients}\label{tab:betaMAX}
 \begin{center}
 \begin{tabular}{lrrr}
@@ -433,7 +440,7 @@ The hedonic analysis results presented suggest that traffic noise exhibits a sig
 
 Our previously reported results lack some important control variables in the hedonic function. To the extent that structural variables like the number of bedrooms, bathrooms, garage size, or construction quality co-vary with other variables in our dataset, our regression coefficients will suffer from omitted variable bias. We are comforted, however, because we do have some of these important additional variables for a subset of our data. We obtained the number of bedrooms, bathrooms, and garage area for our houses located within Dakota County from the Dakota County Assessor's Office. Our LWR analysis (Models 1, 2, and 3 described earlier) was repeated on this geographic subset of the data and the results were compared to the estimates obtained from the same analysis when these additional structural variables were omitted. We found strikingly similar estimates of the impact of traffic noise suggesting that our results may be robust to the omission of these variables from our analysis.
 
-\begin{table}[ht]
+\begin{table}
 \begin{center}
 \caption{Noise Coefficient Estimates in Dakota County with and without Additional Structural Variables}\label{tab:Dak}
 \begin{tabular}{lll}
@@ -465,6 +472,7 @@ Precise estimates of the impact of traffic noise are important for efficient imp
 
 Future research should be conducted in more housing markets, as the potential to apply the results of analysis in one set of geographical and economic circumstances may be limited. Second, ``mixed'' regression techniques (in which some regression coefficients are constrained to remain constant across the study area while others are allowed to vary) may allow researchers to obtain more precise estimates of the impact of hedonic characteristics by increasing the degrees of freedom in the regression. Future work may also seek to re-estimate traffic noise models over time to better account for changes in traffic flows associated with macroeconomic conditions. Lastly, researchers should take advantage of the recent suggestions in \citet{Carruthers2010} and use the spatial variation in regression coefficients obtained from LWR models to estimate the second-stage hedonic regressions to identify consumer demand curves for these characteristics.
 
+\newpage
 \begin{singlespace}
 \bibliographystyle{plainnat}
 \bibliography{NoiseBibliography}
