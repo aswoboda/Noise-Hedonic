@@ -17,6 +17,7 @@
 
 \title{The Negative Effect of Traffic Noise on House Prices: A Landscape Hedonic Analysis}
 \date{}
+\author{Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
 
 \doublespacing
 \begin{document}

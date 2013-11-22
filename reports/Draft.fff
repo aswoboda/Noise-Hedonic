@@ -1,28 +1,24 @@
-\begin{figure*}
-
+\begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/StudyAreaSaleValueDist}}
 \caption{This figure shows the spatial extent of our study area as well as the significant spatial variation in single family house sales prices.}\label{fig:overview}
-\end{figure*}
+\end{figure}
 \efloatseparator
  
-\begin{figure*}
-
+\begin{figure}
   \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/GCVbyModel}}
 \caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 200 nearest houses.}\label{fig:GCVmodel}
-\end{figure*}
+\end{figure}
 \efloatseparator
  
-\begin{figure*}
-
+\begin{figure}
  \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDsClean}}
  \caption{Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds}
-\end{figure*}
+\end{figure}
 \efloatseparator
  
-\begin{figure*}
-
+\begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = 1.1\textwidth]{../graphs/LWRbetaMAXbyCatTime}}
 \caption{The mean LWR traffic noise coefficient by 5 decibel category and pre- vs.\ post-September 2008. The vertical lines denote the standard error of the estimated mean by time and level category. Note that over 99 percent of our data have Noise levels between 35 and 80 dB and no houses were sold post-September 2008 with noise levels above 85 dB.}\label{fig:betaMAXvCat}
-\end{figure*}
+\end{figure}
 \efloatseparator
  
