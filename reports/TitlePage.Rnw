@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[round]{natbib}
+\usepackage[nolists]{endfloat}
+\usepackage[width = 5in]{geometry}
+\usepackage{caption, amsmath, graphicx, setspace, multirow, color, hyperref, array}
+
+%\renewcommand{\efloatseparator}{\mbox{}}
+
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+\newcolumntype{x}[1]{%
+>{\centering\hspace{0pt}}p{#1}}%
+
+\defcitealias{Netherlands2004}{Netherlands, 2004}
+\defcitealias{UNDESA2012}{United Nations, 2012}
+\defcitealias{USFHA2012}{USFHWA, 2012}
+
+\title{The Negative Effect of Traffic Noise on House Prices: A Landscape Hedonic Analysis}
+\date{}
+\author{Aaron Swoboda, Maxwell Timm, and Tsegaye Nega}
+
+\doublespacing
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\begin{singlespace}
+\begin{abstract}
+One consequence of the expanding road network and its associated traffic is increased levels of traffic noise.  While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, research in the United States has often relied on crude measures of traffic noise. Here, we reduce the measurement error of traffic noise exposure through a detailed model of noise propagation over the landscape. Additionally, we estimate the impact on single family home transactions throughout the St.\ Paul, Minnesota, urban area using spatially explicit local regression techniques to allow for spatial non-stationarity in the hedonic function. Contrary to previous work, we find no evidence that the effect of traffic noise varies significantly across the several hundred square miles of our study region, nor by traffic noise levels. We do find significant differences in the impact of traffic noise before and after the economic recession of 2008-09. Our results suggest that an increase in traffic noise of one decibel decreases house prices by an average of 0.19 percent before September 2008 and an average of 0.37 percent after September 2008.
+\end{abstract}
+\end{singlespace}
+
+
+\end{document}
