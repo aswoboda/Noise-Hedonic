@@ -6,7 +6,7 @@ workingdata20052010$PostCrash = 0
 crashobs <- which(workingdata20052010$TimePeriod>46)
 workingdata20052010$PostCrash[crashobs] = 1
 
-myModel = "logSALE_VA ~ FIN_SQ_FT + ACRES_POLY +  HOMESTEAD +  YEAR_BUILT + MAX +
+myModel = "logSALE_VA ~ FIN_SQ_FT + ACRES_POLY +  HOMESTEAD +  YEAR_BUILT + MAX + PercU18 + PercWhite +
  MED_INCOME + MCA3 + CBD_dist + LAKE_dist + PARK_dist + SHOP_dist  + COUNTY_ID +  factor(SALE_YR) + SALE_MO"
 
 #ACRES_POLY * CBD_dist I(ACRES_POLY^2)* I(CBD_dist ^2)

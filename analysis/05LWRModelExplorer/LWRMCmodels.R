@@ -7,9 +7,10 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-MYMODELS = c("logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist",
-             "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist+CITY")
-KVECTOR = c(25, 50, 75, 100, 125, 150, 175, 200, 225, 400, 600, 800, 1000)
+MYMODELS = c(#"logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+factor(TimePeriod)",
+             "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+PercWhite+PercU18+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist+factor(TimePeriod)",
+             "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+PercWhite+PercU18+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist+factor(TimePeriod)+CITY")
+KVECTOR = c(25, 50, 75, 100, 125, 150, 175, 200, 225, 400, 600, 800, 1000, 1500)
 
 filePrefix = "../Data/R2GIS/CleanData/"
 inputFile = "Sales20052010.dbf"
@@ -26,7 +27,7 @@ for (modelNum in 1:length(MYMODELS)) { #
                         LWRtimelag,
                         Data.Frame = DATAFRAME,
                         my.model = MYMODEL, 
-                        my.modelSMALL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist", #substr(MYMODEL, 1, nchar(MYMODEL)-5),
+                        my.modelSMALL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+PercWhite+PercU18+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist+factor(TimePeriod)", #substr(MYMODEL, 1, nchar(MYMODEL)-5),
                         kvector = KVECTOR,
                         timelag = 12,
                         mc.cores = 16
@@ -36,7 +37,7 @@ for (modelNum in 1:length(MYMODELS)) { #
 
   names(output.raw) = DATAFRAME$UNIQID[obs2run]
   output = Reorganizer(output.raw)
-  save(output, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRmodel", modelNum+16, "-", Sys.Date(), ".RData"))
+  save(output, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRmodel", modelNum+4, "-", Sys.Date(), ".RData"))
   rm(output, output.raw)
   gc()
   print(gc())

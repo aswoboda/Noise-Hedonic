@@ -1,17 +1,18 @@
 library (foreign)
-sales0510 <- read.dbf("../Data/GIS2R/Sales20052010.dbf")
+sales0510 <- read.dbf("../Data/GIS2R/Sales20052010_airport_and_demographics.dbf")
 summary(sales0510) #found that some observations have a 0 or negative sales value
-t <- which(sales0510$SALE_VALUE < 1)
-sales0510 = sales0510 [-t, ] #Excludes observations without sales value information
+# No need to do the following...
+# t <- which(sales0510$SALE_VALUE < 1)
+# sales0510 = sales0510 [-t, ] #Excludes observations without sales value information
 
 #Pulling the variables we WANT into a new, working dataframe.
-sales0510$GARSQFT <- as.numeric(as.character(sales0510$GARAGESQFT)) #Converting factor to numeric
-sales0510$SALE_SEASON <- factor(sales0510$SALE_QRT)
-sales0510$SALE_MO <- factor(sales0510$SALE_MONTH)
+# sales0510$GARSQFT <- as.numeric(as.character(sales0510$GARAGESQFT)) #Converting factor to numeric
+# sales0510$SALE_SEASON <- factor(sales0510$SALE_QRT)
+# sales0510$SALE_MO <- factor(sales0510$SALE_MONTH)
 sales0510$OWNOCC <- as.numeric(sales0510$HOMESTEAD)-1
 #Creating a time period variable so we can pull data in LWR from a time lag of a 12 month window for each parcel
-sales0510$YEARtemp <- sales0510$SALE_YR - 2005
-sales0510$TimePeriod <- sales0510$YEARtemp*12+sales0510$SALE_MONTH
+# sales0510$YEARtemp <- sales0510$SALE_YR - 2005
+# sales0510$TimePeriod <- sales0510$YEARtemp*12+sales0510$SALE_MONTH
 
 #Cleaning HOME_STYLE independent variable
 table(sales0510$HOME_STYLE)
@@ -65,20 +66,44 @@ bung.home <- sales0510[x1, ]
 bung <- c(x,x1)
 sales0510$HOME_STYLE[bung] <- bung.home$HOME_STYLE[1]
 
-dataNames <- names (sales0510)
-VarsIWant <- which(dataNames %in% c("ELEM", "HIGH", "GARSQFT","TimePeriod","HOMESTEAD", "SALE_SEASON", "SALE_MO","COUNTY_ID", "CITY", "ZIP", "ACRES_POLY", "OWNOCC", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter"))
-workingdata = sales0510[ , VarsIWant]
+# others
+x = which(sales0510$HOME_STYLE == "ROW")
+x1 = which(sales0510$HOME_STYLE == "OTHER")
+x2 = which(sales0510$HOME_STYLE == "MODULAR")
+x3 = which(sales0510$HOME_STYLE == "None")
+x4 = which(sales0510$HOME_STYLE == "TWO+ STORY")
+other.style = sales0510[x1, ]
+other.houses = c(x, x1, x2, x3, x4)
+sales0510$HOME_STYLE[other.houses] = other.style$HOME_STYLE[1]
+table(sales0510$HOME_STYLE)
+
+
+# previously, we only kept some variables, but let's just keep all of them for now.
+# myVars = c("ELEM", "HIGH", "GARSQFT","TimePeriod","HOMESTEAD", "SALE_SEASON", "SALE_MO","COUNTY_ID", 
+#            "CITY", "ZIP", "ACRES_POLY", "OWNOCC", "TOTAL_TAX", "HOME_STYLE", "FIN_SQ_FT", "GARAGE", 
+#            "YEAR_BUILT", "SALE_VALUE", "SALE_YR", "BEDS", "BATH", "MAX", "TRACTCE10", "BLDG_QUAL", 
+#            "PARK_dist", "LAKE_dist", "SDNUM", "MCA3", "MCA5", "UNIQID", "Long_X", "Lat_Y", "SHOP_dist", 
+#            "CBD_dist", "PIN", "SP_dist", "MPS_dist", "COLLEGE_di", "MED_INCOME","X_Meter", "Y_Meter",
+#            "Air_Max", "Air_Min", "Air_Mean", "MSP_noise", "STP_noise", "Road_max", "Road_min", "Road_mean")
+# dataNames <- names (sales0510)
+# VarsIWant <- which(dataNames %in% myVars)
+# workingdata = sales0510[ , VarsIWant]
+workingdata = droplevels(sales0510)
 summary (workingdata)
-workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
+workingdata$MAXmax = workingdata$MAX
+workingdata$MAX = workingdata$Air_Max
+
+# workingdata$logSALE_VALUE = log(workingdata$SALE_VALUE) #Transforming sales values into logs
+# summary(workingdata)
 
 ##Outlier Investigation -- Looking to not violate normality assumption by looking at histograms
-#hist(workingdata$ACRES_POLY) #Large outliers -- very right skewed
-#hist(workingdata$FIN_SQ_FT) #Also right skewed
-#hist(workingdata$MAX) #Left skewed
-#hist(workingdata$SALE_VALUE) #Right skewed
+# hist(workingdata$ACRES_POLY) #Large outliers -- very right skewed
+# hist(workingdata$FIN_SQ_FT) #Also right skewed
+# hist(workingdata$MAX) #Left skewed
+# hist(workingdata$SALE_VALUE) #Right skewed
 LivingAreaOutliers = which (workingdata$FIN_SQ_FT > 4000) #Limit dataset to houses with less than 5000 sq ft.
 AcreageOutliers = which (workingdata$ACRES_POLY > .6) #Limit dataset to parcels less than one acre
-TrafficNoiseOutliers = which(workingdata$MAX <25) #Limit dataset to properties exposed to more than 25 dBA
+TrafficNoiseOutliers = which(workingdata$MAX <30) #Limit dataset to properties exposed to more than 25 dBA
 SalesValueOutliers = which (workingdata$SALE_VALUE > 675000)#Limit dataset to properties that sold for less than $675,000
 svoutlier = which (workingdata$logSALE_VALUE < 11.5)
 OutlierParcels = c(LivingAreaOutliers,AcreageOutliers,TrafficNoiseOutliers,SalesValueOutliers, svoutlier)
