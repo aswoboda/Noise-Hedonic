@@ -30,15 +30,16 @@ for (modelNum in 1:length(MYMODELS)) { #
                         my.modelSMALL = "logSALE_VA~MAX+FIN_SQ_FT+ACRES_POLY+YEAR_BUILT+HOME_STYLE+OWNOCC+PercWhite+PercU18+MED_INCOME+MCA3+LAKE_dist+PARK_dist+SHOP_dist+CBD_dist+factor(TimePeriod)", #substr(MYMODEL, 1, nchar(MYMODEL)-5),
                         kvector = KVECTOR,
                         timelag = 12,
-                        mc.cores = 16
+                        mc.cores = 8
                         )
   end = Sys.time()
   print(end - start)
-
+  Sys.time()
   names(output.raw) = DATAFRAME$UNIQID[obs2run]
   output = Reorganizer(output.raw)
   save(output, inputFile, MYMODEL, file = paste0(filePrefix, dataSource, "LWRmodel", modelNum+4, "-", Sys.Date(), ".RData"))
   rm(output, output.raw)
   gc()
   print(gc())
+  Sys.time()
 }
