@@ -6,18 +6,19 @@ require(fields, quietly = TRUE)
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_INCOME", "MCA3",
-           "LAKE_dist", "PARK_dist", "SHOP_dist", "CBD_dist", "HOME_STYLE")
+myVars = c("Air_Mean", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_INCOME", "MCA3",
+           "LAKE_dist", "PARK_dist", "SHOP_dist", "CBD_dist", "PercWhite", "PercU18", 
+           "HOME_STYLE", "factor(TimePeriod)", "CITY")
 RHS = paste(myVars, collapse = "+")
 MYMODEL = paste("logSALE_VA", RHS, sep = "~")
-MYMODELsmall = MYMODEL
-KVECTOR = c(200)
+MYMODELsmall = substr(MYMODEL, 1, nchar(MYMODEL)-5)
+KVECTOR = c(650) # c(200, 400, 650, 1000, 2000, 4000)
 
 # How many times am I going to reshuffle?
-iterations = 100
+iterations = 50 #100
 # How many things am I keeping track of each reshuffle? 
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
-vars2keep = c("Intercept", myVars[-length(myVars)])
+vars2keep = c("Intercept", myVars[c(1:(length(myVars)-3))])
 numMCstats = 2 + 2*length(vars2keep)
 MCstats = matrix(NA, iterations, numMCstats)
 colnames(MCstats) = c("minGCV", "optimalBandwidth", 
@@ -37,11 +38,11 @@ for (iter in 1:iterations) {
   start = Sys.time()
   
   output.raw = mclapply(obs2run,
-                      LWRtimelag,
-                      Data.Frame = simDATA,
-                      my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
-                      kvector = KVECTOR,
-                      timelag = 12,
+                        LWRtimelag,
+                        Data.Frame = simDATA,
+                        my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
+                        kvector = KVECTOR,
+                        timelag = 12,
                         mc.cores = 16
   )
   names(output.raw) = simDATA$UNIQID[obs2run]
@@ -63,7 +64,7 @@ for (iter in 1:iterations) {
   end = print(Sys.time())
   print(paste("iteration ", iter, " took "))
   print(end - start)
-  write.csv(MCstats, file = paste0(filePrefix, "LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
+  write.csv(MCstats, file = paste0("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
   rm(output, output.raw)
   gc()
   print(gc())
