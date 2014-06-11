@@ -1,53 +1,4 @@
-\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass{article}
 
 \usepackage[round]{natbib}
 \usepackage[nolists]{endfloat}
@@ -70,13 +21,12 @@
 \author{}%Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
 
 \doublespacing
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \maketitle
 \pagenumbering{roman}
 \begin{singlespace}
 \begin{abstract}
-One consequence of the expanding road network and its associated traffic is increased levels of traffic noise.  While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, research in the United States has often relied on crude measures of traffic noise. Here, we reduce the measurement error of traffic noise exposure through a detailed model of noise propagation over the landscape. Additionally, we estimate the impact on single family home transactions throughout the St.\ Paul, Minnesota, urban area using spatially explicit local regression techniques to allow for spatial non-stationarity in the hedonic function. Contrary to previous work, we find no evidence that the effect of traffic noise varies significantly across the several hundred square miles of our study region, nor by traffic noise levels. We do find significant differences in the impact of traffic noise before and after the economic recession of 2008-09. Our results suggest that an increase in traffic noise of one decibel decreases house prices by an average of 0.19 percent before September 2008 and an average of 0.37 percent after September 2008.
+One consequence of the expanding road network and its associated traffic is increased levels of traffic noise.  While the hedonic literature has consistently shown a negative effect of this phenomenon on the real estate market, research in the United States has often relied on crude measures of traffic noise. Here, we reduce the measurement error of traffic noise exposure through a detailed model of noise propagation over the landscape. Additionally, we estimate the impact on single family home transactions throughout the St.\ Paul, Minnesota, urban area using spatially explicit local regression techniques to allow for spatial non-stationarity in the hedonic function. 
 \end{abstract}
 \end{singlespace}
 
@@ -95,15 +45,17 @@ One way to estimate some of the costs of traffic noise (and therefore the econom
 
 Reviews of the research by \citet{Bateman2001} found that the negative effect of traffic noise on house prices ranged from 0.08 to 2.22 percent per decibel with a mean around 0.55 percent per decibel, while \citet{Navrud2002} found an average decrease of 0.64 percent per decibel. Much of the recent research in this literature has tended to focus on the European experience with noise, often due to the availability of high quality traffic noise data made available from the government, especially the United Kingdom \citep{Day2007, Blanco2011}, Sweden \citep{Wilhelmsson2000, Andersson2010}, Switzerland \citep{Baranzini2010}, Spain \citep{MarmolejoDuarteCarlos;GonzalezTamez2009}, Netherlands \citep{Theebe2004a}, and Germany \citep{Brandt2011}. 
 
-Instead of focusing on the impact of automobile traffic noise, hedonic work in the United States has tended to concentrate on noise from airports \citep{Espey2000, McMillen2004, Cohen2008a} or indirect measures of traffic noise, such as proximity to highways \citep{Matthews2007, Chernobai2009, Li2012}, or traffic counts \citep{HughesJr.1992, Larsen2012}. One exception is \citet{Cheng2008}, which finds that an additional decibel of traffic noise reduced house prices in Louisville, Tennessee, by 0.34 percent during the year 2007. However, the generalizability of this research is limited given that it is based on less than a thousand house transactions in just one city. 
+Instead of focusing on the impact of automobile traffic noise, hedonic work in the United States has tended to concentrate on noise from airports \citep{Espey2000, McMillen2004, Cohen2008a} or indirect measures of traffic noise, such as proximity to highways \citep{Matthews2007, Chernobai2009, Li2012}, or traffic counts \citep{HughesJr.1992, Larsen2012}. One exception is \citet{Cheng2008}, who estimated that year 2007 housing prices in Louisville, Tennessee were, on avarege, 0.34 percent lower for each additional decibel of traffic noise. However, the generalizability of this research is limited given that it is based on less than a thousand house transactions in just one city. 
 
 A major reason for the thinness of the scholarly literature on this topic in the US lies in the difficulty of modeling traffic noise propagation over the landscape. To properly analyze the spatial association between real estate prices and exposure to traffic noise, it is necessary to create a noise surface map at sufficiently detailed spatial resolution to account for the complex and heterogeneous interaction between the noise source and the resistance of the landscape to noise propagation.  Implementing such a model can be very difficult.  The data needed for the model is very extensive and may not even be readily available (e.g., building footprint and height data).  Furthermore, it is computationally very intensive. Fortunately, recent developments in Geographic Information Systems and distributive computing have reduced these difficulties, making it much easier to create a noise surface map at landscape level with high spatial resolution.  
 
-In this paper, we estimate the relationship between traffic noise and single family house prices across 44 cities and several hundred square miles in the St.\ Paul, Minnesota, urban region by taking advantage of a uniquely detailed set of noise estimates. The data represent perhaps the most accurate regional noise estimates ever used in the hedonic literature in the United States to date due to the high spatial resolution of the estimates (10 m x 10 m) and the incorporation of the effects of nearby buildings and land cover on noise propagation. More detail about the noise model inputs and procedures are presented in the next section of the paper. 
+In this paper, we estimate a hedonic relationship between traffic noise and single family house prices across 44 cities and several hundred square miles in the St.\ Paul, Minnesota, urban region by taking advantage of a uniquely detailed set of noise estimates. The data represent perhaps the most accurate regional noise estimates ever used in the hedonic literature in the United States to date due to the high spatial resolution of the estimates (10 m x 10 m) and the incorporation of the effects of nearby buildings and land cover on noise propagation. More detail about the noise model inputs and procedures are presented in the next section of the paper. 
  
 %Precise estimates of the impact of traffic noise are important for efficient implementation of noise mitigation projects. The US Federal Highway Admistration reports that 47 states have constructed noise barriers to reduce noise propagation, spending over a half a billion dollars from 2008-2010 \citepalias{USFHA2012}. \citet{Delucchi1998} used an estimate of 0.85 percent reduction in house prices per additional decibel in their cost-benefit analysis of traffic noise. While their preferred estimate of the total damage cost to the United States in 1991 is \$3 billion, they report a possible range of less than \$100 million to over \$40 billion due in part to uncertainty surrounding the degree of noise propagation over space in the urban built environment and the effect of noise on house prices. Indeed, one of the main conclusions of their work is that more research should be done to better understand the impact of noise on house prices and that better noise data are needed for such work to occur. 
 
-Work from Europe suggests that the relationship between traffic noise and house prices varies across housing submarkets \citep{Day2007, MarmolejoDuarteCarlos;GonzalezTamez2009}, by level of traffic noise \citep{Theebe2004a, Brandt2011}, and over time \cite{Wilhelmsson2000}. As such, we construct a flexible hedonic model that allows for a non-stationary relationship between house prices and our explanatory variables over geography and time. Such Locally Weighted Regression (LWR) models have become increasingly common in published work \citep[see][]{MarmolejoDuarteCarlos;GonzalezTamez2009, Carruthers2010, Sunding2010, Nappi-Choulet2011} and have been shown to be more accurate than other common spatial econometric models under common real world circumstances \citep{McMillen2012}. Thus, in addition to using new data that reduces the measurement error of the impact of traffic noise, the spatial and temporal variation in our data and hedonic modeling allow us to present the first estimates in the United States of how the impact of traffic noise varies over space, time, and by noise level. 
+Work from Europe suggests that the relationship between traffic noise and house prices varies across housing submarkets \citep{Day2007, MarmolejoDuarteCarlos;GonzalezTamez2009}, by level of traffic noise \citep{Theebe2004a, Brandt2011}, and over time \cite{Wilhelmsson2000}. As such, we construct a flexible hedonic model that allows for a non-stationary relationship between house prices and our explanatory variables over geography and time. Such Locally Weighted Regression (LWR) models have become increasingly common in published work \citep[see][]{MarmolejoDuarteCarlos;GonzalezTamez2009, Carruthers2010, Sunding2010, Nappi-Choulet2011} and have been shown to be more accurate than other common spatial econometric models under common real world circumstances \citep{McMillen2012}. Thus, in addition to using new data that reduces the measurement error of the impact of traffic noise, the spatial and temporal variation in our data and hedonic modeling allow us to present the first estimates in the United States of how the marginal effect of traffic noise varies over space and time.
+
+What do we think now?
 
 We find that while the impact of other important control variables in the hedonic function vary significantly over space, the impact of traffic noise does not. Such results are contradictory to recent work by \citet{MarmolejoDuarteCarlos;GonzalezTamez2009} which found evidence of a spatially non-stationary relationship between traffic noise and housing prices using a LWR model in Barcelona, Spain. Our paper also presents the first estimates of the implicit price of traffic noise after the housing market collapse and economic recession of 2008-09. Contrary to work such as \citet{Cho2011b}, which found that environmental amenities mattered \emph{less} after the housing crash, our estimated effect of traffic noise mattered \emph{almost twice as much more} after the recession (0.19 percent reduction in house prices per additional decibel beforehand compared to 0.37 percent per decibel afterwards). We conclude with a discussion of how future research can expand and improve upon this work.
  

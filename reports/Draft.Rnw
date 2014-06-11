@@ -1,9 +1,10 @@
 \documentclass{article}
+
 \usepackage[round]{natbib}
 \usepackage[nolists]{endfloat}
 \usepackage[width = 5in]{geometry}
 \usepackage{caption, amsmath, graphicx, setspace, multirow, color, hyperref, array}
-
+\usepackage[modulo]{lineno}
 %\renewcommand{\efloatseparator}{\mbox{}}
 
 \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
@@ -17,7 +18,7 @@
 
 \title{The Negative Effect of Traffic Noise on House Prices: A Landscape Hedonic Analysis}
 \date{}
-\author{Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
+\author{}%Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
 
 \doublespacing
 \begin{document}
@@ -31,6 +32,8 @@ One consequence of the expanding road network and its associated traffic is incr
 
 \clearpage
 \pagenumbering{arabic} 
+
+\linenumbers
 
 \section{Motivation and Past Research}\label{sec:lit}
 Prolonged exposure to traffic noise affects people in a number of ways, ranging from simple annoyance \citep{Miedema2001, Ouis2001, Ohrstrom2007, DeKluizenaar2013, Weinhold2013}, to sleep disturbance \citepalias{Netherlands2004}, to increasing risk for stroke \citep{Sorensen2011}, hypertension \citep{Jarup2008, Bodin2009}, myocardial infarction \citep{Babisch2005}, and overall quality of life \citep{Shepherd2013}. The noise level at which such effects are observed does not have to be high.  It has been shown that people exposed to traffic noise with a 24-hour average of 55 decibels (dBA) are found to be at a higher risk for hypertension \citep{Barregard2009, Bodin2009}, and those exposed to 60 dBA or greater are found to be at a higher risk for stroke \citep{Sorensen2011}.  

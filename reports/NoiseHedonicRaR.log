@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 JUN 2014 08:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  10 JUN 2014 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Draft.tex
-(./Draft.tex
+**NoiseHedonicRaR.tex
+(./NoiseHedonicRaR.tex
 LaTeX2e <2011/06/27>
 Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
@@ -337,8 +337,9 @@ LaTeX Info: Redefining \\ on input line 3056.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-) (./Draft.aux)
-\openout1 = `Draft.aux'.
+)
+(./NoiseHedonicRaR.aux)
+\openout1 = `NoiseHedonicRaR.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
@@ -354,7 +355,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
 LaTeX Font Info:    ... okay on input line 74.
- (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count126
 \scratchdimen=\dimen145
@@ -433,33 +435,34 @@ LaTeX Info: Redefining \ref on input line 74.
 LaTeX Info: Redefining \pageref on input line 74.
 LaTeX Info: Redefining \nameref on input line 74.
 
-(./Draft.out) (./Draft.out)
+(./NoiseHedonicRaR.out) (./NoiseHedonicRaR.out)
 \@outlinefile=\write5
-\openout5 = `Draft.out'.
+\openout5 = `NoiseHedonicRaR.out'.
 
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1
 
 ] [2] [3] [4]
-\openout3 = `Draft.fff'.
+\openout3 = `NoiseHedonicRaR.fff'.
 
- (Draft.fff)
-\openout4 = `Draft.ttt'.
 
- (Draft.ttt) [5]
+(NoiseHedonicRaR.fff)
+\openout4 = `NoiseHedonicRaR.ttt'.
+
+ (NoiseHedonicRaR.ttt) [5]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [6] [7]
-[8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+ [6] [7] [8] [9] [10] [11]
+[12] [13] [14] [15] [16] [17] [18]
 Overfull \hbox (64.26093pt too wide) detected at line 386
 [][] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 [] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 
 [][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 [][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/
 10 [][] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^O:
  []
 
-[19] [20] [21] [22] [23] [24] [25] (./Draft.bbl [26]
+[19] [20] [21] [22] [23] [24] [25] (./NoiseHedonicRaR.bbl [26]
 Underfull \hbox (badness 1460) in paragraph at lines 107--116
 []\OT1/cmr/m/n/10 Theo Bodin, Maria Al-bin, Jonas Ard^^?o, Em-i-lie Stroh, Per-
 Olof Os-ter-gren,
@@ -542,7 +545,8 @@ Underfull \hbox (badness 2503) in paragraph at lines 462--471
 0-4601.  doi: $10 . 3390 /
  []
 
-[30]) AED endfloat: Processing end Figures and Tables [31] (./Draft.fff
+[30]) AED endfloat: Processing end Figures and Tables [31]
+(./NoiseHedonicRaR.fff
 <../graphs/StudyAreaSaleValueDist.png, id=624, 614.295pt x 794.97pt>
 File: ../graphs/StudyAreaSaleValueDist.png Graphic file (type png)
 
@@ -577,25 +581,26 @@ File: ../graphs/LWRbetaMAXbyCatTime.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../graphs/LWRbetaMAXbyCatTime.pdf used on input line 2
 0.
 (pdftex.def)             Requested size: 397.48718pt x 265.00404pt.
- [35 <../graphs/LWRbetaMAXbyCatTime.pdf>]) (./Draft.ttt [36] [37] [38] [39] [40
-] [41] [42] [43])
+ [35 <../graphs/LWRbetaMAXbyCatTime.pdf>]) (./NoiseHedonicRaR.ttt [36] [37] [38
+] [39] [40] [41] [42] [43])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
- (./Draft.aux)
+
+(./NoiseHedonicRaR.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
-Package rerunfilecheck Info: File `Draft.out' has not changed.
+Package rerunfilecheck Info: File `NoiseHedonicRaR.out' has not changed.
 (rerunfilecheck)             Checksum: BAF6A533CF89B20111B9B01F2B6226C0;1072.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
  ) 
 Here is how much of TeX's memory you used:
  8431 strings out of 493315
- 127072 string characters out of 6137904
+ 127262 string characters out of 6137904
  238380 words of memory out of 5000000
  11624 multiletter control sequences out of 15000+600000
  12405 words of font info for 46 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 36i,13n,38p,1455b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,38p,1465b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -618,7 +623,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on Draft.pdf (44 pages, 702450 bytes).
+Output written on NoiseHedonicRaR.pdf (44 pages, 702450 bytes).
 PDF statistics:
  833 PDF objects out of 1000 (max. 8388607)
  739 compressed objects within 8 object streams
