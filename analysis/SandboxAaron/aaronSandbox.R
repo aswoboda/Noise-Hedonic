@@ -1,65 +1,88 @@
-# Run a Monte Carlo experiment to see whether coefficients really vary over space
+
+
+# goal is to export the results of our LWR model to eventually create some maps in ArcMAP...
+
+# 1 - open the appropriate R data file
+load("~/NoiseHedonicProject/Data/R2GIS/CleanData/TimeLag12months/Sales20052010LWRmodelAirMean3-2014-03-19.RData")
+
+# 2 - select the appropriate variables to export 
+# remember the structure of "output" is a list of the 279 things we calculated...
+# > names(output)
+# [1] "beta.(Intercept)"             "beta.Air_Mean"                "beta.FIN_SQ_FT"              
+# [4] "beta.ACRES_POLY"              "beta.YEAR_BUILT"              "beta.HOME_STYLE1-1/4 STRY"      
+# [16] "beta.OWNOCC"                  "beta.PercWhite"               "beta.PercU18"                
+# [19] "beta.MED_INCOME"              "beta.MCA3"                    "beta.LAKE_dist"              
+# [22] "beta.PARK_dist"               "beta.SHOP_dist"               "beta.CBD_dist"  
+# [139] "ses.(Intercept)"              "ses.Air_Mean"                 "ses.FIN_SQ_FT"               
+# [142] "ses.ACRES_POLY"               "ses.YEAR_BUILT"               "ses.HOME_STYLE1-1/4 STRY"    
+# [154] "ses.OWNOCC"                   "ses.PercWhite"                "ses.PercU18"                 
+# [157] "ses.MED_INCOME"               "ses.MCA3"                     "ses.LAKE_dist"               
+# [160] "ses.PARK_dist"                "ses.SHOP_dist"                "ses.CBD_dist" 
+
+data2xport = data.frame(output$beta.Air_Mean[,"k650"])
+names(data2xport) = "bnoise"
+data2xport$bfinsqft = output$beta.FIN_SQ_FT[,"k650"]
+data2xport$bacres = output$beta.ACRES_POLY[,"k650"]
+data2xport$senoise = output$ses.Air_Mean[, "k650"]
+data2xport$sefinsqft = output$ses.FIN_SQ_FT[,"k650"]
+data2xport$seacres = output$ses.ACRES_POLY[,"k650"]
+data2xport$UNIQID = as.numeric(rownames(data2xport))
+
+
+# 3 - create a flat table of the variables (make sure they have names <10 characters long)
+
+# 4 - export as .dbf file
+require(foreign)
+write.dbf(dataframe=data2xport, "../Data/R2GIS/CleanData/TimeLag12months/AirMean3LWRresults.dbf")
+
+
+# MIXED GWR attempt...
+
+
+
+load("~/NoiseHedonicProject/Data/R2GIS/CleanData/MixedLWR/mixedStep4.RData")
+# output and MYMODEL loaded
+
+# names(output) # 271 different betas, ses, etc.
+dim(output[["yhats"]]) # only for obs with Timeperiod >11
+
+# what is the GCV score for this model?
 
 require(foreign)
-require(multicore)
+require(multicore, quietly = TRUE)
 require(fields, quietly = TRUE)
+
 # the following command loads up some functions we'll use
 source("helper/LWRfunctions.R")
 
-myVars = c("MAX", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "HOME_STYLE")
-RHS = paste(myVars, collapse = "+")
-MYMODEL = paste("logSALE_VA", RHS, sep = "~")
-MYMODELsmall = MYMODEL
-KVECTOR = c(25, 50, 75, 100, 150, 200, 400, 600, 800, 1000, 2000, 4000)
+load("~/NoiseHedonicProject/Data/R2GIS/CleanData/MixedLWR/step3bOutput.RData")
+# DATAFRAME
+names(DATAFRAME)
 
-# How many times am I going to reshuffle?
-iterations = 2
-# How many things am I keeping track of each reshuffle? 
-# mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
-vars2keep = c("Intercept", myVars[-length(myVars)])
-numMCstats = 2 + 2*length(vars2keep)
-MCstats = matrix(NA, iterations, numMCstats)
-colnames(MCstats) = c("minGCV", "optimalBandwidth", 
-                      paste0("meanBeta.", vars2keep),
-                      paste0("sterBeta.", vars2keep))
+myobs = which(DATAFRAME$TimePeriod > 11)
 
-filePrefix = "../Data/R2GIS/CleanData/"
-inputFile = "Sales20052010.dbf"
-DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
-simDATA = DATAFRAME
-N = dim(simDATA)[1]
-obs2run = which(simDATA$TimePeriod>11)
-for (iter in 1:iterations) {
-  # Do a reshuffle
-  rowShuffle = sample(1:N)
-  simDATA[, c("Long_X", "Lat_Y")] = DATAFRAME[rowShuffle, c("Long_X", "Lat_Y")]
-  start = Sys.time()
-  
-  output.raw = mclapply(obs2run,
-                      LWRtimelag,
-                      Data.Frame = simDATA,
-                      my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
-                      kvector = KVECTOR,
-                        timelag = 12
-  )
-  names(output.raw) = simDATA$UNIQID[obs2run]
-  output = Reorganizer(output.raw)
-  
-  gcvs = GCV(leverages = output$leverages, 
-             yhats = output$yhats, 
-             dep.var = simDATA[obs2run, "logSALE_VA"])
-  minGCVnumber = which.min(gcvs)
-  minGCV = gcvs[minGCVnumber]
-  optimalBandwidth = KVECTOR[minGCVnumber]
-  
-  MCstats[iter, "minGCV"] = minGCV
-  MCstats[iter, "optimalBandwidth"] = optimalBandwidth
-  for (i in 1:length(vars2keep)) {
-    MCstats[iter, i+2] = mean(output[[i]][, minGCVnumber])
-    MCstats[iter, i+2+length(vars2keep)] = sd(output[[i]][, minGCVnumber])
-  }
-  end = Sys.time()
-  print(paste("iteration ", iter, " took "))
-  print(end - start)
-  write.csv(MCstats, file = paste0(filePrefix, "LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
-}
+# our estimated logged sales price is equal to the yhats in "output" + DATAFRAME$Xaahat
+
+mixedLWRyhat = output$yhats + DATAFRAME$Xaahat[myobs]
+gcvs = GCV(output$leverages, mixedLWRyhat, DATAFRAME$logSALE_VA[myobs]) # GCV of 2.19 doesn't make sense
+print(gcvs) # 0.296 is about 10% higher than we had with the full LWR
+
+# what does a time series plot of noise coefficients and se's look like?
+
+plot(DATAFRAME$TimePeriod, DATAFRAME$Noisebeta)
+
+DATAtimecollapsed = data.frame(TimePeriod = 1:72,
+                               Noisebeta = tapply(DATAFRAME$Noisebeta, DATAFRAME$TimePeriod, mean),
+                               Noisese = tapply(DATAFRAME$Noisese, DATAFRAME$TimePeriod, mean))
+
+plot(DATAtimecollapsed$TimePeriod, DATAtimecollapsed$Noisebeta, type = "l", lwd = "3")
+lines(DATAtimecollapsed$TimePeriod, DATAtimecollapsed$Noisebeta + 2*DATAtimecollapsed$Noisese)
+lines(DATAtimecollapsed$TimePeriod, DATAtimecollapsed$Noisebeta - 2*DATAtimecollapsed$Noisese)
+abline(v = 12)
+
+names(output)
+require(graphics) 
+smoothScatter(DATAFRAME$TimePeriod[myobs], output$beta.FIN_SQ_FT)
+
+smoothScatter(DATAFRAME$TimePeriod, DATAFRAME$Air_Mean)
+

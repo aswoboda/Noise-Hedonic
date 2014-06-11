@@ -13,21 +13,21 @@ require(foreign)
 source("../../helper/LWRfunctions.R")
 
 DATAFRAME = read.dbf("~/NoiseHedonicProject/Data/R2GIS/CleanData/Sales20052010.dbf")
-obs2run = which(DATAFRAME$COUNTY_ID == "037" & DATAFRAME$BATH>.8 & DATAFRAME$TimePeriod>11)
+obs2run = which(DATAFRAME$COUNTY_ID == "037" & DATAFRAME$BEDS > 0 &  DATAFRAME$BATH > 0 & DATAFRAME$GARSQFT>0 & DATAFRAME$TimePeriod>11)
 
-#dataPath = "../Data/R2GIS/CleanData/"
-filelist = list.files()
-files2open = filelist[which(substr(filelist, 1, 6) == "Dakota")]
+dataPath = "../../../Data/R2GIS/CleanData/Dakota/"
+filelist = list.files(dataPath)
+files2open = filelist[which(substr(filelist, 1, 9) == "dakotaLWR")]
 # mymat = c()
 pdf("GCVplotsAll.pdf")
 for (myFile in 1:length(files2open)) {
-  load(files2open[myFile])
-  if (dim(output[[1]])[1] == 9140) gcvs = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
+  load(paste0(dataPath, files2open[myFile]))
+  if (dim(output[[1]])[1] == 8751) gcvs = GCV(output$leverages, output$yhats, DATAFRAME$logSALE_VA[obs2run])
   ks = as.numeric(substr(colnames(output[[1]]), 2, 5))
   plot(ks, gcvs, type = "l", main = "")
   title(MYMODEL, cex.main = .5)
   title(paste0("N = ", dim(output[[1]])[1]), line = .5)
-  title(paste("data: ", substr(files2open[myFile], 22, nchar(files2open[myFile]))), line = -1)
+  title(paste("data: ", substr(files2open[myFile], 16, nchar(files2open[myFile])-6)), line = -1)
   lmreg = lm(MYMODEL, data = DATAFRAME[obs2run, ])
   levs = lm.influence(lmreg, do.coef = FALSE)$hat
   globalGCV = GCV(cbind(levs), cbind(lmreg$fitted.values), DATAFRAME$logSALE_VA[obs2run])
