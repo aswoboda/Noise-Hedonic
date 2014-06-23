@@ -12,7 +12,7 @@ myVars = c("Air_Mean", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_I
 RHS = paste(myVars, collapse = "+")
 MYMODEL = paste("logSALE_VA", RHS, sep = "~")
 MYMODELsmall = substr(MYMODEL, 1, nchar(MYMODEL)-5)
-KVECTOR = c(650) # c(200, 400, 650, 1000, 2000, 4000)
+KVECTOR = c(1000) # c(200, 400, 650, 1000, 2000, 4000)
 
 # How many times am I going to reshuffle?
 iterations = 50 #100
@@ -20,10 +20,12 @@ iterations = 50 #100
 # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
 vars2keep = c("Intercept", myVars[c(1:(length(myVars)-3))])
 numMCstats = 2 + 2*length(vars2keep)
-MCstats = matrix(NA, iterations, numMCstats)
+MCstats = matrix(NA, 100, numMCstats)
 colnames(MCstats) = c("minGCV", "optimalBandwidth", 
                       paste0("meanBeta.", vars2keep),
                       paste0("sterBeta.", vars2keep))
+# mcstats = read.csv("analysis/04MonteCarloSim/Revision/Model3/CopyOfLWRMonteCarloStats2014-06-20.csv")
+# MCstats = as.matrix(mcstats)
 
 filePrefix = "../Data/R2GIS/CleanData/"
 inputFile = "Sales20052010.dbf"

@@ -1,4 +1,4 @@
-\begin{thebibliography}{63}
+\begin{thebibliography}{55}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,14 +18,6 @@
 {Summary of Noise Barriers Constructed by December 31, 2010}.
 \newblock Technical report, US Department of Transportation Federal Highway
   Administration, 2012.
-\newblock URL
-  \url{http://www.fhwa.dot.gov/environment/noise/noise\_barriers/inventory/summary/index.cfm}.
-
-\bibitem[Alonso(1964)]{Alonso1964}
-William Alonso.
-\newblock \emph{{Location and land use: toward a general theory of land rent}}.
-\newblock 1964.
-\newblock ISBN 0674537009.
 
 \bibitem[Andersson et~al.(2010)Andersson, Jonsson, and
   \"{O}gren]{Andersson2010}
@@ -34,17 +26,6 @@ Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
   Regression with Road and Railway Noise}.
 \newblock \emph{Environmental and Resource Economics}, 45\penalty0
   (1):\penalty0 73--89, 2010.
-\newblock ISSN 09246460.
-\newblock \doi{10.1007/s10640-009-9306-4}.
-\newblock URL \url{http://dx.doi.org/10.1007/s10640-009-9306-4}.
-
-\bibitem[Arditi et~al.(2007)Arditi, Lee, and Polat]{Arditi2007}
-David Arditi, Dong-Eun Lee, and Gul Polat.
-\newblock {Fatal accidents in nighttime vs. daytime highway construction work
-  zones.}
-\newblock \emph{Journal of Safety Research}, 38\penalty0 (4):\penalty0
-  399--405, 2007.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/17884426}.
 
 \bibitem[Babisch et~al.(2005)Babisch, Beule, Schust, Kersten, and
   Ising]{Babisch2005}
@@ -52,8 +33,6 @@ Wolfgang Babisch, Bernd Beule, Marianne Schust, Norbert Kersten, and Hartmut
   Ising.
 \newblock {Traffic Noise and Risk of Myocardial Infarction}.
 \newblock \emph{Epidemiology}, 16:\penalty0 33--40, 2005.
-\newblock ISSN 10443983.
-\newblock \doi{10.1097/01.ede.0000147104.84424.24}.
 
 \bibitem[Baranzini et~al.(2010)Baranzini, Schaerer, and
   Thalmann]{Baranzini2010}
@@ -61,19 +40,12 @@ Andrea Baranzini, Caroline Schaerer, and Philippe Thalmann.
 \newblock {Using measured instead of perceived noise in hedonic models}.
 \newblock \emph{Transportation Research Part D: Transport and Environment},
   15\penalty0 (8):\penalty0 473--482, December 2010.
-\newblock ISSN 13619209.
-\newblock \doi{10.1016/j.trd.2010.06.002}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S1361920910000878}.
 
 \bibitem[Barber et~al.(2010)Barber, Crooks, and Fristrup]{Barber2010}
 Jesse~R Barber, Kevin~R Crooks, and Kurt~M Fristrup.
 \newblock {The costs of chronic noise exposure for terrestrial organisms.}
 \newblock \emph{Trends in ecology \& evolution}, 25\penalty0 (3):\penalty0
   180--9, March 2010.
-\newblock ISSN 0169-5347.
-\newblock \doi{10.1016/j.tree.2009.08.002}.
-\newblock URL \url{http://www.ncbi.nlm.nih.gov/pubmed/19762112}.
 
 \bibitem[Barregard et~al.(2009)Barregard, Bonde, and
   Ohrstr\"{o}m]{Barregard2009}
@@ -100,7 +72,6 @@ Ian Bateman, Brett Day, Iain Lake, and Andrew Lovett.
 J~C Blanco and I~H Flindell.
 \newblock {Property prices in urban areas affected by road traffic noise}.
 \newblock \emph{Applied Acoustics}, 72\penalty0 (4):\penalty0 133--141, 2011.
-\newblock URL \url{http://eprints.soton.ac.uk/191013/}.
 
 \bibitem[Bodin et~al.(2009)Bodin, Albin, Ard\"{o}, Stroh, Ostergren, and
   Bj\"{o}rk]{Bodin2009}
@@ -109,10 +80,6 @@ Theo Bodin, Maria Albin, Jonas Ard\"{o}, Emilie Stroh, Per-Olof Ostergren, and
 \newblock {Road traffic noise and hypertension: results from a cross-sectional
   public health survey in southern Sweden.}
 \newblock \emph{Environmental Health}, 8:\penalty0 38, January 2009.
-\newblock ISSN 1476-069X.
-\newblock \doi{10.1186/1476-069X-8-38}.
-\newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2753564\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Brandt and Maennig(2011)]{Brandt2011}
 Sebastian Brandt and Wolfgang Maennig.
@@ -120,10 +87,6 @@ Sebastian Brandt and Wolfgang Maennig.
   Hamburg}.
 \newblock \emph{Transportation Research Part D: Transport and Environment},
   16\penalty0 (1):\penalty0 23--30, January 2011.
-\newblock ISSN 13619209.
-\newblock \doi{10.1016/j.trd.2010.07.008}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S1361920910001070}.
 
 \bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, and
   Charlton]{Brunsdon1998b}
@@ -132,29 +95,18 @@ Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
   non-stationarity}.
 \newblock \emph{Journal of the Royal Statistical Society Series D The
   Statistician}, 47\penalty0 (3):\penalty0 431--443, 1998.
-\newblock ISSN 00390526.
-\newblock \doi{10.1111/1467-9884.00145}.
-\newblock URL \url{http://www.jstor.org/stable/2988625}.
 
 \bibitem[Carruthers and Clark(2010)]{Carruthers2010}
 John~I. Carruthers and David~E. Clark.
 \newblock {Valuing Environmental Quality: a Space-Based Strategy}.
 \newblock \emph{Journal of Regional Science}, 50\penalty0 (4):\penalty0
   801--832, April 2010.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/j.1467-9787.2010.00662.x}.
-\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2010.00662.x}.
 
 \bibitem[Casetti(1972)]{Casetti1972}
 Emilio Casetti.
 \newblock {Generating Models by the Expansion Method: Applications to
   Geographical Research}.
 \newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1972.
-
-\bibitem[Cheng(1992)]{Cheng1992}
-C.~Cheng.
-\newblock \emph{{Optimum Sampling for Traffic Volume Estimation}}.
-\newblock Ph.d., University of Minnesota, 1992.
 
 \bibitem[Cheng(2008)]{Cheng2008}
 Hao Cheng.
@@ -168,9 +120,6 @@ Ekaterina Chernobai, Michael Reibel, and Michael Carney.
   House Prices}.
 \newblock \emph{The Journal of Real Estate Finance and Economics}, 42\penalty0
   (3):\penalty0 348--370, October 2009.
-\newblock ISSN 0895-5638.
-\newblock \doi{10.1007/s11146-009-9208-9}.
-\newblock URL \url{http://link.springer.com/10.1007/s11146-009-9208-9}.
 
 \bibitem[Cho et~al.(2011)Cho, Kim, and Roberts]{Cho2011b}
 Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
@@ -178,10 +127,6 @@ Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
   Real Estate Boom and Subsequent 2008 Recession}.
 \newblock \emph{Journal of Environmental Planning and Management}, 54\penalty0
   (1):\penalty0 71--91, January 2011.
-\newblock ISSN 0964-0568.
-\newblock \doi{10.1080/09640568.2010.502760}.
-\newblock URL
-  \url{http://www.tandfonline.com/doi/abs/10.1080/09640568.2010.502760}.
 
 \bibitem[Cleveland and Devlin(1988)]{Cleveland1988}
 William~S Cleveland and Susan~J Devlin.
@@ -196,9 +141,6 @@ Jeffrey~P. Cohen and Cletus~C. Coughlin.
   Prices}.
 \newblock \emph{Journal of Regional Science}, 48\penalty0 (5):\penalty0
   859--878, December 2008.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/j.1467-9787.2008.00569.x}.
-\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2008.00569.x}.
 
 \bibitem[Cohen and Coughlin(2009)]{Cohen2009}
 Jeffrey~P. Cohen and Cletus~C. Coughlin.
@@ -225,10 +167,6 @@ Yvonne de~Kluizenaar, Sabine~a Janssen, Henk Vos, Erik~M Salomons, Han Zhou,
   quiet side exposure at dwellings.}
 \newblock \emph{International journal of environmental research and public
   health}, 10\penalty0 (6):\penalty0 2258--70, January 2013.
-\newblock ISSN 1660-4601.
-\newblock \doi{10.3390/ijerph10062258}.
-\newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3717735\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Delucchi and Hsu(1998)]{Delucchi1998}
 Mark Delucchi and Shi-Ling Hsu.
@@ -255,13 +193,6 @@ A.~Stewart Fotheringham, Chris Brunsdon, and Martin Charlton.
   varying relationships}}.
 \newblock John Wiley \& Sons, West Sussex, England, 2002.
 
-\bibitem[Fricker and Saha(1986)]{Fricker1986}
-Jon~D. Fricker and Sunil~K. Saha.
-\newblock {Traffic Volume Forecasting Methods for Rural State Highways:
-  Publication FHWA/IN/JHRP-86/20}.
-\newblock Technical report, Indiana Department of Transportation and Purdue
-  University, West Lafayette, Indiana, 1986.
-
 \bibitem[Gamble et~al.(1974)Gamble, Sauerlender, and Langley]{Gamble1974}
 Hays~B. Gamble, Owen~H. Sauerlender, and C.~John Langley.
 \newblock {Adverse and Beneficial Effects of Highways on Property Values}.
@@ -272,15 +203,6 @@ Hays~B. Gamble, Owen~H. Sauerlender, and C.~John Langley.
 Lisa Goines and Louis Hagler.
 \newblock {Noise Pollution : A Modern Plague}.
 \newblock \emph{Southern Medical Journal}, 100:\penalty0 287--294, 2007.
-\newblock ISSN 00384348.
-\newblock \doi{10.1097/SMJ.0b013e3180318be5}.
-
-\bibitem[Huang and Palmquist(2001)]{Huang;Palmquist2001}
-Ju-Chin Huang and Raymond~B Palmquist.
-\newblock {Environmental Conditions, Reservation Prices, and Time on the Market
-  for Housing}.
-\newblock \emph{Journal of Real Estate Finance and Economics}, 22\penalty0
-  (2-3):\penalty0 203--219, 2001.
 
 \bibitem[{Hughes Jr.} and Sirmans(1992)]{HughesJr.1992}
 William~T. {Hughes Jr.} and C.F. Sirmans.
@@ -300,21 +222,6 @@ Lars Jarup, Wolfgang Babisch, Danny Houthuijs, G\"{o}ran Pershagen, Klea
 \newblock {Hypertension and Exposure to Noise Near Airports: the HYENA Study}.
 \newblock \emph{Environmental Health Perspectives}, 116\penalty0 (3):\penalty0
   329--333, December 2008.
-\newblock ISSN 0091-6765.
-\newblock \doi{10.1289/ehp.10775}.
-\newblock URL
-  \url{http://www.ehponline.org/ambra-doi-resolver/10.1289/ehp.10775}.
-
-\bibitem[Kim et~al.(2007)Kim, Park, and Kweon]{Kim2007}
-Kwang~Sik Kim, Sung~Joong Park, and Young-Jun Kweon.
-\newblock {Highway traffic noise effects on land price in an urban area}.
-\newblock \emph{Transportation Research Part D: Transport and Environment},
-  12\penalty0 (4):\penalty0 275--280, June 2007.
-\newblock ISSN 13619209.
-\newblock \doi{10.1016/j.trd.2007.03.002}.
-\newblock URL
-  \url{http://www.elsevier.com/wps/find/journaldescription.cws\_home/31153/description\#description
-  http://linkinghub.elsevier.com/retrieve/pii/S1361920907000260}.
 
 \bibitem[Langley(1976)]{Langley1976}
 C.~John~Jr. Langley.
@@ -327,10 +234,6 @@ James~E. Larsen.
 \newblock {Surface street traffic volume and single-family house price}.
 \newblock \emph{Transportation Research Part D: Transport and Environment},
   17\penalty0 (4):\penalty0 317--320, June 2012.
-\newblock ISSN 13619209.
-\newblock \doi{10.1016/j.trd.2012.01.004}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S1361920912000053}.
 
 \bibitem[Li and Saphores(2012)]{Li2012}
 Wei Li and Jean-Daniel Saphores.
@@ -338,7 +241,6 @@ Wei Li and Jean-Daniel Saphores.
   Values Southern California Case Study}.
 \newblock \emph{Transportation Research Record}, \penalty0 (2288):\penalty0
   48--56, 2012.
-\newblock \doi{10.3141/2288-06}.
 
 \bibitem[Loader(1999)]{Loader1999}
 Clive Loader.
@@ -350,9 +252,6 @@ John~W. Matthews and Geoffrey~K. Turnbull.
 \newblock \emph{{Neighborhood Street Layout and Property Value: The Interaction
   of Accessibility and Land Use Mix}}, volume~35.
 \newblock July 2007.
-\newblock ISBN 1114600790359.
-\newblock \doi{10.1007/s11146-007-9035-9}.
-\newblock URL \url{http://link.springer.com/10.1007/s11146-007-9035-9}.
 
 \bibitem[McMillen(2004)]{McMillen2004}
 Daniel~P. McMillen.
@@ -360,10 +259,6 @@ Daniel~P. McMillen.
   Airport}.
 \newblock \emph{Journal of Urban Economics}, 55\penalty0 (3):\penalty0
   627--640, May 2004.
-\newblock ISSN 00941190.
-\newblock \doi{10.1016/j.jue.2004.01.001}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0094119004000099}.
 
 \bibitem[McMillen(2012)]{McMillen2012}
 Daniel~P. McMillen.
@@ -371,9 +266,6 @@ Daniel~P. McMillen.
   Structured Models}.
 \newblock \emph{Journal of Regional Science}, 52\penalty0 (2):\penalty0
   192--209, May 2012.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/j.1467-9787.2011.00746.x}.
-\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00746.x}.
 
 \bibitem[McMillen and Redfearn(2010)]{McMillen2010}
 Daniel~P. McMillen and Christian~L. Redfearn.
@@ -381,9 +273,6 @@ Daniel~P. McMillen and Christian~L. Redfearn.
   Price Functions}.
 \newblock \emph{Journal of Regional Science}, 50\penalty0 (3):\penalty0
   712--733, April 2010.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/j.1467-9787.2010.00664.x}.
-\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2010.00664.x}.
 
 \bibitem[Miedema and Oudshoorn(2001)]{Miedema2001}
 Henk M~E Miedema and Catharina G~M Oudshoorn.
@@ -392,26 +281,12 @@ Henk M~E Miedema and Catharina G~M Oudshoorn.
 \newblock \emph{Environmental Health Perspectives}, 109\penalty0 (4):\penalty0
   409--416, 2001.
 
-\bibitem[Mills(1967)]{Mills1967}
-Edwin~S. Mills.
-\newblock {An Aggregative Model of Resource Allocation in a Metropolitan Area}.
-\newblock \emph{American Economic Review}, 57:\penalty0 197--210, 1967.
-\newblock ISSN 00028282.
-
-\bibitem[Muth(1969)]{Muth1969}
-Richard~F. Muth.
-\newblock \emph{{Cities and Housing}}.
-\newblock University of Chicago Press, Chicago, 1969.
-
 \bibitem[Nappi-Choulet and Maury(2011)]{Nappi-Choulet2011}
 Ingrid Nappi-Choulet and Tristan-Pierre Maury.
 \newblock {A Spatial and Temporal Autoregressive Local Estimation for the Paris
   Housing Market}.
 \newblock \emph{Journal of Regional Science}, 51\penalty0 (4):\penalty0
   732--750, October 2011.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/j.1467-9787.2011.00713.x}.
-\newblock URL \url{http://doi.wiley.com/10.1111/j.1467-9787.2011.00713.x}.
 
 \bibitem[Navrud(2002)]{Navrud2002}
 Stale Navrud.
@@ -447,8 +322,6 @@ D~Ouis.
 \newblock {Annoyance From Road Traffic Noise: a Review}.
 \newblock \emph{Journal of Environmental Psychology}, 21:\penalty0 101--120,
   2001.
-\newblock ISSN 02724944.
-\newblock \doi{10.1006/jevp.2000.0187}.
 
 \bibitem[Paez et~al.(2011)Paez, Farber, and Wheeler]{Paez2011}
 Antonio Paez, Steven Farber, and David Wheeler.
@@ -464,10 +337,6 @@ Daniel Shepherd, David Welch, Kim~N Dirks, and David McBride.
   noisy areas?}
 \newblock \emph{International journal of environmental research and public
   health}, 10\penalty0 (4):\penalty0 1284--303, April 2013.
-\newblock ISSN 1660-4601.
-\newblock \doi{10.3390/ijerph10041284}.
-\newblock URL
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3709317\&tool=pmcentrez\&rendertype=abstract}.
 
 \bibitem[Sorensen et~al.(2011)Sorensen, Hvidberg, Andersen, Nordsborg,
   Lillelund, Jakobsen, Tjonneland, Overvad, and Raaschou-Nielsen]{Sorensen2011}
@@ -476,10 +345,6 @@ M.~Sorensen, M.~Hvidberg, Z.~J. Andersen, R.~B. Nordsborg, K.~G. Lillelund,
 \newblock {Road traffic noise and stroke: a prospective cohort study}.
 \newblock \emph{European Heart Journal}, 32\penalty0 (6):\penalty0 737--744,
   January 2011.
-\newblock ISSN 0195-668X.
-\newblock \doi{10.1093/eurheartj/ehq466}.
-\newblock URL
-  \url{http://eurheartj.oxfordjournals.org/cgi/doi/10.1093/eurheartj/ehq466}.
 
 \bibitem[Sunding and Swoboda(2010)]{Sunding2010}
 David~L. Sunding and Aaron~M. Swoboda.
@@ -487,10 +352,6 @@ David~L. Sunding and Aaron~M. Swoboda.
   the shadow cost of housing regulation in Southern California}.
 \newblock \emph{Regional Science and Urban Economics}, 40\penalty0
   (6):\penalty0 550--573, November 2010.
-\newblock ISSN 01660462.
-\newblock \doi{10.1016/j.regsciurbeco.2010.07.002}.
-\newblock URL
-  \url{http://linkinghub.elsevier.com/retrieve/pii/S0166046210000608}.
 
 \bibitem[Theebe(2004)]{Theebe2004a}
 Marcel Theebe.
@@ -504,9 +365,6 @@ Diana Weinhold.
 \newblock {The Happiness-Reducing Costs of Noise Pollution}.
 \newblock \emph{Journal of Regional Science}, 53\penalty0 (2):\penalty0
   292--303, May 2013.
-\newblock ISSN 00224146.
-\newblock \doi{10.1111/jors.12001}.
-\newblock URL \url{http://doi.wiley.com/10.1111/jors.12001}.
 
 \bibitem[Wilhelmsson(2000)]{Wilhelmsson2000}
 Mats Wilhelmsson.

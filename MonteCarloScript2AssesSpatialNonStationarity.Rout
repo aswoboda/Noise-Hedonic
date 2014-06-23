@@ -1,0 +1,738 @@
+
+R version 2.15.2 (2012-10-26) -- "Trick or Treat"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> # Run a Monte Carlo experiment to see whether coefficients really vary over space
+> 
+> require(foreign)
+Loading required package: foreign
+> require(multicore)
+Loading required package: multicore
+> require(fields, quietly = TRUE)
+Spam version 0.29-2 (2012-08-17) is loaded.
+Type 'help( Spam)' or 'demo( spam)' for a short introduction 
+and overview of this package.
+Help for individual functions is also obtained by adding the
+suffix '.spam' to the function name, e.g. 'help( chol.spam)'.
+
+Attaching package: ‘spam’
+
+The following object(s) are masked from ‘package:base’:
+
+    backsolve, forwardsolve
+
+> # the following command loads up some functions we'll use
+> source("helper/LWRfunctions.R")
+> 
+> myVars = c("Air_Mean", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_INCOME", "MCA3",
++            "LAKE_dist", "PARK_dist", "SHOP_dist", "CBD_dist", "PercWhite", "PercU18", 
++            "HOME_STYLE", "factor(TimePeriod)", "CITY")
+> RHS = paste(myVars, collapse = "+")
+> MYMODEL = paste("logSALE_VA", RHS, sep = "~")
+> MYMODELsmall = substr(MYMODEL, 1, nchar(MYMODEL)-5)
+> KVECTOR = c(1000) # c(200, 400, 650, 1000, 2000, 4000)
+> 
+> # How many times am I going to reshuffle?
+> iterations = 50 #100
+> # How many things am I keeping track of each reshuffle? 
+> # mean and sd of each coefficient i care about + intercept + GCV score + min bandwidth
+> vars2keep = c("Intercept", myVars[c(1:(length(myVars)-3))])
+> numMCstats = 2 + 2*length(vars2keep)
+> MCstats = matrix(NA, 100, numMCstats)
+> colnames(MCstats) = c("minGCV", "optimalBandwidth", 
++                       paste0("meanBeta.", vars2keep),
++                       paste0("sterBeta.", vars2keep))
+> # mcstats = read.csv("analysis/04MonteCarloSim/Revision/Model3/CopyOfLWRMonteCarloStats2014-06-20.csv")
+> # MCstats = as.matrix(mcstats)
+> 
+> filePrefix = "../Data/R2GIS/CleanData/"
+> inputFile = "Sales20052010.dbf"
+> DATAFRAME = read.dbf(paste0(filePrefix, inputFile))
+> simDATA = DATAFRAME
+> N = dim(simDATA)[1]
+> obs2run = which(simDATA$TimePeriod>11)
+> for (iter in 1:iterations) {
++   # Do a reshuffle
++   rowShuffle = sample(1:N)
++   simDATA[, c("Long_X", "Lat_Y")] = DATAFRAME[rowShuffle, c("Long_X", "Lat_Y")]
++   start = Sys.time()
++   
++   output.raw = mclapply(obs2run,
++                         LWRtimelag,
++                         Data.Frame = simDATA,
++                         my.model = MYMODEL, my.modelSMALL = MYMODELsmall,
++                         kvector = KVECTOR,
++                         timelag = 12,
++                         mc.cores = 16
++   )
++   names(output.raw) = simDATA$UNIQID[obs2run]
++   output = Reorganizer(output.raw)
++   
++   gcvs = GCV(leverages = output$leverages, 
++              yhats = output$yhats, 
++              dep.var = simDATA[obs2run, "logSALE_VA"])
++   minGCVnumber = which.min(gcvs)
++   minGCV = gcvs[minGCVnumber]
++   optimalBandwidth = KVECTOR[minGCVnumber]
++   
++   MCstats[iter, "minGCV"] = minGCV
++   MCstats[iter, "optimalBandwidth"] = optimalBandwidth
++   for (i in 1:length(vars2keep)) {
++     MCstats[iter, i+2] = mean(output[[i]][, minGCVnumber])
++     MCstats[iter, i+2+length(vars2keep)] = sd(output[[i]][, minGCVnumber])
++   }
++   end = print(Sys.time())
++   print(paste("iteration ", iter, " took "))
++   print(end - start)
++   write.csv(MCstats, file = paste0("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats", Sys.Date(), ".csv"), row.names = FALSE)
++   rm(output, output.raw)
++   gc()
++   print(gc())
++ }
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 12:32:50 CDT"
+[1] "iteration  1  took "
+Time difference of 1.495056 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430756  23.1    7143284 381.5  11161382  596.1
+Vcells 13822109 105.5   84293696 643.2 131702437 1004.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 14:05:08 CDT"
+[1] "iteration  2  took "
+Time difference of 1.538185 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6998940 373.8  11161382  596.1
+Vcells 13822153 105.5   80194626 611.9 131702437 1004.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 15:38:17 CDT"
+[1] "iteration  3  took "
+Time difference of 1.552117 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6862452 366.5  11161382  596.1
+Vcells 13822169 105.5   80245998 612.3 131702437 1004.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 17:10:24 CDT"
+[1] "iteration  4  took "
+Time difference of 1.535188 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7095661 379.0  11161382  596.1
+Vcells 13822169 105.5   80327030 612.9 131702437 1004.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 18:43:42 CDT"
+[1] "iteration  5  took "
+Time difference of 1.554777 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6931779 370.2  11161382  596.1
+Vcells 13822188 105.5   88654729 676.4 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 20:15:36 CDT"
+[1] "iteration  6  took "
+Time difference of 1.531242 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6798947 363.2  11161382  596.1
+Vcells 13822188 105.5   84318295 643.3 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 21:47:17 CDT"
+[1] "iteration  7  took "
+Time difference of 1.528023 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7032611 375.6  11161382  596.1
+Vcells 13822211 105.5   84279980 643.1 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 23000
+[1] 22000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-22 23:23:10 CDT"
+[1] "iteration  8  took "
+Time difference of 1.597841 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6894291 368.2  11161382  596.1
+Vcells 13822211 105.5   80181656 611.8 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 00:55:38 CDT"
+[1] "iteration  9  took "
+Time difference of 1.540718 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7127273 380.7  11161382  596.1
+Vcells 13822238 105.5   80233080 612.2 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 02:28:44 CDT"
+[1] "iteration  10  took "
+Time difference of 1.551438 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6983800 373.0  11161382  596.1
+Vcells 13822238 105.5   80314256 612.8 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 04:01:44 CDT"
+[1] "iteration  11  took "
+Time difference of 1.549815 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6828928 364.8  11161382  596.1
+Vcells 13822238 105.5   84370998 643.7 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 05:33:31 CDT"
+[1] "iteration  12  took "
+Time difference of 1.529301 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7062377 377.2  11161382  596.1
+Vcells 13822271 105.5   80267720 612.4 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 07:05:11 CDT"
+[1] "iteration  13  took "
+Time difference of 1.527681 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6922436 369.7  11161382  596.1
+Vcells 13822271 105.5   80258553 612.4 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 08:38:21 CDT"
+[1] "iteration  14  took "
+Time difference of 1.552422 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7155218 382.2  11180029  597.1
+Vcells 13822271 105.5   80339438 613.0 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 10:10:07 CDT"
+[1] "iteration  15  took "
+Time difference of 1.529144 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    7010223 374.4  11180029  597.1
+Vcells 13822271 105.5   80389744 613.4 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000
+[1] 25000
+[1] 26000
+[1] 28000
+[1] 29000
+[1] 31000
+[1] 32000
+[1] 33000
+[1] 36000
+[1] 38000
+[1] 41000
+[1] 42000
+[1] "2014-06-23 11:42:19 CDT"
+[1] "iteration  16  took "
+Time difference of 1.536534 hours
+           used  (Mb) gc trigger  (Mb)  max used   (Mb)
+Ncells   430795  23.1    6873121 367.1  11180029  597.1
+Vcells 13822310 105.5   80469832 614.0 138519168 1056.9
+[1] 1000
+[1] 3000
+[1] 4000
+[1] 5000
+[1] 6000
+[1] 7000
+[1] 8000
+[1] 9000
+[1] 10000
+[1] 11000
+[1] 12000
+[1] 13000
+[1] 16000
+[1] 17000
+[1] 18000
+[1] 19000
+[1] 20000
+[1] 21000
+[1] 22000
+[1] 23000
+[1] 24000

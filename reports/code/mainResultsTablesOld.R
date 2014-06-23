@@ -1,10 +1,10 @@
 # Goal is to make a table of LWR results for the paper...
 
-# mega columns (for each bandwidth: 500, 650, 1000)
-# for each bandwidth 
+# columns
+# global model coefficients and se's
 # mean LWR Beta hats
-# 25th and 75th percentile of LWR beta hats
-
+# sd of LWR beta hats
+# monte carlo p-value
 
 # load the dataframe and helper functions
 require(foreign)
@@ -15,37 +15,10 @@ source("~/NoiseHedonicProject/Noise-Hedonic/helper/LWRfunctions.R")
 # load the LWR results
 # load the Monte Carlo Results
 ####################
-# Model 3
+# Kitchen Sink Model
 ####################
-load("~/NoiseHedonicProject/Data/R2GIS/CleanData/TimeLag12months/Sales20052010LWRmodelAirMean3-2014-03-19.RData")
-
-BWs = c("k500", "k650", "k1000")
-variableOrder = c(2:5, 16:24)
-names(output)[variableOrder]
-# [1] "beta.Air_Mean"   "beta.FIN_SQ_FT"  "beta.ACRES_POLY" "beta.YEAR_BUILT" "beta.OWNOCC"     "beta.PercWhite" 
-# [7] "beta.PercU18"    "beta.MED_INCOME" "beta.MCA3"       "beta.LAKE_dist"  "beta.PARK_dist"  "beta.SHOP_dist" 
-# [13] "beta.CBD_dist"
-unitsAdjuster = c(1, 1000, 1, 1, 1, 1, 1, 1000, 1, 1000, 1000, 1000, 1000)
-numvars = length(variableOrder)
-LWRtable = matrix(NA, numvars, 9)
-for (BW in 1:length(BWs)) {
-  for (i in 1:numvars) {
-    LWRtable[i, (BW-1)*3+1] = signif(mean(output[[variableOrder[i]]][,BWs[BW]]), 2)
-    LWRtable[i, (BW-1)*3+2:3] = signif(quantile(output[[variableOrder[i]]][,BWs[BW]], c(.1, .9)), 2)
-  }
-}
-
-niceTable = LWRtable*unitsAdjuster
-require(stargazer)
-varlabels = c("Noise (dB)", "House Size (1,000s ft2)", "Lot Size (acres)", "Year House Built",
-                 "Owner Occupancy Dummy", "Percent White", "Percent Under 18",
-                  "Median Income (1,000s)", "Elementary Test Scores",
-                  "Dist to Lake (km)", "Dist to Park (km)", "Dist to Shop (km)", "Dist to CBD (km)")
-rownames(niceTable) = varlabels
-stargazer(niceTable,
-          align = TRUE,
-          digits = 4, column.sep.width = "-1pt"
-          )
+load("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/CopyOfSales20052010LWRmodel18-2013-04-13.RData")
+LWRMCstats = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/ModelBigCity/bandwidth200/LWRMonteCarloStats2013-05-10.csv")
 
 lm.global = lm(paste0(MYMODEL, "+factor(SALE_YR)"), data = DATAFRAME[obs2run, ])
 GlobalModel = summary(lm.global)

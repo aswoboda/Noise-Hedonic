@@ -20,14 +20,30 @@ load("~/NoiseHedonicProject/Data/R2GIS/CleanData/TimeLag12months/Sales20052010LW
 # [160] "ses.PARK_dist"                "ses.SHOP_dist"                "ses.CBD_dist" 
 
 data2xport = data.frame(output$beta.Air_Mean[,"k650"])
-names(data2xport) = "bnoise"
-data2xport$bfinsqft = output$beta.FIN_SQ_FT[,"k650"]
-data2xport$bacres = output$beta.ACRES_POLY[,"k650"]
-data2xport$senoise = output$ses.Air_Mean[, "k650"]
-data2xport$sefinsqft = output$ses.FIN_SQ_FT[,"k650"]
-data2xport$seacres = output$ses.ACRES_POLY[,"k650"]
+names(data2xport) = "bnoise65"
+data2xport$bfinft65 = output$beta.FIN_SQ_FT[,"k650"]
+data2xport$bacres65 = output$beta.ACRES_POLY[,"k650"]
+data2xport$senoise65 = output$ses.Air_Mean[, "k650"]
+data2xport$sefinft65 = output$ses.FIN_SQ_FT[,"k650"]
+data2xport$seacres65 = output$ses.ACRES_POLY[,"k650"]
+data2xport$yhats65 = output$yhats[, "k650"]
 data2xport$UNIQID = as.numeric(rownames(data2xport))
 
+data2xport$bnoise50 = output$beta.Air_Mean[,"k500"]
+data2xport$bfinft50 = output$beta.FIN_SQ_FT[,"k500"]
+data2xport$bacres50 = output$beta.ACRES_POLY[,"k500"]
+data2xport$senoise50 = output$ses.Air_Mean[, "k500"]
+data2xport$sefinft50 = output$ses.FIN_SQ_FT[,"k500"]
+data2xport$seacres50 = output$ses.ACRES_POLY[,"k500"]
+data2xport$yhats50 = output$yhats[, "k500"]
+
+require(foreign)
+DATAFRAME = read.dbf("../Data/R2GIS/CleanData/Sales20052010.dbf")
+obs2run = which(DATAFRAME$TimePeriod>11)
+lm.global = lm(MYMODEL, data = DATAFRAME[obs2run, ])
+head(DATAFRAME$UNIQID[obs2run])
+head(rownames(data2xport))
+data2xport$yhatsglob = lm.global$fitted.values
 
 # 3 - create a flat table of the variables (make sure they have names <10 characters long)
 
