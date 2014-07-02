@@ -18,23 +18,29 @@ ModelBig = paste0(myModel, "+ CITY")
 lm.big = lm(ModelBig, data = workingdata20052010)#, subset = (SALE_YR == 2010))
 #summary(lm.big)
 
-ModelMonsterLot = paste0(myModel, "+ CITY*ACRES_POLY")
+ModelMonsterLot = paste0(ModelBig, "+ CITY*ACRES_POLY")
 lm.monsterLot = lm(ModelMonsterLot, data = workingdata20052010)#, subset = (SALE_YR == 2010))
 #summary(lm.monsterLot)
 # F test of ModelMonster vs. ModelBig
 anova(lm.monsterLot, lm.big)
 
-ModelMonsterSqft = paste0(myModel, "+ CITY*FIN_SQ_FT")
+ModelMonsterSqft = paste0(ModelBig, "+ CITY*FIN_SQ_FT")
 lm.monsterSqft = lm(ModelMonsterSqft, data = workingdata20052010)#, subset = (SALE_YR == 2010))
 #summary(lm.monsterSqft)
 anova(lm.monsterSqft, lm.big)
 
-ModelMonsterNoise = paste0(myModel, "+ CITY*Air_Mean")
+ModelMonsterNoise = paste0(ModelBig, "+ CITY*Air_Mean")
 lm.monsterNoise = lm(ModelMonsterNoise, data = workingdata20052010)#, subset = (SALE_YR == 2010))
 #summary(lm.monsterNoise)
 anova(lm.monsterNoise, lm.big)
 
-ModelMonster = paste0(myModel, "+ CITY*ACRES_POLY + CITY*FIN_SQ_FT + CITY*Air_Mean")
+ModelMonsterBuilt = paste0(ModelBig, "+ Air_Mean*YEAR_BUILT")
+lm.monsterBuilt = lm(ModelMonsterBuilt, data = workingdata20052010)
+summary(lm.monsterBuilt)
+anova(lm.monsterBuilt, lm.big)
+
+
+ModelMonster = paste0(ModelBig, "+ CITY*ACRES_POLY + CITY*FIN_SQ_FT + CITY*Air_Mean")
 lm.monster = lm(ModelMonster, data = workingdata20052010)#, subset = (SALE_YR == 2010))
 #summary(lm.monster)
 anova(lm.big, lm.monster)

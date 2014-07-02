@@ -37,6 +37,16 @@ data2xport$sefinft50 = output$ses.FIN_SQ_FT[,"k500"]
 data2xport$seacres50 = output$ses.ACRES_POLY[,"k500"]
 data2xport$yhats50 = output$yhats[, "k500"]
 
+data2xport$bnoise100 = output$beta.Air_Mean[,"k1000"]
+data2xport$bfinft100 = output$beta.FIN_SQ_FT[,"k1000"]
+data2xport$bacres100 = output$beta.ACRES_POLY[,"k1000"]
+data2xport$yhats100 = output$yhats[, "k1000"]
+
+data2xport$bnoise200 = output$beta.Air_Mean[,"k2000"]
+data2xport$bfinft200 = output$beta.FIN_SQ_FT[,"k2000"]
+data2xport$bacres200 = output$beta.ACRES_POLY[,"k2000"]
+data2xport$yhats200 = output$yhats[, "k2000"]
+
 require(foreign)
 DATAFRAME = read.dbf("../Data/R2GIS/CleanData/Sales20052010.dbf")
 obs2run = which(DATAFRAME$TimePeriod>11)

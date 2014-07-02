@@ -199,34 +199,65 @@ R$^{2}$ & \multicolumn{1}{c}{0.742} & \multicolumn{1}{c}{0.785} & \multicolumn{1
  
 \begin{table*}
 [!htbp] \centering
-  \caption{LWR Noise Coefficient Over Time}
-  \label{tab:noisebetatime}
+  \label{tab:noisebetatime500}
 \scriptsize
 \begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} }
 \\[-1.8ex]\hline
 \hline \\[-1.8ex]
- & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficient}} \\
+ & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficients (bandwidth = 500 nearest sales)}} \\
 \cline{2-7}
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\
 \hline \\[-1.8ex]
- Months since Jan 2005 & -0.00005^{***} & 0.00004^{***} & -0.00005^{***} & 0.00004^{***} & -0.0001^{***} & 0.0001^{***} \\
-  & (0.000001) & (0.000003) & (0.000001) & (0.000003) & (0.000001) & (0.00001) \\
+Months since Jan 2005 & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.00003^{***} & -0.0001^{***} & 0.00004^{***} \\
+  & (0.000001) & (0.000004) & (0.000001) & (0.000004) & (0.000002) & (0.00001) \\
   & & & & & & \\
  (Months since Jan 2005)$^2$ &  & -0.000001^{***} &  & -0.000001^{***} &  & -0.000001^{***} \\
-  &  & (0.00000004) &  & (0.00000004) &  & (0.0000001) \\
+  &  & (0.00000005) &  & (0.00000004) &  & (0.0000001) \\
   & & & & & & \\
- Constant & -0.0016^{***} & -0.0029^{***} & -0.0021^{***} & -0.0034^{***} & -0.0016^{***} & -0.0035^{***} \\
-  & (0.00003) & (0.0001) & (0.00003) & (0.0001) & (0.0001) & (0.0001) \\
+ Constant & -0.0016^{***} & -0.0028^{***} & -0.0021^{***} & -0.0033^{***} & -0.0015^{***} & -0.0032^{***} \\
+  & (0.00003) & (0.0001) & (0.00003) & (0.0001) & (0.0001) & (0.0002) \\
   & & & & & & \\
 \hline \\[-1.8ex]
 City Fixed Effects & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} \\
 \hline \\[-1.8ex]
 Observations & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{8,003} & \multicolumn{1}{c}{8,003} \\
-R$^{2}$ & \multicolumn{1}{c}{0.1566} & \multicolumn{1}{c}{0.1722} & \multicolumn{1}{c}{0.3298} & \multicolumn{1}{c}{0.3446} & \multicolumn{1}{c}{0.1700} & \multicolumn{1}{c}{0.1915} \\
+R$^{2}$ & \multicolumn{1}{c}{0.1273} & \multicolumn{1}{c}{0.1377} & \multicolumn{1}{c}{0.2931} & \multicolumn{1}{c}{0.3028} & \multicolumn{1}{c}{0.1566} & \multicolumn{1}{c}{0.1704} \\
 \hline
 \hline \\[-1.8ex]
-\textit{Note:}  & \multicolumn{6}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
 \end{tabular}
+  \caption{LWR Noise Coefficient Over Time}
 \end{table*}
+\efloatseparator
+ 
+\begin{sidewaystable}
+[!htbp] \centering
+  \caption{LWR Noise Coefficient Over Time}
+  \label{tab:noisebetatime2000}
+\scriptsize
+\begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} }
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{6}{c}{\textit{LWR bandwidth = 2,000 nearest sales}} \\
+\cline{2-7}
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\
+\hline \\[-1.8ex]
+Months since Jan 2005 & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.0001^{***} \\
+  & (0.0000003) & (0.000002) & (0.0000003) & (0.000002) & (0.000001) & (0.000004) \\
+  & & & & & & \\
+ (Months since Jan 2005)$^2$ &  & -0.000001^{***} &  & -0.000001^{***} &  & -0.000001^{***} \\
+  &  & (0.00000002) &  & (0.00000002) &  & (0.0000001) \\
+  & & & & & & \\
+ Constant & -0.0014^{***} & -0.0026^{***} & -0.0016^{***} & -0.0028^{***} & -0.0016^{***} & -0.0033^{***} \\
+  & (0.00001) & (0.00003) & (0.00002) & (0.00003) & (0.00003) & (0.0001) \\
+  & & & & & & \\
+\hline \\[-1.8ex]
+City Fixed Effects & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} \\
+\hline \\[-1.8ex]
+Observations & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{8,003} & \multicolumn{1}{c}{8,003} \\
+R$^{2}$ & \multicolumn{1}{c}{0.3828} & \multicolumn{1}{c}{0.4142} & \multicolumn{1}{c}{0.5128} & \multicolumn{1}{c}{0.5435} & \multicolumn{1}{c}{0.3454} & \multicolumn{1}{c}{0.3988} \\
+\hline
+\hline \\[-1.8ex]
+\end{tabular}
+\end{sidewaystable}
 \efloatseparator
  

@@ -6,25 +6,43 @@ DATAFRAME <- read.dbf("../Data/R2GIS/CleanData/Sales20052010.dbf")
 bigDATA = merge(LWRresults, DATAFRAME, sort= FALSE)
 
 bigDATA$CITY = relevel(bigDATA$CITY, "ST. PAUL")
-lm0 = lm(bnoise ~ TimePeriod, data = bigDATA)
-summary(lm0)
-lm02 = lm(bnoise ~ TimePeriod + I(TimePeriod^2), data = bigDATA)
-summary(lm02)
-lm1 = lm(bnoise ~ TimePeriod + CITY, data = bigDATA)
-summary(lm1)
-lm12 = lm(bnoise ~ TimePeriod + I(TimePeriod^2) + CITY, data = bigDATA)
-summary(lm12)
 
-lm0st = lm(bnoise ~ TimePeriod, data = bigDATA, subset = (CITY == "ST. PAUL"))
-summary(lm0st)
-lm02st = lm(bnoise ~ TimePeriod + I(TimePeriod^2), data = bigDATA, subset = (CITY == "ST. PAUL"))
-summary(lm02st)
+# 500 bandwidth
+lm0.50 = lm(bnoise50 ~ TimePeriod, data = bigDATA)
+#summary(lm0.50)
+lm02.50 = lm(bnoise50 ~ TimePeriod + I(TimePeriod^2), data = bigDATA)
+#summary(lm02.50)
+lm1.50 = lm(bnoise50 ~ TimePeriod + CITY, data = bigDATA)
+#summary(lm1.50)
+lm12.50 = lm(bnoise50 ~ TimePeriod + I(TimePeriod^2) + CITY, data = bigDATA)
+#summary(lm12.50)
+
+lm0st.50 = lm(bnoise50 ~ TimePeriod, data = bigDATA, subset = (CITY == "ST. PAUL"))
+#summary(lm0st.50)
+lm02st.50 = lm(bnoise50 ~ TimePeriod + I(TimePeriod^2), data = bigDATA, subset = (CITY == "ST. PAUL"))
+#summary(lm02st.50)
+
+# 2000 bandwidth
+lm0.200 = lm(bnoise200 ~ TimePeriod, data = bigDATA)
+summary(lm0.200)
+lm02.200 = lm(bnoise200 ~ TimePeriod + I(TimePeriod^2), data = bigDATA)
+summary(lm02.200)
+lm1.200 = lm(bnoise200 ~ TimePeriod + CITY, data = bigDATA)
+summary(lm1.200)
+lm12.200 = lm(bnoise200 ~ TimePeriod + I(TimePeriod^2) + CITY, data = bigDATA)
+summary(lm12.200)
+
+lm0st.200 = lm(bnoise200 ~ TimePeriod, data = bigDATA, subset = (CITY == "ST. PAUL"))
+summary(lm0st.200)
+lm02st.200 = lm(bnoise200 ~ TimePeriod + I(TimePeriod^2), data = bigDATA, subset = (CITY == "ST. PAUL"))
+summary(lm02st.200)
+
 require(stargazer)
 
 indvarlabels = c("Months since Jan 2005", "(Months since Jan 2005)$^2$",
                  "Constant")
 
-stargazer(lm0, lm02, lm1, lm12, lm0st, lm02st,
+stargazer(lm0.50, lm02.50, lm1.50, lm12.50, lm0st.50, lm02st.50,
           digits.extra = 4, digits = 4,
           align = TRUE,
           omit.stat=c("adj.rsq","ser","f"),
@@ -32,7 +50,18 @@ stargazer(lm0, lm02, lm1, lm12, lm0st, lm02st,
           omit.labels = c("City Fixed Effects"),
           font.size = "scriptsize",
           column.sep.width = "-1pt",
-          dep.var.labels = "Noise Beta",
+          dep.var.labels = "Bandwidth 500",
+          covariate.labels = indvarlabels)
+
+stargazer(lm0.200, lm02.200, lm1.200, lm12.200, lm0st.200, lm02st.200,
+          digits.extra = 4, digits = 4,
+          align = TRUE,
+          omit.stat=c("adj.rsq","ser","f"),
+          omit = c("CITY"),
+          omit.labels = c("City Fixed Effects"),
+          font.size = "scriptsize",
+          column.sep.width = "-1pt",
+          dep.var.labels = "Bandwidth 2000",
           covariate.labels = indvarlabels)
 
 

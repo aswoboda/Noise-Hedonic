@@ -1,7 +1,21 @@
 \begin{figure*}
 
-\makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/StudyAreaSaleValueDist}}
-\caption{This figure shows the spatial extent of our study area as well as the significant spatial variation in single family house sales prices.}\label{fig:overview}
+\makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/Overview2column}}
+\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}\label{fig:overview}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
+\makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DensityPlotsByYear}}
+\caption{This figure shows }\label{fig:DensityPlots}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
+\makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/SaleValue_with05}}
+\caption{This figure shows }\label{fig:SalesYear}
 \end{figure*}
 \efloatseparator
  
@@ -9,6 +23,27 @@
 
   \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/GCVbyModel}}
 \caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 500 nearest houses.}\label{fig:GCVmodel}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/AcreBeta_allBandwidth}}
+ \caption{Simula.}\label{fig:AcreBetas}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/FinSqFtBeta_allBandwidth}}
+ \caption{Simula.}\label{fig:HouseBetas}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/NoiseBeta_allBandwidth}}
+ \caption{Simula.}\label{fig:NoiseBetas}
 \end{figure*}
 \efloatseparator
  
@@ -24,6 +59,30 @@
  \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDs650}}
  \caption{Simulation Results for nearest 650 observations. Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds650}
 \end{figure*}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Acre_50_200_ByYear}
+ \caption{Simula.}
+ \label{fig:AcreTime}
+\end{sidewaysfigure}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/FinFt_50_200_ByYear}
+ \caption{Simula.}
+ \label{fig:HouseTime}
+\end{sidewaysfigure}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Noise_50_200_ByYear}
+ \caption{Simula.}
+ \label{fig:NoiseTime}
+\end{sidewaysfigure}
 \efloatseparator
  
 \begin{figure*}
