@@ -12,8 +12,8 @@ load("../Data/R2GIS/CleanData/TimeLag12months/Sales20052010LWRmodelAirMean3-2014
 # LWRMonteCarloStats2014.03.29 <- read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats2014-03-29.csv")
 # LWRMonteCarloStats2014.04.18 <- read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats2014-04-18.csv")
 # MCMaster <- rbind(LWRMonteCarloStats2014.03.29, LWRMonteCarloStats2014.04.18)
-MCMaster = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/k2000/LWRMonteCarloStats2014-06-29.csv")
-MCMaster = MCMaster[1:50,]
+MCMaster = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats2014-07-02.csv")
+MCMaster = MCMaster[1:94,]
 
 MCplotter = function(outputcoefficient, statcoefficient, meanORsd = "mean") {
   if (meanORsd == "mean") actual = mean(output[[outputcoefficient]][, "k2000"], na.rm =T)

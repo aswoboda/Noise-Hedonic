@@ -12,7 +12,7 @@ myVars = c("Air_Mean", "FIN_SQ_FT", "ACRES_POLY", "YEAR_BUILT", "OWNOCC", "MED_I
 RHS = paste(myVars, collapse = "+")
 MYMODEL = paste("logSALE_VA", RHS, sep = "~")
 MYMODELsmall = substr(MYMODEL, 1, nchar(MYMODEL)-5)
-KVECTOR = c(2000) # c(200, 400, 650, 1000, 2000, 4000)
+KVECTOR = c(500) # c(200, 400, 650, 1000, 2000, 4000)
 
 # How many times am I going to reshuffle?
 iterations = 100
@@ -24,7 +24,7 @@ numMCstats = 2 + 2*length(vars2keep)
 # colnames(MCstats) = c("minGCV", "optimalBandwidth", 
 #                       paste0("meanBeta.", vars2keep),
 #                       paste0("sterBeta.", vars2keep))
-mcstats = read.csv("analysis/04MonteCarloSim/Revision/Model3/k2000/CopyOfLWRMonteCarloStats2014-06-29.csv")
+mcstats = read.csv("analysis/04MonteCarloSim/Revision/Model3/k500/LWRMonteCarloStats2014-06-21.csv")
 MCstats = as.matrix(mcstats)
 
 filePrefix = "../Data/R2GIS/CleanData/"
