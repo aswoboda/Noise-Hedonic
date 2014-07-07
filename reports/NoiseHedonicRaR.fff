@@ -8,14 +8,16 @@
 \begin{figure*}
 
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DensityPlotsByYear}}
-\caption{This figure shows }\label{fig:DensityPlots}
+\caption{This figure shows the distribution of our variables over time. Note that there are no discernable differences in mean, standard deviation, or shape of the distribution for most variables other than sales price.}
+\label{fig:DensityPlots}
 \end{figure*}
 \efloatseparator
  
 \begin{figure*}
 
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/SaleValue_with05}}
-\caption{This figure shows }\label{fig:SalesYear}
+\caption{This figure shows the spatial distribution of observed sales prices over time. The change in color from 2005 to 2010 denotes the dramatic drop in sales prices associated with the recession of 2008-09. There are clear spatial patterns in  house prices that persist over time (locations with relatively high vs. low prices in one year tend to be the same in other years). However, we see no evidence that sales shifted from one area of our study region to another (neighborhoods with many sales in 2005 also tend to have many sales in 2010). }
+\label{fig:SalesYear}
 \end{figure*}
 \efloatseparator
  
@@ -28,43 +30,48 @@
  
 \begin{figure*}
 
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/GCVsFromMCsim}}
+ \caption{This figure shows the distribution of GCV scores obtained from simulations with spatially randomized data and the GCV score from our data. Each solid curve represents the smoothed density plot of 100 different instances of the simulation. The dashed line suggests that our actual minimum GCV score was not obtained by random chance as no other GCV scores come close.}
+ \label{fig:GCVSIM}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}
+
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/AcreBeta_allBandwidth}}
- \caption{Simula.}\label{fig:AcreBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the lot size variable (in acres) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases there is a clear inverse relationship between the coefficient magnitudes and distance to the central business district.}
+ \label{fig:AcreBetas}
 \end{figure*}
 \efloatseparator
  
 \begin{figure*}
 
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/FinSqFtBeta_allBandwidth}}
- \caption{Simula.}\label{fig:HouseBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the finished house size variable (in 1,000s of square feet) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the highest coefficient values are in the west-central portion of our study area and the lowest coefficients tend to be in the far south.}
+ \label{fig:HouseBetas}
 \end{figure*}
 \efloatseparator
  
 \begin{figure*}
 
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/NoiseBeta_allBandwidth}}
- \caption{Simula.}\label{fig:NoiseBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the noise variable (in dB) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the most negative coefficient values are in the west-central portion of our study area with the smallest in magnitude coefficients tending to be near the central business district.}
+ \label{fig:NoiseBetas}
 \end{figure*}
 \efloatseparator
  
 \begin{figure*}
 
- \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDs500}}
- \caption{Simulation Results for nearest 500 observations. Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds500}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}
-
- \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDs650}}
- \caption{Simulation Results for nearest 650 observations. Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds650}
+ \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsimResultsSDsk500and2000final}}
+ \caption{This figure shows the actual standard deviation in LWR coefficients as compared to those obtained from 100 different instances of spatial randomization. Results are presented for two different bandwidths (nearest 500 and 2,000) for our regression variables. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data (the dashed line) is substantially higher than any standard deviation obtained with simulated data.}
+ \label{fig:MCsim2}
 \end{figure*}
 \efloatseparator
  
 \begin{sidewaysfigure}
 
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Acre_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR lot size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:AcreTime}
 \end{sidewaysfigure}
 \efloatseparator
@@ -72,7 +79,7 @@
 \begin{sidewaysfigure}
 
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/FinFt_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR finished house size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:HouseTime}
 \end{sidewaysfigure}
 \efloatseparator
@@ -80,7 +87,7 @@
 \begin{sidewaysfigure}
 
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Noise_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR noise coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:NoiseTime}
 \end{sidewaysfigure}
 \efloatseparator

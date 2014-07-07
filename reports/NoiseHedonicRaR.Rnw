@@ -67,11 +67,13 @@ In addition to the geographic location and date of the house sale, we collected 
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/Overview2column}}
-\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}\label{fig:overview}
+\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}
+\label{fig:overview}
 \end{figure}
 
 \begin{table}
-\caption{Variable Description and Summary Statistics}\label{tab:sumStats}
+\caption{Variable Description and Summary Statistics}
+\label{tab:sumStats}
 \makebox[\linewidth][c]{
 \small
 \begin{tabular}{lD{.}{.}{1}D{.}{.}{1}D{.}{.}{1}D{.}{.}{1}D{.}{.}{1}D{.}{.}{1}D{.}{.}{1}}
@@ -82,7 +84,7 @@ In addition to the geographic location and date of the house sale, we collected 
 % Tue Jun 10 21:29:25 2014
 Sale Price (\$1,000s) & 99 & 195 & 241 & 266 & 315 & 675 & 103 \\ 
   Year House was Built & 1850 & 1950 & 1973 & 1967 & 1993 & 2010 & 32 \\ 
-  House Size (square feet) & 390 & 1158 & 1628 & 1750 & 2189 & 4000 & 704 \\ 
+  House Size (ft$^2$) & 390 & 1158 & 1628 & 1750 & 2189 & 4000 & 704 \\ 
   Lot Size (acres) & 0.02 & 0.17 & 0.25 & 0.25 & 0.31 & 0.60 & 0.11 \\ 
   Owner Occupancy (Yes = 1, No = 0) & 0.0 & 1.0 & 1.0 & 0.8 & 1.0 & 1.0 & 0.4 \\ 
   Traffic Noise (dB) & 24.5 & 49.0 & 54.0 & 54.3 & 59.5 & 81.6 & 7.5 \\ 
@@ -101,7 +103,6 @@ Sale Price (\$1,000s) & 99 & 195 & 241 & 266 & 315 & 675 & 103 \\
 
 \begin{table}
 \caption{Matrix of Pearson Correlation Coefficients for Quantitative Variables}\label{tab:cor}
-%\includegraphics[width = \textwidth]{../graphs/CorrelationMatrix}
 \begin{center}
 \small
 \tabcolsep=0.05cm
@@ -187,12 +188,14 @@ We also created univariate density plots of the variables over time to check for
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DensityPlotsByYear}}
-\caption{This figure shows }\label{fig:DensityPlots}
+\caption{This figure shows the distribution of our variables over time. Note that there are no discernable differences in mean, standard deviation, or shape of the distribution for most variables other than sales price.}
+\label{fig:DensityPlots}
 \end{figure}
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/SaleValue_with05}}
-\caption{This figure shows }\label{fig:SalesYear}
+\caption{This figure shows the spatial distribution of observed sales prices over time. The change in color from 2005 to 2010 denotes the dramatic drop in sales prices associated with the recession of 2008-09. There are clear spatial patterns in  house prices that persist over time (locations with relatively high vs. low prices in one year tend to be the same in other years). However, we see no evidence that sales shifted from one area of our study region to another (neighborhoods with many sales in 2005 also tend to have many sales in 2010). }
+\label{fig:SalesYear}
 \end{figure}
 
 \section{Basic Econometric Model}\label{basicModel}
@@ -312,137 +315,201 @@ Two important conclusions can be drawn from these results. Model (3) consistentl
 \caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 500 nearest houses.}\label{fig:GCVmodel}
 \end{figure}
 
-%Table \ref{tab:LWR} summarizes the results of LWR Model (3) at three different bandwidth sizes plus the same model estimated at the ``global'' level. run without allowing for spatial variation in the regression coefficients. Again, note that the LWR model yields a substantially smaller GCV score (0.027 vs.\ 0.038) signifying a substantial improvement in model performance. In addition to the significant reduction in the GCV score obtained with the use of LWR, we also see a substantial reduction in the degree of spatial autocorrelation in the model residuals. We calculate Moran's I statistic to be 0.199 for the global model while our preferred LWR specification yields 0.012, a more than ten-fold reduction. 
-
+% % Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% % Date and time: Sat, Jun 21, 2014 - 10:37:00 AM
+% % Requires LaTeX packages: dcolumn 
+% \begin{table}[!htbp]
+%   \caption{LWR Results: Dependent Variable = ln(Sales Price)} 
+%   \label{tab:LWR} 
+%   \makebox[\textwidth][c]{
+% \scriptsize
+%   \centering
+% \begin{tabular}{@{\extracolsep{-1pt}} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{-4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{-4} D{.}{.}{3} D{.}{.}{3} } 
+% \\[-1.8ex]\hline 
+% \hline \\[-1.8ex]
+%  & \multicolumn{3}{c}{Nearest 500 sales$^*$} & \multicolumn{3}{c}{Nearest 650 sales} & \multicolumn{3}{c}{Nearest 1000 sales} \\
+%  & \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$}  & 
+%  \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$}  & 
+%  \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$} \\
+%  \cline{2-4} \cline{8-10} \cline{5-7}
+% \multicolumn{1}{l}{Noise (dB)} & -0.0034 & -0.0064 & -0.0006 & -0.0034 & -0.0061 & -0.0009 & -0.0033 & -0.0057 & -0.0013 \\ 
+% \multicolumn{1}{l}{House Size (1,000s ft)} & 0.2700 & 0.1800 & 0.3900 & 0.2700 & 0.1900 & 0.3900 & 0.2700 & 0.2000 & 0.4000 \\ 
+% \multicolumn{1}{l}{Lot Size (acres)} & 0.4200 & 0.1700 & 0.7300 & 0.4200 & 0.1900 & 0.7100 & 0.4200 & 0.2100 & 0.6700 \\ 
+% \multicolumn{1}{l}{Year House Built} & 0.0046 & 0.0004 & 0.0100 & 0.0045 & 0.0005 & 0.0096 & 0.0043 & 0.0005 & 0.0090 \\ 
+% \multicolumn{1}{l}{Owner Occupancy} & 0.0230 & -0.0290 & 0.0800 & 0.0240 & -0.0240 & 0.0760 & 0.0230 & -0.0180 & 0.0680 \\ 
+% \multicolumn{1}{l}{Percent White} & 0.0012 & -0.0003 & 0.0029 & 0.0013 & -0.0001 & 0.0028 & 0.0014 & 0.0001 & 0.0028 \\ 
+% \multicolumn{1}{l}{Percent Under 18} & 0.0005 & -0.0016 & 0.0025 & 0.0004 & -0.0014 & 0.0022 & 0.0004 & -0.0011 & 0.0019 \\ 
+% \multicolumn{1}{l}{Median Income (\$1,000s)} & 0.0007 & -0.0014 & 0.0033 & 0.0008 & -0.0010 & 0.0033 & 0.0010 & -0.0006 & 0.0037 \\ 
+% \multicolumn{1}{l}{Elementary Test Scores} & 0.0000 & -0.0056 & 0.0055 & 0.0001 & -0.0050 & 0.0049 & 0.0003 & -0.0040 & 0.0042 \\ 
+% \multicolumn{1}{l}{Dist to Lake (km)} & -0.0150 & -0.0910 & 0.0580 & -0.0110 & -0.0770 & 0.0550 & -0.0076 & -0.0630 & 0.0520 \\ 
+% \multicolumn{1}{l}{Dist to Park (km)} & -0.0110 & -0.0600 & 0.0330 & -0.0110 & -0.0490 & 0.0250 & -0.0085 & -0.0370 & 0.0160 \\ 
+% \multicolumn{1}{l}{Dist to Shop (km)} & 0.0092 & -0.0330 & 0.0520 & 0.0096 & -0.0270 & 0.0470 & 0.0100 & -0.0210 & 0.0440 \\ 
+% \multicolumn{1}{l}{Dist to CBD (km)} & 0.0084 & -0.0190 & 0.0440 & 0.0094 & -0.0140 & 0.0400 & 0.0100 & -0.0099 & 0.0380 \\ 
+% \hline \\[-1.8ex] 
+% \multicolumn{10}{p{6 in}}{$^*$ A bandwidth of 500 implies that the nearest 500 houses sold within the past 12 months are included.} \\
+% \multicolumn{10}{p{6 in}}{Note: Each model also includes a categorical variable for architectural style, month*year fixed effects, and city-level fixed effects. }
+% 
+% \end{tabular} 
+% }
+% \end{table} 
 
 % Table created by stargazer v.5.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jun 21, 2014 - 10:37:00 AM
+% Date and time: Sat, Jul 05, 2014 - 09:41:55 PM
 % Requires LaTeX packages: dcolumn 
-\begin{table}[!htbp]
-  \caption{LWR Results: Dependent Variable = ln(Sales Price)} 
+\begin{table}[!htbp]   
+  \caption{\mbox{LWR Coefficient Mean and (10$^{th}$ to 90$^{th}$ Percentile) Values for Selected Bandwidths} }
   \label{tab:LWR} 
   \makebox[\textwidth][c]{
 \scriptsize
   \centering
-\begin{tabular}{@{\extracolsep{-1pt}} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{-4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{-4} D{.}{.}{3} D{.}{.}{3} } 
+\begin{tabular}{@{\extracolsep{-1pt}} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} } 
 \\[-1.8ex]\hline 
-\hline \\[-1.8ex]
- & \multicolumn{3}{c}{Nearest 500 sales$^*$} & \multicolumn{3}{c}{Nearest 650 sales} & \multicolumn{3}{c}{Nearest 1000 sales} \\
- & \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$}  & 
- \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$}  & 
- \multicolumn{1}{r}{mean $\hat{\beta}$} & \multicolumn{1}{c}{10$^{th}$} & \multicolumn{1}{c}{90$^{th}$} \\
- \cline{2-4} \cline{8-10} \cline{5-7}
-\multicolumn{1}{l}{Noise (dB)} & -0.0034 & -0.0064 & -0.0006 & -0.0034 & -0.0061 & -0.0009 & -0.0033 & -0.0057 & -0.0013 \\ 
-\multicolumn{1}{l}{House Size (1,000s ft)} & 0.2700 & 0.1800 & 0.3900 & 0.2700 & 0.1900 & 0.3900 & 0.2700 & 0.2000 & 0.4000 \\ 
-\multicolumn{1}{l}{Lot Size (acres)} & 0.4200 & 0.1700 & 0.7300 & 0.4200 & 0.1900 & 0.7100 & 0.4200 & 0.2100 & 0.6700 \\ 
-\multicolumn{1}{l}{Year House Built} & 0.0046 & 0.0004 & 0.0100 & 0.0045 & 0.0005 & 0.0096 & 0.0043 & 0.0005 & 0.0090 \\ 
-\multicolumn{1}{l}{Owner Occupancy} & 0.0230 & -0.0290 & 0.0800 & 0.0240 & -0.0240 & 0.0760 & 0.0230 & -0.0180 & 0.0680 \\ 
-\multicolumn{1}{l}{Percent White} & 0.0012 & -0.0003 & 0.0029 & 0.0013 & -0.0001 & 0.0028 & 0.0014 & 0.0001 & 0.0028 \\ 
-\multicolumn{1}{l}{Percent Under 18} & 0.0005 & -0.0016 & 0.0025 & 0.0004 & -0.0014 & 0.0022 & 0.0004 & -0.0011 & 0.0019 \\ 
-\multicolumn{1}{l}{Median Income (\$1,000s)} & 0.0007 & -0.0014 & 0.0033 & 0.0008 & -0.0010 & 0.0033 & 0.0010 & -0.0006 & 0.0037 \\ 
-\multicolumn{1}{l}{Elementary Test Scores} & 0.0000 & -0.0056 & 0.0055 & 0.0001 & -0.0050 & 0.0049 & 0.0003 & -0.0040 & 0.0042 \\ 
-\multicolumn{1}{l}{Dist to Lake (km)} & -0.0150 & -0.0910 & 0.0580 & -0.0110 & -0.0770 & 0.0550 & -0.0076 & -0.0630 & 0.0520 \\ 
-\multicolumn{1}{l}{Dist to Park (km)} & -0.0110 & -0.0600 & 0.0330 & -0.0110 & -0.0490 & 0.0250 & -0.0085 & -0.0370 & 0.0160 \\ 
-\multicolumn{1}{l}{Dist to Shop (km)} & 0.0092 & -0.0330 & 0.0520 & 0.0096 & -0.0270 & 0.0470 & 0.0100 & -0.0210 & 0.0440 \\ 
-\multicolumn{1}{l}{Dist to CBD (km)} & 0.0084 & -0.0190 & 0.0440 & 0.0094 & -0.0140 & 0.0400 & 0.0100 & -0.0099 & 0.0380 \\ 
 \hline \\[-1.8ex] 
-\multicolumn{10}{p{6 in}}{$^*$ A bandwidth of 500 implies that the nearest 500 houses sold within the past 12 months are included.} \\
-\multicolumn{10}{p{6 in}}{Note: Each model also includes a categorical variable for architectural style, month*year fixed effects, and city-level fixed effects. }
+& \multicolumn{4}{c}{Dependent Variable = ln(Sales Price)} \\ \\
+ & \multicolumn{1}{c}{Nearest 500$^*$ sales} & \multicolumn{1}{c}{Nearest 650 sales} & \multicolumn{1}{c}{Nearest 1,000 sales} & \multicolumn{1}{c}{Nearest 2,000 sales} \\ \hline \\
+\multicolumn{1}{l}{Noise (dB)} & \multicolumn{1}{c}{-0.0034} & \multicolumn{1}{c}{-0.0034} & \multicolumn{1}{c}{-0.0033} & \multicolumn{1}{c}{-0.0032} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0064 to -0.0007)} & \multicolumn{1}{c}{(-0.0061 to -0.0009)} & \multicolumn{1}{c}{(-0.0057 to -0.0013)} & \multicolumn{1}{c}{(-0.0049 to -0.0017)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{House Size (1,000s ft$^2$)} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.28} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.18 to 0.39)} & \multicolumn{1}{c}{(0.19 to 0.39)} & \multicolumn{1}{c}{(0.20 to 0.40)} & \multicolumn{1}{c}{(0.20 to 0.37)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Lot Size (acres)} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.40} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.17 to 0.73)} & \multicolumn{1}{c}{(0.19 to 0.71)} & \multicolumn{1}{c}{(0.21 to 0.67)} & \multicolumn{1}{c}{(0.25 to 0.58)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Year House Built} & \multicolumn{1}{c}{0.0046} & \multicolumn{1}{c}{0.0045} & \multicolumn{1}{c}{0.0043} & \multicolumn{1}{c}{0.0038} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.0004 to 0.010)} & \multicolumn{1}{c}{(0.0005 to 0.0096)} & \multicolumn{1}{c}{(0.0005 to 0.0090)} & \multicolumn{1}{c}{(0.0004 to 0.0080)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Owner Occupancy} & \multicolumn{1}{c}{0.023} & \multicolumn{1}{c}{0.024} & \multicolumn{1}{c}{0.023} & \multicolumn{1}{c}{0.021} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.029 to 0.080)} & \multicolumn{1}{c}{(-0.024 to 0.076)} & \multicolumn{1}{c}{(-0.018 to 0.068)} & \multicolumn{1}{c}{(-0.012 to 0.056)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Percent White} & \multicolumn{1}{c}{0.0012} & \multicolumn{1}{c}{0.0013} & \multicolumn{1}{c}{0.0014} & \multicolumn{1}{c}{0.0016} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0003 to 0.0029)} & \multicolumn{1}{c}{(-0.0001 to 0.0028)} & \multicolumn{1}{c}{(0.0001 to 0.0028)} & \multicolumn{1}{c}{(0.0003 to 0.0032)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Percent Under Age 18} & \multicolumn{1}{c}{0.00047} & \multicolumn{1}{c}{0.00045} & \multicolumn{1}{c}{0.00040} & \multicolumn{1}{c}{0.00034} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0016 to 0.0025)} & \multicolumn{1}{c}{(-0.0014 to 0.0022)} & \multicolumn{1}{c}{(-0.0011 to 0.0019)} & \multicolumn{1}{c}{(-0.0008 to 0.0015)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Median Income (\$1,000s)} & \multicolumn{1}{c}{0.0006} & \multicolumn{1}{c}{0.0008} & \multicolumn{1}{c}{0.0010} & \multicolumn{1}{c}{0.0014} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0014 to 0.0033)} & \multicolumn{1}{c}{(-0.0010 to 0.0033)} & \multicolumn{1}{c}{(-0.0006 to 0.0037)} & \multicolumn{1}{c}{(-0.0002 to 0.0042)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Elementary Test Scores} & \multicolumn{1}{c}{-0.00002} & \multicolumn{1}{c}{0.00008} & \multicolumn{1}{c}{0.00029} & \multicolumn{1}{c}{0.00044} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0056 to 0.0055)} & \multicolumn{1}{c}{(-0.0050 to 0.0049)} & \multicolumn{1}{c}{(-0.0040 to 0.0042)} & \multicolumn{1}{c}{(-0.0025 to 0.0037)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Distance to Lake (km)} & \multicolumn{1}{c}{-0.0150} & \multicolumn{1}{c}{-0.0110} & \multicolumn{1}{c}{-0.0076} & \multicolumn{1}{c}{-0.0051} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.091 to 0.058)} & \multicolumn{1}{c}{(-0.077 to 0.055)} & \multicolumn{1}{c}{(-0.063 to 0.052)} & \multicolumn{1}{c}{(-0.048 to 0.043)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Distance to Park (km)} & \multicolumn{1}{c}{-0.011} & \multicolumn{1}{c}{-0.011} & \multicolumn{1}{c}{-0.009} & \multicolumn{1}{c}{-0.002} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.060 to 0.033)} & \multicolumn{1}{c}{(-0.049 to 0.025)} & \multicolumn{1}{c}{(-0.037 to 0.016)} & \multicolumn{1}{c}{(-0.018 to 0.011)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Distance to Shop (km)} & \multicolumn{1}{c}{0.0092} & \multicolumn{1}{c}{0.0096} & \multicolumn{1}{c}{0.0100} & \multicolumn{1}{c}{0.0078} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.033 to 0.052)} & \multicolumn{1}{c}{(-0.027 to 0.047)} & \multicolumn{1}{c}{(-0.021 to 0.044)} & \multicolumn{1}{c}{(-0.014 to 0.036)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{l}{Distance to CBD (km)} & \multicolumn{1}{c}{0.0084} & \multicolumn{1}{c}{0.0094} & \multicolumn{1}{c}{0.0100} & \multicolumn{1}{c}{0.0095} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.019 to 0.044)} & \multicolumn{1}{c}{(-0.014 to 0.040)} & \multicolumn{1}{c}{(-0.010 to 0.038)} & \multicolumn{1}{c}{(-0.005 to 0.037)} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
 
+\multicolumn{1}{l}{Home Style Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
+\multicolumn{1}{l}{Month*Year Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
+\multicolumn{1}{l}{City Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\ 
+\hline \\[-1.8ex] 
+\multicolumn{1}{l}{Observations} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} \\ 
+\multicolumn{1}{l}{GCV score} & \multicolumn{1}{c}{0.0271} & \multicolumn{1}{c}{0.0271} & \multicolumn{1}{c}{0.0274} & \multicolumn{1}{c}{0.0283} \\ 
+\multicolumn{1}{l}{Moran's I statistic$^{**}$} & \multicolumn{1}{c}{0.027} & \multicolumn{1}{c}{0.031} & \multicolumn{1}{c}{0.037} & \multicolumn{1}{c}{0.049} \\ \hline \hline
+\multicolumn{5}{p{5.5 in}}{$^*$ A bandwidth of 500 implies that the nearest 500 houses sold within the past 12 months are included.} \\
+\multicolumn{5}{p{5.5 in}}{$^{**}$ For comparison, the Moran's I statistic for Model A in Table~\ref{tab:globalRegression} is 0.188.} \\
 \end{tabular} 
 }
 \end{table} 
 
-Table~\ref{tab:LWR} shows the results for our LWR Model (3) with three different bandwidths: the GCV minimizing bandwidth of 500 nearest sales as well as two larger values, 650 and 1,000 nearest sales. For each bandwidth, we display the mean LWR coefficient as well as the 10$^{th}$ and 90$^{th}$ percentile values. The mean LWR coefficient for the noise variable is similar across the three different bandwidths (approximately a third of a percent difference in house sales prices for each additional decibel of noise, all other varibles held constant). Unsurprisingly, the spread of the coefficient distribution is greater for the smaller bandwidths. We now turn to investigating whether this increased dispersion appears from the stochastic nature of smaller sample sizes, or due to heterogeneity in the hedonic function.
+Table~\ref{tab:LWR} shows the results for our LWR Model (3) with four different bandwidths: the GCV minimizing bandwidth of 500 nearest sales as well as three larger bandwidths: 650, 1,000, and 2,000 nearest sales. For each bandwidth, we display the mean LWR coefficient as well as the 10$^{th}$ and 90$^{th}$ percentile values. In addition to having smaller GCV scores than the global model, the LWR models substantially reduce the amount of spatial autocorrelation in our regression residuals (the Moran's I statistic for the global model is seven times larger than for the 500 nearest sales model). 
 
-We believe the hedonic function varies significantly over space and time and that the use of a LWR estimation procedure is an appropriate and beneficial modeling strategy. In the next three subsections we describe the results of hypothesis tests that lead us to these conclusions. 
+The mean LWR coefficient for the noise variable is similar across the different bandwidths (approximately a third of a percent difference in house sales prices for each additional decibel of noise, all other varibles held constant). Unsurprisingly, the spread of the coefficient distribution is greater for the smaller bandwidths. We now turn to investigating whether this increased dispersion appears from the stochastic nature of smaller sample sizes, or due to heterogeneity in the hedonic function. In the next three subsections we describe the results of hypothesis tests that lead us to believe that LWR modeling is an appropriate and beneficial research strategy. 
 
 \subsection{Does the Hedonic Function Vary over Space?}
 
-We first conducted a Monte Carlo simulation recommended in \citet{Fotheringham2002} to see if the improved model fit with our LWR model was due to random chance. The intuition of the test is as follows - if the improved model fit isn't significant, then we should be able to see similar improvements in model fit by using the LWR model with the same houses but in a different spatial arrangement. Failing to recreate a spatial arrangement that yields a similar model fit as to that obtained with our actual data is then evidence that our spatial arrangement and the improved model fit obtained from a spatially heterogeneous model is significant. 
+We first conducted a Monte Carlo simulation recommended in \citet{Fotheringham2002} to see if the improved model fit with our LWR models was due to random chance. The intuition of the test is as follows - if the improved model fit isn't significant, then we should be able to see similar improvements in model fit by using the LWR model with the same houses but in a different spatial arrangement. Failing to recreate a spatial arrangement that yields a similar model fit as to that obtained with our actual data is then evidence that our spatial arrangement and the improved model fit obtained from a spatially heterogeneous model is significant. 
 
-We conducted 100 different experiments in which we randomly swapped the locations of our house transactions. In each case we then estimated the LWR model using 10 different bandwidths ranging from the nearest 100 to 4,000 sales just as before and calculated the GCV score. Every single time the smallest Generalized Cross-Validation score was obtained at the largest bandwidth. That is, in 100 consecutive opportunities to fit our data at a local level of a couple hundred nearest sales up to a couple thousand nearby sales, the GCV score was always smallest for the largest possible bandwidth. In other words, after running a thousand different local regression models on the shuffled data, we never obtained model performance anywhere near the LWR model with our true locational data. This seems to be strong evidence that the increased ability to predict house prices with a local model is not due to chance and that there is spatial non-stationarity in the hedonic function.
+We conducted 100 different experiments in which we randomly resampled (without replacement) the locations of our house transactions. In each case we then estimated the LWR model using 10 different bandwidths ranging from the nearest 100 to 4,000 sales just as before and calculated the GCV score. Figure~\ref{fig:GCVSIM} shows the distribution of the GCV scores we obtained for the simulated data for four selected bandwidths relative to the score we obtained with our actual data. Note that the GCV distributions for the simulated data a strongly related their bandwidth - smaller bandwidths have larger GCV scores. That is, with our randomized location data, the GCV score is inversely proportional to the bandwidth. Additionally, note that no GCV scores from the simulated data are near our GCV score with the actual data. In every single instance the smallest Generalized Cross-Validation score was obtained at the largest bandwidth. That is, in 100 consecutive opportunities to fit our data at a local level of a couple hundred nearest sales up to a couple thousand nearby sales, the GCV score was always smallest for the largest possible bandwidth. In other words, after running a thousand different local regression models on the shuffled data, we never obtained model performance anywhere near the LWR model with our true locational data. This seems to be strong evidence that the increased ability to predict house prices with a local model is not due to chance and that there is spatial non-stationarity in the hedonic function. 
 
-
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/GCVsFromMCsim}}
+ \caption{This figure shows the distribution of GCV scores obtained from simulations with spatially randomized data and the GCV score from our data. Each solid curve represents the smoothed density plot of 100 different instances of the simulation. The dashed line suggests that our actual minimum GCV score was not obtained by random chance as no other GCV scores come close.}
+ \label{fig:GCVSIM}
+\end{figure}
 
 \subsection{Which Coefficients Vary over Space?}
 
 The previous section presented evidence in support of the claim that there exists significant spatial variation in the hedonic function. However, we have not yet established which variables have spatially varying coefficients. Figures~\ref{fig:AcreBetas} -- \ref{fig:NoiseBetas} show the spatial variation in the estimated LWR coefficients for three important variables, lot size, house size, and noise. For comparison, we present the results across four different levels of local analysis, ranging from LWR bandwidths of 500 nearest houses to the nearest 2,000 sales. 
 
-A few patterns are clear in Figures~\ref{fig:AcreBetas} -- \ref{fig:NoiseBetas}. For instance, across all four bandwidths we see that the hedonic\footnote{Remember that the dependent variable is the log of sales price.} coefficient on lot size (measured in acres) is largest near the central business district of St.\ Paul. Thus, consistent with standard urban economic theory, to the extent that the hedonic coefficient is correlated with the price of land, our results suggest the price of land is highest near the central business district and declines with distance from the CBD. This tendency is consistent across the four different bandwidths presented (other specific results available upon request). The LWR coefficients on house size (measured in thousands of square feet of finished space) also seem to exhibit spatial variation across the different bandwidths. In the west-central portion of our study area (a collection of notably desirable neighborhoods) we see a cluster of large LWR coefficients, while those areas in the southernmost portion of our region (suburban areas) have the smallest coefficients. 
+A few patterns are clear in Figures~\ref{fig:AcreBetas} -- \ref{fig:NoiseBetas}. For instance, across all four bandwidths we see that the hedonic coefficient\footnote{Remember that the dependent variable is the log of sales price.} on lot size (measured in acres) is largest near the central business district of St.\ Paul. Thus, consistent with standard urban economic theory, to the extent that the hedonic coefficient is correlated with the price of land, our results suggest the price of land is highest near the central business district and declines with distance from the CBD. This tendency is consistent across the four different bandwidths presented (other specific results available upon request). The LWR coefficients on house size (measured in thousands of square feet of finished space) also seem to exhibit spatial variation across the different bandwidths. In the west-central portion of our study area (a collection of notably desirable neighborhoods) we see a cluster of large LWR coefficients, while those areas in the southernmost portion of our region (suburban areas) have the smallest coefficients. 
 
 In Figure~\ref{fig:NoiseBetas} we map the estimated LWR noise coefficients from four different bandwidths. In this figure the red areas represent large negative coefficients, while yellow areas are characterized by values closer to zero. It is interesting to note that for the smaller bandwidths, the area with the most negative noise coefficients is ringed by some of the coefficients closest to zero (and even greater than zero in some cases). As the bandwidth increases to 1000 or 2000 nearest houses, the variation in noise coefficients decreases substantially. In contrast to the previous two figures, we have largely eliminated the ``hot spots'' that appear in the smaller bandwidths. 
 
 
 \begin{figure}
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/AcreBeta_allBandwidth}}
- \caption{Simula.}\label{fig:AcreBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the lot size variable (in acres) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases there is a clear inverse relationship between the coefficient magnitudes and distance to the central business district.}
+ \label{fig:AcreBetas}
 \end{figure}
 
 \begin{figure}
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/FinSqFtBeta_allBandwidth}}
- \caption{Simula.}\label{fig:HouseBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the finished house size variable (in 1,000s of square feet) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the highest coefficient values are in the west-central portion of our study area and the lowest coefficients tend to be in the far south.}
+ \label{fig:HouseBetas}
 \end{figure}
 
 
 \begin{figure}
  \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/NoiseBeta_allBandwidth}}
- \caption{Simula.}\label{fig:NoiseBetas}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the noise variable (in dB) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the most negative coefficient values are in the west-central portion of our study area with the smallest in magnitude coefficients tending to be near the central business district.}
+ \label{fig:NoiseBetas}
 \end{figure}
 
-We now conduct a second series of simulation experiments aimed at testing whether the spatial variation exhibited in particular coefficients is significant or due to random chance. The mechanics of the second simulation are very similar to the those described in the previous section. We randomly change the spatial arrangment of our house sales and estimate the LWR model. However, in this simulation we restrict the model to small bandwidths and compare the spread of the regression coefficient estimates under the random arrangment of the data to the spread found in our original LWR models with the actual spatial arrangement. If an independent variable in our hedonic regression function exhibits a stationary relationship with sales prices, then we should see similar levels of dispersion in the randomly arranged data as in our true data. However, if the dispersion we see in our random data is \emph{smaller} than the spread we observed in our actual data, that is evidence consistent with the variable having a non-stationary relationship. That is, the variation in regression coefficients obtained in our data is higher than we would observe from random chance. 
+We now conduct a second series of simulation experiments aimed at testing whether the spatial variation exhibited in particular coefficients is significant or due to random chance. The mechanics of the second simulation are very similar to the those described in the previous section. We randomly change the spatial arrangment of our house sales and estimate the LWR model. However, in this simulation we compare the \emph{spread} (rather than the degree of model fit) of the regression coefficient estimates under the random arrangment of the data to the spread found in our original LWR models with the actual spatial arrangement, conditional on bandwidth. If an explanatory variable in our hedonic regression function exhibits a stationary relationship with sales prices, then we should see similar levels of dispersion in the randomly arranged data as in our true data. However, if the dispersion we see in our randomized data is \emph{smaller} than the spread we observed in our actual data, that is evidence consistent with the variable having a non-stationary relationship. That is, the variation in regression coefficients obtained in our data is higher than we observe from random chance. 
 
-We present the results of this simulation for the same three different bandwidths in Table~\ref{tab:LWR}- 500, 650, and 1,000 nearest observations. Figures~\ref{fig:MCsds500} and \ref{fig:MCsds500} visualize the results of the second simulation for different bandwidths. Each sub-figure displays the distribution of LWR coefficient standard deviations obtained from the 100 iterations of the Monte Carlo simulation and the standard deviation obtained with the actual data (in red). Note that it is the case that the standard deviations obtained with the actual data are typically substantially larger than those obtained in the simulation for most of the variables. However, the variation obtained in the noise coefficients simulations is not dissimilar to our actual LWR results, suggesting that the spatial non-stationarity exhibited in this coefficient is perhaps due to chance and not true spatial non-stationarity in the noise coefficient. 
+We conducted this simulation 100 times for the same four different bandwidths in Table~\ref{tab:LWR}- 500, 650, 1,000 and 2,000 nearest observations. Across all bandwidths we obtain similar results, so for brevity's sake we present the results for the 500 and 2,000 bandwidth sizes\footnote{Additional results available on request.} in Figure~\ref{fig:MCsim2}. The solid red (blue) lines show the distribution of the coefficient standard deviations we obtained from the 100 simulations for the 2,000 (500) nearest sale bandwidths. Across all variables it is the case the the distribution of standard deviations is significantly larger for the smaller bandwidth. That is, when we use smaller bandwidths we tend to see greater dispersion in regression coefficients. We also plot the standard deviation of our coefficients from our actual data as vertical dashed lines (again, color denotes the bandwidth size (red=2,000 and blue=500). For most variables, the standard deviation of the LWR coefficients obtained with our actual data is significantly greater than any standard deviation obtained with the randomized simulated data. That is, across our simulated data we never saw anywhere near the level of dispersion in regression coefficients for house size, lot size, etc. that we observe with our actual data. This seems to be strong evidence that many of our regression coefficients in our hedonic function exhibit spatial non-stationarity. However, for some variables (note the distributions for noise, owner occupancy and percent under age 18) for which our observed spread in the LWR coefficients is similar when we used the simulated data. This simulation does not present evidence that these variables exhibit a non-stationary relationship in our hedonic function.
 
 \begin{figure}
- \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDs500}}
- \caption{Simulation Results for nearest 500 observations. Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds500}
+ \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsimResultsSDsk500and2000final}}
+ \caption{This figure shows the actual standard deviation in LWR coefficients as compared to those obtained from 100 different instances of spatial randomization. Results are presented for two different bandwidths (nearest 500 and 2,000) for our regression variables. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data (the dashed line) is substantially higher than any standard deviation obtained with simulated data.}
+ \label{fig:MCsim2}
 \end{figure}
-
-\begin{figure}
- \makebox[\textwidth][c]{\includegraphics[width=1.2\textwidth]{../graphs/MCsimResultsSDs650}}
- \caption{Simulation Results for nearest 650 observations. Actual LWR Coefficient Standard Deviations \textcolor{red}{(red line)} vs.\ Distribution of Monte Carlo Simulation Standard Deviations by Variable. Figures in which the red line is to the right of the black distribution suggest spatial non-stationarity in effect of the variable on house prices in our study region.}\label{fig:MCsds650}
-\end{figure}
-
-[Insert figure with nearest 1,000 observations here]
 
 \subsection{Does the Noise Coefficient Change over Time?}
 
-Previous research has suggested that the impact of noise can change with time and economic conditions. For instance, \citet{Wilhelmsson2000} found that the traffic noise penalty to be stronger in the 1990s near Stockholm, Sweden compared to the 1980s. \citet{Cohen2009} also found the (airport) noise penalty to be larger in the early 2000s compared to the late 1990s in Atlanta, Georgia. We know that house prices in the United States fell dramatically during and after the Great Recession of 2008-09. We know less about the patterns of change in the hedonic price functions during and after the fall in house prices. \citet{Cho2011b} found evidence from hedonic analysis in Nashville, Tennessee, that consumers' willingness to pay for environmental amenities (such as proximity to open space and water views) decreased during the recession as compared to the previous economic boom. 
+We know that house prices in the United States fell dramatically during and after the Great Recession of 2008-09. We know less about the patterns of change in the hedonic price functions during and after the fall in house prices. \citet{Cho2011b} found evidence from hedonic analysis in Nashville, Tennessee, that consumers' willingness to pay for environmental amenities (such as proximity to open space and water views) decreased during the recession as compared to the previous economic boom. Previous research has suggested that the impact of noise can change with time and economic conditions. For instance, \citet{Wilhelmsson2000} found that the traffic noise penalty to be stronger in the 1990s near Stockholm, Sweden compared to the 1980s. \citet{Cohen2009} also found the (airport) noise penalty to be larger in the early 2000s compared to the late 1990s in Atlanta, Georgia. 
 
-Figures~\ref{fig:AcreTime}--\ref{fig:NoiseTime} show the spatial distribution of some our LWR hedonic coefficients for bandwidths of 500 and 2,000 nearest sales within the last year for the sale years 2006--2010. Regardless of bandwidth, the figures show that the estimated LWR coefficients are different over time. In particular, the lot size and house size coefficients tend to decrease over time. What is surprising, however, is that the negative noise coefficient estimates tend to be more negative in later years of our study. Figure~\ref{fig:NoiseTime} shows that the spatial patterns are similar across years (the most negative coefficients tend to be in the same locations across years), but the average noise coefficient tends to be more negative for the later years.
+Figures~\ref{fig:AcreTime}--\ref{fig:NoiseTime} show the spatial distribution of some our LWR hedonic coefficients for bandwidths of 500 and 2,000 nearest sales within the last year for the sale years 2006--2010. For both bandwidths presented\footnote{Additional results available upon request.}, the figures show that the estimated LWR coefficients are different over time. In particular, the lot size and house size coefficients tend to decrease over time. These results are consistent with standard economic theory, as wealth and income decrease, consumer willingness to pay for normal goods decreases. What is surprising, however, is that the negative noise coefficient estimates also tend to be more negative in later years of our study. Figure~\ref{fig:NoiseTime} shows that the spatial patterns are similar across years (the most negative coefficients tend to be in the same locations across years), but the average noise coefficient tends to be more negative for the later years. 
 
 \begin{sidewaysfigure}
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Acre_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR lot size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:AcreTime}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/FinFt_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR finished house size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:HouseTime}
 \end{sidewaysfigure}
 
 
 \begin{sidewaysfigure}
  \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Noise_50_200_ByYear}
- \caption{Simula.}
+ \caption{This figure shows the interpolated LWR noise coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
  \label{fig:NoiseTime}
 \end{sidewaysfigure}
 
-We also find statistical evidence consistent with the estimated noise coefficients being more negative in the later time periods. This finding is robust to multiple different formulations and specifications. Tables~\ref{tab:noisebetatime500} and \ref{tab:noisebetatime2000} present the results of regressions using our estimated LWR noise coefficient as the dependent variable and time and spatial characteristics as explanatory variables for LWR bandwidths of 500 and 2,000 nearest sales.
-
-Both tables are structured similarly. Column (1) finds evidence of a negative linear trend in the LWR noise coefficients over time - predicting a LWR noise coefficient of approximately twice the magnitude for the end of our study period as for the beginning. Column (2) includes a quadratic term and again predicts noise coefficients much more negative towards the end of our study period compared to the beginning. We repeat the regressions from (1) and (2) in (3) and (4) but this time also include city fixed effects in order to control for any potential locational differences of house transactions over time. Again, we see very similar results - the noise coefficient is more negative in later time periods. We also limit our analysis to just the city of St.\ Paul and repeat the analysis from (1) and (2) in columns (5) and (6). Again, we estimate the noise coefficient to be more negative in later time periods.
+We also find statistical evidence consistent with the estimated noise coefficients being more negative in the later time periods. This finding is robust to multiple different formulations and specifications. Tables~\ref{tab:noisebetatime500} and \ref{tab:noisebetatime2000} present the results of regressions using our estimated LWR noise coefficient as the dependent variable and time and spatial characteristics as explanatory variables for LWR bandwidths of 500 and 2,000 nearest sales. Both tables are structured similarly. Column (1) finds evidence of a negative linear trend in the LWR noise coefficients over time - predicting a LWR noise coefficient of approximately twice the magnitude for the end of our study period as for the beginning. Column (2) includes a quadratic term and again predicts noise coefficients much more negative towards the end of our study period compared to the beginning. We repeat the regressions from (1) and (2) in (3) and (4) but this time also include city fixed effects in order to control for any potential locational differences of house transactions over time. Again, we see very similar results - the noise coefficient is more negative in later time periods. We also limit our analysis to just the city of St.\ Paul and repeat the analysis from (1) and (2) in columns (5) and (6). Again, we estimate the noise coefficient to be substantially more negative in later time periods. 
 
 % Requires LaTeX packages: dcolumn 
 \begin{table}[!htbp] \centering 
   \label{tab:noisebetatime500} 
+  \caption{LWR Noise Coefficient Over Time (bandwidth = 500 nearest sales)} 
 \scriptsize 
 \begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} } 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficients (bandwidth = 500 nearest sales)}} \\ 
+ & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficient (bandwidth = 500 nearest sales)}} \\ 
 \cline{2-7} 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\ 
 \hline \\[-1.8ex] 
@@ -463,18 +530,17 @@ R$^{2}$ & \multicolumn{1}{c}{0.1273} & \multicolumn{1}{c}{0.1377} & \multicolumn
 \hline 
 \hline \\[-1.8ex]  
 \end{tabular} 
-  \caption{LWR Noise Coefficient Over Time} 
 \end{table} 
 
 % Requires LaTeX packages: dcolumn 
-\begin{sidewaystable}[!htbp] \centering 
-  \caption{LWR Noise Coefficient Over Time} 
+\begin{table}[!htbp] \centering 
+  \caption{LWR Noise Coefficient Over Time (bandwidth = 2,000 nearest sales)} 
   \label{tab:noisebetatime2000} 
 \scriptsize 
 \begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} } 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
- & \multicolumn{6}{c}{\textit{LWR bandwidth = 2,000 nearest sales}} \\ 
+ & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficient (bandwidth = 2,000 nearest sales)}} \\ 
 \cline{2-7} 
 \\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\ 
 \hline \\[-1.8ex] 
@@ -495,21 +561,21 @@ R$^{2}$ & \multicolumn{1}{c}{0.3828} & \multicolumn{1}{c}{0.4142} & \multicolumn
 \hline 
 \hline \\[-1.8ex] 
 \end{tabular} 
-\end{sidewaystable} 
+\end{table} 
 
 \section{Discussion}\label{Discussion}
 
-The hedonic analysis results presented suggest that traffic noise exhibits a significant negative effect on house prices and that the hedonic function varies over space and time. These results and analysis rest on important assumptions, which if violated, may change the results. This section describes three important considerations needed to contextualize our results and worthy of discussion: causation vs.\ correlation, potential temporal problems with our data, and omitted variable bias.
+The hedonic analysis results presented suggest that noise exhibits a significant negative effect on house prices and that the hedonic function varies over space and time. These results and analysis rest on important assumptions, which if violated, may change the results. This section describes three important considerations worthy of discussion and needed to contextualize our results: causation vs.\ correlation, potential temporal problems with our data, and omitted variable bias.
 
-In a stronger research design, we would observe the same houses over time and randomly ``treat'' some houses with more or less noise to observe the change in price relative to the control houses. Such a study is not feasible and we are therefore limited to a hedonic analysis with observational data. Our conclusions, then, should be interpretted like most other hedonic analysis results and, while we find a strong negative correlation between noise and house prices, we cannot definitely state that noise causes lower sales prices. 
+In a stronger research design, we would observe the same houses over time and randomly ``treat'' some houses with more or less noise to observe the change in price relative to the control houses. Such a study is not feasible and we are therefore limited to a hedonic analysis with observational data. Our conclusions, then, should be interpretted like most other hedonic analysis results and, while we find a strong negative correlation between noise and house prices, we cannot definitely state that noise \emph{causes} lower sales prices. 
 
-Future work may want to further investigate this correlation for more evidence consistent with causation. For instance, by collecting data on the quality of house windows one could test for differential effects of more soundproof windows in noisier areas vs. quieter areas. Unfortunately, such house characteristics are unavailable for this study.
+Future work may want to further investigate this correlation for more evidence consistent with causation. For instance, by collecting data on the quality of house windows one could test for differential effects of more soundproof windows in noisier areas vs. quieter areas. Unfortunately, such house characteristics are unavailable for this study. 
 
-Our work faces other data limitations. Notably, while our house sales data are collected over the course of six years, the traffic noise estimates are for the year 2007. To the extent that traffic flows and composition significantly changed over time, our traffic noise variables may be inaccurate for those other time periods. However, Table VM2 from the US. Department of Transportation Office of Highway Policy Information website reports that in the year 2007 there were approximately 30 million vehicle miles traveled in the urban areas of the state of MN, while for years 2008, 2009, and 2010 the respective values were 32.5, 32.3, and 32.0. Overall, this represents a change of less than 10 percent. \footnote{\url{http://www.fhwa.dot.gov/policyinformation/quickfinddata/qftravel.cfm}} Such small changes in total vehicle miles traveled are unlikely to yield significant differences in noise levels. Additionally, we do not believe the changes are likely to manifest in significant spatial variation in traffic noise, which is ultimately responsible for our identification of the noise regression coefficient. However, given enough time for changes in driving habits and technological advancements to gain significant market penetration (for instance, quieter hybrid cars), future work should seek to create time-series noise data in order to obtain even better estimates of the impact of traffic noise over time. Given the computational complexity of re-estimating the landscape noise surface, such work is beyond the scope of this paper, but may be a worthwhile investment for future work seeking to test the robustness of our results.
+Our work faces other data limitations. Notably, while our house sales data are collected over the course of six years, the traffic noise estimates are for the year 2007. To the extent that traffic flows and composition significantly changed over time, our traffic noise variables may be inaccurate for those other time periods. However, Table VM2 from the US. Department of Transportation Office of Highway Policy Information website reports that in the year 2007 there were approximately 30 million vehicle miles traveled in the urban areas of the state of MN, while for years 2008, 2009, and 2010 the respective values were 32.5, 32.3, and 32.0 million vehicle miles. Overall, this represents a change of less than 10 percent. \footnote{\url{http://www.fhwa.dot.gov/policyinformation/quickfinddata/qftravel.cfm}} Such small changes in total vehicle miles traveled are unlikely to yield significant differences in noise levels. Additionally, we do not believe the changes are likely to manifest significant spatial variation in traffic noise, which is ultimately responsible for our identification of the noise regression coefficient. However, given enough time for changes in driving habits and technological advancements to gain significant market penetration (for instance, quieter hybrid cars), future work should seek to create time-series noise data in order to obtain even better estimates of the impact of traffic noise over time. Given the computational complexity of re-estimating the landscape noise surface, such work is beyond the scope of this paper, but may be a worthwhile investment for future work seeking to test the robustness of our results.
 
-Our previously reported results also lack some important control variables in the hedonic function. For instance, locations exposed to more noise due to their proximity to high traffic areas may also be less safe due to the potential for accidents. Without including a proxy variable for safety, our noise coefficient could be biased - making it appear that home prices are reflecting noise exposure when in fact it could be safety issues. Future research aimed at measuring the impact of noise should continue to seek out and control for other confounding variables. 
+Our previously reported results also lack some important control variables in the hedonic function. As mentioned previously, we do not have data on the actual level of noise purchasers were exposed to inside the house, which could be altered depending on the quality of insulation, windows, and even time of day, or day of week. Locations exposed to more noise due to their proximity to high traffic areas may also be less safe due to the potential for accidents. Without including a proxy variable for safety, our noise coefficient could be biased - making it appear that home prices are reflecting noise exposure when in fact it could be safety issues. Future research aimed at measuring the impact of noise should continue to seek out and control for other confounding variables. 
 
-Our data also omits other variables and to the extent that structural variables like the number of bedrooms, bathrooms, garage size, or construction quality co-vary with other variables in our dataset, our regression coefficients will suffer from omitted variable bias. We are comforted, however, because we do have some of these important additional variables for a subset of our data. We were able to obtain the number of bedrooms, bathrooms, and garage area for our houses located within Dakota County from the Dakota County Assessor's Office. Our LWR analysis was then repeated on this geographic subset of the data in order to compare our noise coefficients across the different models. We found strikingly similar traffic noise coefficient estimates when these additional structural variables were included and omitted. As shown in Figure~\ref{fig:DAK}, a simple linear regression of the noise coefficient estimates obtained when these additional structural variables were excluded on the estimates obtained when these variables were included yields a line of best fit that is almost indiscernable from the 45 degree line and has $R^2 = 0.96$. %Additionally, a paired t-test of the roughly 9,000 (n = 8,751) coefficient estimates yields a 95 percent confidence interval for the true difference between our estimates without the additional variables and with as -0.000175 to -0.000159. That is, the estimated difference is, on average, more than an order of magnitude smaller than our typical coefficient estimates  suggesting that our results may be robust to the omission of these variables from our analysis.
+Our data also omits other structural characteristics and to the extent that variables like the number of bedrooms, bathrooms, garage size, or construction quality co-vary with other variables in our dataset, our regression coefficients will suffer from omitted variable bias. We are comforted, however, because we do have some of these important additional variables for a subset of our data. We were able to obtain the number of bedrooms, bathrooms, and garage area for our houses located within Dakota County from the Dakota County Assessor's Office. Our LWR analysis was then repeated on this geographic subset of the data in order to compare our noise coefficients across the different models. We found strikingly similar traffic noise coefficient estimates when these additional structural variables were included and omitted. As shown in Figure~\ref{fig:DAK}, a simple linear regression of the noise coefficient estimates obtained when these additional structural variables were excluded on the estimates obtained when these variables were included yields a line of best fit that is almost indiscernable from the 45 degree line and has $R^2 = 0.96$. %Additionally, a paired t-test of the roughly 9,000 (n = 8,751) coefficient estimates yields a 95 percent confidence interval for the true difference between our estimates without the additional variables and with as -0.000175 to -0.000159. That is, the estimated difference is, on average, more than an order of magnitude smaller than our typical coefficient estimates  suggesting that our results may be robust to the omission of these variables from our analysis.
 
 \begin{figure}
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DakotaResults}}
@@ -526,9 +592,6 @@ While our results show very strong evidence that the coefficients on lot size an
 Precise estimates of the impact of traffic noise are important for efficient implementation of noise mitigation projects. The US Federal Highway Administration reports that 47 states have constructed noise barriers to reduce noise propagation, spending over a half a billion dollars from 2008-2010 \citepalias{USFHA2012}. \citet{Delucchi1998} used an estimate of 0.85 percent reduction in house prices per additional decibel in their cost-benefit analysis of traffic noise. While their preferred estimate of the total damage cost to the United States in 1991 is \$3 billion, they report a possible range of less than \$100 million to over \$40 billion due in part to uncertainty surrounding the degree of noise propagation over space in the urban built environment and the effect of noise on house prices. Indeed, one of the main conclusions of their work is that more research should be done to better understand the impact of noise on house prices and that better noise data are needed for such work to occur. 
 
 Future research should be conducted in more housing markets, as the potential to apply the results of analysis in one set of geographical and economic circumstances may be limited. Second, ``mixed'' regression techniques (in which some regression coefficients are constrained to remain constant across the study area while others are allowed to vary) may allow researchers to obtain more precise estimates of the impact of hedonic characteristics by increasing the degrees of freedom in the regression. Future work may also seek to re-estimate traffic noise models over time to better account for changes in traffic flows associated with macroeconomic conditions. Lastly, researchers should take advantage of the recent suggestions in \citet{Carruthers2010} and use the spatial variation in regression coefficients obtained from LWR models to estimate the second-stage hedonic regressions to identify consumer demand curves for these characteristics.
-
-
-
 
 \newpage
 \begin{singlespace}

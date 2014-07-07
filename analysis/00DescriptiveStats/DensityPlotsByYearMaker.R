@@ -24,7 +24,7 @@ my.col = brewer.pal(6, "Set2")
 year.f = factor(DATAFRAME$SALE_YR)
 table(year.f)
 
-pdf("graphs/DensityPlotsByYear.pdf", width = 9, height = 15)
+pdf("graphs/DensityPlotsByYear.pdf", width = 9, height = 15, family = "Palatino")
 par(mfrow = c(5, 3))
 par(oma = c(1, 1, 3, 1))
 par(mar = c(3, 4, 3, 1))
@@ -37,7 +37,7 @@ for (i in 1:length(myvars)) {
                      ylab = "relative frequency",
                      main = "",
                      axes = FALSE)
-  title(mynames[i], line = 1)
+  title(mynames[i], line = 1, cex.main = 1)
 }
-mtext("Univariate Density Plots by Year of Sale", outer = TRUE)
+mtext("Univariate Density Plots by Year of Sale", outer = TRUE, cex = 1.7)
 dev.off()

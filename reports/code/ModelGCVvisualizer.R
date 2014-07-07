@@ -35,6 +35,8 @@ for (i in 1:3) {
                                    dep.var = DATAFRAME$logSALE_VA[obs2run]))
 }
 
+# gcvs.global = c(0.04830468, 0.04093458, 0.03753716)
+
 ks = c(100,  200,  300,  350,  400,  450,  500,  550,  600,  650,  700,  800, 1000, 1500, 2000, 3000, 4000)
 gcv1 = c(0.03390767, 0.02991290, 0.02941916, 0.02938722, 0.02944322, 0.02953900, 0.02964363, 0.02977173, 
          0.02990581, 0.03005645, 0.03020745, 0.03049779, 0.03105754, 0.03245082, 0.03364512, 0.03614031, 
@@ -62,7 +64,7 @@ axis(1, at = 500)
 axis(2, at = round(min(gcvs), 3), las = 1)
 title("Generalized Cross Validation Scores Across Models")
 
-text(500, .031, "LWR Model (1) = Structural Variables + Month Fixed Effects",  
+text(500, .031, "LWR Model (1) = Structural Variables + Month*Year Fixed Effects",  
      srt = 13, pos = 4, col = "black", cex = .8)
 
 text(500, .028, "LWR Model (2) = LWR Model (1) + Locational Variables",

@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2013.6.18)  27 JUN 2014 12:29
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=pdflatex 2013.6.18)  6 JUL 2014 19:28
 entering extended mode
 **NoiseHedonicRaR.tex
 (./NoiseHedonicRaR.tex
@@ -493,91 +493,107 @@ l.103
 \openout4 = `NoiseHedonicRaR.ttt'.
 
  (NoiseHedonicRaR.ttt) [4] [5] [6]
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
-Overfull \hbox (4.40067pt too wide) in paragraph at lines 575--576
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (4.40067pt too wide) in paragraph at lines 639--640
 \OT1/cmr/m/n/10 We es-ti-mated a he-do-nic price func-tion for sin-gle fam-ily 
 houses us-ing Lo-cally Weighted
  []
 
-[21] [22] [23] (./NoiseHedonicRaR.bbl [24] [25] [26] [27])
-AED endfloat: Processing end Figures and Tables [28] (./NoiseHedonicRaR.fff
-<../graphs/Overview2column.jpg, id=501, 794.97pt x 614.295pt>
+[22] [23] [24] (./NoiseHedonicRaR.bbl [25] [26] [27] [28])
+AED endfloat: Processing end Figures and Tables [29] (./NoiseHedonicRaR.fff
+<../graphs/Overview2column.jpg, id=510, 794.97pt x 614.295pt>
 File: ../graphs/Overview2column.jpg Graphic file (type jpg)
 
-<use ../graphs/Overview2column.jpg> [29 <../graphs/Overview2column.jpg>]
-<../graphs/DensityPlotsByYear.pdf, id=506, 650.43pt x 1084.05pt>
+<use ../graphs/Overview2column.jpg> [30 <../graphs/Overview2column.jpg>]
+<../graphs/DensityPlotsByYear.pdf, id=516, 650.43pt x 1084.05pt>
 File: ../graphs/DensityPlotsByYear.pdf Graphic file (type pdf)
 
 <use ../graphs/DensityPlotsByYear.pdf>
 
-LaTeX Warning: Float too large for page by 71.39038pt on input line 12.
+LaTeX Warning: Float too large for page by 92.79034pt on input line 13.
 
-[30 <../graphs/DensityPlotsByYear.pdf>]
+[31 <../graphs/DensityPlotsByYear.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/SaleValue_with05.pdf): pdf inclusion
 : found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/SaleValue_with05.pdf, id=518, 679.02505pt x 614.295pt>
+<../graphs/SaleValue_with05.pdf, id=529, 679.02505pt x 614.295pt>
 File: ../graphs/SaleValue_with05.pdf Graphic file (type pdf)
 
-<use ../graphs/SaleValue_with05.pdf> [31 <../graphs/SaleValue_with05.pdf>]
-<../graphs/GCVbyModel.pdf, id=583, 578.16pt x 433.62pt>
+<use ../graphs/SaleValue_with05.pdf> [32 <../graphs/SaleValue_with05.pdf>]
+<../graphs/GCVbyModel.pdf, id=594, 578.16pt x 433.62pt>
 File: ../graphs/GCVbyModel.pdf Graphic file (type pdf)
 
-<use ../graphs/GCVbyModel.pdf> [32 <../graphs/GCVbyModel.pdf>]
+<use ../graphs/GCVbyModel.pdf> [33 <../graphs/GCVbyModel.pdf>]
+<../graphs/GCVsFromMCsim.pdf, id=608, 433.62pt x 289.08pt>
+File: ../graphs/GCVsFromMCsim.pdf Graphic file (type pdf)
+
+<use ../graphs/GCVsFromMCsim.pdf> [34 <../graphs/GCVsFromMCsim.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/AcreBeta_allBandwidth.pdf): pdf incl
 usion: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/AcreBeta_allBandwidth.pdf, id=597, 614.295pt x 794.97pt>
+<../graphs/AcreBeta_allBandwidth.pdf, id=619, 614.295pt x 794.97pt>
 File: ../graphs/AcreBeta_allBandwidth.pdf Graphic file (type pdf)
 
-<use ../graphs/AcreBeta_allBandwidth.pdf> [33 <../graphs/AcreBeta_allBandwidth.
-pdf>]
+<use ../graphs/AcreBeta_allBandwidth.pdf>
+
+LaTeX Warning: Float too large for page by 40.91881pt on input line 44.
+
+[35 <../graphs/AcreBeta_allBandwidth.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/FinSqFtBeta_allBandwidth.pdf): pdf i
 nclusion: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/FinSqFtBeta_allBandwidth.pdf, id=656, 614.295pt x 794.97pt>
+<../graphs/FinSqFtBeta_allBandwidth.pdf, id=678, 614.295pt x 794.97pt>
 File: ../graphs/FinSqFtBeta_allBandwidth.pdf Graphic file (type pdf)
 
-<use ../graphs/FinSqFtBeta_allBandwidth.pdf> [34 <../graphs/FinSqFtBeta_allBand
-width.pdf>]
+<use ../graphs/FinSqFtBeta_allBandwidth.pdf>
+
+LaTeX Warning: Float too large for page by 40.91881pt on input line 52.
+
+[36 <../graphs/FinSqFtBeta_allBandwidth.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/NoiseBeta_allBandwidth.pdf): pdf inc
 lusion: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/NoiseBeta_allBandwidth.pdf, id=716, 614.295pt x 794.97pt>
+<../graphs/NoiseBeta_allBandwidth.pdf, id=739, 614.295pt x 794.97pt>
 File: ../graphs/NoiseBeta_allBandwidth.pdf Graphic file (type pdf)
 
-<use ../graphs/NoiseBeta_allBandwidth.pdf> [35 <../graphs/NoiseBeta_allBandwidt
-h.pdf>] <../graphs/MCsimResultsSDs500.pdf, id=775, 578.16pt x 433.62pt>
-File: ../graphs/MCsimResultsSDs500.pdf Graphic file (type pdf)
+<use ../graphs/NoiseBeta_allBandwidth.pdf>
 
-<use ../graphs/MCsimResultsSDs500.pdf> [36 <../graphs/MCsimResultsSDs500.pdf>]
-<../graphs/MCsimResultsSDs650.pdf, id=787, 578.16pt x 433.62pt>
-File: ../graphs/MCsimResultsSDs650.pdf Graphic file (type pdf)
+LaTeX Warning: Float too large for page by 40.91881pt on input line 60.
 
-<use ../graphs/MCsimResultsSDs650.pdf> [37 <../graphs/MCsimResultsSDs650.pdf>]
+[37 <../graphs/NoiseBeta_allBandwidth.pdf>]
+Warning: /usr/bin/pdflatex (file ../graphs/MCsimResultsSDsk500and2000final.pdf)
+: pdf inclusion: found pdf version <1.5>, but at most version <1.4> allowed
+<../graphs/MCsimResultsSDsk500and2000final.pdf, id=798, 433.62pt x 578.16pt>
+File: ../graphs/MCsimResultsSDsk500and2000final.pdf Graphic file (type pdf)
+
+<use ../graphs/MCsimResultsSDsk500and2000final.pdf>
+
+LaTeX Warning: Float too large for page by 39.34894pt on input line 68.
+
+[38 <../graphs/MCsimResultsSDsk500and2000final.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/Acre_50_200_ByYear.pdf): pdf inclusi
 on: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/Acre_50_200_ByYear.pdf, id=799, 794.97pt x 614.295pt>
+<../graphs/Acre_50_200_ByYear.pdf, id=825, 794.97pt x 614.295pt>
 File: ../graphs/Acre_50_200_ByYear.pdf Graphic file (type pdf)
 
 <use ../graphs/Acre_50_200_ByYear.pdf> Adding sideways figure on 
-right hand page [38 <../graphs/Acre_50_200_ByYear.pdf>]
+right hand page [39 <../graphs/Acre_50_200_ByYear.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/FinFt_50_200_ByYear.pdf): pdf inclus
 ion: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/FinFt_50_200_ByYear.pdf, id=874, 794.97pt x 614.295pt>
+<../graphs/FinFt_50_200_ByYear.pdf, id=900, 794.97pt x 614.295pt>
 File: ../graphs/FinFt_50_200_ByYear.pdf Graphic file (type pdf)
 
 <use ../graphs/FinFt_50_200_ByYear.pdf> Adding sideways figure on 
-right hand page [39 <../graphs/FinFt_50_200_ByYear.pdf>]
+right hand page [40 <../graphs/FinFt_50_200_ByYear.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/Noise_50_200_ByYear.pdf): pdf inclus
 ion: found pdf version <1.6>, but at most version <1.4> allowed
-<../graphs/Noise_50_200_ByYear.pdf, id=950, 794.97pt x 614.295pt>
+<../graphs/Noise_50_200_ByYear.pdf, id=976, 794.97pt x 614.295pt>
 File: ../graphs/Noise_50_200_ByYear.pdf Graphic file (type pdf)
 
 <use ../graphs/Noise_50_200_ByYear.pdf> Adding sideways figure on 
-right hand page [40 <../graphs/Noise_50_200_ByYear.pdf>]
+right hand page [41 <../graphs/Noise_50_200_ByYear.pdf>]
 Warning: /usr/bin/pdflatex (file ../graphs/DakotaResults.pdf): pdf inclusion: f
 ound pdf version <1.5>, but at most version <1.4> allowed
-<../graphs/DakotaResults.pdf, id=1025, 578.16pt x 433.62pt>
+<../graphs/DakotaResults.pdf, id=1051, 578.16pt x 433.62pt>
 File: ../graphs/DakotaResults.pdf Graphic file (type pdf)
 
-<use ../graphs/DakotaResults.pdf> [41 <../graphs/DakotaResults.pdf>])
+<use ../graphs/DakotaResults.pdf> [42 <../graphs/DakotaResults.pdf>])
 (./NoiseHedonicRaR.ttt
 Overfull \hbox (4.62497pt too wide) detected at line 28
 $\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 02$ 
@@ -613,398 +629,278 @@ Overfull \hbox (4.62497pt too wide) detected at line 28
 $\OML/cmm/m/it/9 :\OT1/cmr/m/n/9 11$ 
  []
 
-[42] [43]
-Overfull \hbox (3.98613pt too wide) detected at line 91
+[43] [44]
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 25$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 25$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 25$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 26$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 25$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 26$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 25$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 87$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 87$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 92$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 86$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 60$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 77$ 
  []
 
 
-Overfull \hbox (3.98613pt too wide) detected at line 91
+Overfull \hbox (3.98613pt too wide) detected at line 90
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 83$ 
  []
 
-[44] [45]
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0057$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0013$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 2000$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 4000$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 2100$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 6700$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0005$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0090$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0180$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0680$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0001$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0028$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0011$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0019$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0006$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0037$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0040$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0042$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0630$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0520$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0370$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0160$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0210$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0440$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0099$ 
- []
-
-
-Overfull \hbox (3.98613pt too wide) detected at line 196
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0380$ 
- []
-
-[46
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]
-Overfull \hbox (7.55563pt too wide) detected at line 211
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 211
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 211
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 211
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 212
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00004[]$ 
- []
-
-
-Overfull \hbox (3.12502pt too wide) detected at line 212
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001)$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 214
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 214
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 215
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.11115pt too wide) detected at line 215
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000005)$ 
- []
-
-
-Overfull \hbox (7.11115pt too wide) detected at line 215
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000004)$ 
- []
-
-
-Overfull \hbox (3.12502pt too wide) detected at line 216
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000001)$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 217
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0016[]$ 
- []
-
-
-Overfull \hbox (39.46674pt too wide) in paragraph at lines 204--228
- [][] 
+[45] [46]
+Overfull \hbox (46.61136pt too wide) in paragraph at lines 164--164
+[]\OT1/cmr/m/n/10 Table 5: |[][]| 
  []
 
 [47
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
+Overfull \hbox (7.55563pt too wide) detected at line 240
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 240
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 240
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 240
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 241
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00004[]$ 
+ []
+
+
+Overfull \hbox (3.12502pt too wide) detected at line 241
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001)$ 
+ []
+
+
+Overfull \hbox (7.55563pt too wide) detected at line 243
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
+ []
+
+
+Overfull \hbox (7.55563pt too wide) detected at line 243
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
+ []
+
+
 Overfull \hbox (7.55563pt too wide) detected at line 244
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
  []
 
 
-Overfull \hbox (3.5695pt too wide) detected at line 244
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
+Overfull \hbox (7.11115pt too wide) detected at line 244
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000005)$ 
  []
 
 
-Overfull \hbox (3.5695pt too wide) detected at line 244
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 244
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
- []
-
-
-Overfull \hbox (3.5695pt too wide) detected at line 244
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
- []
-
-
-Overfull \hbox (7.11115pt too wide) detected at line 245
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000003)$ 
+Overfull \hbox (7.11115pt too wide) detected at line 244
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000004)$ 
  []
 
 
 Overfull \hbox (3.12502pt too wide) detected at line 245
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000003)$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 247
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 247
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.55563pt too wide) detected at line 248
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
- []
-
-
-Overfull \hbox (7.11115pt too wide) detected at line 248
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000002)$ 
- []
-
-
-Overfull \hbox (7.11115pt too wide) detected at line 248
-$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000002)$ 
- []
-
-
-Overfull \hbox (3.12502pt too wide) detected at line 249
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000001)$ 
  []
 
 
-Overfull \hbox (3.5695pt too wide) detected at line 250
+Overfull \hbox (3.5695pt too wide) detected at line 246
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0016[]$ 
+ []
+
+
+Overfull \hbox (39.46674pt too wide) in paragraph at lines 233--257
+ [][] 
+ []
+
+[48
+
+]
+Overfull \hbox (7.55563pt too wide) detected at line 272
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 272
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 272
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 272
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00003[]$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 272
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00005[]$ 
+ []
+
+
+Overfull \hbox (7.11115pt too wide) detected at line 273
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000003)$ 
+ []
+
+
+Overfull \hbox (3.12502pt too wide) detected at line 273
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000003)$ 
+ []
+
+
+Overfull \hbox (7.55563pt too wide) detected at line 275
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
+ []
+
+
+Overfull \hbox (7.55563pt too wide) detected at line 275
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
+ []
+
+
+Overfull \hbox (7.55563pt too wide) detected at line 276
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 000001[]$ 
+ []
+
+
+Overfull \hbox (7.11115pt too wide) detected at line 276
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000002)$ 
+ []
+
+
+Overfull \hbox (7.11115pt too wide) detected at line 276
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 00000002)$ 
+ []
+
+
+Overfull \hbox (3.12502pt too wide) detected at line 277
+$\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0000001)$ 
+ []
+
+
+Overfull \hbox (3.5695pt too wide) detected at line 278
 $\OML/cmm/m/it/7 :\OT1/cmr/m/n/7 0014[]$ 
  []
 
-Adding sideways figure on  right hand page [48]) (./NoiseHedonicRaR.aux) ) 
+
+Overfull \hbox (39.46674pt too wide) in paragraph at lines 265--289
+ [][] 
+ []
+
+[49
+
+]) (./NoiseHedonicRaR.aux) ) 
 Here is how much of TeX's memory you used:
- 5537 strings out of 94500
- 77423 string characters out of 1176766
- 140967 words of memory out of 1000000
- 8434 multiletter control sequences out of 10000+50000
+ 5539 strings out of 94500
+ 77483 string characters out of 1176766
+ 140958 words of memory out of 1000000
+ 8433 multiletter control sequences out of 10000+50000
  13951 words of font info for 49 fonts, out of 500000 for 2000
  580 hyphenation exceptions out of 1000
- 35i,17n,38p,1685b,383s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 35i,17n,38p,1810b,383s stack positions out of 1500i,500n,5000p,200000b,5000s
 PDF statistics:
- 1126 PDF objects out of 300000
- 149 named destinations out of 131072
+ 1150 PDF objects out of 300000
+ 152 named destinations out of 131072
  212 words of extra memory for PDF output out of 65536
-</usr
-/share/texmf/fonts/type1/bluesky/cm/cmmi5.pfb></usr/share/texmf/fonts/type1/blu
-esky/cm/cmsy5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb> </var/lib
-/texmf/pk/ljfour/jknappen/tc/tcrm0700.600pk> </var/lib/texmf/pk/ljfour/jknappen
-/tc/tcrm0900.600pk></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/sha
-re/texmf/fonts/type1/bluesky/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/bluesky
-/cm/cmbx10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/t
-exmf/fonts/type1/bluesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/c
-mr6.pfb> </var/lib/texmf/pk/ljfour/jknappen/tc/tcrm1000.600pk></usr/share/texmf
-/fonts/type1/bluesky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex1
-0.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fon
-ts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb
-></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/ty
-pe1/bluesky/cm/cmti10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss8.pfb></
-usr/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1
-/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/s
-hare/texmf/fonts/type1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1/blues
-ky/cm/cmr17.pfb>
-Output written on NoiseHedonicRaR.pdf (49 pages, 6595438 bytes).
+</usr/share/texmf/fonts/type1/bluesky/cm/cmsy5.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmti7.pfb> </var/lib/texmf/pk/ljfour/j
+knappen/tc/tcrm0700.600pk> </var/lib/texmf/pk/ljfour/jknappen/tc/tcrm0900.600pk
+></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></u
+sr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/b
+luesky/cm/cmr8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb> </var/lib
+/texmf/pk/ljfour/jknappen/tc/tcrm1000.600pk></usr/share/texmf/fonts/type1/blues
+ky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb></usr/share/
+texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/c
+m/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf
+/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmt
+i10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmss8.pfb></usr/share/texmf/fo
+nts/type1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.
+pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbx9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr17.pfb>
+Output written on NoiseHedonicRaR.pdf (50 pages, 6780110 bytes).
