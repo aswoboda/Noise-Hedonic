@@ -1,22 +1,17 @@
 \begin{figure*}
 
-\makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/Overview2column}}
-\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}\label{fig:overview}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure*}
-
-\makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DensityPlotsByYear}}
-\caption{This figure shows the distribution of our variables over time. Note that there are no discernable differences in mean, standard deviation, or shape of the distribution for most variables other than sales price.}
-\label{fig:DensityPlots}
+\floatpagestyle{empty}
+\rotfloatpagestyle{empty}
+\makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/Overview2columnAnnotatedPDF}}
+\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}
+\label{fig:overview}
 \end{figure*}
 \efloatseparator
  
 \begin{figure*}
 
 \makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/SaleValue_with05}}
-\caption{This figure shows the spatial distribution of observed sales prices over time. The change in color from 2005 to 2010 denotes the dramatic drop in sales prices associated with the recession of 2008-09. There are clear spatial patterns in  house prices that persist over time (locations with relatively high vs. low prices in one year tend to be the same in other years). However, we see no evidence that sales shifted from one area of our study region to another (neighborhoods with many sales in 2005 also tend to have many sales in 2010). }
+\caption{This figure shows the spatial distribution of observed sales prices over time. The change in color from 2005 to 2010 denotes the drop in sales prices associated with the recession of 2008-09. There are clear spatial patterns in  house prices that persist over time (locations with relatively high vs. low prices in one year tend to be the same in other years). However, we see no evidence that sales shifted from one area of our study region to another (neighborhoods with many sales in 2005 also tend to have many sales in 2010). }
 \label{fig:SalesYear}
 \end{figure*}
 \efloatseparator
@@ -63,7 +58,7 @@
 \begin{figure*}
 
  \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsimResultsSDsk500and2000final}}
- \caption{This figure shows the actual standard deviation in LWR coefficients as compared to those obtained from 100 different instances of spatial randomization. Results are presented for two different bandwidths (nearest 500 and 2,000) for our regression variables. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data (the dashed line) is substantially higher than any standard deviation obtained with simulated data.}
+ \caption{This figure shows the actual standard deviation in LWR coefficients (dashed line) compared to standard deviations obtained from 100 different instances of spatial randomization (solid lines). Results are presented for two different bandwidths (nearest 500 and 2,000 denoted by color) for each explanatory variable. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data is substantially higher than any standard deviation obtained with the simulated data, but not for the noise variable.}
  \label{fig:MCsim2}
 \end{figure*}
 \efloatseparator
