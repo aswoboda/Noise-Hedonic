@@ -15,8 +15,8 @@ load("../Data/R2GIS/CleanData/TimeLag12months/Sales20052010LWRmodelAirMean3-2014
 MCMaster2000 = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/k2000/LWRMonteCarloStats2014-07-03.csv")
 MCMaster2000 = MCMaster2000[1:100, ]
 
-MCMaster500 = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/LWRMonteCarloStats2014-07-05.csv")
-MCMaster500 = MCMaster500[1:80, ]
+MCMaster500 = read.csv("~/NoiseHedonicProject/Noise-Hedonic/analysis/04MonteCarloSim/Revision/Model3/k500/LWRMonteCarloStats2014-07-06.csv")
+MCMaster500 = MCMaster500[1:100, ]
 
 MCplotter = function(outputcoefficient, statcoefficient) {
   actual = sd(output[[outputcoefficient]][, c("k500", "k2000")], na.rm =T)
@@ -37,7 +37,7 @@ MCplotter = function(outputcoefficient, statcoefficient) {
 }
 
 outputCOEFS = rep(names(output)[c(2:5, 16, 19, 20, 21, 22, 23, 24, 17, 18)], 2)
-statCOEFS = names(MCMaster)[c(-(1:3),-17)]
+statCOEFS = names(MCMaster500)[c(-(1:3),-17)]
 titles = c("Noise", "House Size", "Lot Size", "Year Built", "Owner Occupancy",
            "Median Income", "School Test Scores", "Distance to Lake", "Distance to Park", "Distance to Shop",
            "Distance to CBD", "Percent White", "Percent Under Age 18")

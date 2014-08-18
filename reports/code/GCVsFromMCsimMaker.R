@@ -16,15 +16,15 @@ mcstats500Density = density(mcstats500$minGCV)
 
 # 1000
 mcstats1000 = read.csv("analysis/04MonteCarloSim/Revision/Model3/k1000/LWRMonteCarloStats2014-06-25.csv")
-mcstats1000Density = density(mcstats1000$minGCV[1:50])
+mcstats1000Density = density(mcstats1000$minGCV[1:50]) # need to run the other 50 just to be sure..
 
 # 2000
 mcstats2000 = read.csv("analysis/04MonteCarloSim/Revision/Model3/k2000/LWRMonteCarloStats2014-07-03.csv")
 mcstats2000Density = density(mcstats2000$minGCV)
 
 # 4000
-mcstats4000 = read.csv("analysis/04MonteCarloSim/Revision/Model3/k4000/LWRMonteCarloStatsTemp.csv")
-mcstats4000Density = density(mcstats4000$V1[1:34]) # HAVE TO FIX THIS - WHY ARENT THE NAMES HERE???
+mcstats4000 = read.csv("analysis/04MonteCarloSim/Revision/Model3/k4000/LWRMonteCarloStats2014-07-11.csv")
+mcstats4000Density = density(mcstats4000$minGCV) 
 
 
 maxX = max(mcstats500Density$x, mcstats1000Density$x, mcstats2000Density$x, mcstats4000Density$x)

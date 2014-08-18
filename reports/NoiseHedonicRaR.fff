@@ -18,8 +18,9 @@
  
 \begin{figure*}
 
-  \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/GCVbyModel}}
-\caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 500 nearest houses.}\label{fig:GCVmodel}
+  \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/GCVbyModelFinal}}
+\caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 500 nearest houses.}
+\label{fig:GCVmodel}
 \end{figure*}
 \efloatseparator
  
@@ -57,7 +58,7 @@
  
 \begin{figure*}
 
- \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsimResultsSDsk500and2000final}}
+ \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsim2FinalResults}}
  \caption{This figure shows the actual standard deviation in LWR coefficients (dashed line) compared to standard deviations obtained from 100 different instances of spatial randomization (solid lines). Results are presented for two different bandwidths (nearest 500 and 2,000 denoted by color) for each explanatory variable. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data is substantially higher than any standard deviation obtained with the simulated data, but not for the noise variable.}
  \label{fig:MCsim2}
 \end{figure*}
