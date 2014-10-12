@@ -1,0 +1,354 @@
+\begin{thebibliography}{51}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Net(2004)]{Netherlands2004}
+{The Influence of Night-time Noise on Sleep and Health}.
+\newblock Technical report, Health Council of the Netherlands, 2004.
+
+\bibitem[USF(2012)]{USFHA2012}
+{Summary of Noise Barriers Constructed by December 31, 2010}.
+\newblock Technical report, US Department of Transportation Federal Highway
+  Administration, 2012.
+
+\bibitem[Andersson et~al.(2010)Andersson, Jonsson, and
+  \"{O}gren]{Andersson2010}
+Henrik Andersson, Lina Jonsson, and Mikael \"{O}gren.
+\newblock {Property Prices and Exposure to Multiple Noise Sources: Hedonic
+  Regression with Road and Railway Noise}.
+\newblock \emph{Environmental and Resource Economics}, 45\penalty0
+  (1):\penalty0 73--89, 2010.
+
+\bibitem[Babisch et~al.(2005)Babisch, Beule, Schust, Kersten, and
+  Ising]{Babisch2005}
+Wolfgang Babisch, Bernd Beule, Marianne Schust, Norbert Kersten, and Hartmut
+  Ising.
+\newblock {Traffic Noise and Risk of Myocardial Infarction}.
+\newblock \emph{Epidemiology}, 16:\penalty0 33--40, 2005.
+
+\bibitem[Baranzini et~al.(2010)Baranzini, Schaerer, and
+  Thalmann]{Baranzini2010}
+Andrea Baranzini, Caroline Schaerer, and Philippe Thalmann.
+\newblock {Using measured instead of perceived noise in hedonic models}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  15\penalty0 (8):\penalty0 473--482, December 2010.
+
+\bibitem[Barber et~al.(2010)Barber, Crooks, and Fristrup]{Barber2010}
+Jesse~R Barber, Kevin~R Crooks, and Kurt~M Fristrup.
+\newblock {The costs of chronic noise exposure for terrestrial organisms.}
+\newblock \emph{Trends in ecology \& evolution}, 25\penalty0 (3):\penalty0
+  180--9, March 2010.
+
+\bibitem[Barregard et~al.(2009)Barregard, Bonde, and
+  Ohrstr\"{o}m]{Barregard2009}
+Lars Barregard, E~Bonde, and E~Ohrstr\"{o}m.
+\newblock {Risk of hypertension from exposure to road traffic noise in a
+  population-based sample.}
+\newblock \emph{Occupational and Environmental Medicine}, 66:\penalty0
+  410--415, 2009.
+
+\bibitem[Barry and Regan(1978)]{Barry1978}
+T.~M. Barry and J.~A. Regan.
+\newblock {FHWA Highway Traffic Noise Prediction Model: Report No.
+  FHWA-RD-77-108}.
+\newblock Technical report, Federal Highway Administration, Washington, DC,
+  1978.
+
+\bibitem[Blanco and Flindell(2011)]{Blanco2011}
+J~C Blanco and I~H Flindell.
+\newblock {Property prices in urban areas affected by road traffic noise}.
+\newblock \emph{Applied Acoustics}, 72\penalty0 (4):\penalty0 133--141, 2011.
+
+\bibitem[Bodin et~al.(2009)Bodin, Albin, Ard\"{o}, Stroh, Ostergren, and
+  Bj\"{o}rk]{Bodin2009}
+Theo Bodin, Maria Albin, Jonas Ard\"{o}, Emilie Stroh, Per-Olof Ostergren, and
+  Jonas Bj\"{o}rk.
+\newblock {Road traffic noise and hypertension: results from a cross-sectional
+  public health survey in southern Sweden.}
+\newblock \emph{Environmental Health}, 8:\penalty0 38, January 2009.
+
+\bibitem[Brandt and Maennig(2011)]{Brandt2011}
+Sebastian Brandt and Wolfgang Maennig.
+\newblock {Road noise exposure and residential property prices: Evidence from
+  Hamburg}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  16\penalty0 (1):\penalty0 23--30, January 2011.
+
+\bibitem[Brunsdon et~al.(1998)Brunsdon, Fotheringham, and
+  Charlton]{Brunsdon1998b}
+Chris Brunsdon, Stewart Fotheringham, and Martin Charlton.
+\newblock {Geographically weighted regression-modelling spatial
+  non-stationarity}.
+\newblock \emph{Journal of the Royal Statistical Society Series D The
+  Statistician}, 47\penalty0 (3):\penalty0 431--443, 1998.
+
+\bibitem[Carruthers and Clark(2010)]{Carruthers2010}
+John~I. Carruthers and David~E. Clark.
+\newblock {Valuing Environmental Quality: a Space-Based Strategy}.
+\newblock \emph{Journal of Regional Science}, 50\penalty0 (4):\penalty0
+  801--832, April 2010.
+
+\bibitem[Casetti(1972)]{Casetti1972}
+Emilio Casetti.
+\newblock {Generating Models by the Expansion Method: Applications to
+  Geographical Research}.
+\newblock \emph{Geographical Analysis}, 4\penalty0 (1):\penalty0 81--91, 1972.
+
+\bibitem[Cheng(2008)]{Cheng2008}
+Hao Cheng.
+\newblock \emph{{Using Micro Data to Assess Traffic Noise Impact on Residential
+  Property Value: an Application of the Hedonic Model}}.
+\newblock Phd, University of Louisville, 2008.
+
+\bibitem[Chernobai et~al.(2009)Chernobai, Reibel, and Carney]{Chernobai2009}
+Ekaterina Chernobai, Michael Reibel, and Michael Carney.
+\newblock {Nonlinear Spatial and Temporal Effects of Highway Construction on
+  House Prices}.
+\newblock \emph{The Journal of Real Estate Finance and Economics}, 42\penalty0
+  (3):\penalty0 348--370, October 2009.
+
+\bibitem[Cho et~al.(2011)Cho, Kim, and Roberts]{Cho2011b}
+Seong-Hoon Cho, Seung~Gyu Kim, and Roland~K. Roberts.
+\newblock {Values of Environmental Landscape Amenities during the 2000 - 2006
+  Real Estate Boom and Subsequent 2008 Recession}.
+\newblock \emph{Journal of Environmental Planning and Management}, 54\penalty0
+  (1):\penalty0 71--91, January 2011.
+
+\bibitem[Cleveland and Devlin(1988)]{Cleveland1988}
+William~S Cleveland and Susan~J Devlin.
+\newblock {Locally Weighted Regression : An Approach to Regression Analysis by
+  Local Fitting}.
+\newblock \emph{Journal of the American Statistical Association}, 83\penalty0
+  (403):\penalty0 596--610, 1988.
+
+\bibitem[Cohen and Coughlin(2008)]{Cohen2008a}
+Jeffrey~P. Cohen and Cletus~C. Coughlin.
+\newblock {Spatial Hedonic Models of Airport Noise, Proximity, and Housing
+  Prices}.
+\newblock \emph{Journal of Regional Science}, 48\penalty0 (5):\penalty0
+  859--878, December 2008.
+
+\bibitem[Cohen and Coughlin(2009)]{Cohen2009}
+Jeffrey~P. Cohen and Cletus~C. Coughlin.
+\newblock {Changing Noise Levels and Housing Prices Near the Atlanta Airport}.
+\newblock \emph{Growth and Change}, 40\penalty0 (2):\penalty0 287--313, 2009.
+
+\bibitem[Day et~al.(2007)Day, Bateman, and Lake]{Day2007}
+Brett Day, Ian Bateman, and Iain Lake.
+\newblock {Beyond implicit prices: recovering theoretically consistent and
+  transferable values for noise avoidance from a hedonic property price model}.
+\newblock \emph{Environmental and Resource Economics}, 37\penalty0
+  (1):\penalty0 211--232, 2007.
+
+\bibitem[de~Kluizenaar et~al.(2013)de~Kluizenaar, Janssen, Vos, Salomons, Zhou,
+  and van~den Berg]{DeKluizenaar2013}
+Yvonne de~Kluizenaar, Sabine~a Janssen, Henk Vos, Erik~M Salomons, Han Zhou,
+  and Frits van~den Berg.
+\newblock {Road traffic noise and annoyance: a quantification of the effect of
+  quiet side exposure at dwellings.}
+\newblock \emph{International journal of environmental research and public
+  health}, 10\penalty0 (6):\penalty0 2258--70, January 2013.
+
+\bibitem[Delucchi and Hsu(1998)]{Delucchi1998}
+Mark Delucchi and Shi-Ling Hsu.
+\newblock {The External Damage Cost of Noise Emitted from Motor Vehicles}.
+\newblock \emph{Journal of Transportation and Statistics}, 1\penalty0
+  (3):\penalty0 1--24, 1998.
+
+\bibitem[Duarte and Tamez(2009)]{MarmolejoDuarteCarlos;GonzalezTamez2009}
+Carlos~Marmolejo Duarte and Carlos~Gonzalez Tamez.
+\newblock {Does Noise Have a Stationary Impact on Residential Values?}
+\newblock \emph{Journal of European Real Estate Research}, 2\penalty0
+  (3):\penalty0 259--279, 2009.
+
+\bibitem[Espey and Lopez(2000)]{Espey2000}
+Molly Espey and Hilary Lopez.
+\newblock {The Impact of Airport Noise and Proximity on Residential Property
+  Values}.
+\newblock \emph{Growth and Change}, 31\penalty0 (3):\penalty0 408--419, 2000.
+
+\bibitem[Fotheringham et~al.(2002)Fotheringham, Brunsdon, and
+  Charlton]{Fotheringham2002}
+A.~Stewart Fotheringham, Chris Brunsdon, and Martin Charlton.
+\newblock \emph{{Geographically Weighted Regression: the analysis of spatially
+  varying relationships}}.
+\newblock John Wiley \& Sons, West Sussex, England, 2002.
+
+\bibitem[Gamble et~al.(1974)Gamble, Sauerlender, and Langley]{Gamble1974}
+Hays~B. Gamble, Owen~H. Sauerlender, and C.~John Langley.
+\newblock {Adverse and Beneficial Effects of Highways on Property Values}.
+\newblock \emph{Transportation Research Record}, \penalty0 (508):\penalty0
+  37--48, 1974.
+
+\bibitem[{Hughes Jr.} and Sirmans(1992)]{HughesJr.1992}
+William~T. {Hughes Jr.} and C.F. Sirmans.
+\newblock {Traffic Externalities and Single-Family Housing Prices}.
+\newblock \emph{Journal of Regional Science}, 32\penalty0 (4):\penalty0
+  487--500, 1992.
+
+\bibitem[Jarup et~al.(2008)Jarup, Babisch, Houthuijs, Pershagen, Katsouyanni,
+  Cadum, Dudley, Savigny, Seiffert, Swart, Breugelmans, Bluhm, Selander,
+  Haralabidis, Dimakopoulou, Sourtzi, Velonakis, and
+  Vigna-Taglianti]{Jarup2008}
+Lars Jarup, Wolfgang Babisch, Danny Houthuijs, G\"{o}ran Pershagen, Klea
+  Katsouyanni, Ennio Cadum, Marie-Louise Dudley, Pauline Savigny, Ingeburg
+  Seiffert, Wim Swart, Oscar Breugelmans, G\"{o}sta Bluhm, Jenny Selander,
+  Alexandros Haralabidis, Konstantina Dimakopoulou, Panayota Sourtzi, Manolis
+  Velonakis, and Federica Vigna-Taglianti.
+\newblock {Hypertension and Exposure to Noise Near Airports: the HYENA Study}.
+\newblock \emph{Environmental Health Perspectives}, 116\penalty0 (3):\penalty0
+  329--333, December 2008.
+
+\bibitem[Langley(1976)]{Langley1976}
+C.~John~Jr. Langley.
+\newblock {Adverse Impacts of the Washington Beltway on Residential Property
+  Values}.
+\newblock \emph{Land Economics}, 52\penalty0 (1):\penalty0 54--65, 1976.
+
+\bibitem[Larsen(2012)]{Larsen2012}
+James~E. Larsen.
+\newblock {Surface street traffic volume and single-family house price}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  17\penalty0 (4):\penalty0 317--320, June 2012.
+
+\bibitem[Li and Saphores(2012)]{Li2012}
+Wei Li and Jean-Daniel Saphores.
+\newblock {Assessing Impacts of Freeway Truck Traffic on Residential Property
+  Values Southern California Case Study}.
+\newblock \emph{Transportation Research Record}, \penalty0 (2288):\penalty0
+  48--56, 2012.
+
+\bibitem[Loader(1999)]{Loader1999}
+Clive Loader.
+\newblock \emph{{Local Regression and Likelihood}}.
+\newblock Springer-Verlag, New York, NY, 1999.
+
+\bibitem[Matthews and Turnbull(2007)]{Matthews2007}
+John~W. Matthews and Geoffrey~K. Turnbull.
+\newblock \emph{{Neighborhood Street Layout and Property Value: The Interaction
+  of Accessibility and Land Use Mix}}, volume~35.
+\newblock July 2007.
+
+\bibitem[McMillen(2004)]{McMillen2004}
+Daniel~P. McMillen.
+\newblock {Airport expansions and property values: the case of Chicago O'Hare
+  Airport}.
+\newblock \emph{Journal of Urban Economics}, 55\penalty0 (3):\penalty0
+  627--640, May 2004.
+
+\bibitem[McMillen(2012)]{McMillen2012}
+Daniel~P. McMillen.
+\newblock {Perspectives on Spatial Econometrics: Linear Smoothing With
+  Structured Models}.
+\newblock \emph{Journal of Regional Science}, 52\penalty0 (2):\penalty0
+  192--209, May 2012.
+
+\bibitem[McMillen and Redfearn(2010)]{McMillen2010}
+Daniel~P. McMillen and Christian~L. Redfearn.
+\newblock {Estimation and Hypothesis Testing for Nonparametric Hedonic House
+  Price Functions}.
+\newblock \emph{Journal of Regional Science}, 50\penalty0 (3):\penalty0
+  712--733, April 2010.
+
+\bibitem[Miedema and Oudshoorn(2001)]{Miedema2001}
+Henk M~E Miedema and Catharina G~M Oudshoorn.
+\newblock {Annoyance from Transportation Noise : Relationships with Exposure
+  Metrics DNL and DENL and Their Confidence Intervals}.
+\newblock \emph{Environmental Health Perspectives}, 109\penalty0 (4):\penalty0
+  409--416, 2001.
+
+\bibitem[Nappi-Choulet and Maury(2011)]{Nappi-Choulet2011}
+Ingrid Nappi-Choulet and Tristan-Pierre Maury.
+\newblock {A Spatial and Temporal Autoregressive Local Estimation for the Paris
+  Housing Market}.
+\newblock \emph{Journal of Regional Science}, 51\penalty0 (4):\penalty0
+  732--750, October 2011.
+
+\bibitem[Nega et~al.(2012)Nega, Smith, Bethune, and Fu]{Nega2012}
+Tsegaye Nega, Carl Smith, James Bethune, and Wei-Hsin Fu.
+\newblock {An analysis of landscape penetration by road infrastructure and
+  traffic noise}.
+\newblock \emph{Computers, Environment and Urban Systems}, 36\penalty0
+  (3):\penalty0 245--256, May 2012.
+
+\bibitem[Nega et~al.(2013)Nega, Yaffe, Stewart, and Fu]{Nega2013}
+Tsegaye Nega, Nathan Yaffe, Nate Stewart, and Wei-Hsin Fu.
+\newblock {The impact of road traffic noise on urban protected areas: A
+  landscape modeling approach}.
+\newblock \emph{Transportation Research Part D: Transport and Environment},
+  23:\penalty0 98--104, August 2013.
+
+\bibitem[Nelson(1982)]{Nelson1982}
+Jon~P. Nelson.
+\newblock {Highway Noise and Property Values: A Survey of Recent Evidence}.
+\newblock \emph{Journal of Transport Economics and Policy}, 16\penalty0
+  (2):\penalty0 117--138, 1982.
+
+\bibitem[Ohrstrom et~al.(2007)Ohrstrom, Barregard, Andersson, Skarberg,
+  Svensson, and Angerheim]{Ohrstrom2007}
+Evy Ohrstrom, Lars Barregard, Eva Andersson, Annbritt Skarberg, Helena
+  Svensson, and Par Angerheim.
+\newblock {Annoyance due to single and combined sound exposure from railway and
+  road traffic}.
+\newblock \emph{The Journal of the Acoustical Society of America}, 122\penalty0
+  (5):\penalty0 2642--52, 2007.
+
+\bibitem[Ouis(2001)]{Ouis2001}
+D~Ouis.
+\newblock {Annoyance From Road Traffic Noise: a Review}.
+\newblock \emph{Journal of Environmental Psychology}, 21:\penalty0 101--120,
+  2001.
+
+\bibitem[Paez et~al.(2011)Paez, Farber, and Wheeler]{Paez2011}
+Antonio Paez, Steven Farber, and David Wheeler.
+\newblock {A simulation-based study of geographically weighted regression as a
+  method for investigating spatially varying relationships}.
+\newblock \emph{Environment and Planning A}, 43\penalty0 (12):\penalty0
+  2992--3010, 2011.
+
+\bibitem[Shepherd et~al.(2013)Shepherd, Welch, Dirks, and
+  McBride]{Shepherd2013}
+Daniel Shepherd, David Welch, Kim~N Dirks, and David McBride.
+\newblock {Do quiet areas afford greater health-related quality of life than
+  noisy areas?}
+\newblock \emph{International journal of environmental research and public
+  health}, 10\penalty0 (4):\penalty0 1284--303, April 2013.
+
+\bibitem[Sorensen et~al.(2011)Sorensen, Hvidberg, Andersen, Nordsborg,
+  Lillelund, Jakobsen, Tjonneland, Overvad, and Raaschou-Nielsen]{Sorensen2011}
+M.~Sorensen, M.~Hvidberg, Z.~J. Andersen, R.~B. Nordsborg, K.~G. Lillelund,
+  J.~Jakobsen, a.~Tjonneland, K.~Overvad, and O.~Raaschou-Nielsen.
+\newblock {Road traffic noise and stroke: a prospective cohort study}.
+\newblock \emph{European Heart Journal}, 32\penalty0 (6):\penalty0 737--744,
+  January 2011.
+
+\bibitem[Sunding and Swoboda(2010)]{Sunding2010}
+David~L. Sunding and Aaron~M. Swoboda.
+\newblock {Hedonic analysis with locally weighted regression: An application to
+  the shadow cost of housing regulation in Southern California}.
+\newblock \emph{Regional Science and Urban Economics}, 40\penalty0
+  (6):\penalty0 550--573, November 2010.
+
+\bibitem[Theebe(2004)]{Theebe2004a}
+Marcel Theebe.
+\newblock {Planes, Trains, and Automobiles: The Impact of Traffic Noise on
+  House Prices}.
+\newblock \emph{Journal of Real Estate Finance and Economics}, 28\penalty0
+  (2/3):\penalty0 209--234, 2004.
+
+\bibitem[Weinhold(2013)]{Weinhold2013}
+Diana Weinhold.
+\newblock {The Happiness-Reducing Costs of Noise Pollution}.
+\newblock \emph{Journal of Regional Science}, 53\penalty0 (2):\penalty0
+  292--303, May 2013.
+
+\bibitem[Wilhelmsson(2000)]{Wilhelmsson2000}
+Mats Wilhelmsson.
+\newblock {The Impact of Traffic Noise on the Values of Single-Family Houses}.
+\newblock \emph{Journal of Environmental Planning and Management}, 43\penalty0
+  (6):\penalty0 799--815, 2000.
+
+\end{thebibliography}

@@ -1,0 +1,286 @@
+\begin{table}
+\caption{Variable Description and Summary Statistics}
+\label{tab:sumStats}
+\makebox[\linewidth][c]{
+\small
+\begin{tabular}{lccccccc}
+  \hline \hline
+ & min & 25\% & 50\% & mean & 75\% & max & st dev \\
+  \hline
+Sale Price (\$1,000s) & 99 & 195 & 241 & 266 & 315 & 675 & 103 \\ \\
+  Year House was Built & 1850 & 1950 & 1973 & 1967 & 1993 & 2010 & 32 \\ \\
+  House Size (ft$^2$) & 390 & 1158 & 1628 & 1750 & 2189 & 4000 & 704 \\ \\
+  Lot Size (acres) & 0.02 & 0.17 & 0.25 & 0.25 & 0.31 & 0.60 & 0.11 \\ \\
+  Owner Occupancy (Yes = 1, No = 0) & 0.0 & 1.0 & 1.0 & 0.8 & 1.0 & 1.0 & 0.4 \\ \\
+  Traffic Noise (dB) & 24.5 & 49.0 & 54.0 & 54.3 & 59.5 & 81.6 & 7.5 \\  \\
+  Distance to Central Business District (km) & 1.1 & 6.8 & 13.2 & 14.7 & 21.8 & 37.1 & 8.9 \\ \\
+  Distance to Nearest Park (km) & 0.0 & 1.1 & 2.2 & 2.6 & 3.8 & 9.7 & 1.9 \\ \\
+  Distance to Nearest Lake (km) & 0.0 & 0.4 & 0.8 & 0.9 & 1.3 & 4.4 & 0.7 \\ \\
+  Distance to Nearest Shopping Center (km) & 0.0 & 0.9 & 1.5 & 1.9 & 2.3 & 10.8 & 1.6 \\ \\
+  Percent of Census Block Population Race = White & 0 & 80 & 90 & 85 & 96 & 100 & 17 \\ \\
+  Percent of Census Block Population Under Age 18 & 0 & 21 & 27 & 27 & 33 & 67 & 9 \\ \\
+  Median Income in Census Tract (\$1,000s) & 14 & 55 & 69 & 73 & 90 & 143 & 24 \\ \\
+  Nearest Elementary School Test Scores & 336 & 360 & 365 & 364 & 370 & 552 & 11 \\
+   \hline \hline
+\end{tabular}
+}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\caption{Matrix of Pearson Correlation Coefficients for Quantitative Variables}\label{tab:cor}
+\begin{center}
+\small
+\tabcolsep=0.05cm
+\makebox[\linewidth][c]{
+\begin{tabular}{l|rrrrrrrrrrrrr}
+\hline \hline
+ & \multicolumn{1}{x{.35in}}{Price} & \multicolumn{1}{x{.38in}}{House} & \multicolumn{1}{x{.35in}}{Lot} &
+ \multicolumn{1}{x{.35in}}{Built} & \multicolumn{1}{x{.35in}}{Noise} & \multicolumn{1}{x{.35in}}{CBD} & \multicolumn{1}{x{.35in}}{Park} & \multicolumn{1}{x{.35in}}{Lake} & \multicolumn{1}{x{.35in}}{Shop} & \multicolumn{1}{x{.35in}}{White} &
+ \multicolumn{1}{x{.35in}}{U18} & \multicolumn{1}{x{.35in}}{Inc.} &
+ \multicolumn{1}{x{.35in}}{Test} \\
+  \hline
+Sale Price & 1 &  &  &  &  &  &  &  &  &  &  &  &  \\ \\
+House Size & 0.74 & 1 &  &  &  &  &  &  &  &  &  &  &  \\ \\
+Lot Size  & 0.38 & 0.45 & 1 &  &  &  &  &  &  &  &  &  &  \\ \\
+Year Built  & 0.45 & 0.52 & 0.47 & 1 &  &  &  &  &  &  &  &  &  \\ \\
+Noise & -0.24 & -0.12 & -0.04 & -0.25 & 1 &  &  &  &  &  &  &  &  \\ \\
+Distance to CBD  & 0.31 & 0.45 & 0.43 & 0.58 & -0.09 & 1 &  &  &  &  &  &  &  \\ \\
+Distance to Park  & 0.25 & 0.28 & 0.22 & 0.42 & -0.17 & 0.57 & 1 &  &  &  &  &  &  \\ \\
+Distance to Lake & -0.04 & -0.10 & -0.25 & -0.17 & -0.01 & -0.09 & 0.20 & 1 &  &  &  &  &  \\ \\
+Distance to Shop  & 0.27 & 0.27 & 0.15 & 0.37 & -0.24 & 0.46 & 0.38 & 0.15 & 1 &  &  &  &  \\ \\
+Percent White & 0.24 & 0.15 & 0.25 & 0.15 & -0.09 & 0.34 & 0.16 & -0.14 & 0.14 & 1 &  &  &  \\ \\
+Percent Under 18 & 0.26 & 0.30 & 0.11 & 0.36 & -0.19 & 0.29 & 0.32 & 0.09 & 0.32 & -0.22 & 1 &  & \\  \\
+Income & 0.52 & 0.50 & 0.41 & 0.57 & -0.24 & 0.53 & 0.38 & -0.12 & 0.36 & 0.35 & 0.32 & 1 &  \\ \\
+Elem.\ Test Scores & 0.29 & 0.28 & 0.29 & 0.34 & -0.09 & 0.35 & 0.22 & -0.10 & 0.18 & 0.31 & 0.10 & 0.44 & 1 \\ \hline \hline
+\end{tabular} }
+\end{center}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\caption{Mean Variable Values by Year}\label{tab:SumStatsTime}
+\makebox[\textwidth][c]{
+\scriptsize
+  \centering
+    \begin{tabular}{lcccccc|c}
+    \\[-1.8ex]\hline
+\hline \\[-1.8ex]
+    & \multicolumn{6}{c}{Year of House Sale} & \\
+    Variable & 2005 & 2006 & 2007 & 2008 & 2009 & 2010 & \multicolumn{1}{r}{All Years}\\ \hline
+Sale Price (\$1,000s) & 279 & 282 & 275 & 262 & 231 & 233 & 266 \\ \\
+  Year House was Built & 1967 & 1966 & 1966 & 1971 & 1968 & 1968 & 1967 \\ \\
+  House Size (feet$^2$) & 1737 & 1736 & 1743 & 1813 & 1727 & 1775 & 1750 \\ \\
+  Lot Size (acres) & 0.25 & 0.25 & 0.25 & 0.26 & 0.25 & 0.26 & 0.25 \\ \\
+  Owner Occ (Y = 1, N = 0) & 0.87 & 0.87 & 0.92 & 0.86 & 0.60 & 0.77 & 0.83 \\ \\
+  Traffic Noise (dB) & 54.4 & 54.5 & 54.6 & 53.7 & 54.0 & 54.0 & 54.3 \\ \\
+  Dist CBD (km) & 14.7 & 14.6 & 14.8 & 15.0 & 14.3 & 14.5 & 14.7 \\ \\
+  Dist to  Park (km) & 2.6 & 2.6 & 2.6 & 2.8 & 2.6 & 2.6 & 2.6 \\ \\
+  Dist to Lake (km) & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 & 0.9 \\ \\
+  Dist to  Shop (km) & 1.9 & 1.9 & 1.8 & 2.0 & 1.9 & 1.9 & 1.9 \\ \\
+  Percent Race = White & 84 & 84 & 85 & 86 & 85 & 86 & 85 \\ \\
+  Percent Under Age 18 & 28 & 28 & 27 & 28 & 27 & 27 & 27 \\ \\
+  Income (\$1,000s) & 72 & 72 & 72 & 75 & 73 & 73 & 73 \\ \\
+  Elementary Test Scores & 365 & 365 & 365 & 364 & 362 & 366 & 364 \\  \hline
+  Number of Observations &  10,990  & 8,885  &  6,549  & 5,498  &  5,961  & 4,200  & 42,083  \\ \hline \hline
+    \end{tabular}%
+}
+\end{table}
+\efloatseparator
+ 
+\begin{table}
+\caption{Basic Global Regression Results}
+\label{tab:globalRegression}
+\makebox[\textwidth][c]{
+\scriptsize
+  \centering
+\begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{-4} D{.}{.}{-4} D{.}{.}{-4} D{.}{.}{-4} }
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{4}{c}{\textit{Dependent variable: ln Sale Price}} \\
+\cline{2-5} \\[-1.8ex]
+& \multicolumn{1}{r}{Model (A)} & \multicolumn{1}{r}{Model (B)} & \multicolumn{1}{r}{Model (C)} & \multicolumn{1}{r}{Model (D)}\\
+& \multicolumn{1}{r}{All Years} & \multicolumn{1}{r}{Year=2006} & \multicolumn{1}{r}{Year=2008} & \multicolumn{1}{r}{Year=2010}\\
+\hline \\[-1.8ex]
+Noise (dB) & -0.0027^{***} & -0.0020^{***} & -0.0033^{***} & -0.0040^{***} \\
+  & (0.0001) & (0.0003) & (0.0005) & (0.0006) \\
+  & & & & \\
+ House Size (1,000s ft$^2$) & 0.2914^{***} & 0.2847^{***} & 0.2810^{***} & 0.3066^{***} \\
+  & (0.0022) & (0.0043) & (0.0067) & (0.0084) \\
+  & & & & \\
+ Lot Size (acres) & 0.2493^{***} & 0.2719^{***} & 0.2799^{***} & 0.2135^{***} \\
+  & (0.0118) & (0.0221) & (0.0359) & (0.0447) \\
+  & & & & \\
+ Owner Occupancy Dummy & 0.0222^{***} & -0.0027 & 0.0478^{***} & 0.0298^{***} \\
+  & (0.0026) & (0.0050) & (0.0085) & (0.0097) \\
+  & & & & \\
+ Year House Built & 0.0020^{***} & 0.0025^{***} & 0.0018^{***} & 0.0011^{***} \\
+  & (0.0001) & (0.0001) & (0.0002) & (0.0002) \\
+  & & & & \\
+ Percent Under Age 18 & -0.0001 & 0.00002 & -0.0002 & -0.0006 \\
+  & (0.0001) & (0.0002) & (0.0004) & (0.0005) \\
+  & & & & \\
+ Percent White & 0.0037^{***} & 0.0031^{***} & 0.0040^{***} & 0.0040^{***} \\
+  & (0.0001) & (0.0001) & (0.0002) & (0.0003) \\
+  & & & & \\
+ Median Income (\$1,000s) & 0.0023^{***} & 0.0021^{***} & 0.0023^{***} & 0.0029^{***} \\
+  & (0.0001) & (0.0001) & (0.0002) & (0.0003) \\
+  & & & & \\
+ Elementary Test Scores & 0.0009^{***} & 0.0023^{***} & 0.0040^{***} & 0.0001 \\
+  & (0.0001) & (0.0003) & (0.0005) & (0.0002) \\
+  & & & & \\
+ Dist to CBD (km) & 0.0078^{***} & 0.0083^{***} & 0.0053^{***} & 0.0101^{***} \\
+  & (0.0005) & (0.0010) & (0.0016) & (0.0020) \\
+  & & & & \\
+ Dist to Lake (km) & 0.0230^{***} & 0.0246^{***} & 0.0021 & 0.0343^{***} \\
+  & (0.0017) & (0.0032) & (0.0054) & (0.0067) \\
+  & & & & \\
+ Dist to Park (km) & 0.0014 & -0.0027 & 0.0099^{***} & 0.0064^{*} \\
+  & (0.0009) & (0.0017) & (0.0027) & (0.0034) \\
+  & & & & \\
+ Dist to Shop (km) & -0.0019^{*} & -0.0020 & -0.0063^{*} & -0.0020 \\
+  & (0.0010) & (0.0019) & (0.0033) & (0.0041) \\
+  & & & & \\
+\hline \\[-1.8ex]
+Home Style Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+Month*Year Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+City Fixed Effects & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+\hline \\[-1.8ex]
+Observations & \multicolumn{1}{c}{42,083} & \multicolumn{1}{c}{8,885} & \multicolumn{1}{c}{5,498} & \multicolumn{1}{c}{4,200} \\
+R$^{2}$ & \multicolumn{1}{c}{0.742} & \multicolumn{1}{c}{0.785} & \multicolumn{1}{c}{0.691} & \multicolumn{1}{c}{0.668} \\
+\hline
+\hline \\[-1.8ex]
+\multicolumn{5}{l}{Note: (Standard errors) and $^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[!htbp]
+  \caption{\mbox{LWR Coefficient Mean and (10$^{th}$ to 90$^{th}$ Percentile) Values for Selected Bandwidths} }
+  \label{tab:LWR}
+  \makebox[\textwidth][c]{
+\scriptsize
+  \centering
+\begin{tabular}{@{\extracolsep{-1pt}} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} D{.}{.}{4} }
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+& \multicolumn{4}{c}{Dependent Variable = ln(Sales Price)} \\ \\
+ & \multicolumn{1}{c}{Nearest 500 sales\ding{105}} & \multicolumn{1}{c}{Nearest 650 sales} & \multicolumn{1}{c}{Nearest 1,000 sales} & \multicolumn{1}{c}{Nearest 2,000 sales} \\ \hline \\
+\multicolumn{1}{l}{Noise (dB)} & \multicolumn{1}{c}{-0.0034} & \multicolumn{1}{c}{-0.0034} & \multicolumn{1}{c}{-0.0033} & \multicolumn{1}{c}{-0.0032} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0064 to -0.0007)} & \multicolumn{1}{c}{(-0.0061 to -0.0009)} & \multicolumn{1}{c}{(-0.0057 to -0.0013)} & \multicolumn{1}{c}{(-0.0049 to -0.0017)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{House Size (1,000s ft$^2$)} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.27} & \multicolumn{1}{c}{0.28} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.18 to 0.39)} & \multicolumn{1}{c}{(0.19 to 0.39)} & \multicolumn{1}{c}{(0.20 to 0.40)} & \multicolumn{1}{c}{(0.20 to 0.37)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Lot Size (acres)} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.42} & \multicolumn{1}{c}{0.40} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.17 to 0.73)} & \multicolumn{1}{c}{(0.19 to 0.71)} & \multicolumn{1}{c}{(0.21 to 0.67)} & \multicolumn{1}{c}{(0.25 to 0.58)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Year House Built} & \multicolumn{1}{c}{0.0046} & \multicolumn{1}{c}{0.0045} & \multicolumn{1}{c}{0.0043} & \multicolumn{1}{c}{0.0038} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(0.0004 to 0.010)} & \multicolumn{1}{c}{(0.0005 to 0.0096)} & \multicolumn{1}{c}{(0.0005 to 0.0090)} & \multicolumn{1}{c}{(0.0004 to 0.0080)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Owner Occupancy} & \multicolumn{1}{c}{0.023} & \multicolumn{1}{c}{0.024} & \multicolumn{1}{c}{0.023} & \multicolumn{1}{c}{0.021} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.029 to 0.080)} & \multicolumn{1}{c}{(-0.024 to 0.076)} & \multicolumn{1}{c}{(-0.018 to 0.068)} & \multicolumn{1}{c}{(-0.012 to 0.056)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Percent White} & \multicolumn{1}{c}{0.0012} & \multicolumn{1}{c}{0.0013} & \multicolumn{1}{c}{0.0014} & \multicolumn{1}{c}{0.0016} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0003 to 0.0029)} & \multicolumn{1}{c}{(-0.0001 to 0.0028)} & \multicolumn{1}{c}{(0.0001 to 0.0028)} & \multicolumn{1}{c}{(0.0003 to 0.0032)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Percent Under Age 18} & \multicolumn{1}{c}{0.00047} & \multicolumn{1}{c}{0.00045} & \multicolumn{1}{c}{0.00040} & \multicolumn{1}{c}{0.00034} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0016 to 0.0025)} & \multicolumn{1}{c}{(-0.0014 to 0.0022)} & \multicolumn{1}{c}{(-0.0011 to 0.0019)} & \multicolumn{1}{c}{(-0.0008 to 0.0015)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Median Income (\$1,000s)} & \multicolumn{1}{c}{0.0006} & \multicolumn{1}{c}{0.0008} & \multicolumn{1}{c}{0.0010} & \multicolumn{1}{c}{0.0014} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0014 to 0.0033)} & \multicolumn{1}{c}{(-0.0010 to 0.0033)} & \multicolumn{1}{c}{(-0.0006 to 0.0037)} & \multicolumn{1}{c}{(-0.0002 to 0.0042)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Elementary Test Scores} & \multicolumn{1}{c}{-0.00002} & \multicolumn{1}{c}{0.00008} & \multicolumn{1}{c}{0.00029} & \multicolumn{1}{c}{0.00044} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.0056 to 0.0055)} & \multicolumn{1}{c}{(-0.0050 to 0.0049)} & \multicolumn{1}{c}{(-0.0040 to 0.0042)} & \multicolumn{1}{c}{(-0.0025 to 0.0037)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Distance to Lake (km)} & \multicolumn{1}{c}{-0.0150} & \multicolumn{1}{c}{-0.0110} & \multicolumn{1}{c}{-0.0076} & \multicolumn{1}{c}{-0.0051} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.091 to 0.058)} & \multicolumn{1}{c}{(-0.077 to 0.055)} & \multicolumn{1}{c}{(-0.063 to 0.052)} & \multicolumn{1}{c}{(-0.048 to 0.043)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Distance to Park (km)} & \multicolumn{1}{c}{-0.011} & \multicolumn{1}{c}{-0.011} & \multicolumn{1}{c}{-0.009} & \multicolumn{1}{c}{-0.002} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.060 to 0.033)} & \multicolumn{1}{c}{(-0.049 to 0.025)} & \multicolumn{1}{c}{(-0.037 to 0.016)} & \multicolumn{1}{c}{(-0.018 to 0.011)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Distance to Shop (km)} & \multicolumn{1}{c}{0.0092} & \multicolumn{1}{c}{0.0096} & \multicolumn{1}{c}{0.0100} & \multicolumn{1}{c}{0.0078} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.033 to 0.052)} & \multicolumn{1}{c}{(-0.027 to 0.047)} & \multicolumn{1}{c}{(-0.021 to 0.044)} & \multicolumn{1}{c}{(-0.014 to 0.036)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{l}{Distance to CBD (km)} & \multicolumn{1}{c}{0.0084} & \multicolumn{1}{c}{0.0094} & \multicolumn{1}{c}{0.0100} & \multicolumn{1}{c}{0.0095} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{(-0.019 to 0.044)} & \multicolumn{1}{c}{(-0.014 to 0.040)} & \multicolumn{1}{c}{(-0.010 to 0.038)} & \multicolumn{1}{c}{(-0.005 to 0.037)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+
+\multicolumn{1}{l}{Home Style Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+\multicolumn{1}{l}{Month*Year Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+\multicolumn{1}{l}{City Fixed Effects} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} \\
+\hline \\[-1.8ex]
+\multicolumn{1}{l}{Observations\ding{61}} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} \\
+\multicolumn{1}{l}{GCV score} & \multicolumn{1}{c}{0.0271} & \multicolumn{1}{c}{0.0271} & \multicolumn{1}{c}{0.0274} & \multicolumn{1}{c}{0.0283} \\
+\multicolumn{1}{l}{Moran's I statistic\ding{71}} & \multicolumn{1}{c}{0.027} & \multicolumn{1}{c}{0.031} & \multicolumn{1}{c}{0.037} & \multicolumn{1}{c}{0.049} \\ \hline \hline
+\multicolumn{5}{p{5.5 in}}{\ding{105} A bandwidth of X implies that only the nearest X houses sold within the past 12 months receive positive weights in the locally weighted regression.} \\
+\multicolumn{5}{p{5.5 in}}{\ding{61} Fewer LWR coefficient estimates are obtained than the total sample size because we only estimate the regression for houses that have 12 months of previous sales to include in the local regression.} \\
+\multicolumn{5}{p{5.5 in}}{\ding{71} For comparison, the Moran's I statistic for Model A in Table~\ref{tab:globalRegression} is 0.188.} \\
+\end{tabular}
+}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[!htbp] \centering
+  \caption{LWR Noise Coefficient Over Time (bandwidth = 500 nearest sales)}
+    \label{tab:noisebetatime500}
+\scriptsize
+\begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} }
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficient (bandwidth = 500 nearest sales)}} \\
+\cline{2-7}
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\
+\hline \\[-1.8ex]
+Months since Jan 2005 & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.00003^{***} & -0.0001^{***} & 0.00004^{***} \\
+  & (0.000001) & (0.000004) & (0.000001) & (0.000004) & (0.000002) & (0.00001) \\
+  & & & & & & \\
+ (Months since Jan 2005)$^2$ &  & -0.000001^{***} &  & -0.000001^{***} &  & -0.000001^{***} \\
+  &  & (0.00000005) &  & (0.00000004) &  & (0.0000001) \\
+  & & & & & & \\
+ Constant & -0.0016^{***} & -0.0028^{***} & -0.0021^{***} & -0.0033^{***} & -0.0015^{***} & -0.0032^{***} \\
+  & (0.00003) & (0.0001) & (0.00003) & (0.0001) & (0.0001) & (0.0002) \\
+  & & & & & & \\
+\hline \\[-1.8ex]
+City Fixed Effects & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} \\
+\hline \\[-1.8ex]
+Observations & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{8,003} & \multicolumn{1}{c}{8,003} \\
+R$^{2}$ & \multicolumn{1}{c}{0.1273} & \multicolumn{1}{c}{0.1377} & \multicolumn{1}{c}{0.2931} & \multicolumn{1}{c}{0.3028} & \multicolumn{1}{c}{0.1566} & \multicolumn{1}{c}{0.1704} \\
+\hline
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+\efloatseparator
+ 
+\begin{table}[!htbp] \centering
+  \caption{LWR Noise Coefficient Over Time (bandwidth = 2,000 nearest sales)}
+  \label{tab:noisebetatime2000}
+\scriptsize
+\begin{tabular}{@{\extracolsep{-1pt}}lD{.}{.}{6} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} D{.}{.}{7} }
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{6}{c}{\textit{Dependent variable: LWR Noise Coefficient (bandwidth = 2,000 nearest sales)}} \\
+\cline{2-7}
+\\[-1.8ex] & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} & \multicolumn{1}{c}{(5)} & \multicolumn{1}{c}{(6)}\\
+\hline \\[-1.8ex]
+Months since Jan 2005 & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.00003^{***} & -0.00005^{***} & 0.0001^{***} \\
+  & (0.0000003) & (0.000002) & (0.0000003) & (0.000002) & (0.000001) & (0.000004) \\
+  & & & & & & \\
+ (Months since Jan 2005)$^2$ &  & -0.000001^{***} &  & -0.000001^{***} &  & -0.000001^{***} \\
+  &  & (0.00000002) &  & (0.00000002) &  & (0.0000001) \\
+  & & & & & & \\
+ Constant & -0.0014^{***} & -0.0026^{***} & -0.0016^{***} & -0.0028^{***} & -0.0016^{***} & -0.0033^{***} \\
+  & (0.00001) & (0.00003) & (0.00002) & (0.00003) & (0.00003) & (0.0001) \\
+  & & & & & & \\
+\hline \\[-1.8ex]
+City Fixed Effects & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{Yes} & \multicolumn{1}{c}{No} & \multicolumn{1}{c}{No} \\
+\hline \\[-1.8ex]
+Observations & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{31,737} & \multicolumn{1}{c}{8,003} & \multicolumn{1}{c}{8,003} \\
+R$^{2}$ & \multicolumn{1}{c}{0.3828} & \multicolumn{1}{c}{0.4142} & \multicolumn{1}{c}{0.5128} & \multicolumn{1}{c}{0.5435} & \multicolumn{1}{c}{0.3454} & \multicolumn{1}{c}{0.3988} \\
+\hline
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+\efloatseparator
+ 

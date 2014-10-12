@@ -1,0 +1,88 @@
+\begin{figure}
+\floatpagestyle{empty}
+\rotfloatpagestyle{empty}
+\makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/Overview2columnAnnotatedPDF}}
+\caption{This figure shows the spatial extent of our study area, the significant spatial variation in single family house sales prices, as well as our noise data.}
+\label{fig:overview}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/SaleValue_with05}}
+\caption{This figure shows the spatial distribution of observed sales prices over time. The change in color from 2005 to 2010 denotes the drop in sales prices associated with the recession of 2008-09. There are clear spatial patterns in  house prices that persist over time (locations with relatively high vs. low prices in one year tend to be the same in other years). However, we see no evidence that sales shifted from one area of our study region to another (neighborhoods with many sales in 2005 also tend to have many sales in 2010). }
+\label{fig:SalesYear}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+  \makebox[\textwidth][c]{\includegraphics[width = 1.2\textwidth]{../graphs/GCVbyModelFinal}}
+\caption{This figure shows the relationship between bandwidth size and the GCV score for three different Locally Weighted Regression (LWR) models. For comparison, the GCV scores for each model when estimated at a global scale are also shown. Note that the LWR models all have significantly smaller GCV scores than the global models. The minimum GCV score is obtained by LWR Model (3) at a bandwidth of 500 nearest houses.}
+\label{fig:GCVmodel}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/GCVsFromMCsim}}
+ \caption{This figure shows the distribution of GCV scores obtained from simulations with spatially randomized data and the GCV score from our data. Each solid curve represents the smoothed density plot of 100 different instances of the simulation. The dashed line suggests that our actual minimum GCV score was not obtained by random chance as no other GCV scores come close.}
+ \label{fig:GCVSIM}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/AcreBeta_allBandwidth}}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the lot size variable (in acres) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases there is a clear inverse relationship between the coefficient magnitudes and distance to the central business district.}
+ \label{fig:AcreBetas}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/FinSqFtBeta_allBandwidth}}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the finished house size variable (in 1,000s of square feet) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the highest coefficient values are in the west-central portion of our study area and the lowest coefficients tend to be in the far south.}
+ \label{fig:HouseBetas}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{../graphs/NoiseBeta_allBandwidth}}
+ \caption{This figure shows an interpolated surface (using Inverse Distance Weighting) for the estimated LWR coefficients (dependent variable = ln(sales price)) for the noise variable (in dB) obtained across four different bandwidths: 500, 650, 1,000, and 2,000 nearest observations. In all cases some of the most negative coefficient values are in the west-central portion of our study area with the smallest in magnitude coefficients tending to be near the central business district.}
+ \label{fig:NoiseBetas}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+ \makebox[\textwidth][c]{\includegraphics[height=.9\textheight]{../graphs/MCsim2FinalResults}}
+ \caption{This figure shows the actual standard deviation in LWR coefficients (dashed line) compared to standard deviations obtained from 100 different instances of spatial randomization (solid lines). Results are presented for two different bandwidths (nearest 500 and 2,000 denoted by color) for each explanatory variable. In all cases the distribution of standard deviations for the smaller bandwidth is larger. In most cases the standard deviation of LWR coefficients for the actual data is substantially higher than any standard deviation obtained with the simulated data, but not for the noise variable.}
+ \label{fig:MCsim2}
+\end{figure}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Acre_50_200_ByYear}
+ \caption{This figure shows the interpolated LWR lot size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
+ \label{fig:AcreTime}
+\end{sidewaysfigure}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/FinFt_50_200_ByYear}
+ \caption{This figure shows the interpolated LWR finished house size coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
+ \label{fig:HouseTime}
+\end{sidewaysfigure}
+\efloatseparator
+ 
+\begin{sidewaysfigure}
+
+ \includegraphics[trim = 0cm 2cm 0cm 0cm, clip = true, width = \textwidth]{../graphs/Noise_50_200_ByYear}
+ \caption{This figure shows the interpolated LWR noise coefficients across space and time for two bandwidths (nearest 500 and 2,000). Note that the spatial pattern obtained is similar across time periods, but the average value tends to decline over time.}
+ \label{fig:NoiseTime}
+\end{sidewaysfigure}
+\efloatseparator
+ 
+\begin{figure}
+\makebox[\textwidth][c]{\includegraphics[width = \textwidth]{../graphs/DakotaResults}}
+\caption{This figure shows the similarity between the LWR coefficients we obtained from our model in Dakota County when additional structural variables were excluded vs.\ included in the hedonic regression function. The black line shows the 45 degree line, while the red dashed line shows the estimated line of best fit, which yields a simple $R^2$ of 0.96}\label{fig:DAK}
+\end{figure}
+\efloatseparator
+ 
