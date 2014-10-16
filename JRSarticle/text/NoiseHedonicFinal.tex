@@ -1,6 +1,6 @@
 \documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+
+
 \makeatletter
 \def\maxwidth{ %
   \ifdim\Gin@nat@width>\linewidth
@@ -48,7 +48,7 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-\usepackage{floatpag} %floatpag.sty file is just in the reports folder - commands to remove page nos are in first figure
+\usepackage{floatpag} %floatpag.sty file is in the text folder - commands to remove page nos are in first figure
 \usepackage[round]{natbib}
 \usepackage{dcolumn}
 \usepackage{pifont}
@@ -68,7 +68,7 @@
 
 \title{Hedonic Analysis over Time and Space:\\ The Case of House Prices and Traffic Noise}
 \date{}
-\author{Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
+\author{}%Aaron Swoboda, Tsegaye Nega and Maxwell Timm}
 
 \doublespacing
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -202,7 +202,7 @@ where
 \item[] $\Delta _{shielding}$ is a shielding adjustment (land cover, buildings, noise barriers).
 \end{itemize}
 
-We used the SoundPlan\texttrademark noise modeling software to implement equation~\ref{eq:noise} using several data sources as inputs.  A 2007 road centerline and the associated traffic characteristics (volume and proportion of trucks and vehicles) for the region were obtained from the Minnesota Department of Transportation (MNDoT).  We converted the posted speed of each road segment into a GIS layer.  We used three data sources for the shielding adjustment: buildings, foliage, and noise barriers.  We extracted the perimeter and height of 818,500 buildings using a combination of LiDAR data and aerial photography.  Foliage shielding was accounted for by extracting forest polygons that are at least 10 m high and have an area $\geq$10,000 m$^2$ from a 2005 land use and 2001 National Land Cover Data. We obtained a noise barrier layer from the MNDoT containing the locations, width, and height of each noise barriers to account for its shielding effect. 
+We used the SoundPlan\texttrademark noise modeling software to implement equation~\eqref{eq:noise} using several data sources as inputs.  A 2007 road centerline and the associated traffic characteristics (volume and proportion of trucks and vehicles) for the region were obtained from the Minnesota Department of Transportation (MNDoT).  We converted the posted speed of each road segment into a GIS layer.  We used three data sources for the shielding adjustment: buildings, foliage, and noise barriers.  We extracted the perimeter and height of 818,500 buildings using a combination of LiDAR data and aerial photography.  Foliage shielding was accounted for by extracting forest polygons that are at least 10 m high and have an area $\geq$10,000 m$^2$ from a 2005 land use and 2001 National Land Cover Data. We obtained a noise barrier layer from the MNDoT containing the locations, width, and height of each noise barriers to account for its shielding effect. 
 
 In order to incorporate noise produced by aircraft into the overall noise exposure, we obtained the aircraft noise contour lines of the region from the Twin Cities Metropolitan Airports Commission. The contour line noise values coincident with the traffic noise surface were then added following rules of logarithmic addition. For example, adding 52 dBA from aircraft contour line into the noise surface where the noise value was 51 dBA yielded 53.5 dBA. 
 
@@ -614,6 +614,7 @@ Future research should be conducted in more housing markets, as the potential to
 \newpage
 \begin{singlespace}
 
-\input{NoiseHedonicFinalBib.bbl}
+\input{NoiseHedonicFinalBib.bbl} 
+% This file contains the bibliography with proper Journal of Regional Science Formatting
 \end{singlespace}
 \end{document}
