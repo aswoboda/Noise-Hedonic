@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[leqno]{article}
 \usepackage{floatpag} %floatpag.sty file is just in the reports folder - commands to remove page nos are in first figure
 \usepackage[round]{natbib}
 \usepackage{dcolumn}
